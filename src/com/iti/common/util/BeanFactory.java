@@ -11,7 +11,6 @@ public class BeanFactory {
 	public static void setWebApplicationContext(WebApplicationContext webApplicationContext) {
 		BeanFactory.webApplicationContext = webApplicationContext;
 	}
-
 	/**
 	 * 得到名称为beanName的Bean实例
 	 * 
