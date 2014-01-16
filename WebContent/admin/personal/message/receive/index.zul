@@ -1,0 +1,28 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window width="760px" style="text-align:left"  sclass="newin"  use="org.iti.xypt.personal.message.MessageReceiveWindow">
+		<panel title="查看信息">
+			<caption>
+				<hbox align="end">
+					<toolbarbutton id="replyMsg" image="/css/default/images/button/hf.gif" tooltiptext="点击回复消息">
+					</toolbarbutton>
+						
+					<toolbarbutton id="deleteMsg" image="/css/default/images/button/delAct.gif" tooltiptext="点击删除消息"></toolbarbutton>				
+
+				</hbox>
+			</caption>
+			<panelchildren>
+				<listbox id="receMsglistbox" mold="paging" pageSize="10" checkmark="true" multiple="true" sclass="new_listbox">
+					<listhead sizable="true">
+						<listheader width="5%" />
+						<listheader label="状态" width="10%" align="center" />
+						<listheader label="主题" width="55%" style="padding-left: 12px;" sort="auto(xmSubject)" id="titleHeader" />
+						<listheader label="关键词" width="10%" align="center" id="keywordHeader" sort="auto(xmKeyword)" />
+						<listheader label="发信人" width="10%" align="center" id="fromHeader" sort="auto(xmSender)" />
+						<listheader label="发送时间" width="10%" align="center" id="timeHeader" sort="auto(xmSndtime)" />
+					</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

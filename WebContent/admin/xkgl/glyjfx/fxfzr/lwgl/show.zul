@@ -1,0 +1,20 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="详细显示"  use="org.iti.gh.glyjfx.fxfzr.lwgl.ShowWindow" width="800px" border="normal"  closable="true" style="text-align:left" >
+<panel>
+ 
+<panelchildren>
+<listbox id="showlist" mold="paging" pageSize="15">
+		<listhead>
+			<listheader width="20%" label="序号" align="center"/>
+			<listheader width="17%" label="负责人"  align="center"/>
+			<listheader width="17%" label="论文类型"  align="center"/>
+			<listheader width="17%" label="年度"  align="center"/>
+			<listheader width="17%"  label="论文篇数" align="center"/>
+			<listheader width="16%" label="论文内容"  align="center"/>
+		</listhead>
+</listbox>
+</panelchildren>
+</panel>
+</window>
+</zk>

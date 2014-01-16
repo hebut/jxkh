@@ -1,0 +1,53 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="社会学术团体"  border="normal" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.RychWindow " width="800px">
+<grid>
+			<columns>
+				<column width="30%" align="center" />
+				<column width="70%" />
+			
+			</columns>
+			<rows>
+				<row >
+					<label value="荣誉名称"/>
+					<hbox>
+					<textbox id="name" cols="60"  maxlength="50"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="年度"  style="letter-spacing:20px"/>
+					<hbox>
+					<textbox id="year" cols="60"  maxlength="50"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>	
+					<label value="颁发单位"/>
+					<textbox id="dep" cols="60"  maxlength="100"/>
+				</row>
+				
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit"></button>
+				<button label="重置" id="reset"></button>
+				<button label="关闭" id="close"></button>
+			</hbox>
+		</hbox>
+		<separator />
+			<groupbox closable="true">
+					<caption>
+						<label style="color:blue" value="[提示]" />
+					</caption>
+					<vbox>
+					<separator spacing="1px" />
+						<separator spacing="1px" />
+						<label pre="true" value="1、获奖时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9" />
+
+						</vbox>
+			</groupbox>
+</window>
+</zk>

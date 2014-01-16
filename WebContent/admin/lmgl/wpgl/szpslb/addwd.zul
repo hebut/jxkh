@@ -1,0 +1,30 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window closable="true" title="添加子阶段" border="normal" width="500px" style="text-align:left" use="org.iti.wp.szpslb.AddwdWindow ">
+	
+		<grid>
+					<columns>
+						<column ></column>
+						<column></column>
+					</columns>
+					<rows>
+					<row>
+						<label value="文档名称"/>
+						 <textbox id="wdname" constraint="no empty"></textbox></row>
+						<row>
+						<label value="提交文档开始时间"/>
+						<datebox id="start" constraint="no empty" width="115px"></datebox></row>
+						<row>
+						<label value="提交文档结束时间"/>
+						<datebox id="end" constraint="no empty" width="115px"></datebox></row>
+					</rows>
+		</grid>
+				<hbox pack="center" width="100%">
+				<hbox>
+				<button label="确定" id="sure"></button> 
+				<button label="重置" id="reset"></button> 
+				</hbox>
+				</hbox>
+		
+		</window>
+		</zk>

@@ -1,0 +1,132 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="添加部门" border="normal" sclass="newin" width="920px" closable="true" height="700px">
+	<grid>
+		<columns>
+			<column  width="910px"/>
+		</columns>
+<rows>
+	<row>
+	<hbox>	
+	<hbox id="in">
+		<label value="部门名称:"/>
+		<textbox width="180px"   id="dept" >
+		</textbox>
+		<space width="15px"/>
+		<label value="部门编号:"/>
+		<textbox width="130px" id="name"/>
+		</hbox>
+		<hbox id="out" visible="false">
+		<label value="姓名:"/>
+		<textbox id="outname" width="130px"/>
+		<label value="部门:"/>
+		<textbox id="outdept" width="130px"/>
+		<label value="职称:"/>
+		<textbox id="outduty" width="130px"/>
+		</hbox>
+		<space/>
+			<toolbarbutton  image="/css/default/images/button/searAct.gif" id="view"/>
+			<toolbarbutton  image="/css/default/images/button/addAct.gif" visible="false" id="outadd"/>
+			</hbox>
+	</row>
+	<row>
+    <hbox>
+					<hbox>
+						<panel width="400px" border="normal" title="部门列表">
+							<panelchildren>
+								<listbox      checkmark="true" multiple="true" height="450px"  mold="paging" pageSize="13" id="listbox1" sclass="new_listbox" >
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="序号"  width="15%" align="center"/>
+										<listheader label="部门编号" width="30%" align="center"/>
+										<listheader label="部门名称" width="45%"  align="center"/>										
+										</listhead>		
+										<listitem>
+											<listcell label=""/>
+											<listcell label="1"/>
+											<listcell label="02010"/>
+											<listcell label="科技信息资源研究所"/>
+										</listitem>	
+										<listitem>
+											<listcell label=""/>
+											<listcell label="2"/>
+											<listcell label="02011"/>
+											<listcell label="科技发展战略研究所"/>
+										</listitem>	
+										<listitem>
+											<listcell label=""/>
+											<listcell label="3"/>
+											<listcell label="02012"/>
+											<listcell label="科技宣传服务中心"/>
+										</listitem>		
+										<listitem>
+											<listcell label=""/>
+											<listcell label="4"/>
+											<listcell label="02013"/>
+											<listcell label="科技评估中心"/>
+										</listitem>	
+										<listitem>
+											<listcell label=""/>
+											<listcell label="5"/>
+											<listcell label="02014"/>
+											<listcell label="科技查新咨询中心"/>
+										</listitem>	
+										<listitem>
+											<listcell label=""/>
+											<listcell label="6"/>
+											<listcell label="02015"/>
+											<listcell label="技术转移中心"/>
+										</listitem>	
+								</listbox>
+							</panelchildren>
+						</panel>
+						<space />
+						<vbox>
+							<separator spacing="180px" />
+							<button  label="添加&gt;&gt;" id="add" />
+							<separator />
+							<button  label="&lt;&lt;删除"  id="delete"/>
+							
+						</vbox>
+						<space />
+						<panel width="400px" border="normal" title="已添加部门列表(可用鼠标拖动对部门排序，排序规则见下方提示)">
+							<panelchildren>
+								<listbox    checkmark="true" multiple="true" height="450px" mold="paging" pageSize="13" id="listbox2" sclass="new_listbox">
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="序号"  width="15%" align="center"/>
+										<listheader label="部门编号" width="30%" align="center"/>
+										<listheader label="部门名称" width="45%"  align="center"/>
+									</listhead>	
+									<listitem>
+											<listcell label=""/>
+											<listcell label="1"/>
+											<listcell label="02010"/>
+											<listcell label="科技信息资源研究所"/>
+										</listitem>	
+										<listitem>
+											<listcell label=""/>
+											<listcell label="2"/>
+											<listcell label="02011"/>
+											<listcell label="科技发展战略研究所"/>
+										</listitem>				
+								</listbox>
+							</panelchildren>
+						</panel>
+					</hbox>
+		</hbox>
+	</row>
+	</rows>
+	</grid>
+	<separator/>
+	<separator bar="true"/>
+	<groupbox>
+		<caption>
+			<label value="[提示]" style="color:red"/>
+		</caption>
+		<hbox>
+			<label value="1、在右边列表中可以通过用鼠标拖动来对已选部门进行排序，主持部门放在第一位，其余参与部门按贡献排序。" style="color:blue"/>
+		</hbox>
+	</groupbox>
+</window>
+</zk>

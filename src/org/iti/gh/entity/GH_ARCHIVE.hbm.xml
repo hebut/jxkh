@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.iti.gh.entity">
+  <class name="org.iti.gh.entity.GH_ARCHIVE" table="GH_ARCHIVE" schema="dbo">
+  	<id name="arId" type="java.lang.Long">
+  		<column name="AR_ID" precision="18" scale="0" />
+  		<generator class="com.uniwin.framework.common.idgenerator.WebkeyIdGenerator" />
+  	</id>
+  	<property name="arName" type="java.lang.String">
+  		<column name="AR_NAME" precision="18" scale="0" />
+  	</property>
+  	<property name="arKeyWord" type="java.lang.String">
+  		<column name="AR_KEYWORD" />
+  	</property>
+  	<property name="arAuthor" type="java.lang.String">
+  		<column name="AR_AUTHOR" />
+  	</property>
+  	<property name="arSource" type="java.lang.String">
+  		<column name="AR_SOURCE" />
+  	</property>
+  	
+  	<property name="arSourceType" type="java.lang.Integer">
+  		<column name="AR_SOURCETYPE" />
+  	</property>
+  	
+  	<property name="arFundNum" type="java.lang.String">
+  		<column name="AR_FUNDNUM" />
+  	</property>
+  	<property name="arPostDate" type="java.lang.String">
+  		<column name="AR_POSTDATE" />
+  	</property>
+  	<property name="arProId" type="java.lang.Long">
+  		<column name="AR_PROID" />
+  	</property>
+  	<property name="arPath" type="java.lang.String">
+  		<column name="AR_PATH" />
+  	</property>
+  	<property name="arUpUserId" type="java.lang.Long">
+  		<column name="AR_UPUSERID" />
+  	</property>
+  	<property name="arThema" type="java.lang.String">
+  		<column name="AR_THEMA" />
+  	</property>
+  	<property name="arType" type="java.lang.Integer">
+  		<column name="AR_TYPE" />
+  	</property>
+  	<property name="arReadFeel" type="java.lang.String">
+  		<column name="AR_READFEEL" />
+  	</property>
+  	<property name="arUpTime" type="java.lang.String">
+  		<column name="AR_UPTIME" />
+  	</property>
+  	<property name="arCLC" type="java.lang.String">
+  		<column name="AR_CLC" />
+  	</property>
+  	<property name="arIssue" type="java.lang.String">
+  		<column name="AR_ISSUE" />
+  	</property>
+  	<property name="arCategory" type="java.lang.Short">
+  		<column name="AR_CATEGORY" />
+  	</property>
+  </class>
+</hibernate-mapping>

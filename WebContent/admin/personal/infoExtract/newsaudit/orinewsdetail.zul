@@ -1,0 +1,79 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window id="win"  border="normal"  width="900px"   contentStyle="overflow:auto"  use="org.iti.xypt.personal.infoCollect.newsaudit.OriauditNewsEditWindow">
+<caption image="/css/img/win-ico.gif" label="查看信息" />
+<zscript><![CDATA[
+import org.zkoss.io.Files; 
+import java.io.*;
+import java.util.Date;
+import org.iti.gh.common.util.DateUtil;
+import org.zkoss.zk.ui.util.Configuration;
+import org.zkoss.util.media.Media; 
+import org.zkoss.util.media.AMedia; 
+import com.uniwin.framework.entity.WkTUser;
+]]></zscript>
+<vbox>
+<hbox >
+<label value="信息标题:" width="70px" />
+<textbox   width="500px" id="kititle" constraint="no empty" />
+<label value="*" style="color:red;valign:center" />
+<space width="19px"/>
+<checkbox label="粗体" id="cuti"/>
+<checkbox label="发送到用户邮箱" id="mail"/>
+<space/>
+</hbox>
+<separator />
+<hbox >
+<label value="副标题:" />
+<space width="12px"/>
+<textbox width="500px" id="kititle2"/>
+<space width="45px"/>
+<label value="图片:"  width="66px"/>       
+	<hbox  id="pics" align="start"></hbox>
+</hbox>
+<separator />
+<hbox>
+<label value="所属任务:"/>
+<textbox  width="300px" id="taskname"/>
+
+<space/>
+<toolbarbutton image="/images/content/1/xz.gif" id="choose"/>
+<space width="50px"/>
+<label value="关键字:" width="70px"  />
+<textbox width="220px" id="kikeys" />
+</hbox>
+<separator />
+<hbox>
+<label value="信息来源:" width="70px"/>
+<textbox width="300px"  id="kisource" />
+<space width="90px"/>
+<label value="发布时间:" />
+<textbox width="220px"  id="ptime"/>
+
+</hbox>
+<separator />
+<hbox >
+<label value="摘要信息:" width="70px"/>
+<textbox width="730px" id="kimemo" />
+</hbox>
+<separator />
+<hbox  id="wdnews">
+<label value="文档内容:" />
+<fckeditor  height="300px" width="810px" id="kicontent" /> <!-- toolbarSet="webkeyCms" -->
+</hbox>
+<separator bar="true" id="sep2" visible="true"/>
+<hbox id="tupian">
+<label value="附件列表:" width="70px"/>
+<listbox  width="200px" id="upList"  mold="select" />
+<space/>
+<toolbarbutton image="/images/content/1/xz_.gif" id="down"/>
+</hbox>
+</vbox>
+<div sclass="pop-win-b-div" align="center">
+<toolbarbutton id="save"   image="/css/img/btn-save.gif"  />
+<toolbarbutton id="saudit"  image="/css/img/btn-pub.gif" />
+<toolbarbutton image="/css/img/btn-resetb.gif" id="reset" />
+<toolbarbutton image="/css/img/btn-close.gif"  id="back" onClick="win.detach()" />
+</div>
+</window>
+</zk>

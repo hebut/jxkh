@@ -1,0 +1,81 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="添加部门" border="normal" sclass="newin" width="920px" closable="true" height="700px"
+	use="org.iti.jxkh.business.award.ChooseDeptWin"	>
+	<grid>
+		<columns>
+			<column  width="910px"/>
+		</columns>
+<rows>
+	<row>
+	<hbox>	
+		<hbox id="in">
+			<label value="部门名称:"/>
+			<textbox width="180px"   id="name" >
+			</textbox>
+			<space width="15px"/>
+			<label value="部门编号:"/>
+			<textbox width="130px" id="number"/>
+		</hbox>
+		<space/>
+		<toolbarbutton  image="/css/default/images/button/searAct.gif" id="view"/>
+	</hbox>
+	</row>
+	<row>
+    <hbox>
+					<hbox>
+						<panel width="400px" border="normal" title="部门列表">
+							<panelchildren>
+								<listbox id="listbox1" checkmark="true" multiple="true" height="450px"  mold="paging" pageSize="13" sclass="new_listbox" >
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="序号"  width="15%" align="center"/>
+										<listheader label="部门编号" width="30%" align="center"/>
+										<listheader label="部门名称" width="45%"  align="center"/>										
+										</listhead>		
+								</listbox>
+							</panelchildren>
+						</panel>
+						<space />
+						<vbox>
+							<separator spacing="180px" />
+							<button  label="添加&gt;&gt;" id="add" />
+							<separator />
+							<button  label="&lt;&lt;删除"  id="delete"/>
+						</vbox>
+						<space />
+						<panel width="400px" border="normal" title="已添加部门列表(可用鼠标拖动对部门排序，排序规则见下方提示)">
+							<panelchildren>
+								<listbox id="listbox2" checkmark="true" multiple="true" height="450px" mold="paging" pageSize="13"  sclass="new_listbox">
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="排名"  width="15%" align="center"/>
+										<listheader label="部门编号" width="30%" align="center"/>
+										<listheader label="部门名称" width="45%"  align="center"/>
+									</listhead>	
+								</listbox>
+							</panelchildren>
+						</panel>
+					</hbox>
+		</hbox>
+	</row>
+	</rows>
+	</grid>
+	<separator/>
+	<div align="center">
+			<hbox>
+				<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif" />
+				<toolbarbutton id="close" image="/css/default/images/button/actquit.gif" />
+			</hbox>
+		</div>
+	<separator bar="true"/>
+	<groupbox>
+		<caption>
+			<label value="[提示]" style="color:red"/>
+		</caption>
+		<hbox>
+			<label value="1、在右边列表中可以通过用鼠标拖动来对已选部门进行排序，主持部门放在第一位，其余参与部门按贡献排序。" style="color:blue"/>
+		</hbox>
+	</groupbox>
+</window>
+</zk>

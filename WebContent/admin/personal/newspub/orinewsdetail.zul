@@ -1,0 +1,72 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window id="win"  border="normal"  width="910px"   contentStyle="overflow:auto"  use="org.iti.xypt.personal.infoCollect.newspub.OriNewsEditWindow">
+<caption image="/css/img/win-ico.gif" label="查看信息" />
+<vbox>
+<hbox >
+<label value="信息标题:" width="70px" />
+<textbox   width="600px" id="kititle"  />
+<label value="*" style="color:red;valign:center" />
+<space width="19px"/>
+<checkbox label="粗体" id="cuti"/>
+<checkbox label="发送到用户邮箱" id="mail" visible="false"/>
+<space/>
+</hbox>
+<hbox >
+<label value="副标题:" />
+<space/>
+<textbox width="600px" id="kititle2"/>
+<space width="45px"/>
+<label value="图片:"  width="66px"/>       
+	<hbox  id="pics" align="start"></hbox>
+</hbox>
+<hbox>
+<label value="所属任务:"/>
+<textbox  width="300px" id="taskname"/>
+
+<space/>
+<toolbarbutton image="/images/content/1/xz.gif" id="choose"/>
+<space width="30px"/>
+<label value="发布时间:" />
+<textbox width="220px"  id="ptime"/>
+
+</hbox>
+<hbox>
+<label value="信息来源:" width="70px"/>
+<textbox width="300px"  id="kisource" />
+<space width="50px"/>
+<label value="关键字:" width="70px"  />
+<textbox width="385px" id="kikeys" />
+</hbox>
+<hbox >
+<label value="摘要信息:" width="70px"/>
+<textbox width="500px" id="kimemo" />
+
+<label>查看权限</label>
+<listbox mold="select" id="oripubAuth">
+<listitem label="教师" value="0" id="teacher" />
+<listitem label="学生" value="1" id="student" />
+<listitem label="全部" selected="true" value="2" id="all"/>
+</listbox>
+</hbox>
+<hbox  id="wdnews">
+<label value="文档内容:" />
+<fckeditor   height="370px" width="790px"  id="kicontent"  /> 
+</hbox>
+<separator bar="true" id="sep2" visible="true"/>
+<hbox id="tupian">
+<label value="附件列表:" width="70px"/>
+<listbox  width="200px" id="upList"  mold="select" />
+<space/>
+<toolbarbutton image="/images/content/1/xz_.gif" id="down"/>
+</hbox>
+</vbox>
+<separator />
+<div sclass="pop-win-b-div" align="center">
+<toolbarbutton id="save"   image="/css/img/btn-save.gif"  />
+<toolbarbutton id="saudit"  image="/css/img/btn-pub.gif" />
+<toolbarbutton image="/css/img/btn-resetb.gif" id="reset" />
+<toolbarbutton image="/css/img/btn-close.gif"  id="back" onClick="win.detach()" />
+</div>
+</window>
+</zk>

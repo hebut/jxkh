@@ -1,0 +1,166 @@
+<zk>
+	<window title="我的主页" width="700px" height="630px" border="normal" style="text-align:left" closable="true" >
+	<!--	<style>.blue { color:#1256a7; font-style: oblique; font-size:18px; }</style>-->
+	<style>.blue { color:#1256a7; font-weight:bold; font-size:14px; }</style>
+		<div align="center">
+					<grid width="98%" height="550px" >
+						<rows>
+							<row>
+								<grid>
+									<columns>
+										<column width="25%" align="center" />
+										<column width="25%" />
+										<column width="25%" align="center" />
+										<column width="25%" />
+									</columns>
+									<rows>
+										<row spans="4">
+									       <div align="left">
+									       		<label value="个人基本信息" sclass="blue"/>
+									       </div>
+									    </row>
+										<row spans="3,1">
+											<grid width="98%" >
+												<columns>
+													<column width="15%" align="cneter" />
+													<column />
+													<column width="15%" align="cneter"/>
+													<column />
+												</columns>
+												<rows>
+													<row spans="1,3">
+														<label value="教师姓名" style="text-align:center"></label>
+														<label id="kuName" width="150px" />
+													</row>
+													<row >
+														<label value="曾用名" style="text-align:center"/>
+														<label  id="kuUsedname" width="150px"/>
+														<label value="性别" style="letter-spacing:10px;text-align:center"/>	
+														<label id="kuSex" width="150px"/>
+													</row>
+													
+													<row>
+														<label value="民族" style="letter-spacing:10px;text-align:center"/>	
+														<label id="kuNation" width="150px"/>
+														<label value="政治面貌" style="text-align:center"></label>
+														<label id="kuPolitical" width="150px"/>	
+													</row>
+													<row>
+														<label value="最高学历" style="text-align:center"></label>
+														<label id="kuEducational" width="195px"/>	
+														<label value="学位" style="letter-spacing:10px;text-align:center"></label>
+														<label id="kuXuewei" width="195px"/>
+													</row>
+													<row spans="1,3">
+														<label value="个人主页" ></label>
+														<toolbarbutton id="homePagePath" width="380px" target="_blank"></toolbarbutton>												
+													</row>
+													<row spans="1,3">
+														<label value="籍贯" style="letter-spacing:10px;text-align:center"></label>
+														<label id="nativeplace" width="380px" ></label>														
+													</row>
+													<row spans="1,3">
+														<label value="研究方向" ></label>
+														<label id="yjfx" width="380px" ></label>														
+													</row>
+												</rows>
+											</grid>
+											<hbox>
+												<vbox>
+													<hbox width="98%" >
+														<space width="5px" />
+														<image id="img" width="150px" height="150px" />
+													</hbox>													
+												</vbox>
+											</hbox>
+										</row>
+									</rows>
+								</grid>
+							</row>
+							
+							<row spans="4">
+						       <div align="left">
+						       		<label value="学历" sclass="blue"/>
+						       </div>
+						    </row>
+							<row>
+								<grid>
+									<columns>
+										<column width="15%" align="cneter" />
+										<column />
+										<column width="15%" align="cneter"/>
+										<column />
+									</columns>
+									<rows>
+										
+										<row>
+											<label value="第一学位" style="text-align:center"></label>
+											<label id="facdegree" width="150px"/>	
+											<label value="毕业学校" style="text-align:center"></label>
+											<label id="fkuSchool" width="150px"/>
+										</row>
+										
+										<row>
+											<label value="毕业时间" style="text-align:center"></label>
+											<label id="fgradutime" width="150px"/>
+											<label value="主修专业" style="text-align:center"></label>
+											<label id="fhighmajor" width="150px"/>	
+										</row>
+										<row>
+											<label value="最高学位" style="text-align:center"></label>
+											<label id="hacdegree" width="150px"/>
+											<label value="毕业学校" style="text-align:center"></label>
+											<label id="kuSchool" width="150px"/>
+										</row>
+										<row>
+											<label value="毕业时间" style="text-align:center"></label>
+											<label id="highgradutime" width="150px"/>
+											<label value="主修专业" style="text-align:center"></label>
+											<label id="highmajor" width="150px"/>	
+										</row>
+										</rows>
+								</grid>
+							</row>
+							
+							<row spans="4">
+						       <div align="left">
+						       		<label value="联系方式" sclass="blue" style="text-align:center"/>
+						       </div>
+						    </row>
+							<row>
+								   <grid >
+									<columns>
+										<column width="15%" align="cneter" />
+										<column />
+										<column width="15%" align="cneter"/>
+										<column />
+									</columns>
+									<rows>
+										<row>
+											<label value="家庭住址" style="text-align:center"></label>
+											<label id="address" width="150px"/>	
+											<label value="家庭电话" style="text-align:center"></label>
+											<label id="kuhomePhone" width="150px"/>	
+										</row>
+										<row>
+											<label value="工作电话" style="text-align:center"></label>
+											<label id="kuworkPhone" width="150px"/>
+											<label value="手机" style="letter-spacing:10px;text-align:center"></label>
+											<label id="kuPhone" width="150px"/>	
+										</row>
+										<row>
+											<label value="电子邮箱" style="text-align:center"></label>
+											<label id="kuEmail" width="150px"/>	
+											<label value="MSN" style="text-align:center"></label>
+											<label id="msn" width="150px"/>													
+										</row>
+										<row>
+											<label value="QQ" style="text-align:center"></label>
+											<label id="qq" width="150px"/>
+										</row>
+										
+									</rows>
+								</grid>
+							</row>
+							
+							

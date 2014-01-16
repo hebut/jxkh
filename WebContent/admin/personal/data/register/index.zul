@@ -1,0 +1,125 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="个人注册信息" width="600px" border="normal"
+		style="text-align:left"
+		use="com.uniwin.asm.personal.ui.data.Register">
+		<style>
+			.red { color: red; font-style: oblique; font-size:18px; }
+		</style>
+		<grid>
+			<columns>
+				<column width="60px" />
+				<column width="110px" />
+				<column width="60px" />
+				<column width="150px" />
+			</columns>
+
+			<rows>
+				<row spans="1">
+					<label value="登录名" width="60px" />
+					<label id="kuLid" width="150px" sclass="red" />
+					<label value="真实姓名" width="60px" />
+					<hbox>
+						<textbox id="kuName" width="150px" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+
+				<row>
+					<label value="密码提示问题" width="60px" />
+					<textbox id="kuQuestion" width="150px" />
+					<label value="密码问题答案" width="60px" />
+					<textbox id="kuAnswer" width="150px" />
+				</row>
+
+				<row>
+					<label value="电子邮箱" width="60px" />
+					<hbox>
+						<textbox id="kuEmail" width="150px"
+							constraint="/.+@.+\.[a-z]+/: Please enter an e-mail address" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="电话" width="60px" />
+					<hbox>
+						<textbox id="kuPhone" width="150px" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="出生日期" width="60px" />
+					<datebox id="kuBirthday" focus="true" width="130px" />
+					<label value="性别" width="60px" />
+					<radiogroup id="kuSex">
+						<radio id="man" label="男" checked="true" />
+						<radio id="woman" label="女" />
+
+					</radiogroup>
+				</row>
+				<row>
+					<label value="身份证号" width="60px" />
+					<hbox>
+						<textbox id="kuIdentity" width="150px"  />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="政治面貌" width="60px" />
+					<hbox>
+						<textbox id="kuPolitical" width="150px" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="毕业院校" width="60px" />
+					<hbox>
+						<textbox id="kuSchool" width="150px" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="学历" width="60px" />
+					<hbox>
+						<textbox id="kuEducational" width="150px" />
+						
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="单位名称" width="60px" />
+					<textbox id="kuCompany" width="415px" />
+				</row>
+
+				<row>
+					<label value="绑定类型" />
+					<listbox id="bangType" mold="select">
+						<listitem label="不绑定" selected="true" />
+						<listitem label="IP绑定" />
+					</listbox>
+					<label value="绑定地址" />
+					<hbox>
+						<textbox id="uBandIp" />
+						<checkbox label="自动登录" id="kuAutoenter" />
+					</hbox>
+				</row>
+
+				<row spans="1">
+					<label value="界面风格" width="50px" />
+					<hbox>
+						<listbox mold="select" id="kuStyle">
+							<listitem label="默认" selected="true" />
+						</listbox>
+					</hbox>
+				</row>
+				<row spans="4">
+					<hbox align="center">
+						<space spacing="242px" />
+						<button id="save" label="保存"></button>
+						<space />
+						<button id="reset" label="重填"></button>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

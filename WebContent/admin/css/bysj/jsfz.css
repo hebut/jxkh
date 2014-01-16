@@ -1,0 +1,229 @@
+body {
+	margin-left: 0px;
+	background-color: #FFFFFF;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+}
+
+
+TABLE {
+	FONT-SIZE: 12px; COLOR: #3372a2; LINE-HEIGHT: 150%; FONT-FAMILY: "����"
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #006699;
+}
+a:active {
+	text-decoration: none;
+}
+
+A.blue1:link {
+	FONT-SIZE: 9pt; color:#FF9933; TEXT-DECORATION: none
+}
+A.blue1:visited {
+	FONT-SIZE: 9pt; COLOR: #0033FF; TEXT-DECORATION: none
+}
+A.blue1:hover {
+	FONT-SIZE: 9pt; color:#FF6600; TEXT-DECORATION: none
+}
+
+A.Link3:link {
+	FONT-SIZE: 9pt; COLOR: #ff6701; TEXT-DECORATION: none
+}
+A.Link3:visited {
+	FONT-SIZE: 9pt; COLOR: #ff6701; TEXT-DECORATION: none
+}
+A.Link3:hover {
+	FONT-SIZE: 9pt; COLOR: #ff6701; TEXT-DECORATION: underline
+}
+A.Link4:link {
+	FONT-SIZE: 9pt; COLOR: #666666; TEXT-DECORATION: none
+}
+A.Link4:visited {
+	FONT-SIZE: 9pt; COLOR: #666666; TEXT-DECORATION: none
+}
+A.Link4:hover {
+	FONT-SIZE: 9pt; COLOR: #ff6701; TEXT-DECORATION: none
+}
+A.Link2:link {
+	FONT-SIZE: 9pt; COLOR: #5e6a94; TEXT-DECORATION: none
+}
+A.Link2:visited {
+	FONT-SIZE: 9pt; COLOR: #5e6a94; TEXT-DECORATION: none
+}
+A.Link2:hover {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A.biglink:link {
+	FONT-SIZE: 10.5pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A.biglink:visited {
+	FONT-SIZE: 10.5pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A.biglink:hover {
+	FONT-SIZE: 10.5pt; COLOR: #5e6a94; TEXT-DECORATION: none
+}
+A.redLink:link {
+	FONT-SIZE: 9pt; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.redLink:visited {
+	FONT-SIZE: 9pt; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.redLink:hover {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A.redLink:active {
+	FONT-SIZE: 9pt; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.redLink2:link {
+	FONT-SIZE: 9pt; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.redLink2:visited {
+	FONT-SIZE: 9pt; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.redLink2:hover {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A.redLink2:active {
+	FONT-SIZE: 9pt; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.redBoldLink:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #1b9ebc; TEXT-DECORATION: none
+}
+A.redBoldLink:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #1b9ebc; TEXT-DECORATION: none
+}
+A.redBoldLink:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #FF6600; TEXT-DECORATION: none
+}
+.font2 {
+	FONT-SIZE: 9pt; COLOR: #ffffff; LINE-HEIGHT: 150%
+}
+.font3 {
+	font-family: "����";
+	font-size: 14px;
+	font-weight: bold;
+	color: #3372a2;
+}
+
+.10font {
+	FONT-SIZE: 12px; COLOR: #138bc8; LINE-HEIGHT: 150%
+}
+.12font {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #3372a2; LINE-HEIGHT: 150%
+}
+.10redFont {
+	FONT-SIZE: 10.5pt; COLOR: #FF3300; LINE-HEIGHT: 150%
+}
+.boldfont {
+	font-size: 14px;
+	font-weight: bold;
+	color: #25992e;
+}
+
+.redFont {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #FF6600}
+.greenfont {
+	font-size: 12px;
+	line-height: 150%;
+	color: #009900;
+}
+.STYLE6 {color: #004e00; 
+         font-size: 12px;
+	     font-family: "宋体";}
+
+.STYLE11 {color: #FFFF99; font-size: 12px; font-family: "宋体"; }
+.STYLE12 {
+	color: #FFFFFF;
+	font-size: 12px;
+	font-family: "宋体";
+	font-weight: bold;
+}
+.STYLE14 {color: #FF0000}
+.STYLE13 {color: #000000; font-size: 12px; font-family: "宋体"; }
+.STYLE17 {
+	font-size: 12px;
+	color: #FF0000;
+}
+.STYLE18 {color: #FF0000}
+.STYLE19 {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+FORM {
+	MARGIN: 0px
+}
+input {
+	BORDER-RIGHT: #a8c3da 1px solid; BORDER-TOP: #a8c3da 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #a8c3da 1px solid; COLOR: #3372a2; LINE-HEIGHT: 18px; BORDER-BOTTOM: #a8c3da 1px solid; FONT-FAMILY: "����"; BACKGROUND-COLOR: #ffffff
+}
+.input1 {
+	BORDER-RIGHT: #a8c3da 0px solid; BORDER-TOP: #a8c3da 0px solid; FONT-SIZE: 12px; BORDER-LEFT: #a8c3da 0px solid; COLOR: #3372a2; LINE-HEIGHT: 18px; BORDER-BOTTOM: #a8c3da 0px solid; FONT-FAMILY: "����"; BACKGROUND-COLOR: #FFFFFF}
+textarea {
+	BORDER-RIGHT: #a8c3da 1px solid; BORDER-TOP: #a8c3da 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #a8c3da 1px solid; COLOR: #3372a2; LINE-HEIGHT: 18px; BORDER-BOTTOM: #a8c3da 1px solid; FONT-FAMILY: "����"; BACKGROUND-COLOR: #ffffff
+}
+.textarea1 {
+	BORDER-RIGHT: #a8c3da 1px solid; BORDER-TOP: #a8c3da 1px solid; FONT-SIZE: 14px; BORDER-LEFT: #a8c3da 1px solid; COLOR: #3372a2; LINE-HEIGHT: 18px; BORDER-BOTTOM: #a8c3da 1px solid; FONT-FAMILY: "����"; BACKGROUND-COLOR: #ffffff
+}
+SELECT {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+.select {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #666666 1px solid; COLOR: #000000; LINE-HEIGHT: 18px; BORDER-BOTTOM: #cccccc 1px solid; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #a7ecf5
+}
+.button {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #000000;
+	background-image: url(../images/button.jpg);
+	background-position: center center;
+	height: 20px;
+	width: 60px;
+	cursor: hand;
+	border: 0px none #FFFFFF;
+}
+
+.button2 {
+	BORDER-RIGHT: #665b8e 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #ffffff 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 12px; BACKGROUND: #eeeeee; PADDING-BOTTOM: 1px; BORDER-LEFT: #ffffff 1px solid; WIDTH: 60px; CURSOR: hand; COLOR: #333333; PADDING-TOP: 1px; BORDER-BOTTOM: #665b8e 1px solid; FONT-FAMILY: "宋体"; HEIGHT: 20px
+}
+.position {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.leftBg {
+	BACKGROUND-POSITION: left top; BACKGROUND-IMAGE: url(images/LeftEndBg.png); BACKGROUND-REPEAT: repeat-x
+}
+.table1 {
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #999999;
+}
+.table2 {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #cccccc;
+}
+.p {
+	font-family: "����";
+	font-size: 12px;
+	font-style: normal;
+	line-height: 150%;
+	color: #666666;
+	text-indent: 2em;
+	word-spacing: normal;
+	white-space: normal;
+}

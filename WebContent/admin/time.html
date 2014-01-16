@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body style="background-image: url('css/time/bg.gif');">
+	<div style="padding-left: 53px; padding-top: 53px; position: relative;">
+		<div id=h style="padding-left: 5px; padding-top: 5px; position: absolute;">
+			<img style="width: 130px; height: 130px" src="css/time/hour.gif">
+		</div>
+		<div id=m style="padding-left: 5px; padding-top: 5px; position: absolute;">
+			<img style="width: 130px; height: 130px" src="css/time/minute.gif">
+		</div>
+		<div id=s style="padding-left: 5px; padding-top: 5px; position: absolute;">
+			<img style="width: 130px; height: 130px" src="css/time/seconds.gif">
+		</div>
+		<div id=dot style="padding-left: 5px; padding-top: 5px; position: absolute;">
+			<img style="width: 130px; height: 130px" src="css/time/dot.gif">
+		</div>
+		<div>
+			<script>
+				var deg2radians = Math.PI * 2 / 360;
+				function MatrixFilter(obj) {
+					if (!obj.filters)
+						return;
+					var Matrix;
+					for (p in obj.filters) {
+						if (p == "DXImageTransform.Microsoft.Matrix")
+							Matrix = obj.filters["DXImageTransform.Microsoft.Matrix"];
+					}
+					if (!Matrix) {
+						obj.style.filter += "progid:DXImageTransform.Microsoft.Matrix()";
+					}
+					Matrix = obj.filters["DXImageTransform.Microsoft.Matrix"];
+					this.equal = function(Matrix2D_x) {
+						if (Matrix2D_x.M11)
+							Matrix.M11 = Matrix2D_x.M11;
+						if (Matrix2D_x.M12)
+							Matrix.M12 = Matrix2D_x.M12;
+						if (Matrix2D_x.M21)
+							Matrix.M21 = Matrix2D_x.M21;
+						if (Matrix2D_x.M22)
+							Matrix.M22 = Matrix2D_x.M22;
+					}
+
+					if (arguments[1])
+						this.equal(arguments[1]);
+
+					this.Rotate = function(deg) {
+						rad = deg * deg2radians;
+						costheta = Math.cos(rad);
+						sintheta = Math.sin(rad);
+						var d = new Matrix2D(costheta, -sintheta, sintheta,
+								costheta);
+						this.equal(Matrix2D.Mul(Matrix, d));
+					}
+					this.RotateTo = function(deg) {
+						rad = deg * deg2radians;
+						costheta = Math.cos(rad);
+						sintheta = Math.sin(rad);
+						var d = new Matrix2D(costheta, -sintheta, sintheta,
+								costheta);
+						this.equal(d);
+					}
+					this.RotateAt = function(deg, sx, sy) {
+						rad = deg * deg2radians;
+						costheta = Math.cos(rad);
+						sintheta = Math.sin(rad);
+						var d = new Matrix2D(costheta, -sintheta, sintheta,
+								costheta);
+						var x = sx - Matrix.Dx;
+						var y = sy - Matrix.Dy;
+						this.MoveTo(x * costheta + y * sintheta - x, -x
+								* sintheta + y * costheta - y);
+						this.equal(Matrix2D.Mul(Matrix, d));
+					}
+					this.RotateToAt = function(deg, sx, sy) {
+						rad = deg * deg2radians;
+						costheta = Math.cos(rad);
+						sintheta = Math.sin(rad);
+						var d = new Matrix2D(costheta, -sintheta, sintheta,
+								costheta);
+						var x = sx;
+						var y = sy;
+						this.MoveTo(x - (x * costheta - y * sintheta), -(x
+								* sintheta + y * costheta - x));
+						this.equal(d);
+					}
+
+					this.MoveTo = function(sx, sy) {
+						Matrix.Dx = sx;
+						Matrix.Dy = sy;
+					}
+					this.toMatrix2D = function() {
+						return new Matrix2D(Matrix.M11, Matrix.M12, Matrix.M21,
+								Matrix.M22);
+					}
+					this.ZoomBy = function(sx, sy) {
+						var d = new Matrix2D(sx, 0, 0, sy);
+						this.equal(Matrix2D.Mul(Matrix, d));
+					}
+					this.toString = function() {
+						return "" + Matrix.M11 + " " + Matrix.M12 + "\n"
+								+ Matrix.M21 + " " + Matrix.M22 + "\n"
+					}
+				}
+				function Matrix2D() {
+					this.M11 = arguments[0] || 1;
+					this.M12 = arguments[1] || 0;
+					this.M21 = arguments[2] || 0;
+					this.M22 = arguments[3] || 1;
+					this.Mul_Matrix2D = function(Matrix2D_b) {
+						var r = new Matrix2D();
+						r = Matrix2D.Mul(this, Matrix2D_b);
+						return r;
+					}
+					this.toString = function() {
+						return "" + this.M11 + " " + this.M12 + "\n" + this.M21
+								+ " " + this.M22 + "\n"
+					}
+				}
+				Matrix2D.Mul = function(Matrix2D_a, Matrix2D_b) {
+					var r = new Matrix2D();
+					r.M11 = Matrix2D_a.M11 * Matrix2D_b.M11 + Matrix2D_a.M12
+							* Matrix2D_b.M21;
+					r.M12 = Matrix2D_a.M11 * Matrix2D_b.M12 + Matrix2D_a.M12
+							* Matrix2D_b.M22;
+					r.M21 = Matrix2D_a.M21 * Matrix2D_b.M11 + Matrix2D_a.M22
+							* Matrix2D_b.M21;
+					r.M22 = Matrix2D_a.M21 * Matrix2D_b.M12 + Matrix2D_a.M22
+							* Matrix2D_b.M22;
+					return r;
+				}
+
+				var ms = new MatrixFilter(s);
+				var mm = new MatrixFilter(m);
+				var mh = new MatrixFilter(h);
+				var i = 1;
+				setInterval(
+						"ms.RotateToAt((new Date()).getSeconds()*6+6,69,69)",
+						500);
+				setInterval(
+						"mm.RotateToAt((new Date()).getMinutes()*6+6,69,69)",
+						500);
+				setInterval(
+						"mh.RotateToAt(((new Date()).getHours()+(new Date()).getMinutes()/60)*30,69,69)",
+						500);
+			</script>
+		</div>
+	</div>
+</body>
+</html>

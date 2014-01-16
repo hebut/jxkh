@@ -1,0 +1,58 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="选择成果" border="normal" width="630px" height="400px" 	closable="true"  sclass="newin"
+	use="org.iti.jxkh.business.award.ChooseFruitWin">
+		<grid>
+			<columns>
+				<column align="center" />
+			</columns>
+			<rows>
+				<row>
+					<hbox align="center">
+						<label value="  成果名称"/>
+						<textbox id="name" width="120px"/>
+						<label value="成果水平"/>
+						<listbox id="rank" mold="select" rows="1"  width="120px">
+							<listitem label="--请选择--" />
+							<listitem label="国际领先" />
+							<listitem label="国际先进" />
+							<listitem label="国内领先" />
+							<listitem label="国内先进" />
+						</listbox>
+						<label value="验收等级"/>
+						<listbox id="appraiseRank" mold="select" rows="1"  width="120px">
+							<listitem label="--请选择--" />
+							<listitem label="国家级" />
+							<listitem label="省级" />
+							<listitem label="正常结题" />
+						</listbox>.
+						<toolbarbutton id="query" image="/css/default/images/button/searAct.gif" />
+					</hbox>
+				</row>
+				</rows>
+			</grid>
+				
+			<separator/>
+				<groupbox>
+				<caption>
+				<label value="[成果列表]" />
+				</caption>
+				<listbox id="fruitListbox" paginal="${choosePaging}"  sclass="new_listbox" 
+					checkmark="true" rows="6">
+					<listhead>
+						<listheader label="" width="4%" align="center"/>
+						<listheader label="序号" width="7%" align="center"/>
+						<listheader label="成果名称" width="40%" align="left" style="text-align:center"/>
+						<listheader label="成果水平" width="25%" align="center"/>
+						<listheader label="验收等级" width="24%" align="center"/>	
+					</listhead>
+				</listbox>
+				<paging id="choosePaging" pageSize="5" detailed="true" />
+				</groupbox>
+				<div width="100%" align="center">
+					<toolbarbutton id="choose" image="/css/default/images/button/qd.gif"/>
+					<space/>
+					<toolbarbutton id="close" image="/css/default/images/button/actquit.gif"/>
+				</div>
+	</window>
+</zk>

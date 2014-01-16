@@ -1,0 +1,166 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="审核发明专利" border="normal" height="380px"
+		use="org.iti.gh.shxkjs.kyqk.ShfmzlWindow " width="800px"
+		closable="true" sclass="newin">
+		<!--  <caption>
+			<toolbar align="end">
+			<button label="关闭" id="back" style="color:blue"></button>
+			</toolbar>
+			</caption>
+		-->
+		<listbox id="fmzllist" style="border-bottom-width:0px"
+			mold="paging" pageSize="10" sclass="new_listbox">
+			<listhead>
+				<listheader label="序号" width="10%" align="center" />
+
+				<listheader label="发明专利名称" width="20%" align="center" />
+
+				<listheader label="授权时间" width="20%" align="center" />
+
+				<listheader label="专利授权号" width="20%" align="center" />
+				<listheader label="填写人" width="20%" align="center" />
+
+				<listheader label="操作" width="10%" align="center" />
+			</listhead>
+			<listitem>
+				<listcell label="1" />
+				<listcell label="绩效考核管理系统的研究与实现" style="color:blue" />
+				<listcell label="2011-09-20" />
+				<listcell label="ISBN2011" />
+				<listcell label="朱镕基" />
+				<listcell>
+					<div align="center">
+						<toolbarbutton label="审核" style="color:blue">
+							<attribute name="onClick">
+	fmzllist.setVisible(false);
+	auditFmzl.setVisible(true);
+</attribute>
+						</toolbarbutton>
+					</div>
+				</listcell>
+			</listitem>
+		</listbox>
+		<grid id="auditFmzl" visible="false">
+			<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="20%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="发明专利名称" />
+					<hbox>
+						<label id="cgmc" value="绩效考核管理系统的研究与实现" />
+					</hbox>
+				</row>
+				<row>
+					<label value="授权时间" style="letter-spacing:5px" />
+					<hbox>
+						<label id="shijian" value="2011-09-20" />
+					</hbox>
+					<label value="专利授权号" />
+					<hbox>
+						<label id="kanwu" value="ISBN2011" />
+					</hbox>
+				</row>
+				<row>
+					<label value="专利类别" style="letter-spacing:5px" />
+					<listbox id="types" mold="select" rows="1">
+						<listitem label="教育类" />
+						<listitem label="医学类" />
+						<listitem label="化学类" />
+						<listitem label="计算机类" />
+					</listbox>
+					<label value="专利状态" style="letter-spacing:5px" />
+					<radiogroup id="status">
+						<radio label="失效专利" checked="true" />
+						<radio label="有效专利" />
+					</radiogroup>
+				</row>
+				<row>
+					<label value="申请国别" style="letter-spacing:5px" />
+					<label id="country" value="中华人民共和国" />
+					<label value="申请号" style="letter-spacing:10px" />
+					<label id="requesino" value="IT007" />
+				</row>
+				<row>
+					<label value="申请日期" style="letter-spacing:5px" />
+					<label id="requestdate" value="2011-07-11" />
+					<label value="申请公开号" />
+					<label id="reqpublino" value="007" />
+				</row>
+				<row>
+					<label value="主办单位" />
+					<label value="情报院" />
+					<label value="合作单位" />
+					<label value="无" />
+				</row>
+				<row spans="1,3">
+					<label value="发明人" style="letter-spacing:10px" />
+					<label id="inventor" value="黄征" />
+				</row>
+
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+					<hbox>
+						<grid width="400px">
+							<columns>
+								<column width="60%"></column>
+								<column width="20%"></column>
+								<column width="20%"></column>
+							</columns>
+							<rows>
+								<row>
+									<listbox id="upList"
+										style="border:0px" mold="select" rows="1" />
+								</row>
+							</rows>
+						</grid>
+						<hbox pack="center" width="100%">
+							<hbox>
+								<button label="下载" id="downFile" />
+							</hbox>
+						</hbox>
+					</hbox>
+				</row>
+				<row>
+					<label value="是否通过" />
+					<hbox>
+						<radiogroup id="audit">
+							<radio label="不通过" checked="true" />
+							<radio label="通过" />
+						</radiogroup>
+					</hbox>
+					<label value="填写人" />
+					<label value="李鹏" />
+				</row>
+				<row spans="1,3">
+					<label value="审核意见" />
+					<textbox id="reason" cols="80" rows="4"
+						height="30px">
+					</textbox>
+				</row>
+				<row spans="4">
+					<hbox pack="center" width="100%">
+						<hbox>
+							<button label="提交" id="submit" />
+							<space width="3px" />
+							<!--  
+							<button label="下载全部 " id="downFileZip" />
+							<space width="3px" />
+							-->
+							<button label="返回" id="close">
+								<attribute name="onClick">
+	fmzllist.setVisible(true);
+	auditFmzl.setVisible(false);
+</attribute>
+							</button>
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

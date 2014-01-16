@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.iti.gh.entity">
+  <class name="org.iti.gh.entity.GH_ARCHIVECOMMENT" table="GH_ARCHIVECOMMENT" schema="dbo">
+  	<id name="id" type="java.lang.Long">
+  		<column name="ID" precision="18" scale="0" />
+  		<generator class="com.uniwin.framework.common.idgenerator.WebkeyIdGenerator" />
+  	</id>
+  	<property name="arId" type="java.lang.Long">
+  		<column name="AR_ID" precision="18" scale="0" />
+  	</property>
+  	<property name="commUserId" type="java.lang.Long">
+  		<column name="COMMUSERID" />
+  	</property>
+  	<property name="commUserName" type="java.lang.String">
+  		<column name="COMMUSERNAME" />
+  	</property>
+  	
+  	<property name="commUserMajor" type="java.lang.String">
+  		<column name="COMMUSERMAJOR" />
+  	</property>
+  	
+  	<property name="commDate" type="java.lang.String">
+  		<column name="COMMDATE" />
+  	</property>
+  	<property name="commContext" type="java.lang.String">
+  		<column name="COMMCONTEXT" />
+  	</property>
+  </class>
+</hibernate-mapping>

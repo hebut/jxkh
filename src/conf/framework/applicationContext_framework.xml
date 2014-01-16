@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="userTarget" class="com.uniwin.framework.service.impl.UserServiceImpl" parent="baseService"></bean>
+	<bean id="userService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="userTarget" />
+		</property>
+	</bean>
+	<bean id="titleTarget" class="com.uniwin.framework.service.impl.TitleServiceImpl" parent="baseService"></bean>
+	<bean id="titleService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="titleTarget" />
+		</property>
+	</bean>
+	<bean id="authTarget" class="com.uniwin.framework.service.impl.AuthServiceImpl" parent="baseService"></bean>
+	<bean id="authService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="authTarget" />
+		</property>
+	</bean>
+	<bean id="departmentTarget" class="com.uniwin.framework.service.impl.DepartmentServiceImpl" parent="baseService"></bean>
+	<bean id="departmentService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="departmentTarget" />
+		</property>
+	</bean>
+	<bean id="roleTarget" class="com.uniwin.framework.service.impl.RoleServiceImpl" parent="baseService"></bean>
+	<bean id="roleService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="roleTarget" />
+		</property>
+	</bean>
+	<bean id="mlogTarget" class="com.uniwin.framework.service.impl.MLogServiceImpl" parent="baseService">
+	</bean>
+	<bean id="mlogService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="mlogTarget" />
+		</property>
+	</bean>
+	<bean id="doctypeTarget" class="com.uniwin.framework.service.impl.DocTypeServiceImpl" parent="baseService">
+	</bean>
+	<bean id="doctypeService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="doctypeTarget" />
+		</property>
+	</bean>
+	<bean id="docTarget" class="com.uniwin.framework.service.impl.DocServiceImpl" parent="baseService">
+	</bean>
+	<bean id="docService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="docTarget" />
+		</property>
+	</bean>
+	
+	
+	
+		
+	<bean id="wpPhaseTarget" class="org.iti.wp.service.impl.WpPhaseServiceImpl" parent="baseService"></bean>
+	<bean id="wpPhaseService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="wpPhaseTarget" />
+		</property>
+	</bean>
+	<bean id="zsTarget" class="org.iti.gh.service.impl.ZsServiceImpl" parent="baseService"></bean>
+	<bean id="zsService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="zsTarget" />
+		</property>
+	</bean>
+	<bean id="dbchooseTarget" class="org.iti.bysj.service.impl.DbchooseServiceImpl" parent="baseService"></bean>
+	<bean id="dbchooseService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="dbchooseTarget" />
+		</property>
+	</bean>
+	<bean id="gprocesTarget" class="org.iti.bysj.service.impl.GprocesServiceImpl" parent="baseService"></bean>
+	<bean id="gprocesService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="gprocesTarget" />
+		</property>
+	</bean>
+	<bean id="bsstudentTarget" class="org.iti.bysj.service.impl.BsStudentServiceImpl" parent="baseService"></bean>
+	<bean id="bsStudentService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="bsstudentTarget" />
+		</property>
+	</bean>
+	<bean id="bsteacherTarget" class="org.iti.bysj.service.impl.BsTeacherServiceImpl" parent="baseService"></bean>
+	<bean id="bsteacherService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="bsteacherTarget" />
+		</property>
+	</bean>
+	<bean id="gpunitTarget" class="org.iti.bysj.service.impl.GpunitServiceImpl" parent="baseService"></bean>
+	<bean id="gpunitService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="gpunitTarget" />
+		</property>
+	</bean>
+	<bean id="bsphaseTarget" class="org.iti.bysj.service.impl.PhaseServiceImpl" parent="baseService"></bean>
+	<bean id="bsphaseService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="bsphaseTarget" />
+		</property>
+	</bean>
+		<bean id="batchTarget" class="org.iti.bysj.service.impl.BatchServiceImpl" parent="baseService"></bean>
+	<bean id="batchService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="batchTarget" />
+		</property>
+	</bean>
+	<bean id="checkTarget" class="org.iti.bysj.service.impl.CheckServiceImpl" parent="baseService"></bean>
+	<bean id="checkService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="checkTarget" />
+		</property>
+	</bean>
+		<bean id="cphaseTarget" class="org.iti.bysj.service.impl.CphaseServiceImpl" parent="baseService"></bean>
+	<bean id="cphaseService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="cphaseTarget" />
+		</property>
+	</bean>
+	<!--以下是任务书+课表部分-->
+	<bean id="taskTarget" class="org.iti.jxgl.service.impl.TaskServiceImpl" parent="baseService"></bean>
+	<bean id="taskService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="taskTarget" />
+		</property>
+	</bean>
+		<bean id="excellTarget" class="org.iti.jxgl.service.impl.ExcellServiceImpl" parent="baseService"></bean>
+	<bean id="excellService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="excellTarget" />
+		</property>
+	</bean>
+	<!--以下是校历部分-->
+	<bean id="calendarTarget" class="org.iti.jxgl.service.impl.CalendarServiceImpl" parent="baseService"></bean>
+	<bean id="calendarService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="calendarTarget" />
+		</property>
+	</bean>
+	<!--以下是成绩管理部分-->
+	<bean id="scoreTarget" class="org.iti.jxgl.service.impl.ScoreServiceImpl" parent="baseService"></bean>
+	<bean id="scoreService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="scoreTarget" />
+		</property>
+	</bean>
+	 <bean id="yearTarget" class="org.iti.jxgl.service.impl.YearServiceImpl" parent="baseService"></bean>
+	<bean id="yearService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="yearTarget" />
+		</property>
+	</bean>
+		<!--以下是出勤管理部分-->
+		<bean id="usbTarget" class="org.iti.cqgl.service.impl.UsbServiceImpl" parent="baseService"></bean>
+	<bean id="usbService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="usbTarget" />
+		</property>
+	</bean>
+	<bean id="kyhdcqTarget" class="org.iti.cqgl.service.impl.KyhdcqServiceImpl" parent="baseService"></bean>
+	<bean id="kyhdcqService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="kyhdcqTarget" />
+		</property>
+	</bean>
+	<bean id="nstudentTarget" class="org.iti.cqgl.service.impl.NstudentServiceImpl" parent="baseService"></bean>
+	<bean id="nstudentService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="nstudentTarget" />
+		</property>
+	</bean>
+		<bean id="zccqTarget" class="org.iti.cqgl.service.impl.ZccqServiceImpl" parent="baseService"></bean>
+	<bean id="zccqService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="zccqTarget" />
+		</property>
+	</bean>
+	<bean id="cqcsTarget" class="org.iti.cqgl.service.impl.CqcsServiceImpl" parent="baseService"></bean>
+	<bean id="cqcsService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="cqcsTarget" />
+		</property>
+	</bean>
+</beans>

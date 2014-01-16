@@ -1,0 +1,19 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window width="900px" height="442px" sclass="newin" closable="true" position="center" border="normal" use="org.iti.xypt.personal.message.MessageSelectUserWindow">
+		<tabbox sclass="new-tabbox">
+			<tabs>
+				<tab label="全部用户" id="allUserSelectTab" />
+				<!-- <tab label="我的群组" id="myGroupSelectTab" /> -->
+				<tab label="最近联系人" id="lastUserSelectTab" />
+				<!-- <tab label="毕设相关" id="bysjUserSelectTab" /> -->
+			</tabs>
+			<tabpanels>
+				<tabpanel />
+				<tabpanel />
+				<tabpanel />
+				<tabpanel />
+			</tabpanels>
+		</tabbox>
+	</window>
+</zk>

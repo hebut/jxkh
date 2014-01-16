@@ -1,0 +1,55 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="编辑项目" border="normal" width="600px" style="text-align:left" closable="true" use="org.iti.gh.glyjfx.fxfzr.xmgl.EditxmWindow">
+<grid>
+		<columns>
+			<column width="30%" align="center"/>
+			<column width="70%" align="left"/>
+		</columns>
+		<rows>		
+			<row>
+				<label value="项目名称"/>
+					<textbox id="name" width="200px" constraint="no empty"/>
+					</row>		
+			<row>
+				<label value="项目负责人"/>
+					<listbox id="fzrlist"  rows="1" mold="select"/>
+			</row>	
+		
+			<row>
+				<label value="项目级别"/>				
+					<listbox id="xmjblist"  rows="1" mold="select"/>					
+			</row>
+			<row>
+				<label value="项目类别"/>
+				<listbox id="xmlblist"  rows="1" mold="select"/>
+			</row>
+			
+			<row>
+				<label value="类别"/>
+				<listbox id="lblist"  rows="1" mold="select"/>
+			</row>
+			<row>
+				<label value="年度"/>
+				<listbox id="ndlist"  rows="1" mold="select"/>
+			</row>
+			
+			<row>
+				<label value="项目内容"/>
+					<textbox id="content" width="95%"  rows="14" height="150"/>
+			</row>
+			
+		</rows>
+	</grid>
+	<separator/>
+	<hbox align="center" pack="center" width="100%">
+	<hbox>
+		<button id="submit" label="提交"/>
+		<space spacing="5px"/>
+		<button id="reset" label="重置"/>
+		<space spacing="5px"/>
+		<button id="close" label="关闭"/>
+	</hbox>
+	</hbox>
+</window>
+</zk>

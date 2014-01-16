@@ -1,0 +1,41 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="推荐信息" border="normal" closable="true" width="485px"   id="printWin"
+		height="175px" sclass="newin" maximizable="true" sizable="true" >
+		<separator/>
+		<hbox>
+			<space/><label value="校内新闻" />
+			<space/><label value="我校代表队获第二届全国高校篮球比赛冠军" />
+			<space width="10px"/><label value="2011-11-08" style="color:red"/>
+			<label value="17:07:01" style="color:red"/>
+		</hbox>
+		<separator/>
+		<hbox>
+			<space/><label value="校内新闻" />
+			<space/><label value="我校荣获2011届中国国际科技博览会两…"/>
+			<space width="14px"/><label value="2011-11-08" style="color:red"/>
+			<label value="13:22:09" style="color:red"/>
+		</hbox>
+		<separator/>
+		<hbox>
+			<space/><label value="校内新闻" />
+			<space/><label value="我校参加2011中国（长沙）科技成果转…" />
+			<space width="14px"/><label value="2011-11-06" style="color:red"/>
+			<label value="10:43:09" style="color:red"/>
+		</hbox>
+		<separator/>
+		<hbox>
+			<space/><label value="教务新闻" />
+			<space/><label value="岗前培训考试的通知"/>
+			<space/><space/><space/><space/><space/><space/><space/><space/><space/><label value="2011-11-06" style="color:red"/>
+			<label value="12:02:55" style="color:red"/>
+		</hbox>
+		<separator/>
+		<hbox>
+			<space/><label value="科研新闻" />
+			<space/><label value="我校第八届科普论文征文大赛圆满结束"/>
+			<space width="4px"/><space/><space/><label value="2011-11-03" style="color:red"/>
+			<label value="10:14:25" style="color:red"/>
+		</hbox>
+	</window>
+</zk>

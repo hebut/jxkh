@@ -1,0 +1,12 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="话题回复详情" border="normal" width="800px" id="window" closable="true" droppable="true" use="com.uniwin.asm.personal.group.discuss.MessageWindow">
+		<grid id="messagegrid" height="500px">
+			<columns>
+				<column align="center" width="16%" />
+				<column />
+			</columns>
+			<rows id="rows" />
+		</grid>
+	</window>
+</zk>

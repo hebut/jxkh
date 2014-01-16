@@ -1,0 +1,71 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="联系方式" width="100%" border="normal" style="text-align:left"  use="com.uniwin.asm.personal.ui.data.TeacherContact">
+		<style>.red { color: red; font-style: oblique; font-size:18px; }</style>
+				<grid>
+						<columns>
+							<column align="center"></column>
+							<column></column>
+							<column align="center"></column>
+							<column></column>
+							<column align="center"></column>
+							<column></column>
+						</columns>
+						<rows>
+							<row spans="1,5">
+								<label value="家庭住址" />
+								<textbox id="address" width="400px"></textbox>
+							</row>
+							<row>
+								<label value="家庭电话" />
+								<hbox>
+									<textbox id="kuhomePhone" width="150px" />
+								</hbox>
+								<label value="工作电话" />
+								<hbox>
+									<textbox id="kuworkPhone" width="150px" />
+								</hbox>
+								<label value="手机" style="letter-spacing:25px" />
+								<hbox>
+									<textbox id="kuPhone" width="150px" />
+									<label value="*" style="color:red;valign:center" />
+								</hbox>
+							</row>
+							<row>
+								<label value="电子邮箱" />
+								<hbox>
+									<textbox id="kuEmail" width="150px" constraint="/.+@.+\.[a-z]+/: Please enter an e-mail address" />
+									<label value="*" style="color:red;valign:center" />
+								</hbox>
+								<label value="MSN" />
+								<hbox>
+									<textbox id="msn" width="150px" />
+								</hbox>
+								<label value="QQ" />
+								<hbox>
+									<textbox id="qq" width="150px" />
+								</hbox>
+							</row>
+							<row>
+								<label value="个人主页" />
+								<textbox id="homepage" width="150px" />
+								<label value="传真" style="letter-spacing:25px" />
+								<textbox id="chuanzhen" width="150px" />
+								<label value="其他联系方式" />
+								<hbox>
+									<textbox id="others" width="150px" />
+								</hbox>
+							</row>
+							<row spans="6">
+								<hbox pack="center" width="100%">
+									<hbox>
+										<button id="save3" label="保存"></button>
+										<space />
+										<button id="reset3" label="重填"></button>
+									</hbox>
+								</hbox>
+							</row>
+						</rows>
+					</grid>
+	</window>
+</zk>

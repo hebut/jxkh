@@ -1,0 +1,29 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="" border="normal" sclass="newin" width="750px" use="org.iti.jxkh.score.work.DeptRankSetWindow">
+	<panel>
+		<panelchildren>
+			<div align="right">
+		<listbox mold="select" id="yearList" use="org.iti.gh.ui.listbox.YearListbox">
+		</listbox>
+		<space/>
+		<button id="view" label="查找"/>
+	</div>
+	<listbox id="deptlist" sclass="new_listbox" mold="paging" pageSize="9">
+		<listhead>
+			<listheader label="序号" width="10%" align="center"/>
+			<listheader label="部门名称" width="50%" align="center"/>
+			<listheader label="所在档次" width="20%" align="center"/>
+			<listheader label="设置档次" width="20%" align="center"/>
+		</listhead>
+	</listbox>
+	<div align="center">
+		<toolbarbutton id="submit" image="/css/img/actSave.gif" />
+		<space/>
+		<toolbarbutton id="reset" image="/css/default/images/button/cz.gif" />
+	</div>
+		</panelchildren>
+	</panel>
+	
+</window>
+</zk>

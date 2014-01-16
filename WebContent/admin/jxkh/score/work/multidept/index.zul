@@ -1,0 +1,151 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" style="text-align:left" use="org.iti.jxkh.score.work.MultiDeptWindow">
+		<panel title="多部门合作" border="normal" width="768px">
+			<caption>
+				<label value="选择年份：" />
+				<listbox id="yearlist" width="150px" mold="select" use="org.iti.gh.ui.listbox.YearListbox">
+									<!-- <listitem label="2011" selected="true" /> -->
+								</listbox>
+			</caption>
+			<panelchildren>
+				<tabbox orient="vertical">
+					<tabs width="100px">
+						<tab label="会议论文" />
+						<tab label="期刊论文" />
+						<tab label="著作" />
+						<tab label="奖励" />
+						<tab label="视频" />
+						<tab label="项目" />
+						<tab label="专利" />
+						<tab label="成果" />
+						<tab label="会议" />
+						<tab label="报道" />
+					</tabs>
+					<tabpanels>
+						<tabpanel>
+							<listbox id="hylwlist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="qklwlist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="zzlist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="jllist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="splist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="xmlist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="zllist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="cglist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="hylist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="bglist">
+								<listhead>
+									<listheader label="序号" align="center" />
+									<listheader label="业务业绩名称" width="18%" align="center" />
+									<listheader label="主持部门" width="12%" align="center" />
+									<listheader label="参与部门" width="40%" align="center" />
+									<listheader label="当前比例" width="10%" align="center" />
+									<listheader label="设置" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</tabpanel>
+					</tabpanels>
+				</tabbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

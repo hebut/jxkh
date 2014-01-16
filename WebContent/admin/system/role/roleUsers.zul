@@ -1,0 +1,44 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="编辑角色用户:" border="normal" width="600px" use="com.uniwin.framework.ui.role.RoleUserWindow">
+		<hbox>
+			<vbox>
+				<hbox>
+					<label value="可选用户列表" />
+					<combobox id="notUsers" use="com.uniwin.framework.common.combobox.UserCombobox" autodrop="true" />
+				</hbox>
+				<listbox id="left" height="250px" multiple="true">
+					<listhead>
+						<listheader label="用户姓名" />
+						<listheader label="登陆名" />
+					</listhead>
+				</listbox>
+			</vbox>
+			<vbox align="end" spacing="10" height="250px">
+				<separator height="85" />
+				<button label="增加" id="addUser" />
+				<button label="删除" id="delUser" />
+				<button label="清空" id="clearUser" />
+			</vbox>
+			<vbox>
+				<hbox>
+					<label value="已选用户列表" />
+					<combobox id="ofUsers" use="com.uniwin.framework.common.combobox.UserCombobox" autodrop="true" />
+				</hbox>
+				<listbox id="right" height="250px" multiple="true">
+					<listhead>
+						<listheader label="用户姓名" />
+						<listheader label="登陆名" />
+					</listhead>
+				</listbox>
+			</vbox>
+		</hbox>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="重设" id="reset" />
+				<button label="返回" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

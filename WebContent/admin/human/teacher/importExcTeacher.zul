@@ -1,0 +1,35 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="导入教师" border="normal" width="40%" use="org.iti.human.ld.TeacherImportWindow" closable="true">
+		<grid>
+			<columns>
+				<column width="40%" align="center"></column>
+				<column width="60%"></column>
+			</columns>
+			<rows>
+				<row>
+					<label value="导入样例"></label>
+					<button id="downExample" label="下载"></button>
+				</row>
+				<row>
+					<label value="导入教师"></label>
+					<button label="导入" id="importTea"></button>
+				</row>
+				<row>
+					<label value="导入结果"></label>
+					<hbox id="result" align="center">
+						<label id="process"></label>
+						<button id="resultDown" label="下载导入结果"></button>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<groupbox>
+			<caption>
+				<label value="[提示]" style="color:blue"></label>
+			</caption>
+			<hbox>1.excel中各列分别为登录名,教师号,姓名 ,性别,单位编号,职称。</hbox>
+			<hbox>2.excel中的先按照单位编号排序再按照职称排序能够提高导入速度，单位编号为管理组织单位中录入的编号。</hbox>
+		</groupbox>
+	</window>
+</zk>

@@ -1,0 +1,55 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window use="org.iti.feedback.ui.usb.student.StudentWindow" width="100%" height="100%" style="text-align:left">
+		<borderlayout width="100%" height="580px">
+			<west size="200px" id="westPanel">
+				<vbox>
+					<listbox id="deptList" mold="select" width="195px" />
+					<tree zclass="z-dottree" rows="45" width="190px" id="westTree" />
+				</vbox>
+			</west>
+			<center flex="true">
+				<panel title="管理学生" framable="true" id="userPanel">
+					<panelchildren>
+						<grid style="border:0px">
+							<columns>
+								<column align="center" />
+							</columns>
+							<rows>
+								<row style="padding:0;border-width:medium 0px 0px" align="center">
+									<vbox>
+										<separator spacing="1px" />
+										<hbox align="center">
+											<label value="年级：" />
+											<listbox id="gradeList" mold="select" use="org.iti.bysj.ui.listbox.GradeListbox" rows="1"></listbox>
+											<space spacing="25px" />
+											<label value="姓名：" />
+											<textbox id="nameSearch" width="80px" />
+											<space spacing="25px" />
+											<label value="学号：" />
+											<textbox id="tnoSearch" width="80px" />
+											<space spacing="20px" />
+											<button id="search" label="查 询" />
+										</hbox>
+										<separator spacing="1px" />
+									</vbox>
+								</row>
+							</rows>
+						</grid>
+						<listbox id="leaderlist" mold="paging" pageSize="18">
+							<listhead>
+								<listheader label="序号" width="6%" align="center" />
+								<listheader label="学号" width="10%" align="center" sort="auto(stId)" />
+								<listheader label="姓名" width="12%" align="center" sort="auto(user.kuName)" />
+								<listheader label="班级" width="12%" align="center" sort="auto(stClass)" />
+								<listheader label="系" width="25%" align="center" id="xi" sort="auto(user.xiDept)" />
+								<listheader label="学院" width="25%" align="center" id="yuan" sort="auto" />
+								<listheader label="密码" width="10%" align="center" />
+							</listhead>
+						</listbox>
+					</panelchildren>
+				</panel>
+			</center>
+		</borderlayout>
+	</window>
+</zk>

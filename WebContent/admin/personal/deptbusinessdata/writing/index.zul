@@ -1,0 +1,89 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" border="false" width="770px" style="text-align:left"
+		sclass="newin"
+		use="org.iti.jxkh.business.writing.DeptWritingWindow">
+		<groupbox id="cxtj" width="760px" visible="false">
+			<caption>
+				<label value="[查询条件]" />
+			</caption>
+			<grid width="730px">
+				<columns>
+					<column width="15%" align="right"></column>
+					<column width="35%"></column>
+					<column width="15%" align="right"></column>
+					<column width="35%"></column>
+				</columns>
+				<rows>
+					<row style="background:#D2E9FF">
+						<label value="著作名称" />
+						<textbox id="name" width="90%" />
+						<label value="审核状态" />
+						<listbox id="auditState" mold="select" rows="1"
+							width="90%" />
+					</row>
+					<row style="background:#D2E9FF">
+						<label value="著作类型" />
+						<listbox id="rank" mold="select" rows="1"
+							width="90%" />
+						<label value="绩分年度" />
+						<listbox id="year" mold="select" rows="1"
+							use="org.iti.gh.ui.listbox.YearListbox" width="90%" />
+					</row>
+					<row spans="6" style="background:#D2E9FF">
+						<div align="center">
+							<button label="查   询" id="query" />
+							<space></space>
+							<button label="重   置" id="reset" />
+						</div>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<div align="right">
+			<hbox>
+				<toolbarbutton id="searchcbutton"
+					image="/css/default/images/button/data-btn-js.gif"
+					style="color:blue" />
+				<toolbarbutton id="add1"
+					image="/css/default/images/button/addAct.gif" visible="true"
+					style="color:blue">
+				</toolbarbutton>
+				<toolbarbutton id="del1"
+					image="/css/default/images/button/delAct.gif" />
+				<toolbarbutton id="export1"
+					image="/css/default/images/button/dc.gif" visible="true"
+					style="color:blue" />
+			</hbox>
+		</div>
+		<div align="center">
+			<listbox id="zxListbox"  paginal="${zxPaging}"
+				sclass="new_listbox" checkmark="true" multiple="true"
+				fixedLayout="true">
+				<listhead>
+					<listheader width="5%" align="center" />
+					<listheader label="序号" width="7%" align="center" />
+					<listheader label="著作名称" width="23%"
+						style="text-align:center" />
+					<listheader label="著作类型" width="16%" align="center"
+						style="text-align:center" />
+					<listheader label="绩分年度" width="13%" align="center" />
+					<listheader label="附件" width="10%" align="center" />
+					<listheader label="该项得分" width="12%" align="center" />
+					<listheader label="审核状态" width="14%" align="center" />
+				</listhead>
+			</listbox>
+			<paging id="zxPaging" zclass="z-paging" pageSize="13" width="98%"
+				detailed="true" visible="false"/>
+		</div>
+		<groupbox closable="true">
+			<caption>
+				<label style="color:red" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击著作名称，可以查看或修改详细信息。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

@@ -1,0 +1,23 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="查询情况调查详细" use="org.iti.gh.ghtj.QkdcDetailWindow" border="normal" closable="true" width="40%">
+<hbox align="center">
+   统计结果:<label id="result"></label>
+</hbox>
+   <listbox id="detaillist" mold="paging" pageSize="15" rows="15">
+     <listhead>
+        <listheader label="序号"></listheader>
+        <listheader label="姓名"></listheader>
+        <listheader label="内容" id="header"></listheader>
+     </listhead> 
+   </listbox>
+   <groupbox id="tsGroup">
+		<caption>
+			<label value="[提示]"></label>
+			</caption>
+			<hbox>
+			<label id="tsl"></label>
+			</hbox>
+   </groupbox>
+</window>
+</zk>

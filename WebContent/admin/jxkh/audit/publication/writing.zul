@@ -1,0 +1,448 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="著作信息录入" border="normal" sclass="newin" width="720px"
+		height="600px" closable="true"
+		use="org.iti.jxkh.audit.writing.DetailWindow">
+		<caption>
+			<button label="打印信息" id="print" target="blank" href=""
+				visible="false" />
+			<space />
+		</caption>
+		<tabbox sclass="new-tabbox">
+			<tabs>
+				<tab label="著作信息" />
+				<tab label="绩分信息" />
+				<!-- <tab label="审核信息" /> -->
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<groupbox width="98%">
+						<caption>
+							<label value="基本信息" />
+						</caption>
+						<separator />
+						<grid>
+							<columns>
+								<column width="20%" align="right" />
+								<column width="30%" />
+								<column width="20%" align="right" />
+								<column width="30%" />
+							</columns>
+							<rows>
+								<row spans="1,3" valign="center">
+									<label value="著作名称：" />
+									<hbox>
+										<textbox width="500px"
+											id="projectName" readonly="true" />
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+								<row valign="center" spans="1,3">
+									<label value="全部作者：" />
+									<hbox>
+										<textbox id="projectMember"
+											width="500px" readonly="true" />
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+								<row valign="center" spans="1,3">
+									<label value="院内完成部门：" />
+									<hbox>
+										<textbox id="department"
+											width="500px" readonly="true" />
+										<label value="*"
+											style="color:red" />
+
+									</hbox>
+								</row>
+								<row valign="center" spans="1,3">
+									<label value="是否与外单位合作:" />
+									<hbox>
+										<radiogroup id="ifCoo">
+											<radio label="是"
+												disabled="true">
+											</radio>
+											<space></space>
+											<space></space>
+											<radio label="否"
+												checked="true" disabled="true">
+											</radio>
+										</radiogroup>
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+								<row valign="center" id="coUnitRow"
+									visible="false">
+									<label value="我院是否是第一署名" />
+									<hbox>
+										<radiogroup>
+											<radio id="firstSignTrue"
+												label="是" checked="true" disabled="true" />
+											<space></space>
+											<space></space>
+											<radio id="firstSignFalse"
+												label="否" disabled="true" />
+										</radiogroup>
+										<label value="*"
+											style="color:red" />
+									</hbox>
+									<label value="合作单位：" />
+									<hbox>
+										<textbox id="coUnit"
+											width="190px" readonly="true" />
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+								<row valign="center">
+									<label value="著作类型：" />
+									<hbox>
+										<listbox mold="select" id="rank"
+											disabled="true" width="190px" rows="1">
+										</listbox>
+										<label value="*"
+											style="color:red" />
+									</hbox>
+									<label value="是否正式出版：" />
+									<hbox>
+										<radiogroup id="ifPub">
+											<radio label="是"
+												checked="true" disabled="true">
+											</radio>
+											<space></space>
+											<space></space>
+											<radio label="否"
+												disabled="true">
+											</radio>
+										</radiogroup>
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+								<row valign="center">
+									<label value="出版社名称：" />
+									<textbox id="header" width="190px"
+										readonly="true" />
+									<label value="出版时间：" />
+									<datebox id="end" width="170px"
+										readonly="true" />
+								</row>
+								<row valign="center">
+									<label value="信息填写人：" />
+									<hbox>
+										<label id="writer" />
+										<label value="*"
+											style="color:red;valign:center" />
+									</hbox>
+									<label value="档案号:" id="recordlabel"
+										visible="false" />
+									<hbox id="recordhbox"
+										visible="false">
+										<textbox id="record"
+											width="190px" readonly="true" />
+										<label value="*"
+											style="color:red;valign:center" />
+									</hbox>
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+					<separator bar="true" />
+					<separator />
+					<groupbox width="98%">
+						<caption>
+							<label value="绩分信息" />
+						</caption>
+						<separator />
+						<grid>
+							<columns>
+								<column width="20%" align="right" />
+								<column width="30%" align="left" />
+								<column width="20%" align="right" />
+								<column width="30%" align="left" />
+							</columns>
+							<rows>
+								<row valign="center">
+									<label value="绩分年度：" />
+									<hbox>
+										<listbox width="190px"
+											mold="select" id="jiFenTime"
+											use="org.iti.gh.ui.listbox.YearListbox" disabled="true" />
+										<label value="*"
+											style="color:red" />
+									</hbox>
+									<label value="绩分方式：" />
+									<hbox>
+										<listbox mold="select" rows="1"
+											id="computMethod" width="194px" disabled="true">
+											<!-- 
+												<listitem label="请选择" />
+												<listitem label="默认比例" />
+												<listitem label="参编人员比例" />
+												<listitem label="编写内容比例" />
+												<attribute name="onSelect">
+												if (computMethod.getSelectedIndex() == 2) {
+												memRow.setVisible(true);
+												contentRow.setVisible(false);
+												} else if (computMethod.getSelectedIndex() == 3) {
+												memRow.setVisible(false);
+												contentRow.setVisible(true);
+												} else if (computMethod.getSelectedIndex() == 0
+												|| computMethod.getSelectedIndex() == 1) {
+												memRow.setVisible(false);
+												contentRow.setVisible(false);
+												}
+												</attribute>-->
+										</listbox>
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+								<row align="center" id="memRow"
+									spans="1,3" visible="false">
+									<label value="我院人员所占参编人员比例:" />
+									<hbox>
+										<textbox width="200px"
+											id="memProp" disabled="true" />
+										<label value="%" />
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+								<row align="center" id="contentRow"
+									spans="1,3" visible="false">
+									<label value="我院人员编写内容比例:" />
+									<hbox>
+										<textbox width="200px"
+											id="contentProp" disabled="true" />
+										<label value="%" />
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+				</tabpanel>
+				<!-- 绩分信息 -->
+				<tabpanel>
+					<groupbox>
+						<caption>
+							<label value="个人绩分" />
+						</caption>
+						<listbox sclass="new_listbox" rows="10">
+							<listhead>
+								<listheader label="序号" width="10%"
+									align="center" />
+								<listheader label="完成人" width="15%"
+									align="center" />
+								<listheader label="人员类型" width="15%"
+									align="center" />
+								<listheader label="所属部门" width="15%"
+									align="center" />
+								<listheader label="所占比例(共10)"
+									width="15%" align="center" />
+								<listheader label="绩分归属部门" width="15%"
+									align="center" />
+								<listheader label="绩分" width="15%"
+									align="center" />
+							</listhead>
+							<listitem>
+								<listcell label="1" />
+								<listcell label="吴峰" />
+								<listcell label="院内" />
+								<listcell label="信息资源所" />
+								<listcell>
+									<textbox width="90px" value="7" />
+								</listcell>
+								<listcell>
+									<toolbarbutton label="指定"
+										style="color:blue" />
+								</listcell>
+								<listcell>
+									<label value="5.0" />
+								</listcell>
+							</listitem>
+							<listitem>
+								<listcell label="2" />
+								<listcell label="张朝宗" />
+								<listcell label="院内" />
+								<listcell label="信息资源所" />
+								<listcell>
+									<textbox width="90px" value="2" />
+								</listcell>
+								<listcell>
+									<toolbarbutton label="指定"
+										style="color:blue" />
+								</listcell>
+								<listcell>
+									<label value="3.0" />
+								</listcell>
+							</listitem>
+							<listitem>
+								<listcell label="3" />
+								<listcell label="张彦忠" />
+								<listcell label="院外" />
+								<listcell label="" />
+								<listcell>
+									<textbox width="90px" value="1" />
+								</listcell>
+								<listcell>
+									<toolbarbutton label="指定"
+										style="color:blue" />
+								</listcell>
+								<listcell>
+									<label value="2.0" />
+								</listcell>
+							</listitem>
+						</listbox>
+					</groupbox>
+					<separator />
+					<html>
+
+
+
+
+						
+						<![CDATA[ <hr color="##8470FF"/> ]]>
+						
+						
+						
+						
+						
+					</html>
+					<separator />
+					<groupbox>
+						<caption>
+							<label value="部门绩分" />
+						</caption>
+						<listbox sclass="new_listbox">
+							<listhead>
+								<listheader label="序号" align="center"
+									width="20%" />
+								<listheader label="完成部门" align="center"
+									width="50%" />
+								<listheader label="部门绩分" align="center"
+									width="30%" />
+							</listhead>
+							<listitem>
+								<listcell label="1" />
+								<listcell label="信息资源所" />
+								<listcell label="5.0" />
+							</listitem>
+							<listitem>
+								<listcell label="2" />
+								<listcell label="综合办公室" />
+								<listcell label="3.0" />
+							</listitem>
+						</listbox>
+					</groupbox>
+					<separator />
+					<div align="center">
+						<toolbarbutton id="submitScore"
+							image="/css/img/actSave.gif" />
+						<space width="3px" />
+						<toolbarbutton id="closeScore"
+							image="/css/img/actquit.gif" />
+					</div>
+				</tabpanel>
+				<!-- 审核信息 -->
+				<tabpanel>
+					<groupbox>
+						<caption>
+							<label value="部门审核" />
+						</caption>
+						<separator />
+						<grid>
+							<columns>
+								<column width="20%" align="center" />
+								<column width="80%" />
+							</columns>
+							<rows>
+								<row height="80px" align="center">
+									<label value="信息资源所(主完成部门)" />
+									<vbox align="center">
+										<radiogroup>
+											<radio id="pass1" label="通过"
+												checked="true" />
+											<space />
+											<radio id="back1"
+												label="退回" />
+										</radiogroup>
+										<textbox width="550px"
+											height="60px" />
+									</vbox>
+								</row>
+								<row height="80px" align="center">
+									<label value="发展战略所" />
+									<vbox align="center">
+										<radiogroup visible="false">
+											<radio id="pass2" label="通过"
+												checked="true" />
+											<space />
+											<radio id="back2"
+												label="退回" />
+										</radiogroup>
+										<textbox width="550px"
+											height="60px" readonly="true" />
+									</vbox>
+								</row>
+								<row height="80px" align="center">
+									<label value="科技宣传中心" />
+									<vbox align="center">
+										<radiogroup visible="false">
+											<radio id="pass3" label="通过"
+												checked="true" />
+											<space />
+											<radio id="back3"
+												label="退回" />
+										</radiogroup>
+										<textbox width="550px"
+											height="60px" readonly="true" />
+									</vbox>
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+					<separator bar="true" />
+					<groupbox>
+						<caption>
+							<label value="业务办审核" />
+						</caption>
+						<grid>
+							<columns>
+								<column width="20%" align="center" />
+								<column width="80%" />
+							</columns>
+							<rows>
+								<row height="80px" align="center">
+									<label value="业务办" />
+									<vbox align="center">
+										<textbox width="550px"
+											height="60px" readonly="true" />
+									</vbox>
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+					<separator />
+					<div align="center">
+						<toolbarbutton id="submitAudit"
+							image="/css/img/actSave.gif" />
+						<space width="3px" />
+						<toolbarbutton id="closeAudit"
+							image="/css/img/actquit.gif" />
+					</div>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+		<separator />
+		<div align="center">
+			<toolbarbutton id="close"
+				image="/css/default/images/button/gb.gif" />
+		</div>
+	</window>
+</zk>

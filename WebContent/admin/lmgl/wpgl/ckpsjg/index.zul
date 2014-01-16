@@ -1,0 +1,52 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="normal" style="text-align:left"
+		use="org.iti.wp.ckpsjg.CkpsjgWindow">
+		<panel title="查看评审结果">
+			<panelchildren>
+				<grid style="border:0px">
+					<columns>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row
+							style="padding:0;border-width:medium 0px 0px">
+							<space width="25px" />
+							<label value="评审类别"
+								style="letter-spacing:5px" />
+
+							<listbox mold="select" rows="1"
+								width="180px" id="pstype">
+							</listbox>
+							<button label="查询" id="search" />
+						</row>
+						<row spans="6" align="right">
+							<button id="judge" label="计算总成绩"></button>
+						</row>
+
+					</rows>
+				</grid>
+				<listbox id="jgjwlist">
+					<listhead id="jgjw">
+					</listhead>
+				</listbox>
+				<listbox id="jglist">
+					<listhead id="jg">
+					</listhead>
+				</listbox>
+				<groupbox closable="true">
+					<caption>
+						<label style="color:blue">[提示]</label>
+					</caption>
+					1.点击文档名称，可下载此文档。<separator></separator>
+					2.点击操作图片，可查看评审的详细成绩。
+				</groupbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

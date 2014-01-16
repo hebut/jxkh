@@ -1,0 +1,24 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="查看具体成绩" border="normal"
+		use="org.iti.wp.ckpsjg.CkjgWindow" width="80%" closable="true">
+		<grid>
+			<columns>
+				<column></column>
+			</columns>
+			<rows> 
+				<row>
+					<listbox id="cklist">
+						<listhead id="cklisthead"></listhead>
+					</listbox>
+				</row>
+				<row align="center">
+					<hbox>
+						<button label="关闭" id="close"></button>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+
+	</window>
+</zk>

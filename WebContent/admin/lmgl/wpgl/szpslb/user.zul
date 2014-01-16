@@ -1,0 +1,33 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="添加用户"  border="normal" width="70%" style="text-align:left" use="org.iti.wp.szpslb.UserWindow" closable="true">
+				<hbox width="100%" pack="center">
+					<hbox align="center">
+					<label value="角色" />
+						<listbox rows="1" mold="select" id="role"></listbox>
+						<label id="gradeTwoLabel1" />
+						<listbox rows="1" mold="select" id="xueyuan"></listbox>
+						<label id="gradeThrLabel1" />
+						<listbox rows="1" mold="select" id="bumen"></listbox>
+						姓名
+						<textbox width="120" id="name" />
+						<button label="查询" id="search" />
+					</hbox>
+				</hbox>
+				<listbox mold="paging" pageSize="15" id="userlist" checkmark="true" multiple="true" >
+					<listhead>
+						<listheader width="10%" label="序号" align="center" />
+						<listheader width="15%" label="用户姓名" align="center"  />
+						<listheader width="15%" label="性别" align="center"  />
+						<listheader width="20%" label="学院" align="center"  />
+						<listheader width="15%" label="专业" align="center"  />
+					</listhead>
+				</listbox>
+				<hbox pack="center" width="100%">
+				<hbox>
+				<button label="确定" id="sure"></button> 
+				<button label="退出" id="back"></button> 
+				</hbox>
+				</hbox>
+	</window>
+</zk>

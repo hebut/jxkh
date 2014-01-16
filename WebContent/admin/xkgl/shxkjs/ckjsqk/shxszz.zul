@@ -1,0 +1,117 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="审核学术专著" style="text-align:left" border="normal"
+		use="org.iti.gh.shxkjs.kyqk.ShxszzWindow" width="800px" closable="true">
+		<listbox id="xszzlist" style="border-bottom-width:0px"
+			mold="paging" pageSize="10">
+			<listhead>
+				<listheader label="序号" width="5%" align="center" />
+				<listheader label="著作名称" width="25%" align="center" />
+				<listheader label="版次" width="10%" align="center" />
+				<listheader label="出版单位" width="20%" align="center" />
+				<listheader label="出版时间" width="10%" align="center" />
+				<!--  <listheader  label="主编" width="15%" align="center" ></listheader>-->
+				<listheader  label="填写人" width="10%" align="center" ></listheader>
+				<listheader label="操作" width="5%" align="center" />
+			</listhead>
+		</listbox>
+		<grid id="auditxszz">
+			<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="22%" align="center" />
+				<column width="28%" />
+			</columns>
+			<rows>
+				<row >
+					<label value="著作名称" />
+					<hbox>
+						<label id="cgmc"  />
+					</hbox>
+					<label value="主编" style="letter-spacing:5px" />
+					<label id="zb"  />
+				</row>
+				<row>
+					<label value="著作类型 " />
+					<listbox id="worktype" mold="select"
+						width="295px">
+					</listbox>
+					<label value="学科分类 " />
+					<listbox id="subjetype" mold="select"
+						width="295px">
+					</listbox>
+				</row>
+				<row>
+					<label value="出版单位" />
+					<hbox>
+						<label id="kanwu"   />
+					</hbox>
+					<label value="出版时间" />
+					<hbox>
+						<label id="publitime"  />
+					</hbox>
+				</row>
+				<row>
+					<label value="版次" style="letter-spacing:15px" />
+					<label id="editionno"   />
+					<label value="ISBN号" />
+					<label id="isbn"   />
+				</row>
+				<!-- 
+				<row spans="1,3">
+					<label value="参编者" style="letter-spacing:5px" />
+					<label id="bz"  />
+				</row>
+				 -->
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+					<hbox>
+						<grid width="400px">
+							<columns>
+								<column width="60%"></column>
+								<column width="20%"></column>
+								<column width="20%"></column>
+							</columns>
+							<rows>
+								<row>
+									<listbox id="upList"
+										style="border:0px" mold="select" rows="1"/>
+								</row>
+							</rows>
+						</grid>
+						<hbox pack="center" width="100%">
+						<hbox>
+							<button label="下载" id="downFile" />
+						</hbox>
+					</hbox>
+					</hbox>
+				</row>
+				<row spans="1,3"> 
+					<label value="是否通过" style="letter-spacing:5px" />
+					<hbox>
+						<radiogroup id="audit">
+							<radio label="不通过" checked="true" />
+							<radio label="通过" />
+						</radiogroup>
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="审核意见" style="letter-spacing:5px" />
+					<textbox id="reason" cols="80" rows="4" height="30px">
+					</textbox>
+				</row>
+				<row spans="4">
+					<hbox pack="center" width="100%">
+						<hbox>
+							<button label="提交" id="submit" />
+							<space width="3px" />
+							<button label="下载全部 " id="downFileZip" />
+							<space width="3px" />
+							<button label="返回" id="close" />
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

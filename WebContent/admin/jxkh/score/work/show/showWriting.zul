@@ -1,0 +1,43 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="查看著作详细" border="normal" sclass="newin" width="600px" height="600px">
+	<div align="right">
+			<listbox id="listbox4" checkmark="true" multiple="true"
+				style="border-bottom-width:0px" sclass="new_listbox"
+				paginal="${zxPaging}" mold="paging">
+				<listhead>
+					<listheader width="5%" align="center" />
+					<listheader label="序号" width="6%" align="center" />
+					<listheader label="著作名称" width="22%" align="left"
+						style="text-align:center" />
+					<listheader label="出版社" width="18%" align="center" />
+					<listheader label="信息写人" width="13%" align="center" />
+					<listheader label="著作类型" width="12%" align="center" />	
+					<listheader label="附件" width="12%" align="center" />
+					<listheader label="审核状态" width="12%" align="center" />					
+				</listhead>
+				<listitem>
+					<listcell />
+					<listcell label="1" />
+					<listcell label="基于路面的检测" style="color:blue" />
+					<listcell label="河北情报院" />
+					<listcell label="董永峰" />
+					<listcell label="专著" />
+					<listcell>
+						<toolbarbutton image="/css/default/images/button/down.gif"></toolbarbutton>
+					</listcell>
+					<listcell label="业务办通过" style="color:red">
+					<attribute name="onClick">
+						org.zkoss.zul.Window w = (org.zkoss.zul.Window) Executions
+						.createComponents("/admin/personal/businessdata/award/advice.zul", null, null);
+						w.doModal();
+						w.setClosable(true);
+					</attribute>
+				</listcell>
+				</listitem>
+			</listbox>
+			<paging id="zxPaging" zclass="z-paging" pageSize="10"
+				detailed="true" />
+		</div>
+</window>
+</zk>

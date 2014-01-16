@@ -1,0 +1,62 @@
+<?page title="职称信息" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="职称信息" border="normal" width="600px" height="200px" closable="true"
+        use="com.uniwin.asm.personal.ui.data.TeacherTitle">
+<grid>
+			  <columns>
+			       <column align="center"></column>
+				   <column></column>
+				   <column align="center"></column>
+				   <column></column>
+				
+			  </columns>
+			  <rows>
+			  <row spans="1,3">
+					<label value="职称" style="letter-spacing:25px"></label>
+					<hbox use="org.iti.xypt.ui.base.TitleSelectHbox" id="titleHbox"></hbox>					
+					
+					
+			  </row>
+			  <row>
+			        <label value="取得时间"></label>			
+					<datebox id="titlegettime" focus="true" width="100px" />
+				    <label value="发证时间"></label>
+				    <datebox id="gettime" focus="true" width="100px" />
+			  </row>
+			  <row>
+				<label value="证书号码"></label>
+				<hbox>
+				    <textbox id="certifino" width="100px"> </textbox>
+				</hbox>
+				<label value="资格文号"></label>
+			    <hbox>
+				    <textbox id="qualino" width="100px"></textbox>
+				</hbox>
+		  </row>
+			  <row spans=",,,3">
+			    <label value="发证机构"></label>
+				<hbox>
+				    <textbox id="certifidept" width="100px"></textbox>
+				</hbox>
+				<label value="认定机构"></label>
+				<hbox>
+				    <textbox id="identdept" width="100px"></textbox>
+				</hbox>
+			  </row>
+			 <row spans="6">
+			   <hbox pack="center" width="100%" >
+				    <hbox>
+				      <button id="save" label="保存"></button>
+						<space />
+						<button id="reset" label="重填"></button>
+						<space />
+						<button id="close" label="关闭"></button>
+				    </hbox>
+				</hbox>
+			 </row>
+			    
+			
+				</rows>
+			  </grid>
+</window>
+</zk>

@@ -1,0 +1,361 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="奖励性绩效工资计算工具" border="normal"
+ use="org.iti.jxkh.tools.BonusDistributeWindow" width="750px">
+<groupbox>
+	<caption>
+		<label value="输入基本信息：" />
+	</caption>
+	<separator />
+	<grid>
+		<columns>
+			<column width="20%" align="left"/>
+			<column width="30%" align="left"/>
+			<column width="20%" align="left"/>
+			<column width="30%" align="left"/>
+		</columns>
+		<rows>
+			<row>
+				<label value="奖励性绩效工资总额：" />
+				<decimalbox id="totalAcount"  width="65%"/>
+				<label value="管理部门人数："/>
+				<decimalbox id="ManageNum"  width="65%"/>
+			</row>
+			<row>
+				<label value="业务部门人数：" />
+				<decimalbox id="DeptNum"  width="65%"/>
+				<label value="院领导人数：" />
+				<decimalbox id="LeaderNum" width="65%"/>
+			</row>
+		</rows>
+	</grid>
+</groupbox>
+<separator />
+<div align="center">
+<button label="保存" id="saveInfo" />
+</div>
+<separator />
+<tabbox>
+	<tabs>
+		<tab label="业务部门" id="oprateDept"  selected="true" />
+		<tab label="管理部门" id="manageDept"  />
+		<tab label="院长" id="president"   />
+	</tabs>
+	<tabpanels>
+	<!-- 业务部门 -->
+	<tabpanel  >
+	<div align="right">
+		<toolbarbutton id="exportDept" image="/css/default/images/button/dc.gif" style="color:blue" />
+ 	</div>
+	<groupbox>
+		<caption>
+			<label value="设置：" />
+		</caption>
+ 	<separator />
+		<grid>
+			<columns>
+				<column width="20%" align="left" />
+				<column width="30%"  align="left" />
+				<column width="20%"  align="left" />
+				<column width="30%"  align="left" />
+			</columns>
+			<rows>
+				<row>
+					<label value="考核年度：" />
+					<listbox id="yearlist" mold="select" width="83px"
+					use="org.iti.gh.ui.listbox.YearListbox" />
+					<vbox>
+						<label value="业务部门奖励性绩效工资" />
+						<label value="总额（元）：" />
+					</vbox>
+					<decimalbox id="DeptTotalAcount" width="65%" />
+				</row>
+			</rows>
+		</grid>
+		<grid >
+			<columns>
+				<column width="20%" align="left" />
+				<column width="80%"/>
+			</columns>
+			<rows>
+				<row>
+					<label value="选择三档部门：" />
+					<hbox>
+					<textbox id="oprateDept3" width="500px" readonly="true" />
+					<space />
+					<toolbarbutton id="chooseDept3"
+					image="/css/default/images/common/xz.gif">
+					</toolbarbutton>
+					</hbox>
+				</row>
+				<row>
+					<label value="选择二档部门：" />
+					<hbox>
+					<textbox id="oprateDept2" width="500px" readonly="true" />
+					<space />
+					<toolbarbutton id="chooseDept2"
+					image="/css/default/images/common/xz.gif">
+					</toolbarbutton>
+					</hbox>
+				</row>
+				<row>
+					<label value="选择一档部门：" />
+					<hbox>
+					<textbox id="oprateDept1" width="500px" readonly="true" />
+					<space />
+					<toolbarbutton id="chooseDept1"
+					image="/css/default/images/common/xz.gif">
+					</toolbarbutton>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<grid id="setDeptNum">
+			<columns>
+				<column width="20%"  align="left" />
+				<column width="30%" align="left" />
+				<column width="20%"  align="left" />
+				<column width="30%"  align="left" />
+			</columns>
+			<rows id="rows" >
+			</rows>
+		</grid>
+	</groupbox>
+	<separator />
+	<div align="center">
+	<button id="compute" label="开始计算" />
+	</div>
+	<separator />
+	<groupbox> 
+	<caption>
+		<label value="计算结果：" />
+	</caption>
+	<div align="left">
+		<space/>
+		<label value="一个基数额度："/>
+		<label id="perBasicAcount" />
+	</div>
+	<separator />
+	<listbox id="computeListbox" sclass="new_listbox" >
+		<listhead>
+			<listheader label="部门" width="11%" align="center" />
+			<listheader label="总人数" width="8%" align="center" />
+			<listheader label="四档人数" width="8%" align="center" />
+			<listheader label="三档人数" width="8%" align="center" />
+			<listheader label="二档人数" width="8%" align="center" />
+			<listheader label="一档人数" width="8%" align="center" />
+			<listheader label="基数" width="20%" align="center" />
+			<listheader label="总额" width="14%" align="center" />
+			<listheader label="人员详细" width="15%" align="center"/>
+		</listhead>
+	</listbox>
+	<separator />
+	</groupbox>
+	</tabpanel>
+<!-- 管理部门 -->
+	 <tabpanel  >
+	 <div align="right">
+		<toolbarbutton id="exportManage" image="/css/default/images/button/dc.gif" style="color:blue" />
+ 	 </div>
+	    <groupbox>
+		<caption>
+			<label value="设置：" />
+		</caption>
+		<separator />
+		<grid>
+			<columns>
+				<column width="20%" align="right" />
+				<column width="30%" />
+				<column width="20%" align="right" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row  >
+					<label value="考核年度：" />
+					<listbox id="yearListGl" mold="select" width="83px"
+					use="org.iti.gh.ui.listbox.YearListbox" />
+					<vbox>
+					<label value="管理部门奖励性绩" />
+					<label value="效工资总额（元）：" />
+					</vbox>
+					<label id="manageTotalAcount"/>
+				</row>
+				<row  >
+				   <label value="四档次人数："  />
+				   <decimalbox id="fourGradePeo" />
+				   <label value="三档次人数：" />
+				   <decimalbox id="threeGradePeo" />
+				</row>
+				<row >
+				   <label value="二档次人数：" />
+				   <decimalbox id="twoGradePeo"/>
+				   <label value="一档次人数："  />
+				   <decimalbox  id="oneGradePeo"/>
+				</row>
+			</rows>
+		</grid>
+		<separator />
+		<grid >
+			<columns>
+				<column width="20%" align="right"/>
+				<column width="80%"/>
+			</columns>
+			<rows>
+			    <row>
+					<label value="选择四档人员："  />
+					<hbox>
+					<textbox id="fourTxt" width="490px" readonly="true" />
+					<space />
+					<toolbarbutton id="chooseManagerPeoFour" image="/css/default/images/common/xz.gif"/>
+					</hbox>
+				</row>
+				<row>
+					<label value="选择三档人员："  />
+					<hbox>
+					<textbox id="threeTxt" width="490px" readonly="true" />
+					<space />
+					<toolbarbutton id="chooseManagerPeoThree" image="/css/default/images/common/xz.gif"/>
+					</hbox>
+				</row>
+				<row>
+					<label value="选择二档人员："  />
+					<hbox>
+					<textbox id="twoTxt" width="490px" readonly="true" />
+					<space />
+					<toolbarbutton id="chooseManagerPeoTwo" image="/css/default/images/common/xz.gif"/>
+					</hbox>
+				</row>
+				<row>
+					<label value="选择一档人员："  />
+					<hbox>
+					<textbox id="oneTxt" width="490px" readonly="true" />
+					<space />
+				    <toolbarbutton id="chooseManagerPeoOne"  image="/css/default/images/common/xz.gif">
+					</toolbarbutton> 
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</groupbox>
+	<separator />
+	<div align="center">
+	<button id="computeGl"  label="开始计算" />
+	</div>
+	<separator />
+	<groupbox> 
+	<caption>
+		<label value="计算结果：" />
+	</caption>
+	<div align="left">
+		<space/>
+		<label value="一个基数额度："/>
+		<label id="perBasicAcountGl" />
+	</div>
+	<separator />
+	<listbox id="reSultGlListbox"  mold="paging" 
+					 rows="5" sclass="new_listbox" >
+		<listhead>
+			<listheader label="序号" width="10%" align="center" />
+			<listheader label="人员编号" width="15%" align="center" />
+			<listheader label="人员姓名" width="20%" align="center" />
+			<listheader label="所在部门"  width="30%" align="center" />
+			<listheader label="所在档次" width="10%" align="center" />
+			<listheader label="绩效工资总额" width="15%" align="center" />
+		</listhead>
+	</listbox>
+	
+	</groupbox>
+	</tabpanel>  
+	<!-- 院长 -->
+	<tabpanel>
+	<div align="right">
+		<toolbarbutton id="exportLeader" image="/css/default/images/button/dc.gif" style="color:blue" />
+ 	<space width="800px"/>
+ 	 </div>
+	<groupbox>
+	   <caption>
+	      <label value="设置" />
+	   </caption>
+	   <separator></separator>
+	   <grid>
+	        <columns>
+	            <column width="20%" align="right"/>
+			    <column width="30%" align="left"/>
+			    <column width="20%" align="right"/>
+			    <column width="30%" align="left"/>
+	        </columns>
+	        <rows>
+	           <row >
+	               <label value="考核年度：" />
+	               <listbox id="yearListLd" mold="select" width="83px" use="org.iti.gh.ui.listbox.YearListbox" />
+	               <vbox>
+	                 <label value="院领导奖励性绩：" />
+	                 <label value="效工资总额（元）：" />
+	               </vbox>
+	               <label id="leaderTotalAcount" />
+	           </row>
+	           <row>
+	              <label value="优秀档次人数：" />
+	              <decimalbox id="yxGradePeo" />
+	              <label value="合格档次人数："  />
+	              <decimalbox id="hgGradePeo" />
+	           </row>
+	        </rows>
+	   </grid>
+	   <separator></separator>
+	   <grid>
+	      <columns>
+	         <column width="20%" align="right"/>
+	         <column width="80%" />
+	      </columns>
+	      <rows>
+	         <row>
+	            <label value="选择优秀档次人员：" />
+	            <hbox>
+	              <textbox id="yxTxt" width="490px" readonly="true"/>
+	              <space />
+	              <toolbarbutton id="chooseLeaderPeoYx" image="/css/default/images/common/xz.gif"/>
+	            </hbox>
+	         </row>
+	         <row>
+	            <label value="选择合格档次人员：" />
+	            <hbox>
+	              <textbox id="hgTxt" width="490px" readonly="true"/>
+	              <space />
+	              <toolbarbutton id="chooseLeaderPeohg" image="/css/default/images/common/xz.gif"/>
+	            </hbox>
+	         </row>
+	      </rows>
+	   </grid>
+	</groupbox>
+	<separator />
+	<div align="center">
+	<button id="computeLd"  label="开始计算" />
+	</div>
+	<separator />
+	<groupbox> 
+	<caption>
+		<label value="计算结果：" />
+	</caption>
+	<div align="left">
+		<space/>
+		<label value="一个基数额度："/>
+		<label id="perBasicAcountLd" />
+	</div>
+	<separator />
+	<listbox id="reSultLdListbox" mold="paging"  rows="5" sclass="new_listbox" >
+	<listhead>
+	     <listheader label="序号" width="10%" align="center"/>
+	     <listheader label="人员编号" width="15%" align="center"/>
+	     <listheader label="人员姓名" width="20%" align="center"/>
+	     <listheader label="所在部门"  width="30%" align="center" />
+	     <listheader label="所在档次" width="10%" align="center"/>
+	     <listheader label="绩效工资总额" width="15%" align="center"/>
+	</listhead>
+	</listbox>
+	</groupbox>
+	</tabpanel>
+	</tabpanels>
+</tabbox>
+</window>
+</zk>

@@ -1,0 +1,67 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="选择获奖成果" border="normal" width="800px" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.kyqk.SelectcgWindow">
+		<panel>
+			<panelchildren>
+				<grid>
+					<columns>
+						<column></column>
+						<column></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row>
+							<label value="成果名称"></label>
+							<textbox id="xmmc"></textbox>
+							<label value="来源"></label>
+							<textbox id="ly"></textbox>
+							<button id="query" label="检索"></button>
+						</row>
+					</rows>
+				</grid>
+
+			</panelchildren>
+		</panel>
+		<panel title="您可能获奖的成果列表" id="cgpanel">
+			<panelchildren>
+				<listbox id="cglist" style="border-bottom-width:0px" sclass="new_listbox"
+					mold="paging" pageSize="10" checkmark="true">
+					<listhead>
+						<listheader label="序号" width="10%"
+							align="center" />
+						<listheader label="项目名称" width="25%"
+							align="center" />
+							<!--  
+						<listheader label="项目来源" width="15%"
+							align="center" />
+							-->
+						<listheader label="获奖人" width="20%"
+							align="center" />
+						<listheader label="获奖时间" width="15%"
+							align="center" />
+						<listheader label="获奖名称/等级" width="20%"
+							align="center" />
+						<listheader label="填写人" width="10%"
+							align="center" />
+					</listhead>
+				</listbox>
+				<hbox pack="center" width="100%">
+					<hbox>
+						<button id="submit" label="确定"></button>
+						<button id="close" label="关闭"></button>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+		<panel id="exception"  visible="false">
+			<panelchildren>
+				<hbox pack="center" width="100%">
+					<hbox>
+						<label value="没有符合条件的获奖成果,请尝试选择其他条件......" style="font-family:'宋体';font-size:14px"></label>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

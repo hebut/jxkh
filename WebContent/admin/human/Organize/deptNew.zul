@@ -1,0 +1,49 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="增加组织机构" border="normal" width="500px" closable="true" use="org.iti.human.ld.OrganizeNewWindow">
+		<grid>
+			<columns>
+				<column width="40%" />
+				<column width="60%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="上级部门" />
+					<label id="pdeptLabel"></label>
+				</row>
+				<row>
+					<label value="部门名称 " />
+					<hbox>
+						<textbox id="dname" constraint="no empty" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="部门编号 " />
+					<hbox>
+						<textbox id="dnumber" constraint="no empty" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row id="descRow">
+					<label value="部门描述" />
+					<textbox id="ddesc" />
+				</row>
+				<row>
+					<label value="类型" />
+					<radiogroup>
+						<radio id="danwei" label="单位" checked="true" />
+						<radio id="bumen" label="部门" />
+					</radiogroup>
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="重填" id="reset" />
+				<button label="返回" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

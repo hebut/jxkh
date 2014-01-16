@@ -1,0 +1,60 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window border="normal" closable="true" width="100%"
+		use="org.iti.wp.tjwd.TjwdWindow" style="text-align:left">
+		<panel title="文档提交时间" collapsible="true">
+			<panelchildren>
+				<listbox id="rclist">
+					<listhead>
+
+						<listheader label="序号" align="center"
+							width="10%" />
+						<listheader label="评审类型阶段" align="center"
+							width="30%" />
+						<listheader label="评审开始时间" align="center"
+							width="30%" />
+						<listheader label="评审结束时间" align="center"
+							width="30%" />
+					</listhead>
+
+				</listbox>
+			</panelchildren>
+		</panel>
+		<separator height="20"></separator>
+		<panel title="提交文档列表" id="tjlist" width="100%" border="normal"
+			collapsible="true">
+			<caption></caption>
+			<panelchildren>
+				<listbox id="wdlist">
+					<listhead>
+						<listheader label="序号" width="5%"
+							align="center" />
+							<listheader label="阶段名称" width="15%"
+							align="center" />
+							<listheader label="开始时间" width="15%"
+							align="center" />
+						<listheader label="结束时间" width="15%"
+							align="center" />
+							<listheader label="评审类别" width="10%"
+							align="center" />
+						<listheader label="提交文档" width="20%"
+							align="center" />
+						<listheader label="提交状态" width="20%"
+							align="center" />
+					</listhead>
+				</listbox>
+				<groupbox>
+					<caption>
+						<label value="[提示]"></label>
+					</caption>
+					1.如未提交文档，则提交状态显示“未提交”;
+					<separator></separator>
+					2.若已提交文档，则提交状态显示图片
+					<image src="/admin/image/bysj/save.jpg"></image>
+					,点击此按钮可下载文档。
+				</groupbox>
+			</panelchildren>
+		</panel>
+
+	</window>
+</zk>

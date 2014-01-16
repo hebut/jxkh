@@ -1,0 +1,56 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="编辑通告" width="80%" border="normal" closable="true" style="text-align:left" use="org.iti.xypt.personal.notice.NoticeEditWindow">
+		<grid width="100%">
+			<columns>
+				<column width="65px" />
+			</columns>
+			<rows>
+				<row spans="2">
+					<label value="注意: * 为必填项,支持10MB内多附件！" style="color:red" width="50px" />
+				</row>
+				<row>
+					<label value="标题:" />
+					<hbox>
+						<textbox id="mlSubject" width="520px" />
+						<label style="color:red" value="*" />
+						<label id="help1" visible="false" value="请填写标题." />
+					</hbox>
+				</row>
+				<row>
+					<label value="关键词:" />
+					<hbox>
+						<combobox id="keyword"></combobox>
+					</hbox>
+				</row>
+				<row id="roleRow">
+					<label value="通知对象 :" width="50px" />
+					<label id="nTarget"></label>
+				</row>
+				<row>
+					<label value="正文:" width="50px" />
+					<hbox width="100%">
+						<fckeditor height="270px" id="mlContent" width="100%" toolbarSet="Basic" />
+					</hbox>
+				</row>
+				<row id="rowFile" visible="false">
+					<label value="附件列表"></label>
+					<hbox>
+						<listbox id="upList" mold="select" rows="1"></listbox>
+						<button label="删除" id="deUpload" />
+					</hbox>
+				</row>
+				<row spans="2" align="center">
+					<hbox>
+						<button id="save" label="发送" style="font-size:13;" />
+						<space width="3px"></space>
+						<button id="upFile" label="上传附件"></button>
+						<space width="3px"></space>
+						<button id="reSend" label="重置" style="font-size:13" />
+						<button id="close" label="关闭" style="font-size:13" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

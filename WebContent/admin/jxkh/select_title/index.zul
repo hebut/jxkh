@@ -1,0 +1,37 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" border="normal" width="768px"
+			use="org.iti.jxkh.selecttitle.SelectTitleWindow">
+		<div align="right">
+			<toolbarbutton id="saveBn" image="/css/sat/actSave.gif"/>
+		</div>
+		<hbox>
+			<panel width="350px" height="500px" title="待选标题">
+				<panelchildren>
+					<tree id="titleTree" width="330px" height="480px">
+					</tree>
+				</panelchildren>
+			</panel>
+			<div width="30px" align="center">
+				<button id="addBn" label="添加" image="/css/img/add.png"/>
+				<separator height="30px"/>
+				<button id="deleteBn" label="删除" image="/css/img/del.gif"/>
+			</div>
+			<panel width="350px" height="500px">
+				<caption>
+					<button id="sortBn" label="排序"/>
+				</caption>
+				<panelchildren>
+					<listbox id="titleListbox" sclass="new_listbox" width="320px" height="470px" checkmark="true" multiple="true">
+						<listhead>
+							<listheader width="8%" align="center"/>
+							<listheader width="12%" align="center" label="序号"/>
+							<listheader width="40%" align="center" label="标题名"/>
+							<listheader width="40%" align="center" label="父标题名"/>
+						</listhead>
+					</listbox>
+				</panelchildren>
+			</panel>
+		</hbox>
+	</window>
+</zk>

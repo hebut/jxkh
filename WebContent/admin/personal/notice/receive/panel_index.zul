@@ -1,0 +1,19 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window width="99%" style="text-align:left" use="org.iti.xypt.personal.notice.NoticeReceiveWindow" height="100%">
+		<panel title="查看通知" height="100%">
+			<caption></caption>
+			<panelchildren>
+				<listbox id="noticeList" mold="paging" pageSize="20" width="100%">
+					<listhead>
+						<listheader width="2%" align="left"></listheader>
+						<listheader label="状态" width="8%" align="center"></listheader>
+						<listheader label="标题" width="60%" style="padding-left: 12px;" />
+						<listheader label="来自" width="20%" />
+						<listheader label="时间" width="10%" align="center" />
+					</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

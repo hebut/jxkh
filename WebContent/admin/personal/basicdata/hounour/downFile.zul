@@ -1,0 +1,22 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="下载相关附件" border="normal" sclass="newin" height="200px" width="200px" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.qtqk.DownFileWindow">
+	<grid>
+		<columns>
+			<column align="right" width="30%"/>
+			<column align="left" width="70%"/>
+		</columns>
+		<rows>
+			<row valign="center">
+				<listbox mold="select" rows="1" width="200px" id="fileList"/>
+				<toolbarbutton id="download" image="/css/default/images/button/xz_.gif"></toolbarbutton>
+			</row>
+		</rows>
+	</grid>
+	<separator/>
+	<div align="center">
+		<toolbarbutton id="close" image="/css/img/actquit.gif" />
+	</div>
+</window>
+</zk>

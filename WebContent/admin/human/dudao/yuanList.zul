@@ -1,0 +1,22 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  border="normal" use="org.iti.human.ld.DudaoYuanListWindow" width="60%"
+	title="选择所负责的学院" closable="true">
+	<panel>
+		<panelchildren>
+			<listbox checkmark="true" multiple="true" id="xueyuan">
+				<listhead >
+					<listheader width="20%" align="center"/>
+					<listheader label="学院" id="yuan" align="center"/>
+				</listhead>
+			</listbox>
+			<hbox align="center" width="100%" pack="center">
+				<hbox>
+					<button label="选择" id="submit"/>
+					<button label="返回" id="close"/>
+				</hbox>
+			</hbox>
+		</panelchildren>
+	</panel>
+</window>
+</zk>

@@ -1,0 +1,33 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="查看审核意见" border="normal" width="500px"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.CkshyjWindow" closable="true">
+		<grid>
+			<columns>
+				<column align="center" width="40%"></column>
+				<column width="60%"></column>
+			</columns>
+			<rows>
+				<row>
+					<label id="sxmc" style="letter-spacing:2px"></label>
+					<label id="xmmc"></label>
+				</row>
+				<row>
+					<label value="审核意见" ></label>
+					<label id="reason" width="180px" height="50px"></label>
+				</row>
+				<row>
+					<label value="审核人"  ></label>
+					<label id="audituser"></label>
+				</row>
+				<row spans="2">
+					<hbox width="100%" pack="center">
+						<hbox>
+							<button id="close" label="关闭"></button>
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

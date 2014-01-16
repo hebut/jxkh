@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.iti.gh.entity">
+  <class name="org.iti.gh.entity.GH_PROJECTSOURCE" table="GH_PROJECTSOURCE" schema="dbo">
+  	<id name="psId" type="java.lang.Long">
+  		<column name="PS_ID" precision="18" scale="0" />
+  		<generator class="com.uniwin.framework.common.idgenerator.WebkeyIdGenerator" />
+  	</id>
+  	<property name="psName" type="java.lang.String">
+  		<column name="PS_NAME" precision="18" scale="0" />
+  	</property>
+  </class>
+</hibernate-mapping>

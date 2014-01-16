@@ -1,0 +1,119 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="newsauditEditWindow" border="normal" width="760px" style="text-align:left" use="org.iti.xypt.personal.infoCollect.newsaudit.NewsauditEditWindow" >
+<caption image="/css/img/win-ico.gif">
+<toolbar align="end">
+<toolbarbutton  image="/images/content/1/sh.gif"
+					hoverImage="/images/content/2/sh.gif"  id="auditnews"/>
+<toolbarbutton  image="/css/img/delAct.gif"
+					hoverImage="/css/img/delAct1.gif"  id="deletenews"/>
+				<!--<button label="界面展示" id="show"/>-->
+</toolbar>
+</caption>
+
+<hbox>
+<label value="采集起止时间:"/>
+<datebox  width="80px"  id="begintime" cols="13" format="yyyy-MM-dd"/>
+<label value="-至-"/>
+<datebox  width="80px" id="endtime" cols="13" format="yyyy-MM-dd"/>
+
+<space width="30px"/>
+<label value="搜索关键字:"/>
+ <textbox  width="100px" id="keys"/>
+ <space/>
+ <listbox mold="select" rows="1" width="80px">
+<listitem  label="标题" id="title" selected="true"/>
+<listitem  label="内容" id="content"/>
+</listbox>
+<space  width="30px"/>
+<label  value="来源:"/>
+<textbox  width="120px" id="source"/>
+</hbox>
+<div align="center">
+<button label="查 询"   id="searchnews"/>
+<button label="重 置" id="resetnews"/>
+</div>
+<separator/>
+<tabbox  width="100%">
+<tabs style="text-align:left">
+<tab label="原始信息"  id="OrinfoTab"/>
+<tab label="撰稿信息" id="writeTab"/>
+<tab label="待审信息" id="auditTab"/>
+<tab label="已阅信息" id="readTab"/>
+<tab label="已发布信息" id="pubTab"/>
+</tabs>
+<tabpanels>
+<tabpanel>
+<listbox id="orinfolistbox" fixedLayout="true" multiple="true" checkmark="true" mold="paging" rows="11" pageSize="11"  >
+
+		<listhead>
+		 <listheader width="3%" />	
+			<listheader label="序号" width="5%" align="center"/>
+			<listheader label="标题" />
+			<listheader label="发布时间" width="18%" align="center"/>
+			<listheader label="来源" width="12%" align="center"/>
+			<listheader label="采集时间" width="18%" align="center"/>
+		</listhead>	
+	</listbox>	
+   </tabpanel> 
+   <tabpanel>
+<listbox id="writeListbox" fixedLayout="true" multiple="true" checkmark="true" mold="paging" rows="11" pageSize="11"  >
+		<listhead>
+		<listheader width="3%" />	
+			<listheader label="序号" width="5%" align="center"/>
+			<listheader label="标题" />
+			<listheader label="发布时间" width="18%" align="center"/>
+			<listheader label="来源" width="12%" align="center"/>
+			<listheader label="撰稿人" width="7%" align="center" />
+			<listheader label="点击次数" width="8%" align="center"/>
+			<listheader label="置顶" width="10%" align="center" />
+		</listhead>
+	</listbox>	
+   </tabpanel>
+<tabpanel>
+<listbox id="auditListbox" fixedLayout="true" multiple="true" checkmark="true" mold="paging" rows="11" pageSize="11"  >
+		<listhead>
+		<listheader width="3%" />	
+			<listheader label="序号" width="5%" align="center"/>
+			<listheader label="标题" />
+			<listheader label="发布时间" width="18%" align="center"/>
+			<listheader label="来源" width="12%" align="center"/>
+			<listheader label="撰稿人" width="7%" align="center" />
+			<listheader label="点击次数" width="8%" align="center"/>
+			<listheader label="置顶" width="10%" align="center" />
+		</listhead>
+	</listbox>	
+   </tabpanel>
+<tabpanel>  
+
+<listbox id="readListbox" fixedLayout="true" multiple="true" checkmark="true" rows="11" mold="paging" pageSize="11">
+		<listhead>
+		<listheader width="3%" />	
+			<listheader label="序号" width="5%" align="center"/>
+			<listheader label="标题" />
+			<listheader label="发布时间" width="18%" align="center"/>
+			<listheader label="来源" width="12%" align="center"/>
+			<listheader label="撰稿人" width="7%" align="center" />
+			<listheader label="点击次数" width="8%" align="center"/>
+			<listheader label="置顶" width="10%" align="center" />
+		</listhead>
+	</listbox>	
+  </tabpanel>
+<tabpanel> 
+<listbox id="pubListbox" fixedLayout="true" multiple="true" checkmark="true" rows="11" mold="paging" pageSize="11" >
+		<listhead>
+		<listheader width="3%" />	
+			<listheader label="序号" width="5%" align="center"/>
+			<listheader label="标题" />
+			<listheader label="发布时间" width="18%" align="center"/>
+			<listheader label="来源" width="12%" align="center"/>
+			<listheader label="撰稿人" width="7%" align="center" />
+			<listheader label="点击次数" width="8%" align="center"/>
+			<listheader label="置顶" width="10%" align="center"/>
+		</listhead>
+	</listbox>	
+   </tabpanel>
+</tabpanels>
+</tabbox>
+</window>
+</zk>

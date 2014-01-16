@@ -1,0 +1,24 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="审核意见" border="normal" width="400px" height="365px" sclass="newin" closable="true"
+use="org.iti.jxkh.audit.report.BothAdviceWin">
+	<groupbox id="b">
+		<caption>
+			<label id="bAdviceGroupbox" value="业务办反馈意见"/>
+		</caption>
+		<separator/>
+		<textbox id="bAdvice" readonly="true" width="98%" rows="5" height="100px" ></textbox>
+	</groupbox> 
+	<separator />
+	<groupbox id="d" >
+		<caption>
+			<label id="dAdviceGroupbox" value="部门反馈意见"/>
+		</caption>
+		<separator/>
+		<textbox id="dAdvice" readonly="true" width="98%" rows="5" height="100px" ></textbox>
+	</groupbox> 
+	<div align="center">
+		<toolbarbutton  id="close" image="/css/default/images/button/gb.gif"/>
+	</div>
+</window>
+</zk>

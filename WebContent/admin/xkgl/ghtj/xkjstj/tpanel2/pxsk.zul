@@ -1,0 +1,35 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="new page title"   border="normal" use="org.iti.gh.ghtj.tpanel2.PxskWindow" closable="true" width="80%">
+<listbox id="px" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%" align="center" label="序号"/>
+		
+		<listheader width="25%" align="center" label="名称"/>
+		<listheader width="25%" align="center" label="主办单位"/>
+		<listheader width="25%" align="center" label="获得奖项"/>
+	<!-- 	<listheader width="10%" align="center" label="个人作用"/> -->
+	    <listheader width="10%" align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+<listbox id="sk" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%" align="center" label="序号"/>
+		<listheader width="35%" align="center" label="课程名称"/>
+		<listheader width="30%" align="center" label="专业"/>
+		<listheader width="15%" align="center" label="学时"/>
+		<listheader width="15%" align="center" label="教师名称"/>
+	</listhead>
+</listbox>
+<listbox id="zs" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="10%" align="center" label="序号"/>
+		<listheader width="15%" align="center" label="教师名称"/>
+		<listheader width="10%" align="center" label="年份"/>
+		<listheader width="10%" align="center" label="招生人数"/>
+		<listheader width="55%" align="center" label="学生名单"/>
+	</listhead>
+</listbox>
+</window>
+</zk>

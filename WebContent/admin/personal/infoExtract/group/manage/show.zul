@@ -1,0 +1,11 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="群组成员" border="normal" width="700px" height="400px" closable="true" use="org.iti.xypt.personal.group.MemberWindow">
+		<listbox>
+			<listhead>
+				<listheader />
+			</listhead>
+		</listbox>
+	</window>
+</zk>

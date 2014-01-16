@@ -1,0 +1,40 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="new page title" border="normal" use="org.iti.gh.ghtj.tpanel2.GhxmWindow" closable="true" width="80%">
+<listbox id="kjxm" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%" align="center" label="序号"/>
+		<listheader width="30%" align="center" label="名称"/>
+		<listheader width="25%" align="center" label="来源"/>
+		<listheader width="10%" align="center" label="开始时间"/>
+		<listheader width="10%" align="center" label="结束时间"/>
+		<listheader width="5%"  align="center" label="经费"/>
+		<listheader width="15%" align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+<listbox id="kydq" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%" align="center" label="序号"/>
+		<listheader width="30%"  align="center" label="名称"/>
+		<listheader width="25%" align="center" label="来源"/>
+		<listheader width="10%" align="center" label="开始时间"/>
+		<listheader width="10%" align="center" label="结束时间"/>
+		<listheader  width="5%"  align="center" label="经费"/>
+	<!-- 	<listheader width="8%" align="center" label="承担任务"/> -->
+		<listheader width="15%"  align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+<listbox id="jydq" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%" align="center" label="序号"/>
+		<listheader width="30%"  align="center" label="名称"/>
+		<listheader width="10%" align="center" label="开始时间"/>
+		<listheader width="10%" align="center" label="结束时间"/>
+		<listheader width="5%"  align="center" label="经费"/>
+<!-- 		<listheader width="8%" align="center" label="个人作用"/> -->
+		<listheader width="15%"  align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+</window>
+</zk>

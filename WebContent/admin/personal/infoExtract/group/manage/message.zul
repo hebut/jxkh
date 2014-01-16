@@ -1,0 +1,47 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="群发消息" width="700px" border="normal" style="text-align:left" closable="true" use="org.iti.xypt.personal.group.MessageWindow">
+		<grid width="100%">
+			<columns>
+				<column width="80px" align="center" />
+			</columns>
+			<rows>
+				<row>
+					<label value="标  题" />
+					<hbox align="center">
+						<textbox id="mlSubject" width="520px" />
+						<label style="color:red" value="*" />
+					</hbox>
+				</row>
+				<row>
+					<label value="关键词" />
+					<hbox>
+						<combobox id="keyword" />
+					</hbox>
+				</row>
+				<row>
+					<label value="正  文" width="50px" />
+					<hbox width="100%">
+						<fckeditor height="270px" id="mlContent" width="100%" toolbarSet="Basic" />
+					</hbox>
+				</row>
+				<row id="rowFile" visible="false">
+					<label value="附件列表" />
+					<hbox>
+						<listbox id="upList" mold="select" rows="1" />
+						<button label="删除" id="deUpload" />
+					</hbox>
+				</row>
+				<row spans="2" align="center">
+					<hbox>
+						<button id="save" label="发送" style="font-size:13;" />
+						<space width="3px" />
+						<button id="upFile" label="上传附件" />
+						<space width="3px" />
+						<button id="reSend" label="重置" style="font-size:13" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

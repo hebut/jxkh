@@ -1,0 +1,304 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="项目统计" border="normal"  width="100%" use="org.iti.projectmanage.science.statistic.StatisticWindow"> 
+	<caption>
+		<label value="年度:"	/>
+			<listbox  mold="select" id="yearlist" width="80px" use="org.iti.gh.ui.listbox.YearListbox"/>					
+			<space/>
+			<label value="项目名称:"/>
+			<listbox  mold="select" rows="1"   id="projectlist">
+				<listitem label="请先选择年份" selected="true"/>
+			</listbox>	
+			<toolbarbutton  image="/css/default/images/common/tj.gif" id="search"/>
+			<toolbarbutton  image="/css/sat/dc.gif" id="expert" />
+	</caption>
+	<tabbox>
+		<tabs>
+			<tab label="纵向项目统计" id="zx"/>
+			<tab label="横向项目统计"  id="hx"/>
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<tabbox  orient="vertical">
+					<tabs  width="80px"  >
+						<tab label="基本信息"/>
+						<tab label="发表论文"/>
+						<tab label="著作及专利"/>
+						<tab label="获奖情况"/>
+						<tab label="交流与合作"/>
+					</tabs>
+					<tabpanels>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							        <auxheader label="项目级别" colspan="3" align="center"/> 
+							         <auxheader label="项目进展" colspan="3" align="center"/> 						  
+							    </auxhead> 
+
+							    <columns> 
+							        <column label="国家级" align="center"/><column label="省部级" align="center"/><column label="其它" align="center"/> 
+							        <column label="申请中" align="center"/> <column label="在研" align="center"/><column label="已完成" align="center"/>
+							      
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label  id="level1"/><label  id="level2"/><label  id="level3"/> 
+							        	<label  id="stage1"/><label  id="stage2"/> <label  id="stage3"/> 						 
+							        </row> 
+							    </rows> 
+							</grid>
+
+						</tabpanel>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							        <auxheader label="会议论文" colspan="4" align="center"/> 
+							        <auxheader label="期刊论文" colspan="6" align="center"/> 
+							
+							    </auxhead> 
+							
+							    <columns> 
+							        <column label="SCI" align="center"/><column label="EI" align="center"/>
+							        <column label="ISTP" align="center"/> <column label="其它" align="center"/> 
+							         <column label="一般期刊" align="center"/><column label="核心期刊" align="center"/>
+							       <column label="SCI" align="center"/><column label="EI" align="center"/>
+							       <column label="ISTP" align="center"/> <column label="其它" align="center"/> 
+							       
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label  id="hysci1"/><label  id="hyei1"/><label  id="hyistp1"/> <label  id="hyother1"/> 
+							        	<label  id="yiban1"/><label id="hexin1"/><label  id="qksci1"/> <label  id="qkei1"/>
+							        	<label  id="qkistp1"/> <label  id="qkother1"/>
+							        </row> 
+							    </rows> 
+							</grid>
+
+						</tabpanel>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							         <auxheader label="软件著作权" colspan="1" align="center"/> 
+							          <auxheader label="发明专利" colspan="3" align="center"/> 
+							    </auxhead> 
+							
+							    <columns> 
+							        <column label="著作权" align="center"/>
+							        <column label="发明" align="center"/><column label="实用新型" align="center"/><column label="外观设计" align="center"/>
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label id="soft1"/> <label id="faming1"/> <label id="shiyong1"/> <label id="waiguan1"/>
+							        </row> 
+							    </rows> 
+							</grid>
+
+						</tabpanel>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							        <auxheader label="奖励级别" colspan="3" align="center"/> 
+							    </auxhead> 
+							
+							    <columns> 
+							        <column label="国家级" align="center"/><column label="省部级" align="center"/>
+							       <column label="其它" align="center"/> 
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label id="gjjl1"/><label id="sbjl1"/><label id="qtjl1"/> 
+							        </row> 
+							    </rows> 
+							</grid>
+						</tabpanel>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							        <auxheader label="国际会议" colspan="3" align="center"/> 
+							         <auxheader label="国内会议" colspan="3" align="center"/> 
+							          <auxheader label="讲学" colspan="2" align="center"/> 
+							           <auxheader label="合作项目" colspan="2" align="center"/> 
+							    </auxhead> 
+							
+							    <columns> 
+							        <column label="主持" align="center"/><column label="参加" align="center"/><column label="独立" align="center"/>
+							         <column label="主持" align="center"/><column label="参加" align="center"/><column label="独立" align="center"/>
+							        <column label="国际讲学" align="center"/> <column label="国内讲学" align="center"/> 
+							         <column label="国际合作" align="center"/> <column label="国内合作" align="center"/> 
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label id="gjhyzc1"/><label id="gjhycj1"/><label  id="gjhydl1"/> <label id="gnhyzc1"/>
+							        	<label id="gnhycj1"/><label id="gnhydl1"/><label id="gjjx1"/> <label id="gnjx1"/>
+							        	<label id="gjhz1"/><label id="gnhz1"/>
+							        </row> 
+							    </rows> 
+							</grid>
+						</tabpanel>
+					</tabpanels>
+				</tabbox>
+			</tabpanel>
+			<tabpanel>
+				<tabbox  orient="vertical">
+					<tabs  width="80px"  >
+						<tab label="基本信息"/>
+						<tab label="发表论文"/>
+						<tab label="著作及专利"/>
+						<tab label="获奖情况"/>
+						<tab label="交流与合作"/>
+					</tabs>
+					<tabpanels>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							        <auxheader label="项目级别" colspan="3" align="center"/> 
+							         <auxheader label="项目进展" colspan="3" align="center"/> 
+							    </auxhead> 
+							
+							    <columns> 
+							        <column label="国家级" align="center"/>
+							        <column label="省部级" align="center"/>
+							        <column label="其它" align="center"/> 
+							        <column label="申请中" align="center"/>
+							        <column label="在研" align="center"/>
+							        <column label="已完成" align="center"/>						  
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label id="level21"/>
+							        	<label id="level22"/>
+							        	<label id="level23"/> 
+							        	<label id="stage21"/>
+							        	<label id="stage22"/> 
+							        	<label id="stage23"/> 
+							        </row> 
+							    </rows> 
+							</grid>
+	
+						</tabpanel>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							        <auxheader label="会议论文" colspan="4" align="center"/> 
+							        <auxheader label="期刊论文" colspan="6" align="center"/> 
+							
+							    </auxhead> 
+							
+							    <columns> 
+							        <column label="SCI" align="center"/>
+							        <column label="EI" align="center"/>
+							        <column label="ISTP" align="center"/> 
+							        <column label="其它" align="center"/> 
+							         <column label="一般期刊" align="center"/>
+							         <column label="核心期刊" align="center"/>
+							       <column label="SCI" align="center"/>
+							       <column label="EI" align="center"/>
+							       <column label="ISTP" align="center"/> 
+							       <column label="其它" align="center"/> 
+							       
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label  id="hysci2"/>
+							        	<label  id="hyei2"/>
+							        	<label  id="hyistp2"/> 
+							        	<label  id="hyother2"/> 
+							        	<label  id="yiban2"/>
+							        	<label id="hexin2"/>
+							        	<label  id="qksci2"/> 
+							        	<label  id="qkei2"/>
+							        	<label  id="qkistp2"/> 
+							        	<label  id="qkother2"/>
+							        </row> 
+							    </rows> 
+							</grid>
+	
+						</tabpanel>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							         <auxheader label="软件著作权" colspan="1" align="center"/> 
+							          <auxheader label="发明专利" colspan="3" align="center"/> 
+							    </auxhead> 
+							
+							    <columns> 
+							        <column label="著作权" align="center"/>
+							        <column label="发明" align="center"/>
+							        <column label="实用新型" align="center"/>
+							        <column label="外观设计" align="center"/>
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label id="soft2"/> 
+							        	<label id="faming2"/> 
+							        	<label id="shiyong2"/> 
+							        	<label id="waiguan2"/>
+							        </row> 
+							    </rows> 
+							</grid>
+	
+						</tabpanel>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							        <auxheader label="奖励级别" colspan="3" align="center"/> 
+							    </auxhead> 
+							
+							    <columns> 
+							    	<column label="国家级" align="center"/>
+							        <column label="省部级" align="center"/>
+							        <column label="其它" align="center"/> 
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label id="gjjl2"/>
+							        	<label id="sbjl2"/>
+							        	<label id="qtjl2"/> 
+							        </row> 
+							    </rows> 
+							</grid>
+						</tabpanel>
+						<tabpanel>
+							<grid width="100%"> 
+							    <auxhead> 
+							        <auxheader label="国际会议" colspan="3" align="center"/> 
+							        <auxheader label="国内会议" colspan="3" align="center"/> 
+							        <auxheader label="讲学" colspan="2" align="center"/> 
+							         <auxheader label="合作项目" colspan="2" align="center"/> 
+							    </auxhead> 
+							
+							    <columns> 
+							        <column label="主持" align="center"/>
+							        <column label="参加" align="center"/>
+							        <column label="独立" align="center"/>
+							        <column label="主持" align="center"/>
+							        <column label="参加" align="center"/>
+							        <column label="独立" align="center"/>
+							        <column label="国际讲学" align="center"/> 
+							        <column label="国内讲学" align="center"/> 
+							        <column label="国际合作" align="center"/> 
+							        <column label="国内合作" align="center"/> 
+							    </columns> 
+							    <rows> 
+							        <row> 
+							        	<label id="gjhyzc2"/>
+							        	<label id="gjhycj2"/>
+							        	<label  id="gjhydl2"/> 
+							        	<label id="gnhyzc2"/>
+							        	<label id="gnhycj2"/>
+							        	<label id="gnhydl2"/>
+							        	<label id="gjjx2"/> 
+							        	<label id="gnjx2"/>
+							        	<label id="gjhz2"/>
+							        	<label id="gnhz2"/>
+							        </row> 
+							    </rows> 
+							</grid>
+						</tabpanel>
+						</tabpanels>
+					</tabbox>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+</window>
+</zk>

@@ -1,0 +1,53 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="调整学生批次" border="normal" closable="true" width="685px" use="org.iti.bysj.xuanti.xzr.szxspc.EditpcWindow">
+		<grid>
+			<columns>
+				<column align="center" />
+			</columns>
+			<rows>
+				<row>
+					<hbox>
+						<panel width="300px" border="normal" title="科研项目所有列表">
+							<panelchildren>
+								<listbox id="listbox1" checkmark="true" multiple="true" height="400px" rows="500">
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="项目编号" width="35%" sort="auto(kyId)" />
+										<listheader label="项目名称" width="65%" sort="auto(kyMc)" />
+										</listhead>
+								</listbox>
+							</panelchildren>
+						</panel>
+						<space />
+						<vbox>
+							<separator spacing="180px" />
+							<button id="add" label="&lt;&lt;" height="15px" />
+							<separator />
+							<button id="delete" label="&gt;&gt;" />
+						</vbox>
+						<space />
+						<panel width="300px" border="normal" title="项目资助列表">
+							<panelchildren>
+								<listbox id="listbox2" checkmark="true" multiple="true" height="400px" rows="500">
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="项目编号" width="35%" sort="auto(kyId)" />
+										<listheader label="项目名称" width="65%" sort="auto(kyMc)" />
+									</listhead>
+								</listbox>
+							</panelchildren>
+						</panel>
+					</hbox>
+				</row>
+				<row>
+					<hbox>
+						<button id="submit" label="保存当前分批" />
+						<space spacing="10px" />
+						<button id="close" label="取消分批操作" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

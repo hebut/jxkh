@@ -1,0 +1,18 @@
+<zk>
+	<window border="normal" title="运行日志" style="text-align:left" use="com.uniwin.framework.ui.parameter.RunLogWindow">
+		<caption>
+			<toolbar align="end">
+				<button label="删除" id="delete" />
+			</toolbar>
+		</caption>
+		<listbox id="fileList" mold="paging" pageSize="12" checkmark="true" multiple="true">
+			<listhead>
+				<listheader label="日志文件" sort="auto" />
+				<listheader label="文件大小" width="10%" align="right" sort="auto" />
+				<listheader label="最后修改日期" width="25%" align="center" sort="auto" />
+				<listheader label="下载" width="10%" align="center" />
+			</listhead>
+		</listbox>
+	</window>
+	<style>.comb_text{ } .comb_text td{ padding-left:8px; }</style>
+</zk>

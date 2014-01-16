@@ -1,0 +1,34 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  style="text-align:left" id="jxprojectlist"   border="false" width="100%"  use="org.iti.projectmanage.teach.member.ProjectListWindow">
+	<div  id="jxplist"  width="100%" > 
+	<listbox id="jxproject"  paginal="${xmlistPaging}"  multiple="true" style="border-bottom-width:0px" sclass="new_listbox">
+		<listhead style="border-bottom-width:0px">
+			
+			<listheader label="序号" width="5%" align="center"/>
+			<listheader label="项目名" width="25%" style="text-align:center" />
+			<listheader label="项目来源" width="20%" style="text-align:center" />
+			<listheader label="负责人" width="10%" align="center"/>
+			<listheader label="本人贡献排名" width="12%" align="center"/>
+			<listheader label="项目成员" width="20%" align="center"/>
+			<listheader label="操作" width="8%" align="center"/>
+		</listhead>			
+	</listbox>
+	<paging id="jxlistPaging" zclass="z-paging"  pageSize="10" detailed="true"/>
+	<space height="10px"/>
+	<groupbox visible="false">
+				<caption>
+					<label style="color:red" value="[提示]" />
+				</caption>
+				<vbox>
+					<separator spacing="1px" />
+					<separator spacing="1px" />
+					<label pre="true" value="1、点击项目名称或操作列的按钮均可查看项目成员信息" />
+					<label pre="true" value="2、项目成员一栏按贡献排序显示" />
+					<label pre="true" value="3、本人贡献排名为登录用户的贡献排名" />
+				</vbox>
+			</groupbox>
+	</div>
+	
+</window>
+</zk>

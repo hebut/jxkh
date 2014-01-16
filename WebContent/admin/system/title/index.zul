@@ -1,0 +1,8 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<panel apply="com.uniwin.framework.ui.title.TitleTreeComposer" id="titlePanel">
+		<panelchildren>
+			<tree id="titleTree" zclass="z-dottree" height="600px" />
+		</panelchildren>
+	</panel>
+</zk>

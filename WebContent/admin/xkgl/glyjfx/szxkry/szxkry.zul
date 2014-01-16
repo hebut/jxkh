@@ -1,0 +1,60 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window use="org.iti.gh.szxkry.SelteaWindow" width="80%" closable="true" border="normal" >
+		<borderlayout width="100%" height="450px">
+			<west size="200px" id="westPanel">
+				<tree zclass="z-dottree" rows="20" width="100%" id="westTree">
+					<!--<treecols>
+						<treecol width="85%">
+						<label value="单位"></label>
+						</treecol>
+						<treecol width="15%">
+						<label value="人数"></label>
+						</treecol>
+						</treecols>-->
+				</tree>
+			</west>
+			<center flex="true">
+				<panel title="管理" framable="true" id="userPanel">
+					<caption></caption>
+					<panelchildren>
+						<grid style="border:0px">
+							<rows>
+								<row style="padding:0;border-width:medium 0px 0px">
+									<hbox width="100%" pack="center">
+										<hbox>
+											<hbox align="center">
+												<label value="姓名："></label>
+												<textbox id="nameSearch"></textbox>
+											</hbox>
+											<separator width="10px"></separator>
+											<hbox align="center">
+												<label value="教师号："></label>
+												<textbox id="tnoSearch"></textbox>
+											</hbox>
+											<button id="search" label="查询"></button>
+										</hbox>
+									</hbox>
+								</row>
+							</rows>
+						</grid>
+						<listbox id="leaderlist" checkmark="true" multiple="true" mold="paging" pageSize="12">
+							<listhead>
+								<listheader label="序号" width="10%" align="center" />
+								<listheader label="教师号" width="15%" align="center" sort="auto(thId)" />
+								<listheader label="姓名" width="15%" align="center" sort="auto(user.kuName)" />
+								<listheader id="gradeThrLabel" width="30%" align="center" sort="auto(user.xiDept)" />
+								<listheader id="gradeTwoLabel" width="30%" align="center" sort="auto(user.yuDept)" />
+							</listhead>
+						</listbox>
+						<hbox width="100%" pack="center">
+							<hbox>
+								<button label="选择" id="submit"></button>
+							</hbox>
+						</hbox>
+					</panelchildren>
+				</panel>
+			</center>
+		</borderlayout>
+	</window>
+</zk>

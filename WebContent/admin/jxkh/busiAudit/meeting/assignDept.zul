@@ -1,0 +1,28 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="指定绩分归属部门" border="normal" sclass="newin"
+		width="300px" height="125px" closable="true"
+		use="org.iti.jxkh.business.meeting.AssignDeptWindow">
+		<grid>
+			<columns>
+				<column align="right" width="35%" />
+				<column width="65%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="绩分归属部门：" />
+					<listbox mold="select" rows="1" width="95%"
+						id="deptListbox" />
+				</row>
+			</rows>
+		</grid>
+		<separator />
+		<div align="center" width="100%">
+			<toolbarbutton id="save"
+				image="/css/default/images/button/actSave.gif" />
+			<space />
+			<toolbarbutton id="close"
+				image="/css/default/images/button/actquit.gif" />
+		</div>
+	</window>
+</zk>

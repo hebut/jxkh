@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	
+	 <bean id="websiteTarget" class="org.iti.xypt.personal.infoCollect.service.Impl.WebsiteServiceImpl" parent="baseService">
+  </bean>
+  <bean id="websiteService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="websiteTarget"/>
+    </property>
+  </bean>
+	
+	  <bean id="orinewsTarget" class="org.iti.xypt.personal.infoCollect.service.Impl.OriNewsServiceImpl" parent="baseService">
+  </bean>
+  <bean id="orinewsService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="orinewsTarget"/>
+    </property>
+  </bean>
+	
+	 <bean id="newsTarget" class="org.iti.xypt.personal.infoCollect.service.Impl.NewsServiceImpl" parent="baseService">
+  </bean>
+  <bean id="newsService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="newsTarget"/>
+    </property>
+  </bean>
+	
+	 <bean id="chanelTarget" class="org.iti.xypt.personal.infoCollect.service.Impl.ChanelServiceImpl" parent="baseService">
+  </bean>
+  <bean id="chanelService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="chanelTarget"/>
+    </property>
+  </bean>
+	
+	<!-- 抽取的service配置 -->
+    <bean id="showTask" class="org.iti.xypt.personal.infoCollect.service.Impl.TaskServiceImpl" parent="baseService">
+    </bean>
+  <bean id="taskService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="showTask"/>
+    </property>
+  </bean>
+  
+  <bean id="showTree" class="org.iti.xypt.personal.infoCollect.service.Impl.TreeServiceImpl" parent="baseService">
+  </bean>
+  <bean id="treeService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="showTree"/>
+    </property>
+  </bean>
+
+<bean id="guide" class="org.iti.xypt.personal.infoCollect.service.Impl.GuideServiceImpl" parent="baseService">
+  </bean>
+  <bean id="guideService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="guide"/>
+    </property>
+  </bean>
+
+<bean id="pick" class="org.iti.xypt.personal.infoCollect.service.Impl.PickServiceImpl" parent="baseService">
+  </bean>
+  <bean id="pickService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="pick"/>
+    </property>
+  </bean>
+	
+<bean id="sign" class="org.iti.xypt.personal.infoCollect.service.Impl.SignServiceImpl" parent="baseService">
+  </bean>
+  <bean id="signService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="sign"/>
+    </property>
+  </bean>	
+	
+	<bean id="link" class="org.iti.xypt.personal.infoCollect.service.Impl.LinkServiceImpl" parent="baseService">
+  </bean>
+  <bean id="linkService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="link"/>
+    </property>
+  </bean>	
+	
+	<bean id="info" class="org.iti.xypt.personal.infoCollect.service.Impl.InfoServiceImpl" parent="baseService">
+  </bean>
+  <bean id="infoService" parent="baseTxProxy">
+    <property name="target">
+      <ref local="info"/>
+    </property>
+  </bean>	
+	
+</beans>

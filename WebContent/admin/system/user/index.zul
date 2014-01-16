@@ -1,0 +1,13 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<panel apply="com.uniwin.framework.ui.user.UserTreeComposer" id="userPanel">
+		<panelchildren>
+			<tree id="tree" zclass="z-dottree" rows="47">
+				<treecols>
+					<treecol label="组织名称" width="85%" />
+					<treecol label="人数" />
+				</treecols>
+			</tree>
+		</panelchildren>
+	</panel>
+</zk>

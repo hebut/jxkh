@@ -1,0 +1,140 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="订制中期报告" border="normal" closable="true"   width="780px" id="checkZMiddle"
+		    use="org.iti.projectmanage.science.project.ZMiddReportWindow" >
+		<tabbox >
+			<tabs>
+				<tab label="请选择您需要的属性，进行文档的订制" />		        
+			</tabs>
+			<tabpanels>
+		        <tabpanel >  
+		        
+			   		<grid>
+						<columns>
+							<column width="8%" align="center" />
+							<column width="17%" />
+							<column width="8%" align="center" />
+							<column width="17%" />
+							<column width="8%" align="center" />
+							<column width="17%" />
+							<column width="8%" align="center" />
+							<column width="17%" />
+						</columns>
+						<rows>
+						    <row spans="8">
+						       <div align="left">
+						       		<label value="项目相关属性"/>
+						       </div>
+						    </row>
+							<row >
+								<checkbox id="proName" checked="true"/>
+								<label value="项目名称" />
+								<checkbox id="proSource" checked="true"/>
+								<label value="项目来源" />
+								<checkbox id="proMan" checked="true"/>
+								<label value="项目负责人" />
+								<checkbox id="proNum" checked="true"/>
+								<label value="项目编号" />
+							</row>
+							
+							<row >
+								<checkbox id="lxTime" checked="true"/>
+								<label value="立项时间" />
+								<checkbox id="beginTime" checked="true"/>
+								<label value="开始时间" />
+								<checkbox id="endTime" checked="true"/>
+								<label value="结束时间" />
+								<checkbox id="proFund" checked="true"/>
+								<label value="项目经费" />
+							</row>
+							
+							<row >
+								<checkbox id="infoWriter" checked="true"/>
+								<label value="信息填写人" />
+								<checkbox id="proMember" checked="true"/>
+								<label value="项目组成员" />
+								<checkbox id="subjectClass" checked="true"/>
+								<label value="学科分类" />
+								<checkbox id="proProgress" checked="true"/>
+								<label value="项目进展" />
+							</row>
+							
+							<row >
+								<checkbox id="proBank" checked="true"/>
+								<label value="项目级别" />
+								<checkbox id="meContrib" checked="true"/>
+								<label value="本人贡献排名" />
+								<checkbox id="meResearch" checked="true"/>
+								<label value="本人研究方向" />
+								<checkbox id="meTask" checked="true"/>
+								<label value="本人承担的任务" />
+							</row>
+							
+							<row >
+								<checkbox id="proInterNum" checked="true"/>
+								<label value="项目内部编号" />
+								<checkbox id="proTarget" checked="true"/>
+								<label value="项目指标" />
+							</row>
+							
+							<row spans="8">
+						       <div align="left">
+						       		<label value="项目统计(单位:项数)"/>
+						       </div>
+						    </row>
+						    <row >
+						    <!-- 	<checkbox id="zxProStatist" checked="true"/>
+								<label value="纵向项目" />
+								<checkbox id="hxProStatist" checked="true"/>
+								<label value="横向项目" />	 -->							
+								<checkbox id="nationalProStatist" checked="true"/>
+								<label value="国家级项目" />
+								<checkbox id="provincProStatist" checked="true"/>
+								<label value="省部级项目" />
+							</row>
+							
+							<row spans="8">
+						       <div align="left">
+						       		<label value="获奖统计(单位:项数)"/>
+						       </div>
+						    </row>
+						    <row >
+								<checkbox id="nationalFruitStatist" checked="true"/>
+								<label value="国家级获奖" />
+								<checkbox id="provincFruitStatist" checked="true"/>
+								<label value="省部级获奖" />
+							</row>
+							
+							<row spans="8">
+						       <div align="left">
+						       		<label value="成果统计(单位:项数)"/>
+						       </div>
+						    </row>
+						    <row >
+								<checkbox id="conferePaperStatist" checked="true"/>
+								<label value="会议论文" />
+								<checkbox id="journalPaperStatist" checked="true"/>
+								<label value="期刊论文" />
+								<checkbox id="softwareCopyrightStatist" checked="true"/>
+								<label value="软件著作权" />
+								<checkbox id="invenPatentStatist" checked="true"/>
+								<label value="发明专利" />								
+							</row>
+						</rows>
+					</grid>
+				</tabpanel>		
+			</tabpanels>
+		</tabbox>
+		<separator></separator>
+		<hbox pack="center" width="100%">
+			<hbox>
+			    <checkbox label="选择全部" id="allCheck" checked="true"/>
+				<space width="3px" />
+				<button label="生成中期报告" id="buildMiddReport" />
+				<space width="3px" />
+				<button label="关闭" id="close" ></button>
+			</hbox>
+		</hbox>
+		<separator></separator>
+	</window>
+</zk>

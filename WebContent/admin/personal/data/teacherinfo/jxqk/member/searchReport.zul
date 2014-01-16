@@ -1,0 +1,35 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  id="searchReport" style="text-align:left" border="false" width="100%"
+		 use="org.iti.projectmanage.teach.member.ReportSearchWindow">
+	<div id="searchreport" width="100%" align="center">
+		<div align="right">
+			<toolbarbutton image="/css/sat/fh.gif" id="back"/>
+		</div>
+		<listbox id="searchFild" mold="select" width="90px">
+			<listitem label="--请选择--" id="nothing"/>
+			<listitem label="报告名称" id="title"/>
+			<listitem label="关键词" id="keyWord"/>
+		</listbox>
+	    <space/>
+	    <textbox id="fild" width="200px"/>
+	    <space/>
+	    <toolbarbutton id="search" image="/css/sat/searInact.gif"/>
+		<separator/>
+		<listbox id="report" width="100%" checkmark="true" multiple="true" sclass="new_listbox" paginal="${cyPaging}">
+			<listhead>
+				<listheader align="center" width="3%"/>
+				<listheader label="序号" align="center" width="5%"/>
+				<listheader label="报告名称" style="text-align:center" width="25%"/>
+				<listheader label="关键词" style="text-align:center" width="21%"/>
+				<listheader label="提交人" align="center" width="10%"/>
+				<listheader label="提交时间" align="center" width="23%"/>
+				<listheader label="操作" align="center" width="13%"/>
+			</listhead>		
+		</listbox>
+		<div align="left">
+		<paging id="srPaging" zclass="z-paging"  pageSize="10" detailed="true"/>
+		</div>
+	</div>
+</window>
+</zk>

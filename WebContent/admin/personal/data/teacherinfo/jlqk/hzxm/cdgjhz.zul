@@ -1,0 +1,71 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="承担国际交流合作项目（已开展）" border="normal" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.CdgjhzWindow" width="800px">
+		<grid>
+			<columns>
+				<column width="25%" align="center" />
+				<column width="35%" />
+				<column width="15%" align="center" />
+				<column width="25%" />
+			</columns>
+			<rows>
+				<row >
+					<label value="国际交流合作项目名称"/>
+					<hbox>
+						<textbox id="cgmc" cols="30" rows="2"  maxlength="100"/>
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+					<label value="合作对象"  style="letter-spacing:10px"/>
+					<hbox>
+					<textbox id="duixiang" cols="30" maxlength="100"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="项目性质"/>
+					<hbox>
+					<listbox id="nature"  width="230px"  mold="select"/>
+					</hbox>
+				</row>
+				<row>
+					<label value="项目开始时间"/>
+					<hbox>
+					<textbox id="Kssj" cols="30" maxlength="50"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+						<label value="项目结束时间"/>
+					<hbox>
+					<textbox id="Jssj" cols="30" maxlength="50"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="备注"  style="letter-spacing:20px"/>
+					<textbox id="remarks" cols="70" height="90px" maxlength="250"/>
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit"></button>
+				<!-- 
+				<space width="3px"/>
+				<button label="重置" id="reset"/>
+				 -->
+				<button label="关闭" id="close"></button>
+			</hbox>
+		</hbox>
+		<separator />
+			<groupbox closable="true">
+					<caption>
+						<label style="color:blue" value="[提示]" />
+					</caption>
+					<vbox>
+						<separator spacing="1px" />
+						<label pre="true" value="1、点击国际交流合作项目名称，可以查看或修改该项目详细信息" />
+						<label pre="true" value="2、项目起止时间必须按照指定的格式填写,如：2007/2/3-2007/3/5、2007/3/5、2008、2008/9" />
+					</vbox>
+			</groupbox>
+	</window>
+</zk>

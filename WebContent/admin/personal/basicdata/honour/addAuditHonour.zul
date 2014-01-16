@@ -1,0 +1,68 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="荣誉称号"  border="normal" closable="true" sclass="newin" height="270px" width="700px"
+		use="org.iti.jxkh.honour.AddHonourWindow">
+<grid>
+			<columns>
+				<column width="20%" align="center" />
+				<column width="80%" />
+			
+			</columns>
+			<rows>
+				<row >
+					<label value="荣誉名称"/>
+					<hbox>
+					<textbox id="name" cols="60"  maxlength="50"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="年度"  style="letter-spacing:20px"/>
+					<hbox>
+					<textbox id="year" cols="60"  maxlength="50"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>	
+					<label value="颁发单位"/>
+					<textbox id="dep" cols="60"  maxlength="100"/>
+				</row>
+				<row>	
+					<label value="荣誉称号证明材料"/>					
+					<hbox>
+						<div id="upload" />
+						<label value="*" style="color:red;valign:center" />
+						<!-- <listbox mold="select" rows="1" width="200px" id="file"/>
+						
+						<toolbarbutton id="upload" image="/css/default/images/button/sc.gif"></toolbarbutton>
+						<toolbarbutton id="download" image="/css/default/images/button/xz_.gif" visible="false"></toolbarbutton>
+						<toolbarbutton id="delet" image="/css/default/images/button/delAct.gif" visible="false"></toolbarbutton> -->
+					</hbox>					
+				</row>
+				
+			</rows>
+		</grid>
+		<separator></separator>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<toolbarbutton id="submit" image="/css/img/actSave.gif" />
+				<space />
+				<toolbarbutton id="reset" image="/css/default/images/button/cz.gif" />
+				<space></space>
+				<toolbarbutton id="close" image="/css/img/actquit.gif" />
+			</hbox>
+		</hbox>
+		<separator />
+			<groupbox closable="true">
+					<caption>
+						<label style="color:blue" value="[提示]" />
+					</caption>
+					<vbox>
+					<separator spacing="1px" />
+						<separator spacing="1px" />
+						<label pre="true" value="1、获奖时间必须按照指定的格式填写，如：2008" />
+
+						</vbox>
+			</groupbox>
+</window>
+</zk>

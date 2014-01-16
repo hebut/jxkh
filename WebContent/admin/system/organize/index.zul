@@ -1,0 +1,8 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<panel apply="com.uniwin.framework.ui.dept.OrganizationTreeComposer" id="deptPanel">
+		<panelchildren>
+			<tree id="deptTree" zclass="z-dottree" rows="47" />
+		</panelchildren>
+	</panel>
+</zk>

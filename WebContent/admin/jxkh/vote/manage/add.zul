@@ -1,0 +1,77 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="添加新投票" border="normal" sclass="newin" closable="true" height="250px" width="600px" use="org.iti.jxkh.vote.manage.AddWindow">
+		<grid>
+			<columns>
+				<column width="12%" align="center" />
+				<column width="16%" />
+				<column width="12%" align="center" />
+				<column width="24%" />
+				<column width="12%" align="center" />
+				<column width="24%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="投票名称" />
+					
+					<textbox id="name" width="80px"  />
+					
+					<label value="开始时间" />
+					<datebox id="startTime" width="120px"  constraint="no empty" />
+					
+					<label value="截止时间" />
+					<datebox id="endTime" width="120px"  constraint="no empty" />
+				</row>
+				<row spans="1,5">
+					<label value="投票对象" />
+					<hbox align="end">
+						<textbox id="object" disabled="true" width="445px" multiline="true"  />
+						<toolbarbutton id="objectSelect" image="/images/content/1/xz.gif" />
+					</hbox>
+				</row>
+				<row spans="1,5">
+					<label value="投票者" />
+					<hbox align="end">
+						<textbox id="voter" disabled="true" width="445px" multiline="true"  />
+						<toolbarbutton id="voterSelect" image="/images/content/1/xz.gif" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<grid>
+			<auxhead>
+				<auxheader label="各档次所占比例" colspan="4" />
+			</auxhead>
+			<columns>
+				<column label="一档" align="center" />
+				<column label="二档" align="center" />
+				<column label="三档" align="center" />
+			</columns>
+			<rows>
+				<row>
+					<hbox align="center">
+						<textbox width="80px" value="14" id="first" />
+						<label value="%" />
+					</hbox>
+					<hbox align="center">
+						<textbox width="80px" value="29" id="second" />
+						<label value="%" />
+					</hbox>
+					<hbox align="center">
+						<textbox width="80px" value="57" id="third" />
+						<label value="%" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<div align="center">
+			<separator spacing="5px" />
+			<hbox>
+				<toolbarbutton id="submit" image="/images/content/1/tj1.gif" />
+				<space />
+				<toolbarbutton id="close" image="/images/content/1/gb.gif" />
+			</hbox>
+			<separator />
+		</div>
+	</window>
+</zk>

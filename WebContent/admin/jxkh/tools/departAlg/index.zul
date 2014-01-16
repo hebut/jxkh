@@ -1,0 +1,66 @@
+<?page title="业务部门名称" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" border="false" width="769px" sclass="newin"
+		style="text-align:left" use="org.iti.jxkh.tools.DepartAlgWindow">
+      
+            <caption>
+				<toolbarbutton id="export" image="/css/default/images/button/dc.gif" visible="true" style="color:blue" />
+			</caption>
+			 <separator></separator>
+			   <grid>
+                <columns>
+                   <column align="center" />
+                </columns>
+                <rows>
+                   <row>
+                      <hbox align="center">
+						<label value="选择年份：" />
+						<listbox id="yearlist" width="150px" mold="select" use="org.iti.gh.ui.listbox.YearListbox">									
+						</listbox>
+						<space spacing="20px" />
+						<button label="计算" id="compute" />
+						
+						<space spacing="10px" />
+						<button label="保存" id="saveResult" />
+						
+				      </hbox>
+				   </row>
+                </rows>
+            </grid>
+           <separator></separator>
+			 <listbox id="deptListbox" sclass="new_listbox" fixedLayout="true">
+				      <listhead>
+				          <listheader label="业务部门名称" align="center" style="letter-spacing:5px" />
+				          <listheader label="上年度积分"  align="center" style="letter-spacing:5px"/>
+				          <listheader label="本年度积分"  align="center" style="letter-spacing:5px"/>
+				          <listheader label="人数"  align="center" style="letter-spacing:5px"/>
+				       
+				      </listhead>
+				      </listbox>
+				      <separator></separator>
+				      <listbox  id="rankResultListbox" sclass="new_listbox" paginal="${rankPaging}" fixedLayout="true">
+				         <listhead>
+				             <listheader label="排名" align="center" width="5%"/>
+				             <listheader label="业务部门名称" align="center" width="20%"/>
+				             <listheader label="上年度积分"  align="center" width="15%"/>
+				             <listheader label="本年度积分" align="center" width="15%" />
+				             <listheader label="本年度人均积分" align="center" width="15%" />
+				             <listheader label="年度增长率" align="center" width="15%" />
+				             <listheader label="业绩指数" align="center"  width="15%"/>
+				         </listhead>
+				      </listbox>
+				      <separator></separator>
+				     
+					  <groupbox closable="true">
+						   <caption>
+							   <label style="color:red" value="[提示]" />
+						   </caption>
+						   <vbox>
+							   <separator spacing="1px" />
+							   <label pre="true" value="1、点击开始计算，可以计算各业务部门的总积分" />
+							   <label pre="true" value="2、点击保存结果，可以将各部门的积分结果保存" />
+							   <label pre="true" value="3、点击导出按钮，可以将各部门的积分情况导出" />
+						   </vbox>
+					   </groupbox>
+	</window>
+</zk>

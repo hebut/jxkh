@@ -1,0 +1,92 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="添加人员" border="normal" sclass="newin" width="920px" closable="true" height="700px"
+use="org.iti.jxkh.business.award.ChooseMemberWin">
+	<grid>
+		<columns>
+			<column  width="910px"/>
+		</columns>
+<rows>
+	<row>
+	<hbox>	
+	<label value="人员范围:"/>
+		<listbox id="range" mold="select" rows="1">
+			<listitem label="院内人员" selected="true" />
+			<listitem label="院外人员" id="cout"/>	
+		</listbox>
+		<hbox id="in">
+			<label value="部门名称:"/>
+			<listbox width="180px"   id="dept" mold="select" rows="1" />
+			<space width="15px"/>
+			<label value="姓名:"/>
+			<textbox width="130px" id="name"/>
+			<toolbarbutton  image="/css/default/images/button/searAct.gif" id="view"/>
+		</hbox>
+		<hbox id="out" visible="false">
+			<label value="姓名:"/>
+			<textbox id="outname" width="130px"/>
+			<toolbarbutton  image="/css/default/images/button/addAct.gif" visible="false" id="outadd"/>
+		</hbox>
+		<space/>
+	</hbox>
+	</row>
+	<row>
+    <hbox>
+					<hbox>
+						<panel width="400px" border="normal" title="院内人员列表">
+							<panelchildren>
+								<listbox id="listbox1" checkmark="true" multiple="true" height="450px"  mold="paging" pageSize="13" sclass="new_listbox" >
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="序号"  width="10%" align="center"/>
+										<listheader label="人员姓名"  width="15%" align="center"/>
+										<listheader label="人员编号" width="20%" align="center"/>
+										<listheader label="所属部门" width="45%"  align="center"/>										
+									</listhead>		
+								</listbox>
+							</panelchildren>
+						</panel>
+						<space />
+						<vbox>
+							<separator spacing="180px" />
+							<button  label="添加&gt;&gt;" id="add" />
+							<separator />
+							<button  label="&lt;&lt;删除"  id="delete"/>
+						</vbox>
+						<space />
+						<panel width="400px" border="normal" title="已添加人员列表(可用鼠标拖动对人员排序，排序规则见下方提示)">
+							<panelchildren>
+								<listbox id="listbox2"  checkmark="true" multiple="true" height="450px" mold="paging" pageSize="100" sclass="new_listbox">
+									<listhead>
+										<listheader label=""  width="10%" />
+										<listheader label="排名"  width="10%" align="center"/>
+										<listheader label="人员姓名"  width="15%" align="center"/>
+										<listheader label="人员编号" width="20%" align="center"/>
+										<listheader label="所属部门" width="45%"  align="center"/>
+									</listhead>	
+								</listbox>
+							</panelchildren>
+						</panel>
+					</hbox>
+		</hbox>
+	</row>
+	</rows>
+	</grid>
+	<separator/>
+	<div align="center">
+			<hbox>
+				<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif" />
+				<toolbarbutton id="close" image="/css/default/images/button/actquit.gif" />
+			</hbox>
+		</div>
+	<separator bar="true"/>
+	<groupbox>
+		<caption>
+			<label value="[提示]" style="color:red"/>
+		</caption>
+		<hbox>
+			<label value="1、在右边列表中可以通过用鼠标拖动来对已选部门进行排序，负责人放在第一位，其余参与人员按贡献排序。" style="color:blue"/>
+		</hbox>
+	</groupbox>
+</window>
+</zk>

@@ -1,0 +1,78 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window width="99%" closable="false" style="text-align:left" use="org.iti.xypt.personal.notice.NoticeNewWindow">
+		<panel title="发布通告">
+			<panelchildren>
+				<grid>
+					<columns>
+						<column width="90px" />
+					</columns>
+					<rows>
+						<row spans="2">
+							<label value="注意: * 为必填项,支持10MB内多附件！" style="color:red" width="50px" />
+						</row>
+						<row id="chooseRow">
+							<label value="选择您的身份" />
+							<hbox>
+								<listbox id="chooseRoleGroup" mold="select" rows="1"></listbox>
+								<listbox id="chooseRole" mold="select" rows="1" />
+							</hbox>
+						</row>
+						<row>
+							<label value="标题:" />
+							<hbox>
+								<textbox id="mlSubject" width="520px" />
+								<label style="color:red" value="*" />
+								<label id="help1" visible="false" value="请填写标题." />
+							</hbox>
+						</row>
+						<row>
+							<label value="关键词:" />
+							<hbox>
+								<combobox id="keyword"></combobox>
+							</hbox>
+						</row>
+						<row id="roleRow">
+							<label value="通知角色 :" width="50px" />
+							<hbox>
+								<listbox id="roleListbox" mold="select"></listbox>
+								<label style="color:red" value="*" />
+								<button label="添加角色" id="addRole" />
+							</hbox>
+						</row>
+						<row id="roleDeptRow">
+							<label value="角色单位 :" width="50px" />
+							<hbox>
+								<textbox id="roleDept" width="520px" readonly="true" />
+								<label style="color:red" value="*" />
+								<button label="添加单位" id="addDept" />
+							</hbox>
+						</row>
+						<row>
+							<label value="正文:" width="50px" />
+							<hbox width="100%">
+								<fckeditor height="270px" id="mlContent" width="100%" toolbarSet="Basic" />
+							</hbox>
+						</row>
+						<row id="rowFile" visible="false">
+							<label value="附件列表"></label>
+							<hbox>
+								<listbox id="upList" mold="select" rows="1"></listbox>
+								<button label="删除" id="deUpload" />
+							</hbox>
+						</row>
+						<row spans="2" align="center">
+							<hbox>
+								<button id="save" label="发送" style="font-size:13;" />
+								<space width="3px"></space>
+								<button id="upFile" label="上传附件"></button>
+								<space width="3px"></space>
+								<button id="reSend" label="重置" style="font-size:13" />
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

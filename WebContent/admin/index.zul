@@ -1,0 +1,76 @@
+<?page title="绩效考核管理平台" contentType="text/html;charset=UTF-8"?>
+<?link rel="icon" href="/images/favicons.ico" mce_href="/images/favicons.ico" type="image/x-icon"?>
+<?link rel="shortcut icon" href="/images/favicons.ico" mce_href="/images/favicons.ico" type="image/x-icon"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<style>div.z-row-cnt { padding:0 0; }</style>
+	<window id="main" mode="overlapped" width="995px" height="780px" position="center" use="com.uniwin.framework.ui.userlogin.BorderLayoutComposer" sclass="newin">
+		<borderlayout>
+			<north size="110px" style="background-color:#d9f3ff">
+				<vbox width="100%" height="110px" spacing="0">
+					<hbox width="100%" height="80px">
+						<flash src="/logo/log2.swf" height="80px" width="100%" autoplay="true" loop="true" />
+					</hbox>
+					<grid style="border:0px">
+						<columns>
+							<column width="20%" align="center" />
+							<column width="600px" />
+							<column align="left" />
+						</columns>
+						<rows>
+							<row style="padding:0;border-width:medium 0px 0px">
+								<menubar>
+									<menuitem id="loguser" />
+								</menubar>
+								<menubar id="onebar" />
+								<menubar>
+									<menuitem id="loginOut" label="注销" />
+								</menubar>
+							</row>
+						</rows>
+					</grid>
+				</vbox>
+			</north>
+			<west id="westLeft" size="200px" title="功能" flex="true" splittable="true" collapsible="true" autoscroll="false" />
+			<center flex="true">
+				<tabbox id="centerTabbox" sclass="new-tabbox">
+					<tabs id="centerTabs">
+						<tab label="首页" id="firstPage"/>
+					</tabs>
+					<tabpanels id="centerTabpanels">
+						<tabpanel style="text-align:center" >
+							<panel width="750px">								
+								<caption>
+									<div align="left">
+										<label value="快捷操作"/>
+									</div>
+									
+								</caption>
+								<panelchildren>
+									<hbox id="fastHbox" width="750px" height="500px">
+										
+									</hbox>
+								</panelchildren>
+							</panel>
+						</tabpanel>						
+					</tabpanels>
+				</tabbox>
+			</center>
+			<south>
+				<vbox>
+					<separator spacing="1px" />
+					<hbox pack="start" width="100%">
+						<space spacing="1px" width="160px" />
+						<hbox>
+							<label id="loginTime" />
+							<separator spacing="20" width="160px" />
+							<label id="lastIP" visible="false" />
+							<label value="本站建议使用IE浏览器       分辨率1024×768" />
+						</hbox>
+					</hbox>
+					<separator spacing="1px" />
+				</vbox>
+			</south>
+		</borderlayout>
+	</window>
+</zk>

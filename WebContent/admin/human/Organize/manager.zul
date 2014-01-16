@@ -1,0 +1,80 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window width="100%" height="100%" style="text-align:left" use="org.iti.human.ld.OrganizeManagerWindow">
+		<borderlayout width="100%" height="820px">
+			<west size="200px" id="westDeptPanel">
+				<tree zclass="z-dottree" rows="45" width="100%" id="westDeptTree"></tree>
+			</west>
+			<center flex="true">
+				<panel title="管理" framable="true" id="deptPanel">
+					<caption></caption>
+					<panelchildren>
+						<grid>
+							<columns>
+								<column width="35%" align="center"></column>
+								<column width="65%"></column>
+							</columns>
+							<rows>
+								<row>
+									<label value="上级部门" />
+									<label id="pdeptLabel"></label>
+								</row>
+								<row>
+									<label value="部门名称 " />
+									<hbox>
+										<textbox id="dname" constraint="no empty" />
+										<label value="*" style="color:red" />
+									</hbox>
+								</row>
+								<row>
+									<label value="部门编号 " />
+									<hbox>
+										<textbox id="dnumber" constraint="no empty" />
+										<label value="*" style="color:red" />
+									</hbox>
+								</row>
+								<row id="descRow">
+									<label value="部门描述" />
+									<textbox id="ddesc" />
+								</row>
+								<row id="gradeNameRow">
+									<label value="单位级别名称"></label>
+									<hbox width="100%" pack="center">
+										<hbox align="center">
+											<label value="一级"></label>
+											<textbox id="gradeOne" width="50px"></textbox>
+										</hbox>
+										<hbox align="center">
+											<label value="二级"></label>
+											<textbox id="gradeTwo" width="50px"></textbox>
+										</hbox>
+										<hbox align="center">
+											<label value="三级"></label>
+											<textbox id="gradeThr" width="50px"></textbox>
+										</hbox>
+									</hbox>
+								</row>
+								<row>
+									<label value="类型" />
+									<radiogroup>
+										<radio id="bumen" label="部门" checked="true" />
+										<radio id="danwei" label="单位" />
+									</radiogroup>
+								</row>
+							</rows>
+						</grid>
+						<hbox width="100%" pack="center">
+							<hbox>
+								<button label="保存" id="submit" />
+								<button label="重填" id="reset" />
+								<button label="增加" id="addDept" />
+								<button label="删除" id="deleteDept" />
+								<button label="排序" id="sortDept" />
+							</hbox>
+						</hbox>
+					</panelchildren>
+				</panel>
+			</center>
+		</borderlayout>
+	</window>
+</zk>

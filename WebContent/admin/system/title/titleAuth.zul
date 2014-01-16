@@ -1,0 +1,71 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="标题权限管理" border="normal" width="800px" height="460px;" use="com.uniwin.framework.ui.title.TitleAuthWindow">
+		<caption></caption>
+		<grid>
+			<columns>
+				<column width="10%" />
+				<column width="60%" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="标题列表" />
+					<textbox id="ktname" width="90%" />
+					<button label="选择" id="titleChoose" />
+				</row>
+				<row>
+					<label value="角色列表" />
+					<hbox>
+						<combobox id="ktrole" use="com.uniwin.framework.common.combobox.RoleCombobox" autodrop="true" width="100" />
+						<separator width="10" />
+						<label value="部门列表" />
+						<combobox id="ktdept" use="com.uniwin.framework.common.combobox.DeptCombobox" autodrop="true" width="100" />
+						　　　　
+						<separator width="55px" />
+						<label value="IP设定" />
+
+					</hbox>
+					<label value="当前权限" />
+				</row>
+			</rows>
+		</grid>
+
+		<hbox>
+			<listbox id="rolelist" height="320px" width="190px" multiple="true" rows="100" use="com.uniwin.framework.common.listbox.DeptRoleListbox">
+
+			</listbox>
+			<listbox use="com.uniwin.framework.common.listbox.DeptListbox" rows="100" id="deptlist" height="320px" width="190px" multiple="true">
+
+			</listbox>
+			<vbox pack="center" width="150px" align="center">
+				<textbox id="authIp" width="140" />
+				<checkbox label="访问权限" id="accessAuth" />
+				<checkbox label="管理权限" id="managerAuth" />
+				<button label="增加" id="addAuth" />
+				<button label="删除" id="deleteAuth" />
+				<button label="清空" id="clearAuth" />
+			</vbox>
+			<listbox id="hasAuth" width="230px" multiple="true" height="320px" use="com.uniwin.framework.common.listbox.TitleAuthListbox">
+
+			</listbox>
+		</hbox>
+		<hbox>
+			<label value="当前权限：" />
+			<label value="" id="nowAuth" />
+		</hbox>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<radiogroup>
+					<radio label="完全设置" id="totalSet" />
+					<radio label="增量设置" id="addSet" checked="true" />
+				</radiogroup>
+
+				<button label="保存" id="submit" />
+				<button label="重填" id="reset" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+
+	</window>
+</zk>

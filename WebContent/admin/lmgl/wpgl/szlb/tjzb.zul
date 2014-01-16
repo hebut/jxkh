@@ -1,0 +1,29 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="添加指标体系" border="normal"
+		use="org.iti.wp.szlb.TjzbWindow" closable="true" width="750px">
+		<panel id="panel">
+			<caption>
+				<hbox align="end">
+					<label value="父指标:"></label>
+					<listbox id="plist" mold="select"
+						use="org.iti.wp.listbox.ZbListbox">
+					</listbox>
+					<toolbarbutton label="添加新指标" id="addzb"
+						style="color:blue">
+					</toolbarbutton>
+				</hbox>
+			</caption>
+			<panelchildren> 
+			<listbox id="list">
+			<listhead id="head"></listhead>
+			</listbox>
+				<listbox id="zlist">
+					<listhead id="pshead">
+						<!--<listheader width="20.0%" align="center"></listheader>
+					--></listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

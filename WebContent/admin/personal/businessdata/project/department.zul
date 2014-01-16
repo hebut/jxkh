@@ -1,0 +1,26 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="指定绩分归属部门" border="normal" sclass="newin" width="300px" height="130px" closable="true">
+	<grid>
+		<columns>
+			<column align="center" width="40%"/>
+			<column align="center" width="60%"/>
+		</columns>
+		<rows>
+			<row>
+				<label value="绩分归属部门:"/>
+				<listbox mold="select" rows="1" width="150px">
+					<listitem label="信息资源所"/>
+					<listitem label="发展战略所"/>
+				</listbox>
+			</row>			
+		</rows>
+	</grid>
+	<separator/>
+	<div align="center" width="100%">
+		<toolbarbutton id="save" image="/css/default/images/button/actSave.gif"/>
+		<space/>
+		<toolbarbutton id="close" image="/css/default/images/button/actquit.gif"/>
+	</div>
+</window>
+</zk>

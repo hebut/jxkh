@@ -1,0 +1,8 @@
+<zk>
+	<hbox use="org.iti.jxkh.business.meeting.UploadBox">
+		<listbox mold="select" width="300px" />
+		<toolbarbutton image="/css/default/images/button/up.gif" />
+		<toolbarbutton image="/css/default/images/button/down.gif" visible="false" />
+		<toolbarbutton image="/css/default/images/button/del.gif" visible="false" />
+	</hbox>
+</zk>

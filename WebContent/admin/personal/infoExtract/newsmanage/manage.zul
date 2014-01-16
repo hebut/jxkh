@@ -1,0 +1,58 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  use="org.iti.xypt.personal.infoCollect.newsmanage.NewsManageEditWindow" border="normal" width="760px" style="text-align:left" >
+	<caption image="/css/img/win-ico.gif">
+			<hbox pack="end">
+				
+<toolbarbutton  image="/css/img/delAct.gif"   hoverImage="/css/img/delAct1.gif"  id="deletenews"/>
+<toolbarbutton id="expert" image="/images/content/1/dc.gif"  hoverImage="/images/content/2/dc.gif" tooltiptext="点此导出数据结果"/>
+</hbox>
+</caption>
+<hbox>
+<label value="采集起止时间:"/>
+<datebox  width="80px" id="begintime" cols="13" format="yyyy-MM-dd"/>
+<label value="-至-"/>
+<datebox  width="80px" id="endtime" cols="13" format="yyyy-MM-dd"/>
+<space width="30px"/>
+<label value="搜索关键字:"/>
+ <textbox  width="100px" id="keys"/>
+ <space/>
+ <listbox mold="select" rows="1" width="80px">
+<listitem  label="标题" id="title" selected="true"/>
+<listitem  label="内容" id="content"/>
+</listbox>
+<space  width="30px"/>
+<label  value="来源:"/>
+<textbox  width="120px" id="source"/>
+
+</hbox>
+<div align="center">
+<button label="查 询"   id="searchnews"/>
+<button label="重 置" id="resetnews"/>
+</div>
+<separator />
+<tabbox  width="100%">
+<tabs style="text-align:left">
+<tab label="原始信息" />
+</tabs>
+<tabpanels>
+<tabpanel>
+<listbox id="infomanagelist"  fixedLayout="true" multiple="true" checkmark="true" mold="paging" rows="11" pageSize="11"  >
+
+		<listhead>
+		    <listheader width="3%" />	
+			<listheader label="序号" width="5%" align="center"/>
+			<listheader label="状态" width="4%" align="center"/>
+			<listheader label="标题" />
+			<listheader label="发布时间" width="18%" align="center"/>
+			<listheader label="来源" width="12%" align="center"/>
+			<listheader label="采集时间" width="18%" align="center"/>
+			<listheader label="评论" width="10%" align="center" visible="false"/>
+		</listhead>	
+	
+	</listbox>	
+   </tabpanel> 
+</tabpanels>
+</tabbox>
+</window>
+</zk>

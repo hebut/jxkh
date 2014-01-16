@@ -1,0 +1,27 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  use="org.iti.gh.szxkry.SzxkryWindow">
+<panel title="设置学科人员" width="100%" border="normal" collapsible="true" style="text-align:left" >
+<caption>
+   <toolbar align="end">
+      <button label="添加教师" id="addTeacher">
+      </button>
+
+   </toolbar>
+</caption>
+<panelchildren>
+<listbox id="teacherlist" mold="paging" pageSize="15">
+		<listhead>
+			<listheader width="5%" label="序号" align="center"/>
+			<listheader width="17%" label="教师号"  align="center"/>
+			<listheader width="18%" label="教师姓名"  align="center"/>
+			<listheader width="10%" label="职称"  align="center"/>
+			<listheader width="20%" id="gradeThrLabel"  align="center"/>
+			<listheader width="20%" id="gradeTwoLabel"  align="center"/>
+			<listheader width="10%" label="功能" align="center"/>
+		</listhead>
+</listbox>
+</panelchildren>
+</panel>
+</window>
+</zk>

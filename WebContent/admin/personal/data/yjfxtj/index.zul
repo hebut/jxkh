@@ -1,0 +1,47 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" border="normal" use="org.iti.gh.yjfxtj.YftjWindow">
+		<panel title="研究方向统计结果" >
+		<caption >
+		<toolbar align="end">
+		<button id="Export" label="导出统计情况" style="color:blue"></button>
+		</toolbar>
+		</caption>
+			<panelchildren>
+				<grid id="yjfx">
+					<columns>
+						<column label="研究方向" width="25%"></column>
+						<column label="教师姓名"></column>
+					</columns>
+					<rows id="fx">
+						<row>
+							<label value="智能信息处理与数据库系统" ></label>
+							<label id="fx1"></label>
+						</row>
+						<row>
+							<label value="图形图像处理与计算机视觉"></label>
+							<label id="fx2"></label>
+							
+						</row>
+						<row>
+							<label value="软件工程与软件理论"></label>
+							<label id="fx3"></label>
+						</row>
+						<row>
+							<label value="嵌入式系统与网络分布式计算"></label>
+							<label id="fx4"></label>
+						</row>
+						<row>
+							<label value="认知科学与网络智能的应用"></label>
+							<label id="fx5"></label>
+						</row>
+						<row>
+							<label value="计算机与信息安全"></label>
+							<label id="fx6"></label>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

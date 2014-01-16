@@ -1,0 +1,23 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window use="org.iti.xypt.personal.message.MessageLastUserWindow">
+		<panel framable="false">
+			<panelchildren>
+				<listbox id="userList" width="100%" height="340px" checkmark="true" multiple="true">
+					<listhead>
+						<listheader label="序号" width="15%" align="center" />
+						<listheader label="姓名" width="30%" align="center" />
+						<listheader label="性别" width="15%" align="center" />
+						<listheader label="所属单位" width="40%" align="center" />
+					</listhead>
+				</listbox>
+				<hbox width="100%" pack="center">
+					<hbox>
+						<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif"></toolbarbutton>			
+						<toolbarbutton id="reset" image="/css/default/images/button/cz.gif"></toolbarbutton>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

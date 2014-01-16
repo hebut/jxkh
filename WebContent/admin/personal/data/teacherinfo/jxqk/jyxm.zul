@@ -1,0 +1,141 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="目前主持/参加的教研项目" border="normal" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.JyxmWindow" width="800px">
+		<grid>
+			<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="20%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row >
+					<label value="项目编号"/>
+					<hbox>
+					<textbox id="number" cols="30" />
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+					<label value="项目名称"/>
+					<hbox>
+					<textbox id="cgmc" cols="30" />
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="开始时间"/>
+					<hbox>
+					<textbox id="kaishi" cols="30"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+					<label value="结束时间"/>
+					<hbox>
+					<textbox id="jieshu" cols="30"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="项目来源"/>
+					<hbox>
+					<textbox id="ly" cols="30"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+					<label value="经费（万元） "/>
+					<textbox id="jingfei"  cols="30"/>
+					
+				</row>
+				<row>
+					<label value="项目组人员"/>
+					<textbox id="prostaffs" cols="30"/>
+					<label value="项目负责人"/>
+					<textbox id="proman" cols="30"/>
+				</row>
+				<row>
+					<label value="申报人员"/>
+					<textbox id="register" cols="30"/>
+				
+					<label value="研究方向"/>
+						<listbox id="research" mold="select" width="220px">
+						<listitem label="---请选择---" selected="true" />
+						<listitem label="研究方向1" />
+						<listitem label="研究方向2" />
+						<listitem label="研究方向3" />
+					</listbox>
+				</row>
+				<row>
+					<label value="学科分类"/>
+					<listbox id="subjetype" mold="select" width="200px">
+						<listitem label="---请选择---" selected="true" />
+						<listitem label="自然科学" />
+						<listitem label="社会科学" />
+					</listbox>
+			
+					<label value="项目类别"/>
+					<listbox id="kyclass" mold="select"  width="200px">
+						<listitem label="---请选择---" selected="true" />
+						<listitem label="横向"  />
+						<listitem label="纵向" />
+					</listbox>
+				</row>
+				<row>
+					<label value="科研项目级别"/>
+					<listbox id="scale" mold="select" width="200px">
+						<listitem label="---请选择---" selected="true" />
+						<listitem label="国际合作项目" />
+						<listitem label="国家级项目" />
+						<listitem label="部（委、省）级项目" />
+						<listitem label="市厅级项目"/>
+						<listitem label="委托及开发项目"/>
+						<listitem label="学校基金项目"/>
+					</listbox>
+					<label value="项目进展"/>
+					<listbox id="progress" mold="select" width="200px">
+						<listitem label="---请选择---" selected="true" />
+						<listitem label="申请中"/>
+						<listitem label="已完成" />
+						<listitem label="在研" />
+					</listbox>
+				</row>
+				<row spans="1,3">
+					<label value="项目指标"/>
+					<textbox id="target" cols="30"/>
+				</row>
+				<row>
+					<label value="项目鉴定（验收）时间"/>
+					<textbox id="identtime" cols="30"/>
+					<label value="鉴定水平"/>
+					<textbox id="level" cols="30"/>
+				</row>
+				<row>
+					<label value="本人贡献"/>
+					<textbox id="gongxian" cols="30"/>
+					<label value="本人承担任务或作用"/>
+					<listbox id="cdrw" mold="select" width="200px">
+						<listitem label="---请选择---" selected="true" />
+						<listitem label="主持"  />
+						<listitem label="参加" />
+						<listitem label="独立" />
+					</listbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit"></button>
+				<button label="重置" id="reset"></button>
+				<button label="关闭" id="close"></button>
+			</hbox>
+		</hbox>
+		<separator />
+			<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、开始时间和结束时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9" />
+				<label pre="true" value="2、经费必须为规范的数字，如：2.3" />
+			</vbox>
+			</groupbox>
+	</window>
+</zk>

@@ -1,0 +1,28 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="编辑文档类别" border="normal" closable="true"
+		width="600px" use="org.iti.wp.szwdlb.EditwdWindow">
+		<grid>
+			<columns>
+				<column width="20%" align="center"></column>
+				<column width="80%"></column>
+			</columns>
+			<rows>
+				<row>
+					<label value="文档类别名称"></label>
+					<textbox id="name" constraint="no empty"></textbox>
+				</row>
+				<row>
+					<label value="所属类别 "></label>
+					<listbox mold="select" id="list" use="org.iti.wp.listbox.LbListbox"></listbox>
+				</row>
+				<row spans="2">
+					<hbox>
+						<button label="保存" id="save"></button>
+						<button label="返回" id="back"></button>
+					</hbox>
+				</row>
+				</rows>
+				</grid>
+	</window>
+</zk>

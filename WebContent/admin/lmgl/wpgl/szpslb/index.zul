@@ -1,0 +1,78 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window border="none" style="text-align:left" use="org.iti.wp.szpslb.SzpslbWindow">
+		<panel title="设置评审类别" id="sz">
+		<caption>
+<button label="添加评审类别" id="addpstype" ></button>
+</caption>
+			<panelchildren>
+				<listbox id="szpslb">
+					<listhead>
+						<listheader label="序号" width="10%" align="center"/>
+						<listheader label="评审类别名称" width="20%"  align="center"/>
+						<listheader label="类别名称" width="10%"  align="center"/>
+							<listheader label="评审开始时间" align="center"
+							width="15%" />
+							<listheader label="评审结束时间" align="center"
+							width="15%" />
+						<listheader label="提交人员" width="10%"  align="center" id="renshu"/>						
+						
+					   <listheader label="操作" width="10%"  align="center"/>
+					     <listheader label="" width="10%"  align="center"/>
+						
+					</listhead>
+					 
+				</listbox>
+			</panelchildren>
+		</panel>
+		<panel  id="addpslb" width="60%"  title="添加评审类别" visible="false">
+		<panelchildren>
+		<grid>
+					<columns>
+						<column ></column>
+						<column></column>
+					</columns>
+					<rows>
+					<row>
+						<label value="评审类别名称"/>
+						 <textbox id="pslbname" constraint="no empty"></textbox></row>
+						<row>
+						<label value="类别"/>
+						<listbox id="lbname" mold="select" width="135px"></listbox></row>
+						<row>
+						<label value="评审开始时间"/>
+						<datebox id="psstart" constraint="no empty" width="115px"> </datebox></row>
+						<row>
+						<label value="评审结束时间"/>
+						<datebox id="psend" constraint="no empty" width="115px"></datebox></row>
+						<row>
+						<label value="提交类型"/>
+						<hbox>
+						<listbox id="szlx" mold="select" width="135px">
+						<listitem label="角色" value="0" ></listitem>
+						<listitem label="用户" value="1" selected="true"></listitem>
+						</listbox>
+						
+						</hbox></row>
+						<row  id="tjry" visible="false">
+						<label value="提交角色"/>
+						<listbox id="role" mold="select" width="135px">
+						<listitem label="教师" value="0" selected="true"></listitem>
+						<listitem label="学生" value="1"></listitem>
+						</listbox>
+						</row>
+						
+						
+					</rows>
+		</grid>
+				<hbox pack="center" width="100%">
+				<hbox>
+				<button label="确定" id="sure"></button> 
+				<button label="退出" id="back"></button> 
+				</hbox>
+				</hbox>
+		
+		</panelchildren>
+		</panel>
+		</window>
+		</zk>

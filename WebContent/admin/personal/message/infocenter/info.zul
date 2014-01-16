@@ -1,0 +1,42 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window border="normal" title=" 查看新闻" width="770px" use="org.iti.xypt.personal.infoCollect.MessageCenter.DistributeNews" closable="true">
+		<grid width="100%">
+			<columns>
+				<column width="12%" align="center" />
+			</columns>
+			<rows>
+				<row>
+					<label value="新闻标题:" />
+					<hbox>
+						<label id="infoSubject" width="440px" />
+					</hbox>
+				</row>
+				<row>
+					<label value="新闻来自:" />
+					<hbox>
+						<label id="infoSource" width="440px" />
+					</hbox>
+				</row>
+				
+				<row>
+					<label value="发布时间:" />
+					<hbox>
+						<label id="infoSendTime" width="440px" />
+					</hbox>
+				</row>
+				<row height="150px">
+					<label value="新闻正文:" />
+					<hbox>
+						<html id="infoContent"></html>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button id="concel" label="关闭" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

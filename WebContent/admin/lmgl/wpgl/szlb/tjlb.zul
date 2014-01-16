@@ -1,0 +1,58 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="添加新类别" border="normal" width="500px" closable="true" use="org.iti.wp.szlb.TjlbWindow">
+		<grid>
+			<columns>
+				<column width="20%" align="center"></column>
+				<column width="80%"></column>
+			</columns>
+			<rows>
+				<row>
+					<label value="类别名称"></label>
+					<textbox id="name" constraint="no empty"></textbox>
+				</row>
+				<row>
+					<label value="类别类型"></label>
+					
+						<radiogroup id="radio">
+							<radio label="百分制" ></radio>
+							<radio label="五级制" ></radio>
+						</radiogroup>
+					
+				</row>
+				<!--<row>
+					<label value="指标体系"></label>
+					<grid>
+						<columns>
+							<column width="20%"></column>
+							<column width="80%"></column>
+						</columns>
+						<rows>
+							<row>
+								<label value="指标名称"></label>
+								<textbox id="zbname"></textbox>
+							</row>
+							<row>
+								<label value="父指标"></label>
+								<listbox id="target" mold="select"
+									rows="1" width="150px">
+								</listbox>
+							</row>
+							 <row><label value="描述"></label>
+							 <textbox id="describ" width="300" height="70px" multiline="true"></textbox></row>
+						</rows>
+					</grid>
+
+				</row>
+				--> 
+				<row spans="2">
+					<hbox>
+						<button label="提交" id="commit"></button>
+						<space></space>
+						<button label="返回" id="back"></button>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

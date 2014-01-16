@@ -1,0 +1,8 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>	
+<zk>
+  <panel apply="org.iti.xypt.personal.infoCollect.newsmanage.NewsManageTreeComposer" id="managepanel">			    	    
+			    <panelchildren>
+				  <tree id="tree" zclass="z-dottree"  mold="paging"  pageSize="24" rows="24"/> 
+				</panelchildren>
+   </panel>
+</zk>

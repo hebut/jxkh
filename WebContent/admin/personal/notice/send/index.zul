@@ -1,0 +1,24 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window width="99%" style="text-align:left" use="org.iti.xypt.personal.notice.NoticeSendWindow">
+		<panel title="已发通知">
+			<caption>
+				<hbox align="end">
+					<button id="deleteNotice" label="删除" tooltiptext="点击删除消息" />
+					<button id="editMsg" label="编辑" />
+				</hbox>
+			</caption>
+			<panelchildren>
+				<listbox id="noticeList" mold="paging" pageSize="10" pagingPosition="bottom" checkmark="true" multiple="true">
+					<listhead sizable="true">
+						<listheader width="5%" align="left" />
+						<listheader label="标题" style="padding-left: 12px;" width="45%" sort="auto(xmSubject)" id="titleHeader" />
+						<listheader label="关键词" width="10%" align="center" id="keywordHeader" sort="auto(xmKeyword)" />
+						<listheader label="通知对象" width="30%" align="center" id="targetHeader" sort="auto(xmReceivers)" />
+						<listheader label="发送时间" width="10%" align="center" id="timeHeader" sort="auto(xmSndtime)" />
+					</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

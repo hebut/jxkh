@@ -1,0 +1,23 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="选择通知单位" width="50%" closable="true" border="normal" use="org.iti.xypt.personal.notice.NoticeTargetSelectWindow">
+		<hbox id="gdhbox" visible="false" align="center">
+			<label value="学生年级:"></label>
+			<listbox id="gdlistox" mold="select"></listbox>
+			<label value=" *只有选择了树中班级节点才有效"></label>
+		</hbox>
+		<tree id="targetTree" zclass="z-dottree" width="100%" mold="paging" rows="20" checkmark="true" multiple="true">
+			<treecols>
+				<treecol label="单位"></treecol>
+				<treecol label="操作"></treecol>
+			</treecols>
+		</tree>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button label="提交" id="submit"></button>
+				<button label="重置" id="reset"></button>
+				<button label="关闭" id="close"></button>
+			</hbox>
+		</hbox>
+	</window>
+</zk>

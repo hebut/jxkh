@@ -1,0 +1,57 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="事故处分" border="normal" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.SgcfWindow" width="800px">
+		<grid>
+				<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="20%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="事故原因" style="letter-spacing:5px"/>
+					<hbox>
+					<textbox id="yuanyin" cols="40"  />
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="年度 " style="letter-spacing:20px"/>
+					<hbox>
+					<textbox id="year" cols="40"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+					<label value="处分单位" style="letter-spacing:5px"/>
+					<hbox>
+					<textbox id="dept" cols="40"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="事故处分结果"/>
+					<textbox id="result" cols="80" height="70px"/>
+				</row>
+				
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit"></button>
+				<button label="重置" id="reset"></button>
+				<button label="关闭" id="close"></button>
+			</hbox>
+		</hbox>
+		<separator />
+			<groupbox closable="true">
+				<caption>
+					<label style="color:blue" value="[提示]" />
+				</caption>
+				<vbox>
+					<separator spacing="1px" />
+					<label pre="true" value="学时（理论+试验），如：32+20 " />
+				</vbox>
+			</groupbox>
+	</window>
+</zk>

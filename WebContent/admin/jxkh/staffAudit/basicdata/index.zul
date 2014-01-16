@@ -1,0 +1,66 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" border="false" width="760px" style="text-align:left" sclass="newin">
+			<div align="right">					
+					<toolbarbutton id="passAll" image="/css/default/images/button/plsh.gif">	
+						<attribute name="onClick">
+							Window win = (Window)execution.createComponents("/admin/jxkh/audit/article/journal/batchAudit.zul",null,null);
+							win.doModal();
+						</attribute>			
+					</toolbarbutton>			
+					<toolbarbutton id="exportExcel" image="/css/default/images/button/dc.gif"/>	
+				
+			</div>		
+				<div align="right" width="100%">	
+				<listbox id="listbox31" checkmark="true" multiple="true" paginal="${zxPaging}" style="border-bottom-width:0px" mold="paging"  sclass="new_listbox">
+					<listhead>
+						<listheader width="10%" align="center" />
+						<listheader label="序号" width="10%" align="center" />
+						<listheader label="人员姓名" width="17%" align="left" style="text-align:center"/>
+						<listheader label="人员编号" width="15%" align="center" />
+						<listheader label="所在部门" width="23%" align="center" />
+						<listheader label="入职日期" width="15%" align="center" />				
+						<listheader label="审核状态" width="10%" align="center" />
+					</listhead>
+					<listitem>
+						<listcell/>
+						<listcell label="1"/>
+						<listcell label="黄海" style="color:blue">
+							<attribute name="onClick">
+							Window win = (Window)execution.createComponents("/admin/personal/basicdata/index.zul",null,null);
+							win.setWidth("750px");
+							win.setHeight("630px");
+							win.setClosable(true);							
+							win.doModal();
+						</attribute>
+						</listcell>
+						<listcell label="00005"/>
+						<listcell label="科技评估中心"/>
+						<listcell label="2011-9-8"/>						
+						<listcell>
+							<div align="center">
+								<toolbarbutton style="color:red" label="未审核" >
+									<attribute name="onClick">
+										Window win = (Window) execution.createComponents("/admin/jxkh/staffAudit/basicdata/advice.zul", null,null);
+										win.doModal();
+										win.setClosable(true);
+									</attribute>	
+								</toolbarbutton>
+							</div>
+						</listcell>
+					</listitem>
+				</listbox>
+				<paging id="zxPaging" zclass="z-paging"  pageSize="11" detailed="true" />
+			</div>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:red" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击人员姓名，可以查看该人员的详细信息。" />				
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

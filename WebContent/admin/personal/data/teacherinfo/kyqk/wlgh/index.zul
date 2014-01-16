@@ -1,0 +1,41 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%"  border="normal" use="com.uniwin.asm.personal.ui.data.teacherinfo.kyqk.WlghWindow">
+		<panel title="未来五年科研计划 " width="100%">
+			<panelchildren>
+				<grid id="grid8">
+					<columns>
+						<column width="20%" align="center" />
+						<column />
+					</columns>
+					<rows>
+						<row>
+							<label value="研究内容"></label>
+							<textbox id="yjnr" cols="80" height="200px"
+								rows="15">
+							</textbox>
+						</row>
+						<row>
+							<label value="要解决的关键问题"></label>
+							<textbox id="jjwt" cols="80" height="200px"
+								rows="15">
+							</textbox>
+						</row>
+						<row>
+							<label value="预期研究成果"></label>
+							<textbox id="yqcg" cols="80" height="120px"
+								rows="15">
+							</textbox>
+						</row>
+					</rows>
+				</grid>
+				<hbox pack="center" width="100%">
+					<hbox>
+						<button label="提交" id="submit"></button>
+						<button label="重置" id="reset"></button>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

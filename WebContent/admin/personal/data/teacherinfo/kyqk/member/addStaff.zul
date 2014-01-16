@@ -1,0 +1,77 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="添加项目成员" border="normal" sclass="newin" width="920px" closable="true" use="org.iti.projectmanage.science.member.StaffAddWindow">
+	<hbox >
+<space width="30px"/>
+<div>
+	<label value="人员范围:"/>
+	<listbox  rows="1" mold="select"  width="80px" id="range">
+	<listitem label="校内人员"  selected="true"/>
+	<listitem label="校外人员"  id="cout"/>
+	</listbox>
+	</div>
+	<space width="10px"/>
+			<label value="部门:"/>
+		<listbox mold="select" rows="1" width="180px"  id="dept"  use="com.uniwin.framework.common.listbox.DeptListbox">
+		</listbox>
+		<space width="20px"/>
+		<checkbox  label="教师"  id="teacher"  checked="true"/>
+		<checkbox  label="研究生" id="master" checked="true"/>
+		<checkbox  label="本科生" id="student" checked="true"/>
+		<space width="15px"/>
+		<label value="姓名:"/>
+		<textbox width="130px" id="name"/>
+		<space/>
+			<toolbarbutton id="view" image="/css/sat/searAct.gif"/>
+			<toolbarbutton id="outadd" image="/css/img/addAct.gif" visible="false"/>
+	</hbox>
+	<separator spacing="10px"/>
+	<hbox>
+	<space width="5px"/>
+	<grid >
+			<columns>
+				<column align="center" />
+			</columns>
+			<rows>
+				<row>
+					<hbox>
+						<panel width="400px" border="normal" title="用户列表">
+							<panelchildren>
+								<listbox id="listbox1"  paginal="${memPaging}"   checkmark="true" multiple="true" height="450px"   sclass="new_listbox" >
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="用户编号"  width="25%" style="text-align:center"/>
+										<listheader label="用户姓名" width="20%" style="text-align:center"/>
+										<listheader label="所属部门" width="45%"  style="text-align:center"/>										
+										</listhead>				
+								</listbox>
+							</panelchildren>
+						</panel>
+						<space />
+						<vbox>
+							<separator spacing="180px" />
+							<button id="add" label="添加&gt;&gt;" />
+							<separator />
+							<button id="delete" label="&lt;&lt;删除" height="15px" />
+							
+						</vbox>
+						<space />
+						<panel width="400px" border="normal" title="项目成员列表">
+							<panelchildren>
+								<listbox id="listbox2" paginal="${mem1Paging}"  checkmark="true" multiple="true" height="450px"   sclass="new_listbox">
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="用户编号"  width="30%" style="text-align:center"/>
+										<listheader label="用户姓名" width="20%" style="text-align:center"/>
+										<listheader label="所属部门" width="50%"  style="text-align:center"/>
+									</listhead>				
+								</listbox>
+							</panelchildren>
+						</panel>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</hbox>
+</window>
+</zk>

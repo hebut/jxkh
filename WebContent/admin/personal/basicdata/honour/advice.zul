@@ -1,0 +1,32 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="审核意见" border="normal" width="400px" height="300px" closable="true" sclass="newin"
+  		use="org.iti.jxkh.honour.AuditAdviceWindow">
+	<separator/>
+	<hbox width="100%" pack="center" id="buttonHbox">
+		<radiogroup visible="false">
+			<radio id="pass" label="通过" checked="true" />
+		     <space/>
+			<radio id="out" label="驳回" />
+		</radiogroup>
+	</hbox>
+	<separator/>
+	<groupbox>
+		<caption>
+			<label value="审核意见（限100字）"/>
+		</caption>
+		<separator/>
+		<div align="center">
+			<textbox id="advice" width="99%" height="150px"/>
+		</div>		
+	</groupbox>
+	<separator/>
+	<div align="center">
+		<toolbarbutton id="save" image="/css/default/images/button/actSave.gif" visible="false"/>
+		<space/>
+		<toolbarbutton id="close" image="/css/default/images/button/gb.gif"/>
+		<space/>
+	</div>
+	<separator/>
+</window>
+</zk>

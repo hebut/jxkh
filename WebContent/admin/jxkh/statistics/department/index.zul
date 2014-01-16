@@ -1,0 +1,67 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" use="org.iti.jxkh.statistics.DepartmentWindow">
+		<panel width="768px" visible="true">
+			<caption height="40px">
+				<div align="right">
+					<label value="选择统计年份：" />
+					<listbox id="yearlist" mold="select" width="80px" rows="1" use="org.iti.gh.ui.listbox.YearListbox">
+						<!-- <listitem label="2011" selected="true" /> -->
+					</listbox>
+					<space />
+					<toolbarbutton image="/css/img/searAct.gif" id="query" />
+				</div>
+			</caption>
+			<panelchildren style="background-color: #FFFFFF">
+				<grid id="grid" visible="false">
+					<columns>
+						<column width="40%" align="center" />
+						<column width="60%" align="center" />
+					</columns>
+					<rows>
+						<row>
+							<label value="所在档次" />
+							<label id="level" />
+						</row>
+						<row>
+							<label value="档次系数" />
+							<label id="xishu"/>
+						</row>
+						<row>
+							<label value="部门总积分" />
+							<label id="total"/>
+						</row>
+						<row>
+							<label value="人数(除去外聘人员)" />
+							<label id="num"/>
+						</row>
+						<row>
+							<label value="人均积分" />
+							<label id="everage"/>
+						</row>
+						<row>
+							<label value="同比增长率" />
+							<label id="rate"/>
+						</row>
+						<row>
+							<label value="部门业绩总分" />
+							<label id="workscore"/>
+						</row>
+						<row>
+							<label value="部门基数" />
+							<label id="base"/>
+						</row>
+						<row>
+							<label value="业务部门基数额度" />
+							<label id="wordbase"/>
+						</row>
+						<row>
+							<label value="部门奖励性绩效工资(元)" />
+							<label id="money" />
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

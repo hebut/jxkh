@@ -1,0 +1,18 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="new page title" border="normal" use="org.iti.gh.ghtj.tpanel2.GhcgWindow" closable="true" width="80%">
+<listbox id="kjcg" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%" align="center" label="序号"/>
+		<listheader width="30%"  align="center" label="成果名称"/>
+		<listheader width="15%"  align="center" label="来源"/>
+		<listheader width="15%"  align="center" label="获奖时间"/>
+		<listheader width="20%"  align="center" label="获奖名称/等级"/>
+<!-- 	<listheader width="5%" align="center" label="个人名次"/>
+		<listheader width="5%" align="center" label="总人数"/> -->	
+		<listheader width="15%"  align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+</window>
+</zk>

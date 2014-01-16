@@ -1,0 +1,53 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%" border="normal"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.qtqk.NdzjWindow">
+		<panel title="个人年度思想总结">
+			<panelchildren>
+				<grid>
+					<columns>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row
+							style="padding:0;border-width:medium 0px 0px">
+							<space width="100px"></space>
+							<label value="年度"
+								style="letter-spacing:10px">
+							</label>
+							<space width="20px"></space>
+							<listbox id="yearlist" rows="1"
+								mold="select" width="130px"
+								use="org.iti.gh.ui.listbox.YearListbox">
+							</listbox>
+							<space width="20px"></space>
+							<button id="query" label="查询"></button>
+						</row>
+						<row spans="6">
+							<hbox pack="center" width="100%">
+								<hbox>
+									<fckeditor id="editor" toolbarSet="Basic" 
+										height="500px" width="600px">
+									</fckeditor>
+								</hbox>
+							</hbox>
+						</row>
+						<row spans="6">
+							<hbox pack="center" width="100%">
+								<hbox>
+									<button id="submit" label="提交"></button>
+									<button label="重置" id="reset"></button>
+								</hbox>
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

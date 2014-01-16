@@ -1,0 +1,72 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window use="org.iti.wp.zdpszj.EaddpsWindow" width="80%" closable="true" border="normal">
+		<borderlayout width="100%" height="450px">
+		
+			<west size="200px" id="westPanel" flex="true">
+			<panel >
+			<panelchildren>
+			单位：<listbox rows="1" mold="select" id="westlist" width="80%" >
+			</listbox>
+				<tree zclass="z-dottree" rows="20" width="100%" id="westTree">
+					<!--<treecols>
+						<treecol width="85%">
+						<label value="单位"></label>
+						</treecol>
+						<treecol width="15%">
+						<label value="人数"></label>
+						</treecol>
+						</treecols>-->
+				</tree></panelchildren>
+				</panel>
+			</west>
+			<center flex="true">
+				<panel title="管理" framable="true" id="userPanel">
+					<caption></caption>
+					<panelchildren>
+						<grid style="border:0px">
+							<columns>
+								<column align="right"></column>
+								<column></column>
+								<column></column>
+								<column></column>
+								<column></column>
+								<column></column>
+								<column></column>
+							</columns>
+							<rows>
+								<row spans="3,1,2,1" style="padding:0;border-width:medium 0px 0px">
+									<hbox align="center">
+										<label value="姓名："></label>
+										<textbox id="nameSearch"></textbox>
+									</hbox>
+									<separator width="10px"></separator>
+									<hbox align="center">
+										<label value="教师号："></label>
+										<textbox id="tnoSearch"></textbox>
+									</hbox>
+									<button id="search" label="查询"></button>
+								</row>
+							</rows>
+						</grid>
+						<listbox id="leaderlist" checkmark="true" multiple="true" mold="paging" pageSize="12">
+							<listhead>
+								<listheader label="序号" width="10%" align="center" />
+								<listheader label="教师号" width="15%" align="center" sort="auto(thId )" />
+								<listheader label="姓名" width="15%" align="center" sort="auto(user.kuName)" />
+								<listheader id="zylistheader" width="30%" align="center" sort="auto(user.xiDept)" />
+								<listheader id="xylistheader" width="30%" align="center" sort="auto(user.yuDept)" />
+							</listhead>
+						</listbox>
+						<hbox width="100%" pack="center">
+							<hbox>
+								<button label="确定" id="submit"></button>
+								<button label="返回" id="back"></button>
+							</hbox>
+						</hbox>
+					</panelchildren>
+				</panel>
+			</center>
+		</borderlayout>
+	</window>
+</zk>

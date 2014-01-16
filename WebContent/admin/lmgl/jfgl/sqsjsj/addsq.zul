@@ -1,0 +1,73 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="添加上机申请" border="normal" closable="true" width="60%" use="org.iti.jf.sqsjsj.AddsqWindow">
+<grid>
+					<columns>
+						<column ></column>
+						<column></column>
+					</columns>
+					<rows>
+					<row>
+						<label value="课程名称"/>
+						 <textbox id="lessionname" constraint="no empty"></textbox></row>
+						<row>
+						<label value="上课校区"/>
+						<listbox id="scharea" mold="select" width="135px">
+						<listitem label="北辰校区" value="0" selected="true"></listitem>
+						<listitem label="丁字沽校区" value="1"></listitem>
+						</listbox></row>
+						<row>
+						<label value="学年"
+								style="letter-spacing:15px" />
+							<listbox mold="select" rows="1"
+								width="135px" id="yearList" use="org.iti.jxgl.ui.listbox.YearListbox">
+							</listbox>
+							
+						</row>
+						<row>
+						<label value="学期"
+								style="letter-spacing:15px" />
+							<listbox mold="select" width="135px"
+								id="termList" use="org.iti.jxgl.ui.listbox.TermListbox" />
+						</row>
+						 <row>
+						<label value="星期"/>
+							<listbox id="week" mold="select" width="135px">
+							<listitem label="星期一" value="0" selected="true"></listitem>
+							<listitem label="星期二" value="1"></listitem>
+							<listitem label="星期三" value="2"></listitem>
+							<listitem label="星期四" value="3"></listitem>
+							<listitem label="星期五" value="4"></listitem>
+							<listitem label="星期六" value="5"></listitem>
+							<listitem label="星期日" value="6"></listitem></listbox></row>
+						<row >
+						<label value="节次"/>
+						<listbox id="jieci" mold="select" width="135px">
+						<listitem label="第一节" value="0" selected="true"></listitem>
+						<listitem label="第二节" value="1"></listitem>
+						<listitem label="第三节" value="2"></listitem>
+						<listitem label="第四节" value="3"></listitem>
+						<listitem label="第五节" value="4"></listitem>
+						</listbox></row>
+						<row>
+						<label value="上课周数"/>
+						 <textbox id="zs" constraint="no empty"></textbox></row>
+						 <row>
+						<label value="上课班级"/>
+						 <textbox id="classname" constraint="no empty"></textbox></row>
+						  <row>
+						<label value="上课人数"/>
+						 <intbox id="num" constraint="no negative" width="132px"></intbox></row>
+						
+						
+						
+					</rows>
+		</grid>
+				<hbox pack="center" width="100%">
+				<hbox>
+				<button label="确定" id="sure"></button> 
+				<button label="退出" id="back"></button> 
+				</hbox>
+				</hbox>
+</window>
+</zk>

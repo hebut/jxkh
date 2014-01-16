@@ -1,0 +1,16 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="收到邀请" border="normal" width="650px" closable="true" use="org.iti.xypt.personal.group.InviteWindow">
+		<listbox id="inviteList" height="300px">
+			<listhead>
+				<listheader label="序号" align="center" width="8%" />
+				<listheader label="群组名称" align="center" width="25%" />
+				<listheader label="群组类型" align="center" width="12%" />
+				<listheader label="创建者" align="center" width="12%" />
+				<listheader label="创建者所属部门" align="center" width="28%" />
+				<listheader label="操作" align="center" width="15%" />
+			</listhead>
+		</listbox>
+	</window>
+</zk>

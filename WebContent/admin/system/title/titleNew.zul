@@ -1,0 +1,63 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="增加标题" width="600px" border="normal" position="center" use="com.uniwin.framework.ui.title.TitleNewWindow">
+		<grid>
+			<columns sizable="true">
+				<column width="30%" />
+				<column width="70%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="标题名称" />
+					<hbox>
+						<textbox value="" id="ktname" constraint="no empty" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="父标题" />
+					<listbox mold="select" id="pselect" use="com.uniwin.framework.common.listbox.TitleListbox"></listbox>
+				</row>
+				<row>
+					<label value="标题类型" />
+					<hbox>
+						<listbox id="kttype" mold="select" rows="1">
+							<listitem label="文字链接" selected="true" />
+							<listitem label="编辑文本" />
+							<listitem label="格式文件" />
+						</listbox>
+						<checkbox label="打开新窗口" id="newWindow" />
+					</hbox>
+				</row>
+				<row>
+					<label value="安全码" />
+					<hbox>
+						<textbox id="ktsecu" />
+						<label value="顺序号" />
+						<intbox id="ktOrder" value="100" constraint="no negative" />
+					</hbox>
+				</row>
+				<row>
+					<label value="图片" />
+					<hbox align="start">
+						<button label="上传" id="upImage"></button>
+						<hbox id="pics" align="start">
+
+						</hbox>
+					</hbox>
+				</row>
+				<row>
+					<label value="内容" />
+					<textbox id="ktcontent" width="80%" height="40px" />
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="重填" id="reset" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

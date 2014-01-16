@@ -1,0 +1,31 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="添加研究方向" border="normal" width="40%" style="text-align:left" closable="true" use="org.iti.gh.glyjfx.AddyjfxWindow">
+<grid>
+		<columns>
+			<column width="30%" align="center"/>
+			<column width="70%" align="center"/>
+		</columns>
+		<rows>
+			<row>
+				<label value="研究方向"/>
+				<hbox>
+					<textbox id="name" width="200px" constraint="no empty"/>
+					<label value="*" style="color=red"/>
+				</hbox>
+			</row>
+			
+		</rows>
+	</grid>
+	<separator/>
+	<hbox align="center" pack="center" width="100%">
+	<hbox>
+		<button id="submit" label="提交"/>
+		<space spacing="5px"/>
+		<button id="reset" label="重置"/>
+		<space spacing="5px"/>
+		<button id="close" label="关闭"/>
+	</hbox>
+	</hbox>
+</window>
+</zk>

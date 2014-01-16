@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.iti.gh.entity">
+  <class name="org.iti.gh.entity.GH_PROMEMBER" table="GH_PRO_MEMBER" schema="dbo">
+  	<id name="id" type="java.lang.Long">
+  		<column name="ID" precision="18" scale="0" />
+  		<generator class="native" />
+  	</id>
+  	<property name="kuId" type="java.lang.String">
+  		<column name="KU_ID" />
+  	</property>
+  	<property name="proId" type="java.lang.Long">
+  		<column name="PRO_ID" />
+  	</property>
+  	<property name="memberName" type="java.lang.String">
+  		<column name="MEMBER_NAME" />
+  	</property>
+  	
+  	<property name="contribBank" type="java.lang.Integer">
+  		<column name="CONTRIB_RANK" />
+  	</property>
+  	
+  	<property name="taskDesc" type="java.lang.String">
+  		<column name="TASK_DESC" />
+  	</property>
+  </class>
+</hibernate-mapping>

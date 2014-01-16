@@ -1,0 +1,26 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="new page title" border="normal" use="org.iti.gh.ghtj.tpanel2.LwzlWindow" closable="true" width="800px">
+<listbox id="lw" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%" align="center" label="序号"/>
+		<listheader width="30%"  align="center" label="论文名称"/>
+		<listheader width="10%"  align="center" label="发表时间"/>
+		<listheader width="40%"  align="center" label="发表刊物、会议名称及检索号或ISSN"/>
+		<listheader width="10%" align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+<listbox id="jc" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="10%" align="center" label="序号"/>
+		<listheader  width="30%"  align="center" label="教材名"/>
+		<listheader width="15%"  align="center" label="出版时间"/>
+		<listheader width="25%"  align="center" label="出版单位"/>
+<!--  		<listheader width="10%" align="center" label="个人排名"/>
+		<listheader width="10%" align="center" label="总人数"/>-->
+		<listheader width="20%" align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+</window>
+</zk>

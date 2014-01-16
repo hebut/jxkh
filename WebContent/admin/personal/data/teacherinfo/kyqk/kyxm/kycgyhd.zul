@@ -1,0 +1,324 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<?page title="addPro" id="zxAddpage" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="纵向项目信息" border="normal" closable="true"   width="780px" height="515px" sclass="newin"
+		    use="org.iti.projectmanage.science.project.KycgYhdWindow" >
+		<tabbox sclass="new-tabbox">
+			<tabs>
+				<tab label="立项信息" />
+		        <tab label="结项信息"  />
+		         <tab label="文档管理"  />
+			</tabs>
+		<tabpanels>
+       <tabpanel >  
+		<grid >
+			<columns>
+				<column width="18%" align="center" />
+				<column width="37%" />
+				<column width="15%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="项目名称" />
+					<hbox>
+						<textbox id="cgmc" cols="73" maxlength="50" tooltiptext="填写或者点击右侧按钮从已有的项目中选择"/>						
+						<toolbarbutton id="choice" image="/css/default/images/common/xz.gif"/>
+					</hbox>
+				</row>
+				<row>
+					<label value="项目来源" />
+					<hbox>
+						<textbox id="ly" cols="27" maxlength="50" disabled="true" tooltiptext="请点击右侧按钮选择项目来源" />
+						<toolbarbutton id="sourceSelect" image="/css/default/images/common/xz.gif"/>
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+					<label value="项目负责人" />
+					<hbox>
+						<textbox id="proman" width="180px" maxlength="50" />
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="项目编号" />
+					<hbox>
+						<textbox id="number" cols="30" maxlength="50" />
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+					<label value="立项时间" />
+					<hbox>
+						<datebox width="166px"  id="lxsj"/>
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="开始时间" />
+					<hbox>
+						<datebox width="166px"  id="kaishi" />
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+					<label value="结束时间" />
+					<hbox>
+						<datebox width="166px"  id="jieshu" />
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="经费（万元） " />
+					<hbox>
+						<decimalbox id="jingfei" />
+					</hbox>
+					<label value="信息填写人 " />
+					<label id="writeuser"></label>
+				</row>
+				<row spans="1,3" id="proStaffsRow" visible="false">
+					<label value="项目组人员" />
+					<textbox id="prostaffs" cols="78" maxlength="200" />
+				</row>
+				<row>
+					<label value="学科分类" />
+					<listbox id="subjetype" mold="select" width="220px" />
+					
+					<label value="项目进展" />
+					<listbox id="progress" mold="select"
+						width="180px">
+					</listbox>
+				</row>
+				<row>
+					<label value="项目级别" />
+					<listbox id="scale" mold="select" width="220px">
+					</listbox>
+				</row>
+				
+				<row>
+					<label value="本人贡献排名" />
+					<hbox>
+						<label id="gongxian" />
+					</hbox>
+					<label value="个人研究方向" />
+					<listbox id="research" mold="select" width="180px" use="org.iti.gh.ui.listbox.YjfxListbox">
+					</listbox>
+				</row>
+				<row>
+					<label value="本人承担任务或作用" />
+					<listbox id="cdrw" mold="select" width="220px">
+					</listbox>
+                    <label value="项目内部编号" id="inNumLabel"/>
+					<hbox>
+						<label id="internalNum" width="180px" />
+					</hbox>
+				</row>	
+				<row spans="1,3">
+					<label value="项目指标" />
+					<textbox id="target" cols="80" height="50px" rows="3" maxlength="180" />
+				</row>	
+			</rows>
+			</grid>
+			<separator />		
+			<groupbox closable="true">
+				<caption>
+					<label style="color:red" value="[提示]" />
+				</caption>
+				<vbox>
+					<separator spacing="1px" />
+					<separator spacing="1px" />
+					<label pre="true" value="1、经费必须为规范的数字，如：2.3" />
+				</vbox>
+			</groupbox>
+		</tabpanel>
+		<tabpanel>
+		<grid>
+			<columns>
+				<column width="22%" align="center" />
+				<column width="30%" />
+				<column width="18%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>				
+				<row>
+					<label value="合同编号" />
+					<hbox>
+						<textbox  width="180px" maxlength="50" id="contractNum"/>
+						<label />
+					</hbox>
+					<label value="主要完成单位" />
+					<hbox>
+						<textbox  width="180px" maxlength="50" id="finishUnit"/>
+						<label />
+					</hbox>
+				</row>
+				<row>
+					<label value="合同规定完成时间" />
+					<hbox>
+						<datebox width="166px"  id="setFinishTime"/>
+						<label  />
+					</hbox>
+					<label value="实际完成时间" />
+					<hbox>
+						<datebox  width="166px"  id="realFinishTime"/>
+						<label />
+					</hbox>
+				</row>			
+				<row>
+					<label value="资助金额（万元） " />
+					<hbox>
+						<decimalbox  width="150px"  value="10" id="grants"/>
+					</hbox>
+					<label value="信息填写人 " />
+					<label id="writeuser1"></label>
+				</row>
+				<row spans="1,3">
+					<label value="研发内容完成情况" />
+					<textbox  cols="78" maxlength="200" height="100px" rows="10" id="conFinishCondition"/>
+				</row>
+
+					<row spans="1,3">
+					<label value="取得的成果及成效" />
+					<textbox  cols="78" maxlength="200" height="100px"  rows="10"  id="fruit"/>
+				</row>
+
+				<row>
+					<label value="项目鉴定（验收）时间" />
+					<datebox  width="166px"  id="identtime"/>
+					<label value="鉴定水平" />
+					<textbox  width="180px" maxlength="100" id="level"/>
+				</row>
+			</rows>
+			</grid>
+			<separator />		
+			<groupbox closable="true">
+				<caption>
+					<label style="color:red" value="[提示]" />
+				</caption>
+				<vbox>
+					<separator spacing="1px" />
+					<separator spacing="1px" />
+					<label pre="true" value="1、资助金额必须为规范的数字，如：2.3" />
+				</vbox>
+			</groupbox>
+		</tabpanel>
+		<tabpanel>
+			<separator />
+			<separator />
+			<separator />
+			<separator />
+			<separator />
+			<grid align="center" >
+				<columns>
+					<column width="25%" align="center" />
+					<column width="70%" />
+				</columns>
+				<rows>			
+					<row id="rowFile" spans="1,3" >
+						<label value="上传申请书:" style="color:blue;"></label>
+						<hbox>
+							<hbox pack="center" width="100%">
+								<hbox>
+									<listbox id="upList" style="border:0px" mold="select"  rows="1" width="200px" visible="false" />
+									<button id="upFile" label="上传" />
+									<button label="下载" id="downFile" visible="false"/>
+									<button label="删除" id="deUpload" visible="false"/>
+									<checkbox label="是否有文件备份" id="checkBackup" checked="false" visible="false"></checkbox>
+								</hbox>
+							</hbox>
+						</hbox>
+					</row>
+					
+					<row id="rowFile2" spans="1,3" >
+						<label value="上传合同书:" style="color:blue;"></label>
+						<hbox>
+							<hbox pack="center" width="100%">
+								<hbox>
+									<listbox id="upList2" style="border:0px" mold="select" rows="1" width="200px" visible="false"/>
+									<button id="upFile2" label="上传" />
+									<button label="下载" id="downFile2" visible="false"/>
+									<button label="删除" id="deUpload2" visible="false"/>
+									<checkbox label="是否有文件备份" id="checkBackup2" checked="false" visible="false"></checkbox>
+								</hbox>
+							</hbox>
+						</hbox>
+					</row>
+					
+					<row id="rowFile3" spans="1,3" >
+						<label value="上传中期报告:" style="color:blue;"></label>
+						<hbox>
+							<hbox pack="center" width="100%">
+								<hbox>
+									<listbox id="upList3" style="border:0px" mold="select" rows="1" width="200px" visible="false"/>
+									<button id="upFile3" label="上传" />
+									<button label="下载" id="downFile3" visible="false"/>
+									<button label="删除" id="deUpload3" visible="false"/>
+									<checkbox label="是否有文件备份" id="checkBackup3" checked="false" visible="false"></checkbox>
+								</hbox>
+							</hbox>
+						</hbox>
+					</row>
+							
+					<row id="rowFile4" spans="1,3" >
+						<label value="上传结项报告:" style="color:blue;"></label>
+						<hbox>
+							<hbox pack="center" width="100%">
+								<hbox>
+									<listbox id="upList4" style="border:0px" mold="select" rows="1" width="200px" visible="false"/>
+									<button id="upFile4" label="上传" />
+									<button label="下载" id="downFile4" visible="false"/>
+									<button label="删除" id="deUpload4" visible="false"/>
+									<checkbox label="是否有文件备份" id="checkBackup4" checked="false" visible="false"></checkbox>
+								</hbox>
+							</hbox>
+						</hbox>
+					</row>								
+				</rows>				
+			</grid>
+			<separator />
+			<separator />
+			<separator />
+			<separator />
+			<separator />
+			<groupbox closable="true">
+				<caption>
+					<label style="color:blue;font:15" value="[生成报告]" />
+				</caption>
+				<hbox pack="center" width="100%">
+					<hbox>	
+					<!--  	<button label="下载全部 " id="downFileZip" /> -->
+						<space width="3px" />
+						<toolbarbutton label="生成中期报告"  id="exportMiddReport"/>
+						<space width="8px" />
+						<toolbarbutton label="生成结项报告" id="resultReport" />
+					</hbox>
+				</hbox>
+			</groupbox>
+			<separator />
+			<separator />
+			<separator />
+			<separator />
+			<separator />	
+			<separator />
+			<separator />	
+			<groupbox closable="true">
+				<caption>
+					<label style="color:red" value="[提示]" />
+				</caption>
+				<vbox>
+					<separator spacing="1px" />
+					<separator spacing="1px" />
+					<label pre="true" value="1、点击“上传附件”可以实现多文件的上传，并且可以删除上传的文件" />
+					<label pre="true" value="2、上传 附件后请点击“提交”保存， 以防丢失文件！" />
+					<label pre="true" value="3、点击生成报告，可以按需要订制报告内容！" />
+				</vbox>
+			</groupbox>
+			</tabpanel>
+		</tabpanels>
+		</tabbox>
+		<separator></separator>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<toolbarbutton id="submit" image="/css/default/images/common/actSave.gif"/>
+				<space width="3px" />
+				<toolbarbutton id="close" image="/css/default/images/common/actquit.gif"/>
+			</hbox>
+		</hbox>
+		
+	</window>
+</zk>

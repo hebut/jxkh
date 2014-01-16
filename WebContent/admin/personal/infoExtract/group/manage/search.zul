@@ -1,0 +1,46 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="搜索群组" width="700px" height="385px" border="normal" style="text-align:left" closable="true" use="org.iti.xypt.personal.group.SearchWindow">
+		<grid>
+			<columns>
+				<column align="center" />
+			</columns>
+			<rows>
+				<row>
+					<vbox>
+						<separator spacing="1px" />
+						<hbox align="center">
+							<label value="群组类型：" />
+							<listbox id="typeList" mold="select" width="100px">
+								<listitem label="-全部群组-" selected="true" />
+								<listitem label="普通群组" />
+								<listitem label="兴趣联盟" />
+								<listitem label="组织机构" />
+								<listitem label="好友交流" />
+							</listbox>
+							<space spacing="30px" />
+							<label value="群组名称：" />
+							<textbox id="name" width="120px" />
+							<space spacing="15px" />
+							<button id="query" label="查询" />
+						</hbox>
+						<separator spacing="1px" />
+					</vbox>
+				</row>
+				<row>
+					<listbox id="groupList" mold="paging" pageSize="10" height="300px">
+						<listhead>
+							<listheader label="序号" align="center" width="10%" />
+							<listheader label="群组名称" align="center" width="20%" />
+							<listheader label="群组类型" align="center" width="10%" />
+							<listheader label="创建者" align="center" width="10%" />
+							<listheader label="创建者所属部门" align="center" width="30%" />
+							<listheader label="状态" align="center" width="10%" />
+							<listheader label="申请操作" align="center" width="10%" />
+						</listhead>
+					</listbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

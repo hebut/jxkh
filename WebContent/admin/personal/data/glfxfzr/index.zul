@@ -1,0 +1,20 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window use="org.iti.gh.glfzfzr.GlfxfzrWindow">
+<panel title="管理方向负责人" width="100%" border="normal" collapsible="true" style="text-align:left">
+
+<panelchildren>
+<listbox id="teacherlist">
+		<listhead>
+			<listheader width="8%" label="序号" align="center"/>
+			<listheader width="20%" label="专业方向"  align="center"/>
+			<listheader label="方向负责人"  align="center"/>
+			
+			
+			<listheader width="10%" label="功能" align="center"/>
+		</listhead>
+</listbox>
+</panelchildren>
+</panel>
+</window>
+</zk>

@@ -1,0 +1,151 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="审核教材情况" border="normal" style="text-align:left"
+		width="800px"  
+		use="org.iti.gh.shxkjs.jyqk.ShjcqkWindow" closable="true">
+		<listbox id="jclistbox" style="border-bottom-width:0px"
+			mold="paging" pageSize="10">
+			<listhead>
+				<listheader label="序号" width="10%" align="center" />
+				<listheader label="教材名称" width="25%" align="center" />
+				<listheader label="出版单位" width="25%" align="center" />
+				<listheader label="出版时间" width="15%" align="center" />
+				<listheader label="填写人" width="15%" align="center" />
+				<listheader label="功能" width="10%" align="center" />
+			</listhead>
+		</listbox>
+		<grid id="auditJc">
+			<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="20%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="教材名 " style="letter-spacing:10px" />
+					<hbox>
+						<label id="cgmc"  />
+					</hbox>
+				</row>
+				<row>
+					<label value="著作类型 " style="letter-spacing:5px" />
+					<listbox id="worktype" mold="select"
+						width="300px">
+					</listbox>
+					<label value="学科分类 " style="letter-spacing:5px" />
+					<listbox id="subjetype" mold="select"
+						width="300px">
+					</listbox>
+				</row>
+				<row>
+					<label value="出版单位" style="letter-spacing:5px" />
+					<hbox>
+						<label id="kanwu"  />
+					</hbox>
+					<label value="出版时间" style="letter-spacing:5px" />
+					<hbox>
+						<label id="publitime" />
+					</hbox>
+				</row>
+				<row>
+					<label value="版次" style="letter-spacing:25px" />
+					<label id="editionno"  />
+					<label value="ISBN号" />
+					<hbox>
+						<label id="isbn" />
+					</hbox>
+				</row>
+				<row>
+					<label value="主编" style="letter-spacing:5px" />
+					<label id="zb"  />
+					<label value="副主编" style="letter-spacing:5px" />
+					<label id="fzb"   />
+				</row>
+				<row spans="1,3">
+					<label value="参编者" style="letter-spacing:5px" />
+					<label id="bz"  />
+				</row>
+				<!-- 
+				<row spans="1,3">
+					<label value="全部作者" style="letter-spacing:5px" />
+					<label id="all"  />
+				</row>
+				 
+				<row spans="1,3">
+					<label value="作者排名" style="letter-spacing:5px" />
+					<textbox id="namesort" cols="80" />
+				</row>
+				<row>
+					<label value="本人署名情况" />
+					<hbox>
+						<textbox id="shuming" cols="20" />
+						<label value="* 排名/总人数 "
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="承担字数" style="letter-spacing:5px" />
+					<hbox>
+						<intbox id="words" cols="20" value="0" />
+						<label value="字数为一个正数"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+				
+				<row spans="1,3">
+					<label value="备注" style="letter-spacing:25px" />
+					<textbox id="remark" cols="80" height="90px" />
+				</row>
+				-->
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+					<hbox>
+						<grid width="400px">
+							<columns>
+								<column width="60%"></column>
+								<column width="20%"></column>
+								<column width="20%"></column>
+							</columns>
+							<rows>
+								<row>
+									<listbox id="upList"
+										style="border:0px" mold="select" rows="1"/>
+								</row>
+							</rows>
+						</grid>
+						<hbox pack="center" width="100%">
+						<hbox>
+							<button label="下载" id="downFile" />
+						</hbox>
+					</hbox>
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="是否通过" style="letter-spacing:5px" />
+					<hbox>
+						<radiogroup id="audit">
+							<radio label="不通过" checked="true" />
+							<radio label="通过" />
+						</radiogroup>
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="审核意见" style="letter-spacing:5px" />
+					<textbox id="reason" cols="80" rows="4"
+						height="30px">
+					</textbox>
+				</row>
+				<row spans="4">
+					<hbox pack="center" width="100%">
+						<hbox>
+							<button label="提交" id="submit" />
+							<space width="3px" />
+							<button label="下载全部 " id="downFileZip" />
+							<space width="3px" />
+							<button label="返回" id="close" />
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

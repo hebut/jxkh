@@ -1,0 +1,108 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="授课情况" border="normal" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.SkqkWindow"
+		width="800px">
+		<grid>
+			<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="20%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+
+				<row>
+					<label value="课程名称" />
+					<hbox>
+						<textbox id="cgmc" cols="40" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="时间" style="letter-spacing:15px" />
+					<hbox>
+						<textbox id="year" cols="40" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>					
+				</row>
+				<row>
+					<label value="专业 " style="letter-spacing:15px" />
+					<hbox>
+						<textbox id="zhuanye" cols="40" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="授课对象" />					
+					<hbox>
+						<textbox id="grade" cols="40" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="学时（理论+试验，如“32+20”）" />
+					<hbox>
+						<textbox id="keshi" cols="40" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="工作量" style="letter-spacing:10px" />
+					<textbox id="work" cols="40" />
+				</row>
+
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+						<hbox>
+						<grid width="400px">
+							<columns>
+								<column width="60%">
+								</column >
+								<column width="20%">
+								</column>
+								<column width="20%" >
+								</column>
+							</columns>
+							<rows>
+							<row>
+							<listbox id="upList" style="border:0px" />
+							<button label="下载" id="downFile" />
+							<button label="删除" id="deUpload" />
+							</row>
+							</rows>
+						</grid>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit" />
+				<space width="3px" />
+				<button id="upFile" label="上传附件" visible="false"/>
+				<!-- 
+				<space width="3px"/>
+				<button label="重置" id="reset"/>
+				 -->
+				 	<space width="3px"/>
+				<button label="下载全部 " id="downFileZip" visible="false"/>
+				<space width="3px" />
+				<button label="关闭" id="close" />
+			
+			</hbox>
+		</hbox>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、课程名称中包含毕业设计 " />
+				<label pre="true" value="2、授课对象填写格式为：例如，本科大三 " />
+				<label pre="true" value="3、时间，如：2003-至今或、2003-2004 " />
+				<label pre="true" value="5、学时（理论+试验），如：32+20 " />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

@@ -1,0 +1,38 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="添加考核年度" border="normal" sclass="newin" width="400px" height="180px" closable="true">
+	<grid>
+		<columns>
+			<column width="30%" align="right"/>
+			<column width="70%" align="left"/>
+		</columns>
+		<rows>
+			<row>
+				<label value="新的考核年度"/>
+				<hbox>
+					<intbox id="year" width="200px"/>
+					<label value="*" style="color:red"/>
+				</hbox>
+				
+			</row>
+		</rows>
+	</grid>
+	<separator/>
+	<div align="center">
+		<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif"/>
+		<space />
+		<toolbarbutton id="reset" image="/css/default/images/button/cz.gif"/>
+		<space />
+		<toolbarbutton id="close" image="/css/default/images/button/gb.gif"/>
+	</div>
+	<separator/>
+	<groupbox>
+		<caption>
+			<label value="提示" style="color:red"/>
+		</caption>
+		<div align="left">
+			<label value="1.年份填写时完全按照格式：2011填写。" style="color:red"/>
+		</div>
+	</groupbox>
+</window>
+</zk>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.uniwin.asm.personal.entity.DocList" table="DocumentList">
+        <id name="dlId" type="java.lang.Long">
+            <column name="DL_ID" precision="18" scale="0" />
+            <generator class="native" />
+        </id>
+        <property name="dlName" type="java.lang.String">
+            <column name="DL_NAME" length="200" />
+        </property>
+        <property name="dtId" type="java.lang.Long">
+            <column name="DT_ID" precision="18" scale="0" />
+        </property>
+        <property name="dlPath" type="java.lang.String">
+            <column name="DL_PATH" length="400" />
+        </property>
+        <property name="dlInfo" type="java.lang.String">
+            <column name="DL_INFO" length="400"/>
+        </property>
+        <property name="dlSize" type="java.lang.Long">
+            <column name="DL_SIZE" precision="18" scale="0" />
+        </property>
+        <property name="dlTime" type="java.lang.Long">
+            <column name="DL_TIME" precision="18" scale="0" />
+        </property>
+        <property name="dlKuid" type="java.lang.Long">
+            <column name="DL_KUID" precision="18" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

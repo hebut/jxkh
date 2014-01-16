@@ -1,0 +1,64 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<window title="密码修改" border="normal" width="500px" use="com.uniwin.framework.ui.parameter.ChangePasswordWindow">
+	<grid>
+		<columns>
+			<column width="80px" />
+			<column width="150px" />
+			<column width="80px" />
+			<column width="150px" />
+		</columns>
+		<rows>
+			<row>
+				<label value="登录名" />
+				<textbox id="loginName" />
+				<label value="真实姓名" />
+				<textbox id="realName" />
+			</row>
+			<row spans="4" align="center">
+				<hbox>
+					<button id="search" label="搜索" onClick="changepassword.setVisible(true)"></button>
+					<button id="reset" label="重填" />
+				</hbox>
+			</row>
+			<row spans="4" id="changepassword" visible="false">
+				<grid>
+					<columns>
+						<column width="80px" />
+						<column width="150px" />
+						<column width="80px" />
+						<column width="150px" />
+					</columns>
+					<rows>
+						<row spans="4" align="center">
+							<label value="密码修改" />
+						</row>
+						<row>
+							<label value="登录名" />
+							<label id="loginName2" />
+							<label value="真实姓名" />
+							<label id="realName2" />
+						</row>
+						<row>
+							<label value="部门" />
+							<label id="company" />
+							<label value="性别" />
+							<label id="sex" />
+						</row>
+						<row>
+							<label value="密码 " />
+							<textbox id="password" />
+							<label value="确认密码" />
+							<textbox id="repassword" />
+						</row>
+						<row spans="4" align="center">
+							<hbox>
+								<button id="save" label="保存" />
+								<button id="reset2" label="重填" />
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+			</row>
+		</rows>
+	</grid>
+</window>

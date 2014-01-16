@@ -1,0 +1,22 @@
+<zk>
+	<window title="标题管理：标题权限" border="normal" style="text-align:left" use="com.uniwin.framework.ui.title.TitltTotalWindow" width="775">
+		<style>.z-listcell{ border: 1px solid; }</style>
+		<caption>
+			<toolbar align="end">
+				<listbox mold="select" id="tselect" use="com.uniwin.framework.common.listbox.TitleListbox" />
+				<button label="权限" id="authButton" />
+				<button label="增加" id="addTitle" />
+				<button label="删除" id="delete" />
+			</toolbar>
+		</caption>
+		<listbox id="tList" mold="paging" pageSize="5" height="360">
+			<listhead>
+				<listheader label="序号" width="5%" align="center" />
+				<listheader label="标题" width="20%" />
+				<listheader label="角色/部门/IP" width="40%" />
+				<listheader label="权限" width="15%" align="center" />
+				<listheader label="操作" width="20%" align="center" />
+			</listhead>
+		</listbox>
+	</window>
+</zk>

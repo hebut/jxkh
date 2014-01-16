@@ -1,0 +1,24 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window border="normal" title="管理日志" use="com.uniwin.framework.ui.parameter.MLogWindow" style="text-align:left">
+		<caption>
+			<hbox align="end">
+				<datebox id="btime" />
+				<label value="到" />
+				<datebox id="etime" />
+				<button label="搜索" id="serchButton" />
+				<button label="导出" id="exportButton" />
+				<button label="删除" id="deleteButton" />
+			</hbox>
+		</caption>
+		<grid style="border:1px" mold="paging" pageSize="12" id="logGrid">
+			<columns>
+				<column label="管理时间" width="150px" align="center" sort="auto(kmlTime)" />
+				<column label="管理员" width="100px" align="center" sort="auto(kuName)" />
+				<column label="管理IP地址" width="150px" align="center" sort="auto(kmlIp)" />
+				<column label="功能模块" width="100px" align="center" sort="auto(kmlFunc)" />
+				<column label="管理摘要" sort="auto(kmlDesc)" />
+			</columns>
+		</grid>
+	</window>
+</zk>

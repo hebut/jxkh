@@ -1,0 +1,47 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="导入他校教师" border="normal" width="90%" closable="true" use="org.iti.human.ld.TeacherSchImpWindow">
+		<panel framable="true">
+			<caption></caption>
+			<panelchildren>
+				<grid style="border:0px">
+					<rows>
+						<row style="padding:0;border-width:medium 0px 0px" align="center">
+							<hbox pack="center" align="center">
+								<listbox id="dselect" use="com.uniwin.framework.common.listbox.DeptListbox" mold="select"></listbox>
+								<label value="姓名："></label>
+								<textbox id="nameSearch" width="60px"></textbox>
+								<label value="教师号："></label>
+								<textbox id="tnoSearch" width="60px"></textbox>
+							</hbox>
+						</row>
+						<row>
+							<hbox width="100%" pack="center">
+								<hbox>
+									<button id="search" label="查询"></button>
+									<button id="reset" label="重置"></button>
+								</hbox>
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+		<listbox id="teacherlist" checkmark="true" multiple="true" mold="paging" pageSize="12">
+			<listhead>
+				<listheader label="序号" width="10%" align="center" />
+				<listheader label="教师号" width="10%" align="center" />
+				<listheader label="姓名" width="10%" align="center" />
+				<listheader label="职称" width="10%" align="center" />
+				<listheader label="系" width="20%" align="center" />
+				<listheader label="学院" width="20%" align="center" />
+				<listheader label="学校" width="20%" align="center" />
+			</listhead>
+		</listbox>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button label="选择" id="submit"></button>
+			</hbox>
+		</hbox>
+	</window>
+</zk>

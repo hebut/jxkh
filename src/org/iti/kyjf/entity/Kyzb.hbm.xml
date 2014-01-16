@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.iti.kyjf.entity.Kyzb" table="ZB_KYZB" schema="dbo">
+		<id name="zbId" type="java.lang.Long">
+			<column name="ZB_ID" precision="18" scale="0"/>
+			<generator class="native"  />
+		</id>
+		<property name="年份" type="java.lang.Integer">
+			<column name="ZX_YEAR" not-null="true"></column>
+		</property>
+
+		<property name="Zxzg" type="java.lang.Float">
+			<column name="ZX_ZG" precision="53" scale="0" />
+		</property>
+		<property name="Zxfg" type="java.lang.Float">
+			<column name="ZX_FG" precision="53" scale="0" />
+		</property>
+		<property name="Zxzcqt" type="java.lang.Float">
+			<column name="ZX_ZCQT" precision="53" scale="0" />
+		</property>
+		<property name="Zxbd" type="java.lang.Float">
+			<column name="ZX_BD" precision="53" scale="0" />
+		</property>
+		<property name="ZxSd" type="java.lang.Float">
+			<column name="ZX_SD" precision="53" scale="0" />
+		</property>
+		<property name="ZxDsqt" type="java.lang.Float">
+			<column name="ZX_DSQT" precision="53" scale="0" />
+		</property>
+		<property name="Zxgg" type="java.lang.Float">
+			<column name="ZX_GG" precision="53" scale="0" />
+		</property>
+		<property name="Zxfgg" type="java.lang.Float">
+			<column name="ZX_FGG" precision="53" scale="0" />
+		</property>
+		<property name="Zxcjys" type="java.lang.Float">
+			<column name="ZX_CJYS" precision="53" scale="0" />
+		</property>
+		<property name="Zxcj" type="java.lang.Float">
+			<column name="ZX_CJ" precision="53" scale="0" />
+		</property>
+		<property name="Zxgkxs" type="java.lang.Float">
+			<column name="ZX_GKXS" precision="53" scale="0" />
+		</property>
+		<property name="Zxwfxs" type="java.lang.Float">
+			<column name="ZX_WFXS" precision="53" scale="0" />
+		</property>
+		<property name="Zxwyxs" type="java.lang.Float">
+			<column name="ZX_WYXS" precision="53" scale="0" />
+		</property>
+		<property name="Zxqtxy" type="java.lang.Float">
+			<column name="ZX_QTXY" precision="53" scale="0" />
+		</property>
+		<property name="Zxtsxk" type="java.lang.Float">
+			<column name="ZX_TSXK" precision="53" scale="0" />
+		</property>
+		<property name="Zxbszd" type="java.lang.Float">
+			<column name="ZX_BSZD" precision="53" scale="0" />
+		</property>
+		<property name="Zxxyxs" type="java.lang.Float">
+			<column name="ZX_XYXS" precision="53" scale="0" />
+		</property>
+			<property name="Zxzdxk" type="java.lang.Float">
+			<column name="ZX_ZDXK" precision="53" scale="0" />
+		</property>
+		<property name="Zxzdjs" type="java.lang.Float">
+			<column name="ZX_ZDJS" precision="53" scale="0" />
+		</property>
+		<property name="Zxzdsys" type="java.lang.Float">
+			<column name="ZX_ZDSYS" precision="53" scale="0" />
+		</property>
+		<property name="kdId" type="java.lang.Long">
+			<column name="KD_ID" />
+		</property>
+	</class>
+</hibernate-mapping>

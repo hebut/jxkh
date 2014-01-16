@@ -1,0 +1,26 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="任务分配"  height="195px" border="normal" width="570px" sclass="newin" closable="true" id="distritueTask" 
+	use="org.iti.projectmanage.science.member.DistributeTaskWindow">
+	<separator height="5px"/>
+	<hbox>
+		<label value="给项目成员["></label>
+		<label id="memberName"  style="color:blue"></label>
+		<label value="]分配的任务："></label>
+	</hbox>
+	<separator width="5px"/>
+	<space width="5px"/>
+	<textbox height="80px" width="510px"  id="task" rows="10"></textbox>
+	<separator width="5px"/>
+	<div width="100%" align="center">
+		<hbox>
+		<toolbarbutton id="save" image="/css/default/images/common/actSave.gif">
+		</toolbarbutton> 
+		<space/>
+		<toolbarbutton id="close" image="/css/default/images/common/actquit.gif">	
+		</toolbarbutton>
+	</hbox>
+	</div>
+	<separator spacing="5px"/>
+</window>
+</zk>

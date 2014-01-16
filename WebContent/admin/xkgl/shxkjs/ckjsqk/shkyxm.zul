@@ -1,0 +1,158 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="审核科研项目" border="normal" style="text-align:left"
+		use="org.iti.gh.shxkjs.kyqk.ShkyxmWindow" width="800px" closable="true">
+		<listbox id="kyxm" mold="paging" pageSize="15" visible="true">
+			<listhead>
+				<listheader width="5%" align="center" label="序号" />
+				<listheader width="35%" label="名称" />
+				<listheader width="25%" label="来源" />
+				<listheader width="15%" label="项目负责人" />
+				<listheader width="10%" label="填写人" />
+				<listheader width="10%" label="操作" />
+			</listhead>
+		</listbox>
+		<grid id="auditxm" visible="false">
+			<columns>
+				<column width="22%" align="center" />
+				<column width="30%" />
+				<column width="18%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="项目名称" />
+					<hbox>
+						<label id="cgmc" />
+					</hbox>
+				</row>
+				<row>
+					<label value="项目来源" />
+					<hbox>
+						<label id="ly" />
+					</hbox>
+					<label value="项目负责人" />
+					<label id="proman" />
+
+				</row>
+				<row>
+					<label value="立项时间"></label>
+					<hbox>
+						<label id="lxsj" />
+					</hbox>
+					<label value="项目编号" />
+					<hbox>
+						<label id="number" />
+					</hbox>
+				</row>
+
+				<row>
+					<label value="开始时间" />
+					<hbox>
+						<label id="kaishi" />
+					</hbox>
+					<label value="结束时间" />
+					<hbox>
+						<label id="jieshu" />
+					</hbox>
+				</row>
+
+
+				<row spans="1,3">
+					<label value="项目组人员" />
+					<label id="prostaffs" />
+				</row>
+
+				<row>
+					<label value="学科分类" />
+					<listbox id="subjetype" mold="select" width="225px" />
+					<label value="项目类别" />
+					<listbox id="kyclass" mold="select" width="205px">
+					</listbox>
+				</row>
+				<!--
+				<row>
+					<label value="经费（万元） " />
+					<hbox>
+						<label id="jingfei" />
+					</hbox>
+					 
+					<label value="申报人员" />
+					<label id="register" />
+					
+				</row>
+				 -->
+				<row>
+					<label value="项目级别" />
+					<listbox id="scale" mold="select" width="225px">
+					</listbox>
+					<label value="项目进展" />
+					<listbox id="progress" mold="select"
+						width="205px">
+
+					</listbox>
+				</row>
+				<row>
+					<label value="项目指标" />
+					<label id="target" />
+
+				</row>
+				<row>
+					<label value="项目鉴定（验收）时间" />
+					<label id="identtime" />
+					<label value="鉴定水平" />
+					<label id="level" width="200px" />
+				</row>
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+					<hbox>
+						<grid width="400px">
+							<columns>
+								<column width="60%"></column>
+								<column width="20%"></column>
+								<column width="20%"></column>
+							</columns>
+							<rows>
+								<row>
+									<listbox id="upList"
+										style="border:0px" mold="select" rows="1"/>
+								</row>
+							</rows>
+						</grid>
+						<hbox pack="center" width="100%">
+						<hbox>
+							<button label="下载" id="downFile" />
+						</hbox>
+					</hbox>
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="是否通过" style="letter-spacing:5px" />
+					<hbox>
+						<radiogroup id="audit">
+							<radio label="不通过" checked="true" />
+							<radio label="通过" />
+						</radiogroup>
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="审核意见" style="letter-spacing:5px" />
+					<textbox id="reason" cols="80" rows="4"
+						height="30px">
+					</textbox>
+				</row>
+				<row spans="4">
+					<hbox pack="center" width="100%">
+						<hbox>
+							<button label="提交" id="submit" />
+							<space width="3px" />
+							<button label="下载全部 " id="downFileZip" />
+							<space width="3px" />
+							<button label="返回" id="close" />
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

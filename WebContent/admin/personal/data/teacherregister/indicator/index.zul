@@ -1,0 +1,327 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window  width="100%" border="false" id="indicatorWindow"
+		    use="com.uniwin.asm.personal.ui.data.IndicatorWindow" >
+	<style>.blue { color:#1256a7; font-weight:bold; font-size:14px; }</style>
+<div align="center">
+	<div width="600px">
+		<separator></separator>
+		<grid>
+			<columns>
+				<column align="right" width="20%"></column>
+				<column width="40%"></column>
+				<column align="right" width="10%"></column>
+				<column width="30%"></column>
+			</columns>
+			<rows>
+				<row spans="4">
+					<div width="100%" align="center">
+						<label id="year" style="color:red;font-size:20"></label>
+					</div>
+				</row>
+				<row>
+					<label value="申报专业一级学科"></label>
+					<hbox>
+						<textbox id="subject" width="200px" constraint="no empty" maxlength="50"></textbox>
+						<label value="*" style="color:red"></label>
+					</hbox>
+					<label value="晋升方式"></label>
+					<listbox id="type" rows="1" mold="select" >
+						<listitem label="正常" selected="true"></listitem>
+						<listitem label="破格"></listitem>
+					</listbox>
+				</row>
+				<row>
+					<label value="申报专业技术职务"></label>
+					<hbox>
+						<textbox id="position" width="200px" constraint="no empty" maxlength="50"></textbox>
+						<label value="*" style="color:red"></label>
+					</hbox>
+					
+					<label value="年度考核"></label>
+					<listbox id="assessment" rows="1" mold="select" >
+						<listitem label="合格" selected="true"></listitem>
+						<listitem label="不合格"></listitem>
+					</listbox>
+				</row>
+				<row>
+					<label value="计算机考试"></label>
+					<listbox id="computer" rows="1" mold="select" >
+						<listitem label="合格" selected="true"></listitem>
+						<listitem label="不合格"></listitem>
+					</listbox>
+					<label value="外语考试"></label>
+					<listbox id="foreign" rows="1" mold="select" >
+						<listitem label="合格" selected="true"></listitem>
+						<listitem label="不合格"></listitem>
+					</listbox>
+				</row>
+				<row spans="1,3">
+					<label value="职称评审状态"></label>
+					<label id="status"></label>
+				</row>
+				<row spans="1,3">
+					<label value="审核意见"></label>
+					<textbox id="remarkTextbox" rows="2" width="480px" height="50px" ></textbox>
+				</row>
+			</rows>
+		</grid>
+		<separator></separator>
+		<hbox pack="center" width="98%">
+			<hbox>
+				<button id="save" label="保存"></button>
+				<space width="3px"/>
+				<button id="reset" label="重置"></button>
+				<space width="3px"/>
+				<!--<button label="导出" id="export" visible="false"/>
+				<space width="3px" visible="false" />
+				<button label="导出报表" id="report"></button>
+			--></hbox>
+		</hbox>
+		<separator></separator>
+	</div>
+<div id="archive" visible="false" width="100%" align="center">
+	<grid width="98%" >
+		<columns>
+			<column width="8%" align="center" />
+			<column width="17%" />
+			<column width="8%" align="center" />
+			<column width="17%" />
+			<column width="8%" align="center" />
+			<column width="17%" />
+			<column width="8%" align="center" />
+			<column width="17%" />
+		</columns>
+		<rows >
+			<row spans="8" id="teaCourseRow1">
+		       <div align="left">						       		
+		       		<hbox>
+		       			<label value="授课情况" sclass="blue"/>
+		       			<div align="right" visible="false">
+		       				<checkbox label="授课学年" id="teaCourseYear" checked="true" sclass="blue"/>
+			       			<checkbox label="授课名称" id="teaCourseName" checked="true" sclass="blue"/>
+			       			<checkbox label="所属单位" id="teaCourseUnit" checked="true" sclass="blue"/>
+			       			<checkbox label="学时" id="teaCourseTime" checked="true" sclass="blue"/>
+		       			</div>
+		       		</hbox>
+		       </div>
+		    </row>	
+		    <row spans="8" id="teaCourseRow2">
+		    	<grid >
+			    	<columns>
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+					</columns>
+		    	    <rows id="teaCourceRows" ></rows>
+		    	</grid>
+		    </row>
+		    <row spans="8" id="fruitRow1">
+		       <div align="left">
+		       		<hbox>
+		       			<label value="获奖成果" sclass="blue"/>
+		       			<div align="right" visible="false">
+			       			<checkbox label="成果名称" id="fruitName" checked="true" sclass="blue"/>
+			       			<checkbox label="获奖时间" id="fruitTime" checked="true" sclass="blue"/>
+			       			<checkbox label="获奖名称" id="HjName" checked="true" sclass="blue"/>
+			       			<checkbox label="获奖等级" id="fruitClass" checked="true" sclass="blue"/>
+			       			<checkbox label="个人排名" id="fruitRank" checked="true" sclass="blue"/>
+		       			</div>
+		       		</hbox>
+		       </div>
+		    </row>	
+		    <row spans="8" id="fruitRow2">
+		    	<grid>
+			    	<columns>
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+					</columns>
+		    	    <rows id="fruitRows" ></rows>
+		    	</grid>
+		    </row>	
+		    <row spans="8" id="proRow1">
+		       <div align="left">
+		            <hbox>
+		       			<label value="科研项目" sclass="blue"/>
+		       			<div align="right" visible="false">
+			       			<checkbox label="项目名称" id="proName" checked="true" sclass="blue"/>
+			       			<checkbox label="项目来源" id="proSource" checked="true" sclass="blue"/>
+			       			<checkbox label="项目编号" id="proNum" checked="true" sclass="blue"/>
+			       			<checkbox label="个人排名" id="proRank" checked="true" sclass="blue"/>
+		       			</div>
+		       		</hbox>
+		       </div>
+		    </row>						 
+		    <row spans="8" id="proRow2">
+		    	<grid >
+			    	<columns>
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+					</columns>
+		    	    <rows id="proRows" ></rows>
+		    	</grid>
+		    </row>
+		    <row spans="8" id="softAuthRow1">
+		       <div align="left">						       		
+		       		<hbox>
+		       			<label value="软件著作权" sclass="blue"/>
+		       			<div align="right" visible="false">
+			       			<checkbox label="软件著作权名称" id="softAuthName" checked="true" sclass="blue"/>
+			       			<checkbox label="首次发表时间" id="softPubTime" checked="true" sclass="blue"/>
+			       			<checkbox label="登记号" id="softDjNum" checked="true" sclass="blue"/>
+			       			<checkbox label="登记时间" id="softDjTime" checked="true" sclass="blue"/>
+			       			<checkbox label="个人排名" id="softRank" checked="true" sclass="blue"/>
+		       			</div>
+		       		</hbox>
+		       </div>
+		    </row>	
+		    <row spans="8" id="softAuthRow2">
+		    	<grid >
+			    	<columns>
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+					</columns>
+		    	    <rows id="softAuthRows" ></rows>
+		    	</grid>
+		    </row>	 	
+  			<row spans="8" id="magaPaperRow1">
+		       <div align="left" >
+		       		<hbox>
+		       			<label value="期刊论文" sclass="blue"/>
+		       			<div align="right" visible="false">
+			       			<checkbox label="论文名称" id="magaPaperName" checked="true" sclass="blue"/>
+			       			<checkbox label="刊物名称" id="magaPaperKw" checked="true" sclass="blue"/>
+			       			<checkbox label="发表时间" id="magaTime" checked="true" sclass="blue"/>
+			       			<checkbox label="卷/期/页码范围" id="magaPages" checked="true" sclass="blue"/>
+			       			<checkbox label="个人排名" id="magaRank" checked="true" sclass="blue"/>
+		       			</div>
+		       		</hbox>
+		       </div>
+		    </row>	
+		    <row spans="8" id="magaPaperRow2">
+		    	<grid >
+			    	<columns>
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+					</columns>
+		    	    <rows id="magaPaperRows" ></rows>
+		    	</grid>
+		    </row>	
+			 <row spans="8" id="mettPaperRow1">
+		       <div align="left" >
+		       		<hbox>
+		       			<label value="会议论文" sclass="blue"/>
+		       			<div align="right" visible="false">
+			       			<checkbox label="论文名称" id="mettPaperName" checked="true" sclass="blue"/>
+			       			<checkbox label="会议论文集名称" id="mettPaperNaS" checked="true" sclass="blue"/>
+			       			<checkbox label="会议时间" id="mettTime" checked="true" sclass="blue"/>
+			       			<checkbox label="会议地点" id="mettPlace" checked="true" sclass="blue"/>
+			       			<checkbox label="个人排名" id="mettRank" checked="true" sclass="blue"/>
+		       			</div>
+		       		</hbox>
+		       </div>
+		    </row>	
+		    <row spans="8" id="mettPaperRow2">
+		    	<grid>
+			    	<columns >
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+					</columns>
+		    	    <rows id="mettingPaperRows" ></rows>
+		    	</grid>
+		    </row>	
+		    <row spans="8" id="pubTeaRow1">
+		       <div align="left">						       		
+		       		<hbox>
+		       			<label value="出版教材" sclass="blue"/>
+		       			<div align="right" visible="false">
+			       			<checkbox label="教材名称" id="pubTeaName" checked="true" sclass="blue"/>
+			       			<checkbox label="出版单位" id="pubTeaUnit" checked="true" sclass="blue"/>
+			       			<checkbox label="出版时间" id="pubTeaTime" checked="true" sclass="blue"/>
+			       			<checkbox label="个人排名" id="pubTeaRank" checked="true" sclass="blue"/>
+		       			</div>
+		       		</hbox>
+		       </div>
+		    </row>	
+		    <row spans="8" id="pubTeaRow2">
+		    	<grid >
+			    	<columns>
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+						<column width="8%" align="center" />
+						<column width="17%" />
+					</columns>
+		    	    <rows id="pubTeaRows" ></rows>
+		    	</grid>
+		    </row>
+		   </rows>
+		</grid>
+		<hbox pack="center" width="98%">
+			<hbox>
+			    <checkbox label="选择全部" id="allCheck" checked="true"/>
+				<space width="3px" />
+				<button label="生成个人主页" id="buildHomePage" visible="false"/>
+				<space width="3px" visible="false"/>
+				<button label="导出" id="export"/>
+				<space width="3px"></space>
+				<button label="导出报表" id="report"></button>
+				<space width="3px" />
+				<button label="预览" id="preView" visible="false"/>
+			</hbox>
+		</hbox>
+	</div>
+	<div width="100%" align="left">
+		<groupbox id="information" visible="false" closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、填写职称申请的基本信息，保存成功即视为提出申请 " />
+				<label pre="true" value="2、直接编辑申请的基本信息，保存即可完成对信息的修改，审核通过后不能修改基本信息"/>
+				<label pre="true" value="3、教师只有提交职称评审申请，并被审核通过后，才能进行导出word、打印报表等操作" />
+			</vbox>
+		</groupbox>
+	</div>
+</div>
+	</window>
+</zk>

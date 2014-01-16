@@ -1,0 +1,56 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window border="normal" title="查看消息" width="770px" sclass="newin" use="org.iti.xypt.personal.message.MessageViewWindow" closable="true">
+		<grid width="100%">
+			<columns>
+				<column width="12%" align="center"/>
+			</columns>
+			<rows>
+				<row>
+					<label value="消息标题:" />
+					<hbox>
+						<label id="xmSubject" width="440px" />
+					</hbox>
+				</row>
+				<row>
+					<label value="消息来自:" />
+					<hbox>
+						<label id="xmSource" width="440px" />
+					</hbox>
+				</row>
+				<row id="xmReceiveRow">
+					<label value="收信人:" />
+					<hbox>
+						<label id="xmReceive" width="440px" />
+					</hbox>
+				</row>
+				<row>
+					<label value="发布时间:" />
+					<hbox>
+						<label id="xmSendTime" width="440px" />
+					</hbox>
+				</row>
+				<row height="150px">
+					<label value="消息正文:" />
+					<hbox>
+						<html id="xmContent"></html>
+					</hbox>
+				</row>
+				<row id="rowFile" visible="true">
+					<label value="附件:" />
+					<hbox>
+						<listbox id="downList" mold="select"></listbox>
+						<button id="download" label="下载" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox width="100%" pack="center">
+			<hbox>				
+				<toolbarbutton id="reply" image="/css/default/images/button/hf.gif"></toolbarbutton>
+				<space spacing="20px" />
+				<toolbarbutton id="concel" image="/css/default/images/button/gb.gif"></toolbarbutton>
+			</hbox>
+		</hbox>
+	</window>
+</zk>

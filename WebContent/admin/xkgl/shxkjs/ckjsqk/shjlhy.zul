@@ -1,0 +1,120 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="审核学术交流会议情况" border="normal" width="800px" height="380px"
+		closable="true" use="org.iti.gh.shxkjs.xsjl.ShxsjlWindow"  sclass="newin">
+		<listbox id="gjxshylist" style="border-bottom-width:0px"
+			mold="paging" pageSize="10" sclass="new_listbox">
+			<listhead>
+				<listheader label="序号" width="10%" align="center" />
+				<listheader label="会议名称" width="25%" align="center" />
+				<listheader label="会议时间" width="25%" align="center" />
+				<listheader label="参与人数" width="10%" align="center" />
+				<listheader label="境外人数" width="10%" align="center" />
+				<listheader label="参加人" width="10%" align="center" />
+				<listheader label="功能" width="10%" align="center" />
+			</listhead>
+			<listitem>
+				<listcell label="1" />
+				<listcell label="绩效考核管理系统的研究与实现" style="color:blue" />
+				<listcell label="2011-09-20" />
+				<listcell label="505" />
+				<listcell label="123" />
+				<listcell label="459" />
+				<listcell>
+					<div align="center">
+						<toolbarbutton label="审核" style="color:blue">
+							<attribute name="onClick">
+	gjxshylist.setVisible(false);
+	AuditXshy.setVisible(true);
+</attribute>
+						</toolbarbutton>
+					</div>
+				</listcell>
+			</listitem>
+		</listbox>
+		<grid id="AuditXshy" visible="false">
+			<columns>
+				<column width="15%" align="center" />
+				<column width="35%" />
+				<column width="15%" align="center" />
+				<column width="35%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="会议名称" />
+					<label id="cgmc" value="绩效考核管理系统的研究与实现" />
+					<label value="会议主题" />
+					<label id="cgzt" value="系统的设计以及实现过程" />
+				</row>
+				<row>
+					<label value="会议时间" />
+					<label id="shijian" value="2011-09-20" />
+					<label value="会议地点" />
+					<label id="cgdd" value="河北工业大学北辰校区12教B204" />
+				</row>
+
+				<row>
+					<label value="参与人数" />
+					<label id="zrs" value="505" />
+					<label value="境外人数" />
+					<label id="jwrs" value="123" />
+				</row>
+				<row>
+					<label value="会议级别"></label>
+					<listbox mold="select" rows="1">
+						<listitem label="请选择"></listitem>
+						<listitem label="国家级交流会"></listitem>
+						<listitem label="省级交流会议"></listitem>
+					</listbox>
+					<label value="举办类型"></label>
+					<listbox mold="select" rows="1">
+						<listitem label="请选择"></listitem>
+						<listitem label="主办"></listitem>
+						<listitem label="协办"></listitem>
+					</listbox>
+				</row>
+				<row>
+					<label value="主办单位" />
+					<label value="情报院" />
+					<label value="合作单位" />
+					<label value="无" />
+				</row>
+				<row>
+					<label value="是否通过" style="letter-spacing:5px" />
+					<hbox>
+						<radiogroup id="audit">
+							<radio label="不通过" checked="true" />
+							<radio label="通过" />
+						</radiogroup>
+					</hbox>
+					<label value="填写人" />
+					<label value="李鹏" />
+				</row>
+				<row spans="1,3">
+					<label value="审核意见" style="letter-spacing:5px" />
+					<textbox id="reason" cols="80" rows="4"
+						height="30px">
+					</textbox>
+				</row>
+				<row spans="4">
+					<hbox pack="center" width="100%">
+						<hbox>
+							<button label="提交" id="submit" />
+							<!-- 
+								<space width="3px" />
+								<button label="下载全部 " id="downFileZip" />
+							-->
+							<space width="3px" />
+							<button label="返回" id="close">
+								<attribute name="onClick">
+	gjxshylist.setVisible(true);
+	AuditXshy.setVisible(false);
+</attribute>
+							</button>
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

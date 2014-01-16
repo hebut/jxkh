@@ -1,0 +1,156 @@
+<?page title="河北工业大学研究生信息管理系统" contentType="text/html;charset=UTF-8"?>
+<?link rel="icon" href="/css/default/images/favicons.ico" mce_href="/css/default/images/favicons.ico" type="image/x-icon"?>
+<?link rel="shortcut icon" href="/css/default/images/favicons.ico" mce_href="/css/default/images/favicons.ico" type="image/x-icon"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<style>div.z-row-cnt { padding:0 0; }</style>
+	<window>
+		<window id="main" mode="overlapped" width="995px" height="780px"
+			position="center"
+			use="com.uniwin.framework.ui.login.BorderLayoutComposer">
+			<borderlayout>
+				<north size="110px" style="background-color:#d9f3ff">
+					<vbox width="100%" height="110px" spacing="0">
+						<hbox width="100%" height="80px">
+						<image src="/css/default/images/logo/0L.jpg" height="80px" width="995px"  ></image>
+							<!-- <flash src="/css/default/images/logo/3.swf" height="80px" width="995px" autoplay="true" loop="true" /> -->
+ 
+						</hbox>
+						<grid style="border:0gpx">
+							<columns>
+								<column align="right" width="200px" />
+								<column align="left" width="700px" />
+								<column align="left" />
+							</columns>
+							<rows>
+								<row
+									style="padding:0;border-width:medium 0px 0px">
+									<menubar>
+										<menuitem id="loguser" />
+									</menubar>
+									<menubar id="onebar" />
+									<menubar>
+										<menuitem id="loginOut"
+											label="注销" />
+									</menubar>
+								</row>
+							</rows>
+						</grid>
+					</vbox>
+				</north>
+				<west id="westLeft" size="200px" title="功能" flex="true"
+					splittable="true" collapsible="true" autoscroll="false" />
+				<center flex="true">
+					<tabbox id="centerTabbox">
+						<tabs>
+							<tab label="首页" id="centerTab" />
+						</tabs>
+						<tabpanels>
+							<tabpanel style="text-align:center">
+								<hbox pack="center">
+									<panel id="noticePanel"
+										width="500px" framable="true" movable="true" border="normal"
+										>
+										<caption label="通知"
+											image="/css/default/images/collection/notice.png"
+											style="filter:Chroma(color=#d8e9ec)">
+											<toolbarbutton
+												id="allNotice" style="color:blue" label="查看更多" />
+										</caption>
+										<panelchildren>
+											<listbox id="noticelistbox"
+												height="200px">
+												<listhead>
+													<listheader
+														width="10%" align="center" />
+													<listheader
+														width="19%" />
+													<listheader
+														width="52%" />
+													<listheader
+														width="19%" align="center" />
+												</listhead>
+											</listbox>
+										</panelchildren>
+									</panel>
+									<panel id="weather" height="260px"
+										title="天气预报" border="normal" collapsible="false"
+										closable="false" maximizable="false" >
+										<panelchildren>
+											<iframe
+												width="100%" scrolling="NO" height="172px" 
+												src="http://weather.qq.com/inc/ss127.htm">
+											</iframe>
+
+										</panelchildren>
+									</panel>
+
+								</hbox>
+								<hbox pack="center">
+									<panel id="messagePanel"
+										width="500px" framable="true" movable="true" border="normal"
+										>
+										<caption label="消息"
+											image="/css/default/images/collection/message.png"
+											style="filter:Chroma(color=#d8e9ec)">
+											<toolbarbutton
+												id="allMessage" style="color:blue" label="查看更多" />
+										</caption>
+										<panelchildren>
+											<listbox id="messagelistbox"
+												height="200px">
+												<listhead>
+													<listheader
+														width="10%" align="center" />
+													<listheader
+														width="19%" />
+													<listheader
+														width="52%" />
+													<listheader
+														width="19%" align="center" />
+												</listhead>
+											</listbox>
+										</panelchildren>
+									</panel>
+									<panel id="clock" height="260px"
+										title="当前时间" border="normal" collapsible="false"
+										closable="false" maximizable="false">
+										<panelchildren>
+											<iframe width="100%"
+												height="100%"
+												src="http://ig.gmodules.com/gadgets/ifr?url=http://www.labpixies.com/campaigns/clock/mini_clock.xml&amp;nocache=0&amp;up_skin_id=&amp;upt_skin_id=hidden&amp;lang=en&amp;country=us&amp;.lang=en&amp;.country=us&amp;synd=ig&amp;mid=34&amp;ifpctok=-3234052241260630457&amp;parent=http://www.google.com&amp;extern_js=/extern_js/f/CgJlbhICdXMrMBI4ACwrMBM4ACw/v3vgcgA0x8g.js" />
+										</panelchildren>
+									</panel>
+								</hbox>
+							</tabpanel>
+						</tabpanels>
+					</tabbox>
+				</center>
+				<south>
+					<vbox>
+						<separator spacing="1px" />
+						<hbox pack="start" width="100%">
+							<space spacing="1px" width="160px" />
+							<hbox>
+								<label id="loginTime" />
+								<button id="resetSessionCount"
+									label="获取在线人数" visible="false" disabled="false">
+								</button>
+								<separator spacing="20" width="160px" />
+								<label id="lastIP" visible="false" />
+								<label
+									value="本站建议使用IE浏览器       分辨率1024×768" />
+								<space width="90px"></space>
+
+								<button id="resetEhcache" label="重置缓存"
+									visible="false" disabled="true">
+								</button>
+							</hbox>
+						</hbox>
+						<separator spacing="1px" />
+					</vbox>
+				</south>
+			</borderlayout>
+		</window>
+	</window>
+</zk>

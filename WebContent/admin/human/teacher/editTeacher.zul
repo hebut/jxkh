@@ -1,0 +1,88 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="编辑教师信息" border="normal" width="70%" use="org.iti.human.ld.TeacherEditWindow" closable="true">
+		<grid>
+			<columns>
+				<column width="15%" />
+				<column width="30%" />
+				<column width="15%" />
+				<column width="40%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="登录名" />
+					<label id="loginName"></label>
+					<label value="真实姓名" />
+					<hbox>
+						<textbox id="trueName" constraint="no empty" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="教师号"></label>
+					<label id="thid"></label>
+					<label value="性别" />
+					<listbox mold="select" id="kuSex">
+						<listitem label="男" value="1"></listitem>
+						<listitem label="女" value="2"></listitem>
+					</listbox>
+				</row>
+				<row>
+					<label value="密码" />
+					<textbox id="uPass" type="password" />
+					<label value="确认密码" />
+					<textbox id="uRpass" type="password" />
+				</row>
+				<row spans="1,3">
+					<label value="职称"></label>
+					<hbox use="org.iti.xypt.ui.base.TitleSelectHbox" id="titleHbox"></hbox>
+				</row>
+				<row spans="1,3">
+					<label value="部门" />
+					<listbox use="com.uniwin.framework.common.listbox.DeptListbox" id="deptSelect" mold="select" />
+				</row>
+				<row>
+					<label value="用户状态" />
+					<listbox mold="select" id="uStatus">
+						<listitem label="未审核" />
+						<listitem label="正常" selected="true" />
+						<listitem label="查杀" />
+					</listbox>
+					<label value="允许登录次数" />
+					<hbox>
+						<intbox id="lTimes" value="0" constraint="no empty,no negative" />
+						<label value="0为无限制" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="绑定类型" />
+					<listbox id="bangType" mold="select">
+						<listitem label="不绑定" selected="true" />
+						<listitem label="IP绑定" />
+					</listbox>
+					<label value="绑定地址" />
+					<hbox>
+						<textbox id="uBandIp" />
+						<checkbox label="自动登录" id="autoLogin" />
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="个人简介"></label>
+					<textbox id="uinfo" cols="65" height="40px"></textbox>
+				</row>
+				<row spans="1,3">
+					<label value="研究方向"></label>
+					<textbox id="serach" cols="65" height="40px"></textbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="重填" id="reset" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

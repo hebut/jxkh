@@ -1,0 +1,58 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="添加人员" border="normal" width="790px" closable="true" use="org.iti.jxkh.score.work.AddWindow">
+		<separator />
+		<div align="center">
+			<hbox align="center">
+				<label value="所属部门：" />
+				<listbox mold="select" width="180px" id="deptSelect" />
+				<space width="20px" />
+				<label value="姓名：" />
+				<textbox width="120px" id="name" />
+				<space width="20px" />
+				<toolbarbutton id="search" image="/css/default/images/button/searAct.gif" />
+			</hbox>
+		</div>
+		<separator bar="true" spacing="15px" />
+		<hbox>
+			<panel width="350px" border="normal" title="备选列表">
+				<panelchildren>
+					<listbox id="listbox1" paginal="${paging}" checkmark="true" multiple="true" rows="9" height="295px">
+						<listhead>
+							<listheader width="10%" label="" />
+							<listheader label="用户编号" width="20%" style="text-align:center" />
+							<listheader label="用户姓名" width="30%" style="text-align:center" />
+							<listheader label="所属部门" width="40%" style="text-align:center" />
+						</listhead>
+					</listbox>
+					<paging id="paging" pageSize="9" />
+				</panelchildren>
+			</panel>
+			<vbox>
+				<separator spacing="150px" />
+				<button id="add" label="添加&gt;&gt;" style="cursor:hand" />
+				<separator />
+				<button id="delete" label="&lt;&lt;删除" style="cursor:hand" />
+			</vbox>
+			<panel width="350px" border="normal" title="上浮人员列表">
+				<panelchildren>
+					<listbox id="listbox2" checkmark="true" multiple="true" height="335px">
+						<listhead>
+							<listheader width="10%" label="" />
+							<listheader label="用户编号" width="20%" style="text-align:center" />
+							<listheader label="用户姓名" width="30%" style="text-align:center" />
+							<listheader label="所属部门" width="40%" style="text-align:center" />
+						</listhead>
+					</listbox>
+				</panelchildren>
+			</panel>
+		</hbox>
+		<div align="center">
+			<separator bar="true" spacing="15px" />
+			<hbox>
+				<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif" />
+				<toolbarbutton id="close" image="/css/default/images/button/actquit.gif" />
+			</hbox>
+		</div>
+	</window>
+</zk>

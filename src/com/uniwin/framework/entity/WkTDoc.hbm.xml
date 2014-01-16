@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.uniwin.framework.entity.WkTDoc" table="WK_T_DOC">
+		<id name="docId" type="java.lang.Long">
+			<column name="DOC_ID" precision="18" scale="0" />
+            <generator class="native" />
+		</id>
+		<property name="docKdid" type="java.lang.Long">
+			<column name="DOC_KDID" precision="18" scale="0" />
+		</property>
+		<property name="docName" type="java.lang.String">
+			<column name="DOC_NAME" length="200"  />
+		</property>
+		<property name="docInfo" type="java.lang.String">
+			<column name="DOC_INFO" length="200" />
+		</property>
+		<property name="docSize" type="java.lang.Long">
+			<column name="DOC_SIZE" precision="18" scale="0" />
+		</property>
+		<property name="docKuid" type="java.lang.Long">
+			<column name="DOC_KUID" precision="18" scale="0" />
+		</property>
+		<property name="doctime" type="java.lang.Long">
+			<column name="DOC_TIME" precision="18" scale="0" />
+		</property>
+		<property name="docLevel" type="java.lang.Integer">
+			<column name="DOC_LEVEL"/>
+		</property>
+		<property name="docPath" type="java.lang.String">
+			<column name="DOC_PATH" length="1000"/>
+		</property>
+		<property name="docKuname" type="java.lang.String">
+			<column name="DOC_KUNAME" length="40" />
+		</property>
+		<set name="wktroles" table="WKTDoc_WKTRole">
+			<key column="docId"></key>
+			<many-to-many class="com.uniwin.framework.entity.WkTRole" column="krId" ></many-to-many>
+		</set>
+		<many-to-one name="wktdoctype" column="doctId" lazy="false"></many-to-one>
+
+	</class>
+</hibernate-mapping>

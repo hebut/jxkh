@@ -1,0 +1,90 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="选择部门" border="normal" sclass="newin" width="500px" height="380px" closable="true">
+	<div align="center">	
+		<!-- <label value="部门编号:"/>
+		<textbox width="100px" id="departId"/>
+		<space></space>
+		<label value="部门名称:"/>
+		<hbox>
+			<textbox width="100px" id="departName"/>
+			<space/>
+			<toolbarbutton  image="/css/default/images/button/searAct.gif" id="search"/>
+		</hbox>	 -->
+	 <grid width="100%">
+		<columns>
+			<column width="23%" align="right"/>
+			<column width="23%" align="left"/>
+			<column width="23%" align="right"/>
+			<column width="31%" align="left"/>			
+		</columns>
+		<rows>
+			<row valign="center">
+				<label value="部门编号:"/>
+				<textbox width="130px" id="departId"/>
+				<label value="部门名称:"/>
+				<hbox>
+					<textbox width="130px" id="departName"/>
+					<space/>
+					<toolbarbutton  image="/css/default/images/button/searAct.gif" id="search"/>
+				</hbox>				
+			</row>
+		</rows>
+	</grid>
+	</div>
+	<separator/>
+	<div align="center">
+		<listbox id="departmen" mold="paging" checkmark="true" paginal="${zxPaging}" sclass="new_listbox">
+			<listhead>
+				<listheader width="10%" label="" />
+				<listheader label="序号"  width="15%" align="center"/>
+				<listheader label="部门编号" width="30%" align="center"/>
+				<listheader label="部门名称" width="45%"  align="center"/>										
+			</listhead>		
+			<listitem>
+				<listcell label=""/>
+				<listcell label="1"/>
+				<listcell label="02010"/>
+				<listcell label="科技信息资源研究所"/>
+			</listitem>	
+			<listitem>
+				<listcell label=""/>
+				<listcell label="2"/>
+				<listcell label="02011"/>
+				<listcell label="科技发展战略研究所"/>
+			</listitem>	
+			<listitem>
+				<listcell label=""/>
+				<listcell label="3"/>
+				<listcell label="02012"/>
+				<listcell label="科技宣传服务中心"/>
+			</listitem>		
+			<listitem>
+				<listcell label=""/>
+				<listcell label="4"/>
+				<listcell label="02013"/>
+				<listcell label="科技评估中心"/>
+			</listitem>	
+			<listitem>
+				<listcell label=""/>
+				<listcell label="5"/>
+				<listcell label="02014"/>
+				<listcell label="科技查新咨询中心"/>
+			</listitem>	
+			<listitem>
+				<listcell label=""/>
+				<listcell label="6"/>
+				<listcell label="02015"/>
+				<listcell label="技术转移中心"/>
+			</listitem>	
+		</listbox>
+		<paging id="zxPaging" zclass="z-paging"  pageSize="11" detailed="true" />
+	</div>
+	<separator/>
+	<div align="center">
+		<toolbarbutton image="/css/default/images/button/qd.gif"/>
+		<space/>
+		<toolbarbutton image="/css/default/images/button/gb.gif"/>
+	</div>
+</window>
+</zk>

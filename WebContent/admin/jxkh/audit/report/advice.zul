@@ -1,0 +1,149 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="部门审核意见" border="normal" width="600px" height="830px"
+		closable="true" sclass="newin"
+		use="org.iti.jxkh.audit.report.AdviceWin">
+		<separator />
+		<groupbox id="d">
+			<caption>
+				<label value="部门反馈意见" />
+			</caption>
+			<separator />
+			<grid>
+				<columns>
+					<column width="20%" align="center" />
+					<column width="80%" />
+				</columns>
+				<rows>
+					<row height="70px" align="center" id="r1">
+						<label id="dep1" />
+						<vbox align="center">
+							<radiogroup>
+								<radio id="pass1" label="通过"
+									disabled="true" />
+								<space />
+								<space />
+								<radio id="back1" label="退回"
+									disabled="true" />
+							</radiogroup>
+							<textbox height="38px" width="440px"
+								rows="5" id="advice1" disabled="true" />
+						</vbox>
+					</row>
+					<row height="70px" align="center" id="r2"
+						visible="false">
+						<label id="dep2" />
+						<vbox align="center">
+							<radiogroup>
+								<radio id="pass2" label="通过"
+									disabled="true" />
+								<space />
+								<space />
+								<radio id="back2" label="退回"
+									disabled="true" />
+							</radiogroup>
+							<textbox height="38px" width="440px"
+								rows="5" id="advice2" disabled="true" />
+						</vbox>
+					</row>
+					<row height="80px" align="center" id="r3"
+						visible="false">
+						<label id="dep3" />
+						<vbox align="center">
+							<radiogroup>
+								<radio id="pass3" label="通过"
+									disabled="true" />
+								<space />
+								<space />
+								<radio id="back3" label="退回"
+									disabled="true" />
+							</radiogroup>
+							<textbox height="38px" width="440px"
+								rows="5" id="advice3" disabled="true" />
+						</vbox>
+					</row>
+					<row height="80px" align="center" id="r4"
+						visible="false">
+						<label id="dep4" />
+						<vbox align="center">
+							<radiogroup>
+								<radio id="pass4" label="通过"
+									disabled="true" />
+								<space />
+								<space />
+								<radio id="back4" label="退回"
+									disabled="true" />
+							</radiogroup>
+							<textbox height="38px" width="440px"
+								rows="5" id="advice4" disabled="true" />
+						</vbox>
+					</row>
+					<row height="80px" align="center" id="r5"
+						visible="false">
+						<label id="dep5" />
+						<vbox align="center">
+							<radiogroup>
+								<radio id="pass5" label="通过"
+									disabled="true" />
+								<space />
+								<space />
+								<radio id="back5" label="退回"
+									disabled="true" />
+							</radiogroup>
+							<textbox height="38px" width="440px"
+								rows="5" id="advice5" disabled="true" />
+						</vbox>
+					</row>
+					<row height="80px" align="center" id="r6"
+						visible="false">
+						<label id="dep6" />
+						<vbox align="center">
+							<radiogroup>
+								<radio id="pass6" label="通过"
+									disabled="true" />
+								<space />
+								<space />
+								<radio id="back6" label="退回"
+									disabled="true" />
+							</radiogroup>
+							<textbox height="38px" width="440px"
+								rows="5" id="advice6" disabled="true" />
+						</vbox>
+					</row>
+					<row height="80px" align="center" id="r7"
+						visible="false">
+						<label id="dep7" />
+						<vbox align="center">
+							<radiogroup>
+								<radio id="pass7" label="通过"
+									disabled="true" />
+								<space />
+								<space />
+								<radio id="back7" label="退回"
+									disabled="true" />
+							</radiogroup>
+							<textbox height="38px" width="440px"
+								rows="5" id="advice7" disabled="true" />
+						</vbox>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<separator />
+		<groupbox id="b">
+			<caption>
+				<label id="bAdviceGroupbox" value="业务办反馈意见" />
+			</caption>
+			<separator />
+			<textbox id="bAdvice" width="98%" rows="5" height="80px"
+				disabled="true" />
+		</groupbox>
+		<div align="center">
+			<toolbarbutton id="save"
+				image="/css/default/images/button/actSave.gif" />
+			<space />
+			<toolbarbutton id="close"
+				image="/css/default/images/button/gb.gif" />
+		</div>
+	</window>
+</zk>

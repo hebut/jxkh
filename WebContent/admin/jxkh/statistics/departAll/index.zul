@@ -1,0 +1,57 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none">
+		<groupbox height="50px">
+			<grid height="100%">
+				<columns>
+					<column width="50%" align="right" />
+					<column width="50%" align="left" />
+				</columns>
+				<rows>
+					<row height="45px">
+						<label value="选择统计年份：" />
+						<hbox>
+							<listbox mold="select" width="80px" rows="1" use="org.iti.gh.ui.listbox.YearListbox">
+								<!-- <listitem label="-请选择-" />
+								<listitem label="2011" />
+								<listitem label="2010" />
+								<listitem label="2009" />
+								<listitem label="2008" />
+								<listitem label="2007" />
+								<listitem label="2006" />
+								<listitem label="2005" /> -->
+							</listbox>
+							<space></space>
+							<toolbarbutton image="/css/img/searAct.gif" />
+						</hbox>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<toolbar align="end">
+			<toolbarbutton image="/css/sat/dc.gif" />
+			<space />
+		</toolbar>
+		<div align="center">
+			<listbox mold="paging" id="memberSalory" sclass="new_listbox" paginal="${zxPaging}">
+				<listhead>
+					<listheader width="10%" label="序号" align="center" />
+					<listheader width="20%" label="人员编号" align="center" />
+					<listheader width="20%" label="人员姓名" align="center" />
+					<listheader width="20%" label="奖励性工资(元)" align="center" />
+					<listheader width="15%" label="所在档次" align="center" />
+					<listheader width="15%" label="是否上浮" align="center" />
+				</listhead>
+				<listitem>
+					<listcell label="1" />
+					<listcell label="0025" />
+					<listcell label="黄海" />
+					<listcell label="3000" />
+					<listcell label="二档" />
+					<listcell label="否" />
+				</listitem>
+			</listbox>
+			<paging id="zxPaging" zclass="z-paging" pageSize="11" detailed="true" />
+		</div>
+	</window>
+</zk>

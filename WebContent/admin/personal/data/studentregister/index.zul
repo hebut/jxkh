@@ -1,0 +1,211 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="个人注册信息" width="100%" border="normal" style="text-align:left" use="com.uniwin.asm.personal.ui.data.StudentRegister">
+		<style>.red { color: red; font-style: oblique; font-size:18px; }</style>
+		<grid height="550px">
+			<columns>
+				<column width="10%" />
+				<column width="40%" />
+				<column width="10%" />
+				<column width="40%" />
+			</columns>
+			<rows>
+				<row spans="4,0">
+					<hbox>
+						<grid width="560px">
+							<columns>
+								<column width="15%" />
+								<column width="35%" />
+								<column width="15%" />
+								<column width="35%" />
+							</columns>
+							<rows>
+								<row spans="1">
+									<label value="登录名" width="60px" />
+									<label id="kuLid" width="150px" sclass="red" />
+									<label value="真实姓名" width="60px" />
+									<hbox align="center">
+										<textbox id="kuName" width="150px" />
+										<label value="*" style="color:red;valign:center" />
+									</hbox>
+								</row>
+								<row>
+									<hbox>
+										<label value="学号" />
+									</hbox>
+									<hbox>
+										<label id="stid" width="150px" />
+									</hbox>
+									<label value="班级" />
+									<label id="stClassList" />
+								</row>
+								<row>
+									<label value="学院" id="yuan" />
+									<label id="xueyuan" />
+									<label value="专业" id="xi" />
+									<label id="bumen" />
+								</row>
+								<row >
+									<label value="学籍状态" />
+									<label id="xueji" />
+									<label value="宿舍" />
+									<textbox id="dorm" />
+								</row>
+								<row>
+									<label value="电子邮箱" width="60px" />
+									<hbox align="center">
+										<textbox id="kuEmail" width="150px" constraint="/.+@.+\.[a-z]+/: Please enter an e-mail address" />
+										<label value="*" style="color:red;valign:center" />
+									</hbox>
+									<label value="电话" width="60px" />
+									<hbox align="center">
+										<textbox id="kuPhone" width="150px" />
+										<label value="*" style="color:red;valign:center" />
+									</hbox>
+								</row>
+								<row>
+									<label value="出生日期" width="60px" />
+									<datebox id="kuBirthday" focus="true" width="130px" />
+									<label value="性别" width="60px" />
+									<radiogroup id="kuSex">
+										<radio id="man" label="男" checked="true" />
+										<radio id="woman" label="女" />
+									</radiogroup>
+								</row>
+								<row>
+									<label value="身份证号" width="60px" />
+									<hbox align="center">
+										<textbox id="kuIdentity" width="150px" />
+										<label value="*" style="color:red;valign:center" />
+									</hbox>
+									<label value="政治面貌" width="60px" />
+									<hbox align="center">
+										<textbox id="kuPolitical" width="150px" />
+										<label value="*" style="color:red;valign:center" />
+									</hbox>
+								</row>
+								<row spans="1,3">
+									<label value="家庭住址" />
+									<hbox align="center">
+										<textbox id="homaddress" cols="65" width="450px" />
+										<label value="*" style="color:red;valign:center" />
+									</hbox>
+								</row>
+							</rows>
+						</grid>
+						<hbox>
+							<vbox align="cneter">
+								<hbox pack="center" width="100%">
+									<hbox>
+										<space width="5px" />
+										<image id="img" width="150px" height="170px" />
+									</hbox>
+								</hbox>
+								<hbox pack="center" width="100%">
+									<hbox>
+										<space width="10px" />
+										<button label="上传" id="upload" />
+										<space width="10px" />
+										<button label="删除" id="delete" />
+									</hbox>
+								</hbox>
+							</vbox>
+						</hbox>
+					</hbox>
+				</row>
+				<row spans="4">
+					<label value="家庭成员" style="font-family:'宋体';font-size:15px" />
+				</row>
+				<row spans="4">
+					<listbox>
+						<listhead>
+							<listheader label="姓名" width="25%" />
+							<listheader label="与本人关系" width="25%" />
+							<listheader label="工作单位" width="25%" />
+							<listheader label="联系电话" width="25%" />
+						</listhead>
+						<listitem>
+							<listcell>
+								<textbox id="name1"></textbox>
+								<textbox id="name2"></textbox>
+							</listcell>
+							<listcell>
+								<textbox id="contact1"></textbox>
+								<textbox id="contact2"></textbox>
+							</listcell>
+							<listcell>
+								<textbox id="work1"></textbox>
+								<textbox id="work2"></textbox>
+							</listcell>
+							<listcell>
+								<textbox id="phone1"></textbox>
+								<textbox id="phone2"></textbox>
+							</listcell>
+						</listitem>
+					</listbox>
+				</row>
+				<row spans="4">
+					<label value="社会关系" style="font-family:'宋体';font-size:15px" />
+				</row>
+				<row spans="4">
+					<listbox>
+						<listhead>
+							<listheader label="姓名" width="25%" />
+							<listheader label="与本人关系" width="25%" />
+							<listheader label="工作单位" width="25%" />
+							<listheader label="联系电话 " width="25%" />
+						</listhead>
+						<listitem>
+							<listcell>
+								<textbox id="name3"></textbox>
+								<textbox id="name4"></textbox>
+								<textbox id="name5"></textbox>
+								
+							</listcell>
+							
+							<listcell>
+								<textbox  id="contact3"></textbox>
+								<textbox  id="contact4"></textbox>
+								<textbox  id="contact5"></textbox>
+							</listcell>
+							<listcell>
+								<textbox id="work3"></textbox>
+								<textbox id="work4"></textbox>
+								<textbox id="work5"></textbox>
+							</listcell>
+							<listcell>
+								<textbox id="phone3"></textbox>
+								<textbox id="phone4"></textbox>
+								<textbox id="phone5"></textbox>
+							</listcell>
+						</listitem>
+					</listbox>
+				</row>
+				<row>
+					<label value="绑定类型" />
+					<listbox id="bangType" mold="select">
+						<listitem label="不绑定" selected="true" />
+						<listitem label="IP绑定" />
+					</listbox>
+					<label value="绑定地址" />
+					<hbox>
+						<textbox id="uBandIp" />
+						<checkbox label="自动登录" id="kuAutoenter" />
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="个人简介" />
+					<textbox id="uinfo" width="600px" cols="65" height="40px" />
+				</row>
+				<row spans="4,0">
+					<hbox align="center">
+						<space spacing="320px" />
+						<button id="save" label="保存" />
+						<space />
+						<button id="reset" label="重填" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

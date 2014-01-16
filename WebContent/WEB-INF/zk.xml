@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+    <language-config>
+    	<addon-uri>/WEB-INF/lang-addon.xml</addon-uri>
+	</language-config>
+
+	<device-config>
+		<device-type>ajax</device-type>
+		<timeout-uri>/timeout.zul</timeout-uri>
+	</device-config>
+	
+	<system-config> 
+      <!-- <ui-factory-class>org.zkoss.spring.bean.ZkSpringUiFactory</ui-factory-class>  -->
+      <disable-event-thread>false</disable-event-thread>   
+	</system-config> 
+	
+	<desktop-config>
+	     <theme-uri>/css/default/default.css</theme-uri>
+	</desktop-config>
+
+	<system-config>
+		<!--<max-upload-size>50240</max-upload-size>  -->
+	</system-config>
+	<session-config>
+	  <session-timeout>3600</session-timeout>
+	</session-config>
+</zk>

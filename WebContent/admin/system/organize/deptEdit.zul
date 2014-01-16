@@ -1,0 +1,82 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="编辑组织" border="normal" width="500px" style="text-align:left" use="com.uniwin.framework.ui.dept.DepartmentEditWindow">
+		<grid>
+			<columns>
+				<column width="40%" />
+				<column width="60%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="部门名称 " />
+					<hbox>
+						<textbox id="dname" constraint="no empty" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="部门编号 " />
+					<hbox>
+						<textbox id="dnumber" constraint="no empty" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row> 
+					<label value="上级部门" />
+					<listbox id="pselect" use="com.uniwin.framework.common.listbox.DeptListbox" mold="select"></listbox>
+				</row>
+				<row id="descRow">
+					<label value="部门描述" />
+					<textbox id="ddesc" />
+				</row>
+				<row id="gradeNameRow">
+					<label value="单位级别名称" />
+					<hbox width="100%" pack="center">
+						<hbox align="center">
+							<label value="一级" />
+							<textbox id="gradeOne" width="50px" />
+						</hbox>
+						<hbox align="center">
+							<label value="二级" />
+							<textbox id="gradeTwo" width="50px" />
+						</hbox>
+						<hbox align="center">
+							<label value="三级" />
+							<textbox id="gradeThr" width="50px" />
+						</hbox>
+					</hbox>
+				</row>
+				<row>
+					<label value="类型" />
+					<radiogroup>
+						<radio id="bumen" label="部门" checked="true" />
+						<radio id="danwei" label="单位" />
+					</radiogroup>
+				</row>
+				<row>
+					<label value="职能" />
+					<radiogroup>
+						<radio id="work" label="业务部门" checked="true" />
+						<radio id="manage" label="管理部门" />
+					</radiogroup>
+				</row>
+				<row id="logoRow">
+					<label value="LOGO" />
+					<hbox>
+						<image id="img" />
+						<button id="upload" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="重填" id="reset" />
+				<button label="增加" id="addDept" />
+				<button label="删除" id="deleteDept" />
+				<button label="排序" id="sortDept" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

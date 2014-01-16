@@ -1,0 +1,117 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="" border="none" sclass="newin" 
+		use="org.iti.jxkh.membermanage.chief.MemberManageWindow">
+	<!-- <panel border="normal" width="768px" height="550px">
+		<panelchildren>			 -->
+			<hbox>									
+				<tree zclass="z-dottree" id="humanTree" rows="45" width="130px" height="550px">
+					<treechildren>
+						<treeitem>
+							<treerow>
+								<treecell>
+									<label value="管理人员类别"/>
+								</treecell>
+							</treerow>
+							<treechildren>
+								<treeitem>
+							<treerow id="y">
+								<treecell>
+									<label value="管理院长"></label>
+								</treecell>
+							</treerow>
+						</treeitem>
+						<treeitem>
+							<treerow>
+								<treecell>
+									<label value="管理副院长"></label>
+								</treecell>
+							</treerow>
+						</treeitem>
+						<treeitem>
+							<treerow>
+								<treecell>
+									<label value="管理部门负责人"></label>
+								</treecell>
+							</treerow>
+						</treeitem>
+						<treeitem>
+							<treerow>
+								<treecell>
+									<label value="管理业务人员"></label>
+								</treecell>
+							</treerow>
+						</treeitem>	
+							</treechildren>
+						</treeitem>				
+					</treechildren>
+				</tree>
+				<panel title="部门列表" width="160px"  border="none" height="550px" id="deptList" visible="false" action="onshow:anima.slideDown(#{self})">						
+						<panelchildren>
+							<listbox id="deptlist" height="350px">
+								<listhead>
+									<listheader label="部门名称" width="80%" />
+									<listheader label="人数" width="20%" align="center" />
+								</listhead>
+								<listitem>
+									<listcell label="科技信息资源研究所"/>
+									<listcell label="1"/>
+								</listitem>
+								<listitem>
+									<listcell label="科技发展战略研究所"/>
+									<listcell label="2"/>
+								</listitem>
+							</listbox>
+						</panelchildren>
+					</panel>
+					
+					<panel title="管理人员"  height="550px" width="635px" visible="true" action="onshow:anima.slideDown(#{self})">
+						<caption>
+							<toolbarbutton id="addHis" image="/css/default/images/button/addAct.gif">
+								<attribute name="onClick">
+								Window win = (Window)execution.createComponents("/admin/jxkh/dutyChange/selectMember.zul",null,null);
+								win.doModal();
+							</attribute>							
+							</toolbarbutton>
+							<toolbarbutton id="del"
+				image="/css/default/images/button/delAct.gif" />
+							<toolbarbutton id="exportExcel"	image="/css/default/images/button/dr.gif" />
+						</caption>
+						<panelchildren>
+							<div align="center">
+								<listbox id="memberList" visible="false" checkmark="true" multiple="true" mold="paging" paginal="${zxPaging1}" sclass="new_listbox">
+								<listhead>
+									<listheader width="10%"/>	
+									<listheader label="序号" align="center" width="10%"/>								
+									<listheader label="人员编号" align="center" width="21%"/>
+									<listheader label="人员姓名" align="center" width="18%"/>
+									<listheader label="所在部门" align="center" width="25%"/>
+									<listheader label="职位" align="center" width="17%"/>
+									<!-- <listheader label="调动时间" align="center" width="15%"/>	 -->								
+								</listhead>
+								<listitem>
+									<listcell/>
+									<listcell label="1"/>
+									<listcell label="0102"/>
+									<listcell label="黄海"/>
+									<listcell label="科技信息资源研究所"/>
+									<listcell label="院长"/>
+									<!-- <listcell label="2010-9-8"/> -->
+									<!-- <listcell>
+										<div align="center">
+											<toolbarbutton image="/css/default/images/button/actEdit.gif"/>
+											<space/>
+											<toolbarbutton image="/css/default/images/button/del.gif"/>
+										</div>
+									</listcell> -->
+								</listitem>
+							</listbox>
+						<paging id="zxPaging1" zclass="z-paging"  pageSize="11" detailed="true" />
+							</div>
+						</panelchildren>							
+				</panel>
+			</hbox>
+		<!-- </panelchildren>
+	</panel> -->	
+</window>
+</zk>

@@ -1,0 +1,508 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="教师“十二五”规划情况" style="text-align:left" width="100%"
+		use="com.uniwin.asm.personal.ui.data.JxqkWindow">
+		<tabbox>
+			<tabs>
+				<tab id="t1" label="教研项目" />
+				<tab id="t2" label="获奖教研成果" />
+				<tab id="t9" label="各类评课选优、基本功竞赛" />
+				<tab id="t3" label="会议论文情况" />
+				<tab id="t4" label="期刊论文情况" />
+				<tab id="t5" label="教材情况" />
+				<tab id="t6" label="竞赛情况" />
+				<tab id="t7" label="授课情况" />
+				<!--<tab id="t7" label="目前参与的教研项目" />
+				-->
+				<tab id="t8" label="研究生招生情况" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<panel title="教研项目 ">
+						<caption>
+							<hbox>
+								<button id="button8" label="添加"
+									visible="true" style="color:blue"/>
+									<button id="button8out" label="导出EXCEL"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox8"
+								 style="border-bottom-width:0px" mold="paging" pageSize="10">
+								<listhead>
+									<listheader label="序号" width="7%"   align="center" />
+									<listheader label="项目名称"  width="20%" align="center" />
+									<listheader label="项目来源" width="12%"  align="center" />
+									<listheader label="开始时间" width="10%" align="center" />
+									<listheader label="结束时间" width="10%" align="center" />
+									<listheader label="项目经费（万元）" width="14%" align="center" />
+									<listheader label="本人贡献" width="10%" align="center" />
+									<listheader label="功能" width="5%" align="center" />
+									<listheader label="审核状态" width="10%" align="center" />
+								</listhead>
+							</listbox>
+							</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+					<caption>
+						<label style="color:blue" value="[提示]" />
+					</caption>
+					<vbox>
+						<separator spacing="1px" />
+						<label pre="true" value="1、点击项目名称，可以查看或修改项目的详细信息。" />
+						<label pre="true" value="2、开始时间和结束时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+						<label pre="true" value="3、经费必须为规范的数字，如：2.3。" />
+						<label pre="true" value="4、本人贡献为规范的数字，如：2。" />
+					</vbox>
+					</groupbox>
+				</tabpanel>
+				<tabpanel>
+				 <panel title="获奖教研成果 ">
+						<caption>
+							<hbox>
+									<button id="button9" label="添加"
+									visible="true" style="color:blue"/>
+									<button id="button9out" label="导出EXCEL"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox9"
+								style="border-bottom-width:0px"  mold="paging" pageSize="10">
+								<listhead>
+									<listheader label="序号" width="5%"
+										align="center" />
+									<listheader label="成果名称" width="25%"
+										align="center" />
+									<listheader label="成果来源" width="15%"
+										align="center" />
+									<listheader label="获奖时间" width="10%"
+										align="center" />
+									<listheader label="获奖名称/等级" width="15%"
+										 align="center" />
+									<listheader label="本人名次" width="10%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+										<listheader label="审核状态" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+							<caption>
+								<label style="color:blue" value="[提示]" />
+							</caption>
+							<vbox>
+							<separator spacing="1px" />
+								<label pre="true" value="1、获奖成果不可以添加，可以查看或修改项目的详细信息。" />
+								<label pre="true" value="2、点击项目名称，可以查看或修改项目的详细信息。" />
+								<label pre="true" value="3、获奖时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+								<label pre="true" value="4、本人名次格式如：3/10。" />
+							</vbox>
+					</groupbox>
+     				 </tabpanel> 
+       				<tabpanel>
+							<panel title="各类评课选优、基本功竞赛 ">
+						<caption>
+							<hbox>
+								<button id="button91" label="添加"
+									visible="true" style="color:blue"/>
+									<button id="button91out" label="导出EXCEL"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox91"
+								style="border-bottom-width:0px"  mold="paging" pageSize="10">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="赛事名称" width="30%"
+										align="center" />
+									<listheader label="获奖级别" width="10%"
+										align="center" />
+									<listheader label="获奖时间" width="15%"
+										align="center" />
+									<listheader label="颁奖部门" width="15%" 
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+										<listheader label="审核状态" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+							<caption>
+								<label style="color:blue" value="[提示]" />
+							</caption>
+							<vbox>
+							<separator spacing="1px" />
+								<label pre="true" value="1、点击项目名称，可以查看或修改项目的详细信息。" />
+								<label pre="true" value="2、获奖时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+								<label pre="true" value="3、本人名次格式如：3/10。" />
+							</vbox>
+					</groupbox>		
+				</tabpanel> 
+			
+				<tabpanel>
+				<panel title="会议论文情况 ">
+						<caption>
+							<hbox>
+								<button id="button10" label="添加"
+									visible="true" style="color:blue"/>
+									<button id="button10out" label="导出EXCEL"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox10"
+								style="border-bottom-width:0px"  mold="paging" pageSize="10">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="论文题目" width="20%"
+										align="center" />
+									<listheader label="发表时间" width="15%"
+										align="center" />
+									<listheader label="刊物或会议论文集名称" width="20%"
+										 align="center" />
+									<listheader label="项目资助" width="15%" 
+										 align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+										<listheader label="审核状态" width="10%" align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+							<caption>
+								<label style="color:blue" value="[提示]" />
+							</caption>
+							<vbox>
+							<separator spacing="1px" />
+								<label pre="true" value="1、点击论文名称，可以查看或修改论文的详细信息。" />
+								<label pre="true" value="2、发表时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+							</vbox>
+					</groupbox>
+       				 </tabpanel> 
+      				 <tabpanel>
+					 	 <panel title="期刊论文情况 ">
+						<caption>
+							<hbox>
+								<button id="button101" label="添加"
+									visible="true" style="color:blue"/>
+									<button id="button101out" label="导出EXCEL"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox101"
+								style="border-bottom-width:0px"  mold="paging" pageSize="10">
+								<listhead>
+									<listheader label="序号" width="5%" align="center" />
+									<listheader label="论文题目" width="15%" align="center" />
+									<listheader label="刊物名称" width="10%"  align="center" />
+									<listheader label="发表时间" width="10%" align="center" />
+									<listheader label="是否核心期刊" width="10%" align="center" />
+									<listheader label="刊物影响因子" width="10%"  align="center" />
+									<listheader label="ISSN/CN" width="10%"  align="center" />
+									<listheader label="项目资助" width="10%" 
+										 align="center" />
+									<listheader label="功能" width="5%" align="center" />
+									<listheader label="审核状态" width="10%" align="center" />
+									</listhead>
+								
+							</listbox>
+						</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+							<caption>
+								<label style="color:blue" value="[提示]" />
+							</caption>
+							<vbox>
+							<separator spacing="1px" />
+								<label pre="true" value="1、点击论文名称，可以查看或修改论文的详细信息。" />
+								<label pre="true" value="2、发表时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+							</vbox>
+					</groupbox>
+				</tabpanel>
+				<tabpanel>
+					<panel title="教材情况 ">
+						<caption>
+							<hbox>
+								<button id="button11" label="添加"
+									visible="true" style="color:blue"/>
+									<button id="button11out" label="导出EXCEL"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox11"
+								style="border-bottom-width:0px"  mold="paging" pageSize="10">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="教材名称" width="25%"
+										align="center" />
+									<listheader label="出版单位" width="20%"
+										align="center" />
+									<listheader label="出版时间" width="15%"
+										align="center" />
+									<listheader label="本人署名情况（排名/总人数）"
+										width="10%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+									<listheader label="审核状态" width="10%" align="center" />
+								</listhead>
+							</listbox>
+							</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+							<caption>
+								<label style="color:blue" value="[提示]" />
+							</caption>
+							<vbox>
+							<separator spacing="1px" />
+								<label pre="true" value="1、点击教材名称，可以查看或修改教材的详细信息。" />
+								<label pre="true" value="2、出版时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+								<label pre="true" value="3、本人署名情况（排名/总人数），如：3/10。" />
+							</vbox>
+					</groupbox>
+				</tabpanel>
+				<tabpanel>
+					<panel title="培养学生参加竞赛情况 " width="100%">
+						<caption>
+							<hbox>
+								<button id="button12" label="添加"
+									visible="true" style="color:blue"/>
+								<button id="button12out" label="导出EXCEL"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox12"
+								style="border-bottom-width:0px"  mold="paging" pageSize="10">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="获奖名称" width="25%"
+										align="center" />
+									<listheader label="主办单位" width="20%"
+										align="center" />
+									<listheader label="获得奖项" width="15%"
+										align="center" />
+									<listheader label="本人作用" width="10%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+										<listheader label="审核状态" width="10%" align="center" />
+								</listhead>
+							</listbox>
+							</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+							<caption>
+								<label style="color:blue" value="[提示]" />
+							</caption>
+							<vbox>
+							<separator spacing="1px" />
+								<label pre="true" value="1、点击获奖名称，可以查看或修改获奖的详细信息。" />
+								<label pre="true" value="2、获奖时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+								
+							</vbox>
+					</groupbox>
+					
+				</tabpanel>
+				<tabpanel>
+					<panel title="授课情况 " width="100%">
+						<caption>
+							<hbox>
+								<button id="button13" label="添加"
+									visible="true" style="color:blue"/>
+									<button id="button13out" label="导出EXCEL"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox13"
+								style="border-bottom-width:0px"  mold="paging" pageSize="10">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="授课名称" width="30%"
+										align="center" />
+									<listheader label="课程所属专业" width="20%"
+										align="center" />
+									<listheader label="学时（理论+试验）"
+										width="15%" align="center" />
+									<listheader label="工作量"
+										width="15%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+							</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+							<caption>
+								<label style="color:blue" value="[提示]" />
+							</caption>
+							<vbox>
+							<separator spacing="1px" />
+								<label pre="true" value="1、点击授课名称，可以查看或修改课程的详细信息。" />
+								<label pre="true" value="2、学时（理论+试验），如：32+20。" />
+							</vbox>
+					</groupbox>
+				</tabpanel>
+			
+				<tabpanel>
+					<panel title="研究生招生情况" width="100%">
+						<caption>
+							<hbox>
+								<button id="button15" label="修改"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<grid id="grid15" visible="true">
+								<columns>
+									<column align="center" width="25%" />
+									<column align="center" width="15%"
+										label="2006" />
+									<column align="center" width="15%"
+										label="2007" />
+									<column align="center" width="15%"
+										label="2008" />
+									<column align="center" width="15%"
+										label="2009" />
+									<column align="center" width="15%"
+										label="2010" />
+								</columns>
+								<rows>
+									<row>
+										<label value="五年情况（人数）" />
+										<label id="g15lable1" />
+										<label id="g15lable2" />
+										<label id="g15lable3" />
+										<label id="g15lable4" />
+										<label id="g15lable5" />
+									</row>
+								</rows>
+							</grid>
+							<grid id="grid16" visible="true">
+								<columns>
+									<column align="center" width="25%" />
+									<column align="center" width="15%"
+										label="2011" />
+									<column align="center" width="15%"
+										label="2012" />
+									<column align="center" width="15%"
+										label="2013" />
+									<column align="center" width="15%"
+										label="2014" />
+									<column align="center" width="15%"
+										label="2015" />
+								</columns>
+								<rows>
+									<row>
+										<label value="未来五年情况（人数）" />
+										<label id="g16lable1" />
+										<label id="g16lable2" />
+										<label id="g16lable3" />
+										<label id="g16lable4" />
+										<label id="g16lable5" />
+									</row>
+								</rows>
+							</grid>
+							<grid id="grid15edit" visible="false">
+								<columns>
+									<column align="center" width="25%" />
+									<column align="center" width="15%"
+										label="2006" />
+									<column align="center" width="15%"
+										label="2007" />
+									<column align="center" width="15%"
+										label="2008" />
+									<column align="center" width="15%"
+										label="2009" />
+									<column align="center" width="15%"
+										label="2010" />
+								</columns>
+								<rows>
+									<row>
+										<label value="五年情况（人数）" />
+										<intbox id="zs2006"  constraint="/.[0-9]+/,no negative,no empty" cols="10"/>
+										<intbox id="zs2007"  constraint="/.[0-9]+/,no negative,no empty" cols="10"/>
+										<intbox id="zs2008"  constraint="/.[0-9]+/,no negative,no empty" cols="10"/>
+										<intbox id="zs2009"  constraint="/.[0-9]+/,no negative,no empty" cols="10"/>
+										<intbox id="zs2010"  constraint="/.[0-9]+/,no negative,no empty" cols="10"/>
+									</row>
+								</rows>
+							</grid>
+							<grid id="grid16edit" visible="false">
+								<columns>
+									<column align="center" width="25%" />
+									<column align="center" width="15%"
+										label="2011" />
+									<column align="center" width="15%"
+										label="2012" />
+									<column align="center" width="15%"
+										label="2013"  />
+									<column align="center" width="15%"
+										label="2014" />
+									<column align="center" width="15%"
+										label="2015" />
+								</columns>
+								<rows>
+									<row>
+										<label value="未来五年情况（人数）" />
+										<intbox id="zs2011" constraint="/.[0-9]+/,no negative,no empty" cols="10"/>
+										<intbox id="zs2012"  constraint="/.[0-9]+/,no negative,no empty" cols="10" />
+										<intbox id="zs2013"  constraint="/.[0-9]+/,no negative,no empty" cols="10" />
+										<intbox id="zs2014"  constraint="/.[0-9]+/,no negative,no empty" cols="10"/>
+										<intbox id="zs2015"  constraint="/.[0-9]+/,no negative,no empty" cols="10"/>
+									</row>
+								</rows>
+							</grid>
+							<hbox id="hb" pack="center" width="100%" visible="false">
+							<hbox >
+								<button id="button15edit" label="提交"
+									visible="true" />
+								<button id="button15reset" label="重置"
+									visible="true" />
+								<button id="button15cancel" label="取消"
+									visible="true" />
+							</hbox></hbox>
+						</panelchildren>
+					</panel>
+						<separator />
+					<groupbox closable="true">
+					<caption>
+						<label style="color:blue" value="[提示]" />
+					</caption>
+					<vbox>
+						<separator spacing="1px" />
+						<label pre="true" value="招生人数为正整数" />
+						
+					</vbox>
+					</groupbox>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+		<caption>
+			<button label="导入“十二五”个规划" id="Import" style="color:blue"></button>
+		</caption>
+	</window>
+</zk>

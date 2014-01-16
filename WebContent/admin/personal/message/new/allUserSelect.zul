@@ -1,0 +1,56 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window use="org.iti.xypt.personal.message.MessageAllUserWindow">
+		<panel framable="false">
+			<panelchildren>
+				<grid>
+					<rows>
+						<row align="center">
+							<hbox width="100%" pack="center">
+								<hbox valign="baseline">
+									<listbox use="com.uniwin.framework.common.listbox.DeptListbox" mold="select" id="deptSelect" />
+									<checkbox id="teacherCheck" label="领导" checked="true" />
+									<checkbox id="studentCheck" label="负责人" checked="true" />
+									<checkbox id="graduateCheck" label="业务人员" checked="true" />
+									<label value="姓名" />
+									<textbox id="trueName" />
+									<button label="搜索" id="search" />
+								</hbox>
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+		<hbox>
+			<listbox id="userList" width="408px" height="310px" mold="paging" pageSize="10" checkmark="true" multiple="true">
+				<listhead>
+					<listheader label="序号" />
+					<listheader label="姓名" />
+					<listheader label="性别" />
+					<listheader label="所属单位" />
+				</listhead>
+			</listbox>
+			<vbox align="center" pack="center" height="250">
+				<vbox>
+					<button label="选择" id="choose" />
+					<button label="移去" id="remove" />
+				</vbox>
+			</vbox>
+			<listbox id="userListSelected" width="408px" height="310px" mold="paging" pageSize="10" checkmark="true" multiple="true">
+				<listhead>
+					<listheader label="序号" />
+					<listheader label="姓名" />
+					<listheader label="性别" />
+					<listheader label="所属单位" />
+				</listhead>
+			</listbox>
+		</hbox>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif"></toolbarbutton>			
+				<toolbarbutton id="reset" image="/css/default/images/button/cz.gif"></toolbarbutton>				
+			</hbox>
+		</hbox>
+	</window>
+</zk>

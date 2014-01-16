@@ -1,0 +1,55 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="相关附件列表" border="normal" sclass="newin" width="500px" closable="true" height="200px">
+	<grid>
+							<columns>
+								<column align="right" width="20%"/>
+								<column align="left" width="80%"/>
+							</columns>
+							<rows>
+							<row valign="center">
+									<label value="项目申请书："/>
+									<hbox>
+										<listbox mold="select" rows="1" width="290px">										
+										</listbox>
+										<space width="8px"/>
+										<toolbarbutton id="download2" image="/css/default/images/button/xz_.gif"></toolbarbutton>
+									</hbox>									
+								</row>
+								<row valign="center">
+									<label value="项目合同书："/>
+									<hbox>
+										<listbox mold="select" rows="1" width="290px">										
+										</listbox>
+										<space width="8px"/>
+										<toolbarbutton id="download1" image="/css/default/images/button/xz_.gif"></toolbarbutton>
+									</hbox>									
+								</row>
+								
+								<row valign="center">	
+									<label value="年度进度文档："/>
+									<hbox>
+										
+										<listbox mold="select" rows="1" width="290px">										
+										</listbox>
+										<space width="8px"/>
+										<toolbarbutton id="download3" image="/css/default/images/button/xz_.gif"></toolbarbutton>
+									</hbox>
+								</row>			
+								<row valign="center">
+									<label value="项目验收证书："/>
+									<hbox>
+										<listbox mold="select" rows="1"  width="290px">										
+										</listbox>
+										<space width="8px"/>
+										<toolbarbutton id="download4" image="/css/default/images/button/xz_.gif"></toolbarbutton>
+									</hbox>									
+								</row>
+							</rows>
+						</grid>
+						<separator/>
+						<div align="center">
+						    <toolbarbutton id="close" image="/css/img/actquit.gif"/>
+						</div>
+</window>
+</zk>

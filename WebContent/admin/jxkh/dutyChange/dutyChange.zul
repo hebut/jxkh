@@ -1,0 +1,36 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="" border="none" sclass="newin"
+		use="org.iti.jxkh.dutyChange.DutyChangeWindow">
+	<panel border="normal" width="768px">
+		<panelchildren>					
+					<panel title="管理人员调动信息" width="750px" visible="true" action="onshow:anima.slideDown(#{self})">
+						<caption>
+							<toolbarbutton id="addHis" image="/css/default/images/button/addAct.gif">							
+							</toolbarbutton>
+							<toolbarbutton id="del"	image="/css/default/images/button/delAct.gif" />
+							<toolbarbutton id="exportExcel"	image="/css/default/images/button/dc.gif" />
+						</caption>
+						<panelchildren>
+							<div align="center">
+								<listbox id="history" checkmark="true" multiple="true" mold="paging" paginal="${zxPaging}" sclass="new_listbox">
+								<listhead>
+									<listheader width="5%"/>	
+									<listheader label="序号" align="center" width="5%"/>	
+									<listheader label="姓名" align="center" width="9%" style="color:blue"/>								
+									<listheader label="原部门" align="center" width="21%"/>
+									<listheader label="原职位" align="center" width="13%"/>
+									<listheader label="新部门" align="center" width="21%"/>
+									<listheader label="新职位" align="center" width="13%"/>
+									<listheader label="调动时间" align="center" width="13%"/>									
+								</listhead>								
+							</listbox>
+						<paging id="zxPaging" zclass="z-paging"  pageSize="11" detailed="true" />
+							</div>
+						</panelchildren>							
+				</panel>
+			<!-- </hbox> -->
+		</panelchildren>
+	</panel>	
+</window>
+</zk>

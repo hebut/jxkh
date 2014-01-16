@@ -1,0 +1,51 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="选择期刊论文" width="600px" closable="true" border="normal"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.SelectQklwWindow">
+		<grid>
+			<columns>
+				<column align="center" />
+			</columns>
+			<rows>
+				<row>
+					<hbox align="center">
+						<label value="论文名称" />
+						<textbox id="lwName" width="120px" />
+						<space />
+						<label value="刊物名称" />
+						<textbox id="kwName" width="120px" />
+						<space />
+						<button id="query" label="查询" />
+					</hbox>
+				</row>
+				<row id="list">
+					<listbox id="lwList" checkmark="true" sclass="new_listbox"
+						height="300px">
+						<listhead>
+							<listheader align="center" width="10%" />
+							<listheader label="论文名称" align="center"
+								width="20%" />
+							<listheader label="刊物名称" align="center"
+								width="20%" />
+							<listheader label="发表时间" align="center"
+								width="10%" />
+							<listheader label="卷/期/页码范围" align="center"
+								width="30%" />
+							<listheader label="填写人" align="center"
+								width="10%" />
+						</listhead>
+					</listbox>
+				</row>
+				<row id="pl" visible="false">
+				<panel><panelchildren><label id="ll"></label></panelchildren></panel>
+				</row>
+				<row id="hb">
+					<hbox>
+						<button label="确定" id="submit" />
+						<button label="关闭" id="close" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

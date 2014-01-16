@@ -1,0 +1,109 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%" border="false"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.jlqk.HzxmWindow">
+		<!--
+		<tabbox width="100%">
+			<tabs>
+				<tab id="t5" label="承担国际交流合作项目（已开展）" />
+				<tab id="t6" label="承担国际交流合作项目（预期开展）" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+				  -->
+					<panel title="承担国际交流合作项目情况 " width="100%">
+						<caption>
+							<hbox>
+								<button id="button21" label="添加"
+									visible="true" style="color:blue" />
+								<button id="button21out" label="导出EXCEL"
+									visible="true" style="color:blue" />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox21"
+								style="border-bottom-width:0px" mold="paging" pageSize="10" sclass="new_listbox">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="国际交流合作项目名称"
+										width="20%" align="center" />
+									<listheader label="项目开始时间"
+										width="15%" align="center" />
+									<listheader label="项目结束时间"
+										width="15%" align="center" />
+									<listheader label="合作对象" width="10%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+									<listheader label="审核状态" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+						<caption>
+							<label style="color:blue" value="[提示]" />
+						</caption>
+						<vbox>
+							<separator spacing="1px" />
+							<label pre="true"
+								value="1、点击国际交流合作项目名称，可以查看或修改该项目详细信息。" />
+							<label pre="true"
+								value="2、预期项目起止时间必须按照指定的格式填写,如：2007/2/3-2007/3/5、2007/3/5、2008、2008/9。" />
+						</vbox>
+					</groupbox>
+					<!-- 
+				</tabpanel>
+				<tabpanel>
+					<panel title="承担国际交流合作项目（预期开展） " width="100%">
+						<caption>
+							<hbox>
+								<button id="button22" label="添加"
+									visible="true" style="color:blue" />
+								<button id="button22out" label="导出EXCEL"
+									visible="true" style="color:blue" />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox22"
+								style="border-bottom-width:0px" mold="paging" pageSize="10">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="国际交流合作项目名称"
+										width="25%" align="center" />
+									<listheader label="项目开始时间"
+										width="15%" align="center" />
+									<listheader label="项目结束时间"
+										width="15%" align="center" />
+									<listheader label="合作对象" width="15%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+									
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<separator />
+					<groupbox closable="true">
+						<caption>
+							<label style="color:blue" value="[提示]" />
+						</caption>
+						<vbox>
+							<separator spacing="1px" />
+							<label pre="true"
+								value="1、点击国际交流合作项目名称，可以查看或修改该项目详细信息。" />
+							<label pre="true"
+								value="2、预期项目起止时间必须按照指定的格式填写,如：2007/2/3-2007/3/5、2007/3/5、2008、2008/9。" />
+						</vbox>
+					</groupbox>
+				</tabpanel>
+			</tabpanels>
+			</tabbox>
+			 -->
+	</window>
+</zk>

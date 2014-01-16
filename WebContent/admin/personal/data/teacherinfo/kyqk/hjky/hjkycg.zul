@@ -1,0 +1,165 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="获奖科研成果" border="normal" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.HjkycgWindow"
+		width="800px">
+		<grid>
+			<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="20%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="成果名称" style="letter-spacing:5px" />
+					<hbox>
+						<textbox id="cgmc" cols="80" maxlength="50"
+							tooltiptext="填写或者点击右侧按钮从已有的项目中选择">
+						</textbox>
+						<button id="choice" label="选择"></button>
+					</hbox>
+				</row>
+				<row>
+					<label value="成果来源" style="letter-spacing:5px" />
+					<hbox>
+						<combobox id="ly" cols="35" height="15px" maxlength="50">
+							<comboitem label="省部级项目"></comboitem>
+						</combobox>
+						
+					</hbox>
+					<label value="项目编号" style="letter-spacing:5px" />
+
+					<textbox id="number" cols="32" maxlength="50"/>
+
+				</row>
+				<row>
+					<label value="获奖级别" style="letter-spacing:5px" />
+					<hbox>
+						<listbox id="jb" mold="select" rows="1" width="220px"/>
+					</hbox>
+						<label value="信息填写者" />
+					<hbox>
+						<label id="writer" />
+					</hbox>
+				</row>
+				<row>
+					<label value="获奖时间" style="letter-spacing:5px" />
+					<hbox>
+						<textbox id="time" cols="32"></textbox>
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+				<label value="获奖名称 " style="letter-spacing:5px" />
+					<hbox>
+						<combobox id="hjmc" cols="35" height="15px" maxlength="50">
+							<comboitem label="省部级项目"></comboitem>
+						</combobox>
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="获奖等级" style="letter-spacing:5px" />
+					<hbox>
+						<combobox id="dengji" cols="35" height="15px" maxlength="50">
+							<comboitem label="省部级项目"></comboitem>
+						</combobox>
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="获奖证书编号" style="letter-spacing:5px" />
+					<textbox id="prizenum" cols="32" maxlength="50"/>
+					<label value="颁奖部门" style="letter-spacing:5px" />
+					<combobox id="prizedep" cols="35" height="15px" maxlength="50">
+							<comboitem label="省部级项目"></comboitem>
+						</combobox>
+
+				</row>
+				<row spans="1,3">
+
+					<label value="获奖人" style="letter-spacing:5px" />
+					<hbox>
+						<textbox id="prizepersons" cols="80" maxlength="100"/>
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+
+				</row>
+				<row>
+					<label value="本人名次" style="letter-spacing:5px" />
+					<hbox>
+						<label id="mingci" />
+					</hbox>
+					<label value="本人承担任务或作用" />
+					<listbox id="cdrw" mold="select" width="200px">
+					</listbox>
+				</row>
+
+
+				<row spans="1,3">
+					<label />
+					<label value="注意：获奖人之间严格用顿号隔开，以便统计"
+						style="color:red;valign:center" />
+				</row>
+
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+					<hbox>
+						<grid width="400px">
+							<rows>
+								<row>
+									<listbox id="upList"
+										style="border:0px" mold="select" rows="1" />
+
+								</row>
+							</rows>
+						</grid>
+						<hbox pack="center" width="100%">
+							<hbox>
+								<button label="下载" id="downFile" />
+								<button label="删除" id="deUpload" />
+							</hbox>
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit" />
+				<space width="3px" />
+				<button id="upFile" label="上传附件" />
+				<!-- 
+					<space width="3px"/>
+					<button label="重置" id="reset"/>
+				-->
+				<space width="3px" />
+				<button label="下载全部 " id="downFileZip" />
+				<space width="3px" />
+				<button label="关闭" id="close" />
+
+			</hbox>
+		</hbox>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<separator spacing="1px" />
+				<label pre="true"
+					value="1、获奖时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9" />
+				<label pre="true" value="2、本人名次格式为个人排名/总人数如,3/10" />
+				<label pre="true" value="3、注意：获奖人之间严格用顿号“、”隔开以便统计" />
+				<label pre="true"
+					value="4、点击“上传附件”可以实现多文件的上传，并且可以删除上传的文件" />
+				<label pre="true" value="5、上传 附件后请点击“提交”保存， 以防丢失文件！" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

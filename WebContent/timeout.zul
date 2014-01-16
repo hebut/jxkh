@@ -1,0 +1,8 @@
+<window title="过期提示:" border="normal" height="200px" width="400px" mode="overlapped" position="center,center">
+	<vbox>
+		<label value="您的网页已经过期，请重新登陆！" />
+	</vbox>
+	<zscript>
+		Executions.getCurrent().sendRedirect("/admin/login.zul")
+	</zscript>
+</window>

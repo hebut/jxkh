@@ -1,0 +1,21 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="查看会议情况" width="80%" border="normal"  style="text-align:left" closable="true" use="org.iti.gh.glyjfx.fxfzr.hygl.CkhyWindow">
+<listbox id="hydetailList" mold="paging" pageSize="15" checkmark="true" multiple="true" >
+		<listhead>
+			<listheader width="10%" label="序号"  align="center"/>
+			<listheader width="15%" label="会议类型"  align="center"/>
+			<listheader width="15%" label="会议形式"  align="center"/>
+			<listheader width="15%" label="举行年份"  align="center"/>
+			<listheader width="15%" label="参加人员"  align="center"/>
+			<listheader width="30%"  label="会议内容" align="center"/>
+		</listhead>
+</listbox>
+<hbox align="center" pack="center" width="100%">
+	<hbox>
+		<button id="delete" label="删除"/>
+		<button id="close" label="关闭"/>
+	</hbox>
+	</hbox>
+</window>
+</zk>

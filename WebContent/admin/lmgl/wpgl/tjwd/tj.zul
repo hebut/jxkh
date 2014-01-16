@@ -1,0 +1,40 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="提交文档" border="normal" closable="true" width="600px" use="org.iti.wp.tjwd.TijiaoWindow">
+		<grid>
+			<columns>
+				<column width="20%" align="center"></column>
+				<column width="80%"></column>
+			</columns>
+			<rows>
+				<row>
+				<label value="文档名称" ></label>
+				<textbox id="wname" constraint="no empty" width="150px"></textbox>
+				</row>
+				<row>
+				<label value="评审类别"></label>
+				<label id="pname"></label>
+				</row>
+				<row>
+				<label value="文档类别"></label>
+				<listbox id="wdlb" mold="select" use="org.iti.wp.listbox.WdlbListbox"></listbox>
+				</row>
+				<row>
+				<label value="提交"></label>
+				<hbox><label id="filename"></label>
+				<button label="上传" id="upload"></button> </hbox>
+				</row>
+				<row>
+				<label value="文档简介"></label>
+				<textbox id="content" multiline="true" cols="50" height="50px"></textbox>
+				</row>
+				<row>
+				<label value="备注"></label>
+				<textbox id="bz" multiline="true" cols="50" height="50px"></textbox>
+				</row>
+				<row spans="2"> <hbox><button label="保存" id="save"></button><space></space>
+				<button label="返回" id="back"></button></hbox></row>
+			</rows>
+		</grid>
+	</window>
+</zk>

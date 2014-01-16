@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.iti.xypt.entity.XyFudao" table="XY_FUDAO" schema="dbo">
+		<composite-id name="id" class="org.iti.xypt.entity.XyFudaoId">
+			<key-property name="clId" type="java.lang.Long">
+				<column name="CL_ID" precision="18" scale="0" />
+			</key-property>
+			<key-property name="kuId" type="java.lang.Long">
+				<column name="KU_ID" precision="18" scale="0" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

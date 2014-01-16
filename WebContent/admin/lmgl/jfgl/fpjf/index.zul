@@ -1,0 +1,57 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window  border="none" style="text-align:left" use="org.iti.jg.fpjf.FpjfWindow">
+<panel title="分配机房">
+
+			<panelchildren> 
+			<grid style="border:0px">
+					<columns>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row style="padding:0;border-width:medium 0px 0px">
+							<space width="25px" />
+							<label value="校区"
+								style="letter-spacing:5px" />
+								
+							<listbox mold="select" rows="1"
+								width="150px" id="scharea">	
+								<listitem label="北辰校区" value="0" selected="true"></listitem>
+								<listitem label="丁字沽校区" value="1"></listitem>						
+							</listbox>
+							<space width="25px" />
+							<label value="学年"
+								style="letter-spacing:15px" />
+							<listbox mold="select" rows="1"
+								width="150px" id="yearList" use="org.iti.jxgl.ui.listbox.YearListbox">
+							</listbox>
+							<label value="学期"
+								style="letter-spacing:15px" />
+							<listbox mold="select" width="150px"
+								id="termList" use="org.iti.jxgl.ui.listbox.TermListbox" >
+							</listbox>
+							 <button label="查询" id="search"/>
+							</row>
+					</rows>
+				</grid>
+				<listbox id="fplist">
+					<listhead>
+						<listheader label="序号" align="center" width="8%"></listheader>
+						<listheader label="申请人" align="center" width="10%"></listheader>
+						<listheader label="申请时间" align="center" width="15%"></listheader>
+						<listheader label="课程名称" align="center" width="20%"></listheader>
+						<listheader label="申请星期" align="center" width="10%"></listheader>
+						<listheader label="申请节次" align="center" width="10%"></listheader>
+						<listheader label="分配区域" align="center" width="15%"></listheader>
+						<listheader label="分配状态" align="center" width="12%"></listheader>
+					</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+</window>
+</zk>

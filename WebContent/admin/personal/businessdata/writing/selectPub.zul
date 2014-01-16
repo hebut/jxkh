@@ -1,0 +1,52 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="选择著作" width="600px" closable="true" border="normal"
+		sclass="newin">
+		<div align="center">
+			<label value="著作名称:" />
+			<textbox id="lwName" width="120px" />
+			<space />
+			<toolbarbutton id="query"
+				image="/css/default/images/button/searAct.gif" />
+		</div>
+		<separator />
+		<div align="center">
+			<listbox id="lwList" mold="paging" checkmark="true"
+				multiple="true" sclass="new_listbox" paginal="${zxPaging}"
+				style="border-bottom-width:0px">
+				<listhead>
+					<listheader align="center" width="7%" />
+					<listheader label="序号" align="center" width="8%" />
+					<listheader label="著作名称" style="text-align:center"
+						align="left" width="20%" />
+					<listheader label="档案号" align="center" />
+					<listheader label="著作类型" align="center" width="12%" />
+					<listheader label="编制类型" align="center" width="15%" />
+					<listheader label="出版时间" align="center" width="13%" />
+					<listheader label="填写人" align="center" width="12%" />
+				</listhead>
+				<listitem>
+					<listcell />
+					<listcell label="1" />
+					<listcell label="计算机网络" />
+					<listcell label="Wk59" />
+					<listcell label="编著" />
+					<listcell label="内部期刊" />
+					<listcell label="2005-9-8" />
+					<listcell label="黎耀祥" />
+				</listitem>
+			</listbox>
+			<paging id="zxPaging" zclass="z-paging" pageSize="11"
+				detailed="true" />
+		</div>
+		<separator />
+		<div align="center">
+			<toolbarbutton image="/css/default/images/button/qd.gif"
+				id="submit" />
+			<space />
+			<toolbarbutton
+				image="/css/default/images/button/actquit.gif" id="close" />
+		</div>
+
+	</window>
+</zk>

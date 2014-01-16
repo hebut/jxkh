@@ -1,0 +1,53 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="提交阶段报告" border="normal" closable="true" height="355px" width="450px"  id="newartical" sclass="newin" style="background-image:'/images/background.gif'"
+			use="org.iti.projectmanage.teach.member.StageReportAddWindow">
+		<grid height="100%">
+			<columns>
+				<column align="center" width="15%" />
+				<column width="85%" />
+			</columns>
+			<rows>
+				<row valign="center" height="20px">
+					<label value="所属项目" />
+					<label id="projectName"/>
+				</row>
+				<row valign="center" height="20px">
+					<label value="报告名称"  />	
+					<div>
+						<textbox width="260px" id="title" height="98%"/>
+						<label value="*" style="color:red"></label>
+					</div>												
+				</row>	
+				<row valign="center" height="20px">
+					<label value="关键词"  />
+					<div>
+						<textbox width="260px" id="keyWord" height="98%"/>
+						<label value="*" style="color:red"></label>
+					</div>											
+				</row>			
+				<row valign="center">
+					<label value="备 注" />
+					<textbox id="remark" height="150px" width="345px"/>
+				</row>
+				<row valign="center" height="25px">
+					<label value="上传附件" />
+					<hbox align="center">
+						<label id="filename" />						
+						<toolbarbutton id="upload" image="/css/sat/up.png"/>
+						<toolbarbutton id="download" image="/css/sat/down.png" visible="false"/>
+						<toolbarbutton id="delete" image="/css/sat/actDel.gif" visible="false"/>	
+					</hbox>
+				</row>
+				<row spans="2" height="25px">
+					<hbox width="100%" pack="center">
+						<hbox>							
+							<toolbarbutton id="save" image="/css/img/actSave.gif"/>
+							<toolbarbutton id="close" image="/css/sat/fh.gif"/>
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

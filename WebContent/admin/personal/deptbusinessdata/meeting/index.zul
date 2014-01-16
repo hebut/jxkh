@@ -1,0 +1,86 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" border="false" width="770px"
+		style="text-align:left" sclass="newin"
+		use="org.iti.jxkh.deptbusiness.meeting.MeetingWindow">
+		<groupbox id="cxtj" width="740px" visible="false">
+			<caption>
+				<label value="[查询条件]" />
+			</caption>
+			<grid width="730px">
+				<columns>
+					<column width="15%" align="right"></column>
+					<column width="35%"></column>
+					<column width="15%" align="right"></column>
+					<column width="35%"></column>
+				</columns>
+				<rows>
+					<row style="background:#D2E9FF">
+						<label value="学术会议名称" />
+						<textbox id="name" width="90%" />
+						<label value="审核状态" />
+						<listbox id="auditState" mold="select" rows="1"
+							width="90%" />
+					</row>
+					<row style="background:#D2E9FF">
+						<label value="会议级别" />
+						<listbox id="rank" mold="select" rows="1"
+							width="90%" />
+						<label value="绩分年度" />
+						<listbox id="year" mold="select" rows="1"
+							use="org.iti.gh.ui.listbox.YearListbox" width="90%" />
+					</row>
+					<row spans="6" style="background:#D2E9FF">
+						<div align="center">
+							<button label="查   询" id="query" />
+							<space />
+							<button label="重   置" id="reset" />
+						</div>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<div align="right">
+			<hbox>
+				<toolbarbutton id="searchcbutton"
+					image="/css/default/images/button/data-btn-js.gif"
+					style="color:blue" />
+				<toolbarbutton id="addMeetartical"
+					image="/css/default/images/button/addAct.gif">
+				</toolbarbutton>
+				<toolbarbutton id="del"
+					image="/css/default/images/button/delAct.gif" style="color:blue" />
+				<toolbarbutton id="exportExcel"
+					image="/css/default/images/button/dc.gif" />
+			</hbox>
+		</div>
+		<div align="center" width="100%">
+			<listbox id="meetingListbox" paginal="${awardPaging}"
+				sclass="new_listbox" checkmark="true" multiple="true">
+				<listhead>
+					<listheader align="center" width="5%" />
+					<listheader label="序号" align="center" width="7%" />
+					<listheader label="会议名称" width="25%"
+						style="text-align:center" align="left" />
+					<listheader label="会议级别" align="center" width="17%" />
+					<listheader label="绩分年度" align="center" width="13%" />
+					<listheader label="附件" align="center" width="9%" />
+					<listheader label="该项得分" align="center" width="11%"
+						style="text-align:center" />
+					<listheader label="审核状态" align="center" width="13%" />
+				</listhead>
+			</listbox>
+			<paging id="awardPaging" pageSize="13" detailed="true"/>
+		</div>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:red" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击会议名称，可以查看或修改详细信息。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

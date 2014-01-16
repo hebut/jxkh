@@ -1,0 +1,48 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%" border="false" sclass="newin"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.jyqk.SkWindow">
+		<div align="right">
+				<hbox>
+					<toolbarbutton id="button13" image="/css/sat/addAct.gif" visible="true"
+						style="color:blue" />
+					<toolbarbutton id="button13out" image="/css/sat/dc.gif"
+						visible="true" style="color:blue" />
+				</hbox>
+		</div>
+				<listbox id="listbox13" style="border-bottom-width:0px" sclass="new_listbox"
+					mold="paging" pageSize="10">
+					<listhead>
+						<listheader label="序号" width="5%"
+							align="center" />
+						<listheader label="授课名称" width="12%"
+							align="center" />
+						<listheader label="授课对象" width="15%"
+							align="center" />
+						<listheader label="课程所属专业" width="15%"
+							align="center" />
+						<listheader label="时间" width="13%"
+							align="center" />
+						<listheader label="学时（理论+试验）" width="15%"
+							align="center" />
+						<listheader label="工作量" width="9%"
+							align="center" />
+						<listheader label="审核状态" width="9%"
+							align="center" />
+						<listheader label="功能" width="7%"
+							align="center" />
+					</listhead>
+				</listbox>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击授课名称，可以查看或修改课程的详细信息。" />
+				<label pre="true" value="2、学时（理论+试验），如：32+20。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

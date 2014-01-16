@@ -1,0 +1,150 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="教育经历" width="100%" border="normal" style="text-align:left" use="com.uniwin.asm.personal.ui.data.TeacherEducation">
+		<style>.red { color: red; font-style: oblique; font-size:18px; }</style>
+					<hbox>
+						<label value="  第一学历" style="font:bold"></label>
+						<space width="1px"></space>
+					</hbox>
+					<grid>
+						<columns>
+							<column width="15%" align="center"></column>
+							<column width="25%"></column>
+							<column width="10%" align="center"></column>
+							<column width="20%"></column>
+							<column width="10%" align="center"></column>
+							<column width="20%"></column>
+						</columns>
+						<rows>
+							<row>
+								<label value="学历" width="60px" style="letter-spacing:25px" />
+								<hbox>
+									<listbox id="fedubackgr" mold="select" width="150px"></listbox>
+								</hbox>
+								<label value="学位" width="60px" style="letter-spacing:25px" />
+								<hbox>
+									<listbox id="facdegree" mold="select" width="120px"></listbox>
+								</hbox>
+								<label value="学制" width="60px" style="letter-spacing:25px" />
+								<hbox>
+									<listbox id="fduyear" mold="select" width="120px"></listbox>
+								</hbox>
+							</row>
+							<row>
+								<label value="毕业院校" width="60px" style="letter-spacing:1px" />
+								<hbox>
+									<textbox id="fkuSchool" width="150px" />
+								</hbox>
+								<label value="毕业时间" width="60px" style="letter-spacing:1px" />
+								<hbox>
+									<datebox id="fgradutime" width="120px" />
+								</hbox>
+								<label value="主修专业" width="60px" />
+								<textbox id="fhighmajor" width="120px" />
+							</row>
+							<row spans=",5">
+								<label value="学历证书编号" width="60px" />
+								<hbox>
+									<textbox id="fcetificateno" width="150px" />
+								</hbox>
+							</row>
+						</rows>
+					</grid>
+					<hbox>
+						<space width="1px"></space>
+					</hbox>
+					<hbox>
+						<label value="  最高学历" style="font:bold"></label>
+					</hbox>
+					<grid>
+						<columns>
+							<column width="15%" align="center"></column>
+							<column width="25%"></column>
+							<column width="10%" align="center"></column>
+							<column width="20%"></column>
+							<column width="10%" align="center"></column>
+							<column width="20%"></column>
+						</columns>
+						<rows>
+							<row>
+								<label value="学历" width="60px" style="letter-spacing:25px" />
+								<hbox>
+									<listbox id="hedubackgr" mold="select" width="150px"></listbox>
+								</hbox>
+								<label value="学位" width="60px" style="letter-spacing:25px" />
+								<hbox>
+									<listbox id="hacdegree" mold="select" width="120px"></listbox>
+								</hbox>
+								<label value="学制" width="60px" style="letter-spacing:25px" />
+								<hbox>
+									<listbox id="heduyear" mold="select" width="120px"></listbox>
+								</hbox>
+							</row>
+							<row>
+								<label value="毕业院校" width="60px" style="letter-spacing:1px" />
+								<hbox>
+									<textbox id="kuSchool" width="150px" />
+								</hbox>
+								<label value="毕业时间" width="60px" style="letter-spacing:1px" />
+								<hbox>
+									<datebox id="highgradutime" width="120px" />
+								</hbox>
+								<label value="主修专业" width="60px" />
+								<textbox id="highmajor" width="120px" />
+							</row>
+							<row spans=",5">
+								<label value="学历证书编号" width="60px" />
+								<hbox>
+									<textbox id="hcetificateno" width="150px" />
+								</hbox>
+							</row>
+							<row spans="6">
+								<hbox pack="center" width="100%">
+									<hbox>
+										<button id="save" label="保存"></button>
+										<space></space>
+										<button id="reset" label="重填"></button>
+									</hbox>
+								</hbox>
+							</row>
+						</rows>
+					</grid>
+					<hbox>
+						<space width="1px"></space>
+					</hbox>
+					<hbox>
+						<label value="参加培训情况" style="font:bold"></label>
+						<space width="580px"></space>
+						<toolbarbutton style="color:blue" label="添加培训信息" visible="true" id="addPeiXun"></toolbarbutton>
+					</hbox>
+					<listbox id="show">
+						<listhead>
+							<listheader align="center" width="5%">
+								<label value="序号"></label>
+							</listheader>
+							<listheader align="center" width="10%">
+								<label value="培训主题"></label>
+							</listheader>
+							<listheader align="center" width="10%">
+								<label value="开始时间"></label>
+							</listheader>
+							<listheader align="center" width="10%">
+								<label value="结束时间"></label>
+							</listheader>
+							<listheader align="center" width="25%">
+								<label value="培训内容"></label>
+							</listheader>
+							<listheader align="center" width="15%">
+								<label value="培训地点"></label>
+							</listheader>
+							<listheader align="center" width="10%">
+								<label value="证明人"></label>
+							</listheader>
+							<listheader align="center" width="10%">
+								<label value="操作"></label>
+							</listheader>
+						</listhead>
+					</listbox>
+				
+	</window>
+</zk>

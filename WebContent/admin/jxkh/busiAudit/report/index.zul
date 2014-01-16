@@ -1,0 +1,92 @@
+<?page title="报告管理" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" border="false" style="text-align:left"
+		width="760px" sclass="newin"
+		use="org.iti.jxkh.busiAudit.report.BusinessWin">
+		<groupbox id="cxtj" visible="false" width="98%">
+			<caption>
+				<label value="[查询条件]" />
+			</caption>
+			<grid>
+				<columns>
+					<column width="15%" align="right"></column>
+					<column width="35%" align="left"></column>
+					<column width="15%" align="right"></column>
+					<column width="35%" align="left"></column>
+				</columns>
+				<rows>
+					<row style="background:#D2E9FF">
+						<label value="报告名称"></label>
+						<textbox id="reportName" width="90%"></textbox>
+						<label value="审核状态"></label>
+						<listbox id="auditState" mold="select"
+							width="90%" rows="1">
+						</listbox>
+					</row>
+					<row style="background:#D2E9FF">
+						<label value="报告种类" />
+						<listbox id="rank" mold="select" rows="1"
+							width="90%" />
+						<label value="参与部门" />
+						<listbox id="dept" mold="select" rows="1"
+							width="90%" />
+					</row>
+					<row spans="6" style="background:#D2E9FF">
+						<div align="center">
+							<button label="查   询" id="query" />
+							<space></space>
+							<button label="重   置" id="reset" />
+						</div>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<div align="right" >
+			<toolbarbutton id="searchcbutton"
+				image="/css/default/images/button/data-btn-js.gif"
+				style="color:blue" />
+			<toolbarbutton id="passAll"
+				image="/css/default/images/button/plsh.gif">
+			</toolbarbutton>
+			<toolbarbutton id="del"
+				image="/css/default/images/button/delAct.gif" visible="false"
+				style="color:blue" />
+
+			<toolbarbutton id="expert"
+				image="/css/default/images/button/dc.gif" style="color:blue" />
+		</div>
+		<div width="100%" align="center">
+		<listbox id="reportListbox" paginal="${reportPaging}"
+			sclass="new_listbox" checkmark="true" multiple="true">
+			<listhead>
+				<listheader align="center" width="5%" />
+				<listheader label="序号" width="8%" align="center" />
+				<listheader label="报告名称" width="21%" align="left"
+					style="text-align:center" sort="auto(name)" />
+				<listheader label="报告种类" width="14%" align="center"
+					sort="auto(types)" />
+				<listheader label="绩分年度" width="11%" align="center"
+					sort="auto(types)" />
+				<listheader label="附件" width="8%" align="center"
+					sort="auto(award_Year)" />
+				<listheader label="该项总分" width="11%" align="left"
+					style="text-align:center" />
+				<listheader label="审核状态" width="13%" align="center"
+					sort="auto(auditState)" />
+				<listheader label="归档" width="9%" align="center" />
+			</listhead>
+		</listbox>
+			<paging id="reportPaging" pageSize="10" />
+		</div>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:red" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击奖励名称，可以查看或修改详细信息。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

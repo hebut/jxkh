@@ -1,0 +1,59 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="评论" border="normal" width="800px" id="commentDetail" closable="true" droppable="true" 
+		sclass="newin" height="600px" use="org.iti.projectmanage.teach.member.JYArCommentWindow">
+<grid height="550px" style="border:0px">
+	<rows>
+		<row style="border:0px">
+			<grid width="99%">
+				<columns>
+					<column align="center" width="16%"></column>
+					<column></column>
+				</columns>
+				<rows>
+					<row valign="top">
+						<vbox align="center">
+							<image id="userImage" width="40px" height="40px"></image>
+							<label id="userName" style="font-family:'华文楷体';font-size:15px;color:red"></label>
+							<label id="userSuject" style="color:gray"></label>
+						</vbox>
+						<vbox style="vlign:top" pack="start">
+							<label id="time" style="color:gray"></label>
+							<div>
+								<label value="参考文献：" style="color:gray"></label>
+								<toolbarbutton id="fileName"></toolbarbutton>
+							</div>
+							<html id="contentHtml" ></html>
+						</vbox>
+					</row>
+				</rows>
+			</grid>
+		</row>
+		<row style="border:0px;">
+			<grid  width="99%" id="commentGrid" mold="paging" pageSize="5">
+				<columns>
+					<column align="center" width="16%" />
+					<column />
+				</columns>
+				<rows>
+				</rows>
+			</grid>
+		</row>
+		<row style="border:0px">
+			
+			<panel  width="99%" title="发表评论" sclass="quik_panel">
+				<panelchildren>
+				<fckeditor id="commentFck" height="160px" toolbarSet="Basic"></fckeditor>
+				<separator></separator>
+				<div align="center">
+					<toolbarbutton id="save" image="/css/default/images/common/actSave.gif"></toolbarbutton>
+					<toolbarbutton id="close" image="/css/default/images/common/actquit.gif"></toolbarbutton>
+				</div>
+				<separator></separator>
+				</panelchildren>
+			</panel>
+		</row>
+	</rows>
+</grid>	
+	</window>
+</zk>

@@ -1,0 +1,59 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window style="text-align:left" width="100%"  border="false" use="com.uniwin.asm.personal.ui.data.teacherinfo.jyqk.ZsqkWindow">
+<panel title="研究生招生情况" width="100%">
+						<caption>
+							<hbox>
+								<button id="add" label="添加"
+									visible="true" style="color:blue"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<!--<grid style="border:0px" id="grid">
+							<columns>
+								<column align="right"></column>
+								
+							</columns>
+							<rows>
+								<row  style="padding:0;border-width:medium 0px 0px">
+									<hbox align="center">
+									<label value="年级："></label>
+									<listbox mold="select" rows="1"
+								width="80px" id="gradelist" use="org.iti.jxgl.ui.listbox.GradeListbox">
+								
+								</listbox>
+								<separator width="20px"></separator>
+										<button label="查询" id="search"></button>
+									<button label="显示全部" id="all"></button>
+									</hbox>
+									
+								</row>
+							</rows>
+						</grid>
+						 
+				--><listbox id="zsqk" sclass="new_listbox">
+					<listhead>
+						<listheader label="年份" width="10%" align="center"/>
+						<listheader label="总人数" width="20%" align="center"/>
+						<listheader label="学生名单" width="60%" align="center"/>
+						<listheader label="编辑" width="10%" align="center"/>
+					</listhead>
+				</listbox>
+						</panelchildren>
+					</panel>
+					<panel id="pl" style="text-align:center" visible="false">
+					<panelchildren>
+					<label id="ll"></label></panelchildren></panel>
+						<separator />
+					<groupbox closable="true">
+					<caption>
+						<label style="color:blue" value="[提示]" />
+					</caption>
+					<vbox>
+						<separator spacing="1px" />
+						<label pre="true" value="1.招生人数为正整数" />
+						<label pre="true" value="2.学生名单以“、”号隔开，“总人数”一栏会按输入的名单自动计算、显示" />
+					</vbox>
+					</groupbox>
+</window>
+</zk>

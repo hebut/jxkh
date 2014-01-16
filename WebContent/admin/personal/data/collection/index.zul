@@ -1,0 +1,32 @@
+<?page title="个人收藏" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window id="userfavWin" width="98%"   style="text-align:left" 
+        use="com.uniwin.asm.personal.ui.data.CollectionListWindow">
+    <panel title="我的收藏" >
+    	<caption> 
+    		<hbox align="end">
+    			<button id="addFav" label="增加" tooltiptext="点击添加新收藏" />
+    			<button id="delCol" label="删除" tooltiptext="点击删除收藏" />
+    		</hbox>
+    	</caption>
+    	<panelchildren>
+
+    		<listbox id="userfavlistbox" mold="paging" pageSize="6" sclass="new_listbox"
+    			checkmark="true" multiple="true" width="100%"
+    			model="@{userfavWin.usrfavList}"
+    			selectedItem="@{userfavWin.selected}">
+    			<listhead>
+    				<listheader width="5%" align="center"/>
+    				<listheader label="序号" width="8%"  align="center"/>
+    				<listheader label="收藏名称" width="20%"
+    					sort="auto(kufName)"  align="center"/>
+    				<listheader label="所属标题" width="20%"  align="center"
+    					sort="auto(ktId)" />
+    				<listheader label="收藏地址" sort="auto(kufUrl)" />
+    			</listhead>
+    		</listbox>
+    	</panelchildren>
+    </panel>
+</window>
+</zk>

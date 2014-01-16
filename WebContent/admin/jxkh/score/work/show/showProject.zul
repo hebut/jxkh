@@ -1,0 +1,32 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="查看项目详细" border="normal" sclass="newin" width="600px" height="600px">
+	<div align="right" width="100%">
+						<listbox id="hxListbox" paginal="${hxPaging}"
+							 sclass="new_listbox" checkmark="true"
+							multiple="true" fixedLayout="true">
+							<listhead>
+								<listheader label="序号" width="7%"
+									align="center" />
+								<listheader label="项目名称" width="23%"
+									style="text-align:center" />
+								<listheader label="项目编号" width="16%"
+									style="text-align:center" />
+								<listheader label="项目负责人" width="13%"
+									align="center" />
+								<listheader label="合同始期" width="12%"
+									align="center" />
+							<listheader label="提交人" width="19%"
+									align="center" />
+								
+							</listhead>
+						</listbox>
+						<paging id="hxPaging" zclass="z-paging"
+							pageSize="10" detailed="true" />
+					</div>
+					<separator/>
+					<div align="center">
+						<toolbarbutton id="close"	image="/css/img/actquit.gif" />
+					</div>
+</window>
+</zk>

@@ -1,0 +1,127 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="订制结项报告" border="normal" closable="true"   width="780px" id="checkZResult"
+		    use="org.iti.projectmanage.science.project.ZResultReportWindow" >
+		<tabbox >
+			<tabs>
+				<tab label="请选择您需要的属性，进行文档的订制" />		        
+			</tabs>
+			<tabpanels>
+		        <tabpanel >  
+			   		<grid>
+						<columns>
+							<column width="8%" align="center" />
+							<column width="17%" />
+							<column width="8%" align="center" />
+							<column width="17%" />
+							<column width="8%" align="center" />
+							<column width="17%" />
+							<column width="8%" align="center" />
+							<column width="17%" />
+						</columns>
+						<rows>
+							<row spans="8">
+						       <div align="left">
+						       		<label value="项目相关属性"/>
+						       </div>
+						    </row>
+							<row >
+								<checkbox id="proName" checked="true"/>
+								<label value="项目名称" />
+								<checkbox id="proSource" checked="true"/>
+								<label value="项目来源" />
+								<checkbox id="proMan" checked="true"/>
+								<label value="项目负责人" />
+								<checkbox id="proNum" checked="true"/>
+								<label value="项目编号" />
+							</row>
+							
+							<row >
+								<checkbox id="contractNum" checked="true"/>
+								<label value="合同编号" />
+								<checkbox id="finishUnit" checked="true"/>
+								<label value="主要完成单位" />
+								<checkbox id="setFinishTime" checked="true"/>
+								<label value="规定完成时间" />
+								<checkbox id="realFinishTime" checked="true"/>
+								<label value="实际完成时间" />
+							</row>
+							
+							<row >
+								<checkbox id="grants" checked="true"/>
+								<label value="资助金额" />
+								<checkbox id="writeuser" checked="true"/>
+								<label value="信息填写人" />
+								<checkbox id="conFinishCondition" checked="true"/>
+								<label value="研发内容完成情况" />
+								<checkbox id="fruit" checked="true"/>
+								<label value="取得的成果及成效" />
+							</row>
+							
+							<row >
+								<checkbox id="identtime" checked="true"/>
+								<label value="项目鉴定时间" />
+								<checkbox id="level" checked="true"/>
+								<label value="鉴定水平" />
+							</row>
+								<row spans="8">
+						       <div align="left">
+						       		<label value="项目统计(单位:项数)"/>
+						       </div>
+						    </row>
+						    <row >
+						        <checkbox id="zxProStatist" checked="true"/>
+								<label value="纵向项目" />
+							<!-- 		<checkbox id="hxProStatist" checked="true"/>
+								<label value="横向项目" />	 -->							
+								<checkbox id="nationalProStatist" checked="true"/>
+								<label value="国家级项目" />
+								<checkbox id="provincProStatist" checked="true"/>
+								<label value="省部级项目" />
+							</row>
+							
+							<row spans="8">
+						       <div align="left">
+						       		<label value="获奖统计(单位:项数)"/>
+						       </div>
+						    </row>
+						    <row >
+								<checkbox id="nationalFruitStatist" checked="true"/>
+								<label value="国家级获奖" />
+								<checkbox id="provincFruitStatist" checked="true"/>
+								<label value="省部级获奖" />
+							</row>
+							
+							<row spans="8">
+						       <div align="left">
+						       		<label value="成果统计(单位:项数)"/>
+						       </div>
+						    </row>
+						    <row >
+								<checkbox id="conferePaperStatist" checked="true"/>
+								<label value="会议论文" />
+								<checkbox id="journalPaperStatist" checked="true"/>
+								<label value="期刊论文" />
+								<checkbox id="softwareCopyrightStatist" checked="true"/>
+								<label value="软件著作权" />
+								<checkbox id="invenPatentStatist" checked="true"/>
+								<label value="发明专利" />								
+							</row>
+						</rows>
+					</grid>
+				</tabpanel>		
+			</tabpanels>
+		</tabbox>
+		<separator></separator>
+		<hbox pack="center" width="100%">
+			<hbox>
+			    <checkbox label="选择全部" id="allCheck" checked="true"/>
+				<space width="3px" />
+				<button label="生成中期报告" id="buildResultReport" />
+				<space width="3px" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+		<separator></separator>
+	</window>
+</zk>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+   http://www.springframework.org/schema/tx 
+   http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+    <context:annotation-config />
+    <context:component-scan base-package="com.uniwin.basehs.service.impl" />
+	<!-- 数据源 -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:jdbc.properties</value>
+		</property>
+	</bean>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass">
+			<value>${jdbc.driverClassName}</value>
+		</property>
+		<property name="jdbcUrl">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="user">
+			<value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+		<property name="initialPoolSize">
+			<value>${cpool.initialPoolSize}</value>
+		</property>
+		<property name="minPoolSize">
+			<value>${cpool.minPoolSize}</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>${cpool.maxPoolSize}</value>
+		</property>
+		<property name="maxIdleTime">
+			<value>${cpool.maxIdleTime}</value>
+		</property>
+		<property name="acquireIncrement">
+			<value>${cpool.acquireIncrement}</value>
+		</property>
+		<property name="maxIdleTimeExcessConnections" value="${cpool.maxIdleTimeExcessConnections}" />
+	</bean>
+	<!-- 整合hibernate配置，配置session工厂 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.showsql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.formatsql}</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl}</prop>
+				<prop key="hibernate.default_schema">${hibernate.schema}</prop>
+				<prop key="hibernate.default_catalog">${hibernate.catalog}</prop>
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>org.iti.jxkh.entity</value> 
+			</list>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath*:/com/uniwin/**/entity/*.hbm.xml</value>
+				<value>classpath*:/org/iti/**/entity/*.hbm.xml</value>
+				<value>classpath*:/gov/tj/ksy/**/model/*.hbm.xml</value>
+				
+			</list>
+		</property>
+		<property name="mappingJarLocations">
+			<list>
+				<value>WEB-INF/lib/uniwin_*.jar</value>
+				<value>WEB-INF/lib/iti_*.jar</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 为session提供事务处理管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 配置事务 -->
+	<bean id="baseTxProxy" lazy-init="true" abstract="true" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref local="transactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="save*">
+					PROPAGATION_REQUIRED,-DataAccessException
+				</prop>
+				<prop key="update*">
+					PROPAGATION_REQUIRED,-DataAccessException
+				</prop>
+				<prop key="delete*">
+					PROPAGATION_REQUIRED,-DataAccessException
+				</prop>
+				<prop key="get*">
+					PROPAGATION_REQUIRED,readOnly,-DataAccessException
+				</prop>
+				<prop key="find*">
+					PROPAGATION_REQUIRED,readOnly,-DataAccessException
+				</prop>
+				<prop key="query*">
+					PROPAGATION_REQUIRED,readOnly,-DataAccessException
+				</prop>
+				<prop key="search*">
+					PROPAGATION_REQUIRED,readOnly,-DataAccessException
+				</prop>
+				<prop key="execute*">
+					PROPAGATION_REQUIRED,-DataAccessException
+				</prop>
+				<prop key="getHibernateSession">
+					PROPAGATION_REQUIRED,-DataAccessException
+				</prop>
+				<prop key="*">
+					PROPAGATION_REQUIRED,-DataAccessException
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<aop:config>
+		<aop:pointcut id="onlineexamService"
+			expression="execution(public * org.iti.onlinexam.service.*.*(..))" />
+		<aop:advisor pointcut-ref="onlineexamService"
+			advice-ref="txAdvice" />
+	</aop:config>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="query*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="search*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="execute*" propagation="REQUIRED"/>
+			<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	<bean id="baseService" class="com.uniwin.basehs.service.impl.BaseServiceImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+</beans>
+ 

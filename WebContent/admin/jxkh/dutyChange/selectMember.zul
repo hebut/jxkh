@@ -1,0 +1,83 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="添加人员" border="normal" sclass="newin" width="920px" closable="true" height="600px"
+		use="org.iti.jxkh.dutyChange.ChooseMemberWin">
+	<grid>
+		<columns>
+			<column  width="910px"/>
+		</columns>
+<rows>
+	<row>
+	<hbox>			
+		<separator></separator>
+		<hbox id="in">
+		<label value="人员姓名:"/>
+		<textbox width="180px"   id="userName" >
+		</textbox>
+		<space width="15px"/>
+		<label value="人员编号:"/>
+		<textbox width="130px" id="staffId"/>
+		</hbox>		
+		<space/>
+			<toolbarbutton  image="/css/default/images/button/searAct.gif" id="view"/>
+			</hbox>
+	</row>
+	<row>
+		<hbox>
+						<panel width="400px" border="normal" title="人员列表">
+							<panelchildren>
+								<listbox paginal="${zxPaging1}" checkmark="true" height="400px"  mold="paging" id="listbox1" sclass="new_listbox" >
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="序号"  width="10%" align="center"/>
+										<listheader label="人员编号" width="20%" align="center"/>
+										<listheader label="人员姓名" width="30%"  align="center"/>
+										<listheader label="所属部门" width="30%"  align="center"/>										
+									</listhead>												
+								</listbox>
+								<paging id="zxPaging1" zclass="z-paging" pageSize="11"
+								detailed="true" />
+							</panelchildren>
+						</panel>
+						<space />
+						<vbox>
+							<separator spacing="180px" />
+							<button  label="添加&gt;&gt;" id="add" />
+							<separator />
+							<button  label="&lt;&lt;删除"  id="delete"/>
+							
+						</vbox>
+						<space />
+						<panel width="400px" border="normal" title="已添加人员列表">
+							<panelchildren>
+								<listbox paginal="${zxPaging2}" checkmark="true"  height="400px" mold="paging" id="listbox2" sclass="new_listbox">
+									<listhead>
+										<listheader width="10%" label="" />
+										<listheader label="序号"  width="10%" align="center"/>
+										<listheader label="人员编号" width="20%" align="center"/>
+										<listheader label="人员姓名" width="30%"  align="center"/>
+										<listheader label="所属部门" width="30%"  align="center"/>										
+									</listhead>											
+								</listbox>
+								<paging id="zxPaging2" zclass="z-paging" pageSize="11"
+								detailed="true" />
+							</panelchildren>
+						</panel>
+		</hbox>
+		
+	</row>
+	</rows>
+	</grid>	
+	<separator/>
+	<div align="center">
+		<toolbarbutton id="submit"
+				image="/css/default/images/button/actSave.gif" />
+			<space />
+			<toolbarbutton id="close"
+				image="/css/default/images/button/gb.gif">
+				<attribute name="onClick">					
+				</attribute>
+			</toolbarbutton>
+	</div>
+</window>
+</zk>

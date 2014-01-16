@@ -1,0 +1,13 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="选择要拷贝权限的角色" border="normal" width="40%" use="com.uniwin.framework.ui.role.RoleCopyWindow" closable="true">
+		<tree id="roleChooseTree" zclass="z-dottree" checkmark="true" multiple="true" mold="paging" rows="20" />
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button label="提交" id="submit"></button>
+				<button label="重置" id="reset"></button>
+				<button label="关闭" id="close"></button>
+			</hbox>
+		</hbox>
+	</window>
+</zk>

@@ -1,0 +1,40 @@
+<?page title="用户登陆" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window id="win" border="none" mode="overlapped" position="center,center" width="800px" height="450px" contentStyle="background-image:url(images/login-now.jpg)" use="com.uniwin.framework.ui.login.UserLoginWindow">
+		<hbox>
+			<space width="420px" />
+			<vbox>
+				<separator height="200px" />
+				<hbox align="center" pack="center">
+					<label value="用户名:" style="color:#2894FF;font-Size:14px;font-weight:bold;" />
+					<space spacing="1px" />
+					<textbox id="j_username" name="j_username" width="180px" height="20px" constraint="no empty" />
+				</hbox>
+				<separator height="15px" />
+				<hbox align="center" pack="center">
+					<label value="密　码:" style="color:#2894FF;Font-Size:14px;font-weight:bold;" />
+					<space spacing="1px" />
+					<textbox id="j_password" name="j_password" width="180px" height="20px" type="password"  />
+					<!-- <space spacing="5px" />
+					<toolbarbutton label="忘记密码" id="reRegistButton" style="color:#2894FF;font-weight:bold" /> -->
+				</hbox>
+				<separator height="5px" />
+				<hbox align="center" pack="center" visible="false">
+					<label value="验证码:" style="color:#2894FF;font-Size:12px" />
+					<space spacing="1px" />
+					<textbox id="cpatb" width="50px" height="20px" constraint="${cpc}" />
+					<space spacing="1px" />
+					<captcha id="cpa" length="4" bgColor="#72b4df" noise="false" fontColor="#00469d" onClick="cpa.randomValue()" />
+				</hbox>
+			</vbox>
+		</hbox>
+		<separator height="10px" />
+		<toolbar mold="panel" align="center">
+			<space width="355px" />
+			<toolbarbutton image="/images/login01.png" hoverImage="/images/login02.png" id="loginButton" />
+			<space width="20px" />
+			<toolbarbutton image="/images/reset01.png" hoverImage="/images/reset02.png" id="resetButton" />
+		</toolbar>
+	</window>
+</zk>

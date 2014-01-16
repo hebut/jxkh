@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="xyUserRoleTarget" class="org.iti.xypt.service.impl.XyUserRoleServiceImpl" parent="baseService"></bean>
+	<bean id="xyUserRoleService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="xyUserRoleTarget" />
+		</property>
+	</bean>
+	<bean id="teacherTarget" class="org.iti.xypt.service.impl.TeacherServiceImpl" parent="baseService"></bean>
+	<bean id="teacherService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="teacherTarget" />
+		</property>
+	</bean>
+	<bean id="studentTarget" class="org.iti.xypt.service.impl.StudentServiceImpl" parent="baseService"></bean>
+	<bean id="studentService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="studentTarget" />
+		</property>
+	</bean>
+	<bean id="yjsTarget" class="org.iti.xypt.service.impl.YjsServiceImpl" parent="baseService"></bean>
+	<bean id="yjsService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="yjsTarget" />
+		</property>
+	</bean>
+	<bean id="xypttitleTarget" class="org.iti.xypt.service.impl.XyptTitleServiceImpl" parent="baseService"></bean>
+	<bean id="xypttitleService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="xypttitleTarget" />
+		</property>
+	</bean>
+	<bean id="xyClassTarget" class="org.iti.xypt.service.impl.XyClassServiceImpl" parent="baseService"></bean>
+	<bean id="xyClassService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="xyClassTarget" />
+		</property>
+	</bean>
+	<bean id="messageTarget" class="org.iti.xypt.service.impl.MessageServiceImpl" parent="baseService"></bean>
+	<bean id="messageService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="messageTarget" />
+		</property>
+	</bean>
+	<bean id="fudaoTarget" class="org.iti.xypt.service.impl.FudaoServiceImpl" parent="baseService"></bean>
+	<bean id="fudaoService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="fudaoTarget" />
+		</property>
+	</bean>
+</beans>

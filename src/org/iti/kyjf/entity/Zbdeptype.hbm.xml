@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.iti.kyjf.entity">
+	<class name="org.iti.kyjf.entity.Zbdeptype" table="ZB_Deptype"
+		schema="dbo">
+		<id name="zdId" type="java.lang.Long">
+			<column name="ZD_ID" precision="18" scale="0" />
+			<generator class="native" />
+		</id>
+		<property name="kdId" type="java.lang.Long">
+			<column name="KD_ID" />
+		</property>
+		<property name="Zxyear" type="java.lang.Integer">
+			<column name="ZX_YEAR" not-null="true"></column>
+		</property>
+		<property name="zdTsxk" type="java.lang.Short">
+			<column name="ZD_TSXK" />
+		</property>
+		<property name="zdZdjs" type="java.lang.Short">
+			<column name="ZD_ZDJS" />
+		</property>
+		<property name="zdBsd" type="java.lang.Short">
+			<column name="ZD_BSD" />
+		</property>
+		<property name="zdZdxk" type="java.lang.Short">
+			<column name="ZD_ZDXK" />
+		</property>
+		<property name="zdZdsys" type="java.lang.Short">
+			<column name="ZD_ZDSYS" />
+		</property>
+
+	</class>
+</hibernate-mapping>

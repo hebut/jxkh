@@ -1,0 +1,21 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<panel framable="false" apply="org.iti.jxkh.indicator.businessdept.BusinessTreeComposer" id="businesspanel"  border="false"  sclass="newin"> 			    	    
+			    <panelchildren>
+				  <tree id="tree" zclass="z-filetree" context="menu" mold="paging"  pageSize="30" rows="30"/> 
+				<menupopup id="menu">
+							<menuitem label="添加" id="add"  Image="/css/img/copy1.jpg"/>
+							<menuitem label="编辑" id="edit"   Image="/css/img/edit.jpg"/>
+							<!-- <menuitem label="删除" id="delete"   Image="/css/img/delete.jpg"/> -->
+							<menuseparator />
+							
+							<menuitem label="启用" id="use"  Image="/css/img/use.jpg"/>
+							<menuitem label="停用" id="drop"  Image="/css/img/stop.jpg"/>
+						
+							<menuseparator />
+							<!-- <menuitem label="排序"  id="sort"  Image="/css/img/order.jpg"/> -->
+							
+						</menupopup>
+				</panelchildren>
+   </panel>
+</zk>

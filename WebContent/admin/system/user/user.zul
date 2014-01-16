@@ -1,0 +1,25 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="用户管理" border="normal" style="text-align:left" use="com.uniwin.framework.ui.user.UserEditWindow">
+		<caption>
+			<toolbar align="end">
+				<textbox id="serchkey" tooltiptext="输入真实姓名" />
+				<button label="搜索" id="serchUser" />
+				<button label="增加" id="addUser" />
+				<button label="删除" id="deleteUser" />
+			</toolbar>
+		</caption>
+		<listbox id="userListbox" mold="paging" pageSize="10" checkmark="true" multiple="true">
+			<listhead>
+				<listheader label="序号" width="13%" />
+				<listheader label="登录名" width="13%" sort="auto(kuLid)" />
+				<listheader label="真实姓名" width="9%" sort="auto(kuName)" />
+				<listheader label="电子邮箱" width="25%" sort="auto(kuEmail)" />
+				<listheader label="状态" width="8%" sort="auto(kuStatus)" />
+				<listheader label="注册时间" width="12%" sort="auto(kuRtime)" />
+				<listheader label="最后登录" width="20%" id="loginTime" sort="auto(kuLtime)" />
+				<listheader label="角色" width="8%" />
+			</listhead>
+		</listbox>
+	</window>
+</zk>

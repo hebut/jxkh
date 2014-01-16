@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- lang-addon.xml
+	Purpose:
+		
+	Description:
+		This file is useless for zkdemo but demostrates how to
+		add new components and override definitions of existent components.
+	History:
+		Fri Mar  3 12:54:00     2006, Created by tomyeh
+
+Copyright (C) 2006 Potix Corporation. All Rights Reserved.
+-->
+
+<language-addon>
+	
+	<addon-name>zkdemo</addon-name>
+	
+	<language-name>xul/html</language-name>
+
+	<component>
+		<component-name>textbox</component-name>
+		<extends>textbox</extends>
+		<property>
+			<property-name>height</property-name>
+			<property-value>18px</property-value>
+		</property>
+		<property>
+			<property-name>style</property-name>
+			<property-value>font:13</property-value>
+		</property>
+	</component>
+	<component>
+		<component-name>datebox</component-name>
+		<extends>datebox</extends>
+		<property>
+			<property-name>height</property-name>
+			<property-value>18px</property-value>
+		</property>
+		<property>
+			<property-name>style</property-name>
+			<property-value>font:13</property-value>
+		</property>
+	</component>
+ 	<component>
+		<component-name>row</component-name>
+		<extends>row</extends>
+		<property>
+			<property-name>align</property-name>
+			<property-value>left</property-value>
+		</property>
+		<property>
+			<property-name>height</property-name>
+			<property-value>20px</property-value>
+		</property>
+	</component>
+
+ 	<component>
+		<component-name>listheader</component-name>
+		<extends>listheader</extends>
+		<property>
+			<property-name>align</property-name>
+			<property-value>left</property-value>
+		</property>
+	</component>
+	<component>
+		<component-name>listitem</component-name>
+		<extends>listitem</extends>
+		<property>
+			<property-name>height</property-name>
+			<property-value>25px</property-value>
+		</property>
+	</component>
+	<component>
+		<component-name>panel</component-name>
+		<extends>panel</extends>
+		<property>
+			<property-name>framable</property-name>
+			<property-value>true</property-value>
+		</property>
+	</component>
+</language-addon>

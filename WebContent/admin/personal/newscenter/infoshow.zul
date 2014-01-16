@@ -1,0 +1,18 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window width="750px" style="text-align:left" use="org.iti.xypt.personal.infoCollect.MessageCenter.InfoShowWindow">
+		<panel >
+			<panelchildren>
+				<listbox id="infoshowlistbox" mold="paging" pageSize="15" >
+					<listhead sizable="true">
+						<listheader label="序号" width="6%" align="center" />
+						<listheader label="状态" width="6%" align="center" />
+						<listheader label="标          题"   id="titleHeader" style="text-align:center"/>
+						<listheader label="来源"   align="center" width="18%"/>
+						<listheader label="发布时间" width="15%" align="center"  />
+					</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

@@ -1,0 +1,27 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="查看期刊论文详细" border="normal"  sclass="newin" width="600px" height="600px">
+	<div align="right">
+			<listbox id="journalListbox" checkmark="true"
+				multiple="true" paginal="${zxPaging}"
+				style="border-bottom-width:0px" mold="paging"
+				sclass="new_listbox">
+				<listhead>
+					<listheader label="序号" width="11%" align="center" />
+					<listheader label="论文题目" width="25%" align="left"
+						style="text-align:center" />
+					<listheader label="刊物名称" width="18%" align="center" />
+					<listheader label="发表时间" width="15%" align="center" />
+					<listheader label="收录类别" width="16%"
+						align="center" />
+					<listheader label="提交人" width="15%" align="center" />
+				</listhead>
+			</listbox>
+			<paging id="meetingPaging" zclass="z-paging" pageSize="10"/>
+		</div>
+		<separator/>
+		<div align="center">
+			<toolbarbutton id="close"	image="/css/img/actquit.gif" />
+		</div>
+</window>
+</zk>

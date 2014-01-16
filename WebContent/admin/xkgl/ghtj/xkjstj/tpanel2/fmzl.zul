@@ -1,0 +1,24 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="new page title"  border="normal" use="org.iti.gh.ghtj.tpanel2.FmzlWindow" closable="true" width="80%">
+<listbox id="fm" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%" align="center" label="序号"/>
+		<listheader width="35%" align="center" label="发明专利名称"/>
+		<listheader width="15%" align="center" label="授权时间"/>
+		<listheader width="30%" align="center" label="专利授权号"/>
+		<listheader width="15%" align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+<listbox id="qt" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%" align="center" label="序号"/>
+		<listheader width="35%" align="center" label="名称"/>
+		<listheader width="15%" align="center" label="时间"/>
+		<listheader width="30%" align="center" label="备注"/>
+		<listheader width="15%" align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+</window>
+</zk>

@@ -1,0 +1,30 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="" border="none" sclass="newin"
+		use="org.iti.jxkh.indicator.businessdept.HistoryStatisticWindow">
+	<panel height="580px">
+		<caption height="40px">
+			<div align="right">
+				<label value="选择统计年份："/>
+				<listbox mold="select" width="80px" rows="1" id="year"
+				use="org.iti.gh.ui.listbox.YearListbox">					
+				</listbox>
+				<space/>
+				<toolbarbutton image="/css/img/searAct.gif" id="search">
+				</toolbarbutton>
+				<toolbarbutton image="/css/sat/dc.gif" id="export"/>
+			</div>	
+		</caption>
+		<panelchildren>			
+			<listbox sclass="new_listbox" mold="paging" id="data" height="500px">
+				<listhead width="100%">
+					<listheader label="年份" width="10%" align="center"/>
+					<listheader label="业务量化指标系数" width="90%" align="center"/>					
+				</listhead>
+				<listitem id="indicator" visible="false">							
+				</listitem>
+			</listbox>
+		</panelchildren>
+	</panel>
+</window>
+</zk>

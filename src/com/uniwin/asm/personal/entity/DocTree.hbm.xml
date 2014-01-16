@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.uniwin.asm.personal.entity.DocTree" table="DocumentTree" schema="dbo">
+        <id name="dtId" type="java.lang.Long">
+            <column name="DT_ID" precision="18" scale="0" />
+            <generator class="native" />
+        </id>
+        <property name="dtName" type="java.lang.String">
+            <column name="DT_NAME" length="50" />
+        </property>
+        <property name="dtpId" type="java.lang.Long">
+            <column name="DT_PID" precision="18" scale="0" />
+        </property>
+        <property name="dtBz" type="java.lang.String">
+            <column name="DT_BZ" length="200" />
+        </property>
+        <property name="totleDocument" type="java.lang.Integer">
+            <column name="TOTLE_DOCUMENT" />
+        </property>
+        <property name="dtKuid" type="java.lang.Long">
+            <column name="DT_KUID" precision="18" scale="0" />
+        </property>
+        <property name="totleSize" type="java.lang.Long">
+            <column name="TOTLE_SIZE" precision="18" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

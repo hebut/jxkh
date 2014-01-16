@@ -1,0 +1,162 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" style="text-align:left" use="org.iti.jxkh.score.setup.SetupWindow">
+		<panel title="参数设定" border="normal" width="768px">
+			<panelchildren>
+				<grid>
+					<columns>
+						<column align="center" />
+					</columns>
+					<rows>
+						<row style="background-color:#ffffff">
+							<groupbox>
+								<caption label="考核年度设置" />
+								<grid>
+									<columns>
+										<column width="30%" align="center" />
+										<column align="left" />
+									</columns>
+									<rows>
+										<row style="background-color:#ffffff">
+											<label value="设置考核年度"/>
+											<hbox>
+												<listbox id="yearlist" width="150px" mold="select" use="org.iti.gh.ui.listbox.YearListbox">
+												</listbox>												
+												<button id="sure" label="确定" visible="false"/>
+												<space/>
+												<button id="add" label="添加" visible="false">
+													<attribute name="onClick">
+														Window w = (Window)Executions.createComponents("/admin/jxkh/setup/addyear.zul",null,null);
+														w.doModal();
+													</attribute>
+												</button>
+											</hbox>
+											
+										</row>
+									</rows>
+								</grid>
+							</groupbox>
+						</row>
+						<row style="background-color:#ffffff">
+							<groupbox>
+								<caption label="工资总额设置" />
+								<grid>
+									<columns>
+										<column width="30%" align="center" />
+										<column align="center" />
+									</columns>
+									<rows>
+										<row style="background-color:#ffffff">
+											<label value="奖励性工资总额" />
+											<hbox align="center">
+												<decimalbox id="money" width="250px"/>
+												<label value="元" />
+											</hbox>
+										</row>
+										<row style="background-color:#ffffff">
+											<label value="业务部门与管理部门分配比例" />
+											<hbox>
+												<label id="showRate1" />
+												<label value=" : " />
+												<label id="showRate2" />
+											</hbox>
+										</row>
+									</rows>
+								</grid>
+							</groupbox>
+						</row>
+						<row style="background-color:#ffffff">
+							<groupbox>
+								<caption label="业务部门评分设置" />
+								<grid>
+									<columns>
+										<column width="30%" align="center" />
+										<column align="center" />
+									</columns>
+									<rows>
+										<row style="background-color:#ffffff">
+											<label value="上浮一档比率" />
+											<hbox align="center">
+												<decimalbox value="30" id="rate" />
+												<label value="%" />
+											</hbox>
+										</row>
+										<row style="background-color:#ffffff" >
+											<label value="各档次部门数设置" />
+											<grid>
+												<columns>
+													<column width="40%" align="center" />
+													<column align="center" />
+												</columns>
+												<rows>
+													<row style="background-color:#ffffff">
+														<label value="三档" />
+														<intbox value="1" id="third" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="二档" />
+														<intbox value="2" id="second" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="一档" />
+														<intbox id="first" />
+													</row>													
+												</rows>
+											</grid>
+										</row>
+
+									</rows>
+								</grid>
+							</groupbox>
+						</row>
+						<row style="background-color:#ffffff">
+							<groupbox>
+								<caption label="管理人员评分设置" />
+								<grid>
+									<columns>
+										<column width="30%" align="center" />
+										<column align="center" />
+									</columns>
+									<rows>
+										<row style="background-color:#ffffff">
+											<label value="各级所占权重" />
+											<grid>
+												<columns>
+													<column width="40%" align="center" />
+													<column align="center" />
+												</columns>
+												<rows>
+													<row style="background-color:#ffffff">
+														<label value="院长" />
+														<intbox value="3" id="weight1" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="副院长" />
+														<intbox value="3" id="weight2" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="部门负责人" />
+														<intbox value="2" id="weight3" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="员工" />
+														<intbox value="1" id="weight4" />
+													</row>
+												</rows>
+											</grid>
+										</row>
+									</rows>
+								</grid>
+							</groupbox>
+						</row>
+						<row style="background-color:#ffffff">
+							<hbox>
+								<button label="保存设置" id="save" />
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

@@ -1,0 +1,19 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="选择区域" border="normal" width="60%" use="org.iti.jg.fpjf.XzareaWindow" closable="true">
+<listbox id="area" checkmark="true" multiple="true" mold="paging" pageSize="15">
+					<listhead>
+						<listheader label="序号" width="10%" align="center"/>
+						<listheader label="区域名称" width="25%"  align="center"/>
+						<listheader label="所属校区" width="25%"  align="center"/>
+						
+					</listhead>	 
+				</listbox>
+				<hbox pack="center" width="100%">
+				<hbox>
+				<button label="确定" id="sure"></button> 
+				<button label="退出" id="back"></button> 
+				</hbox>
+				</hbox>
+</window>
+</zk>

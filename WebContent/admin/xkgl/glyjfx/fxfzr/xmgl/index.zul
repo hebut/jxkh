@@ -1,0 +1,28 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  use="org.iti.gh.glyjfx.fxfzr.xmgl.XmglWindow">
+<panel title="管理项目" width="100%" border="normal" collapsible="true" style="text-align:left" >
+<caption>
+   <toolbar align="end">
+      <button label="添加项目" id="addXm">
+      </button>
+
+   </toolbar>
+</caption>
+<panelchildren>
+<listbox id="xmlist" mold="paging" pageSize="15">
+		<listhead>
+			<listheader width="10%" label="序号" align="center"/>
+			<listheader width="20%" label="项目名称"  align="center"/>
+			<listheader width="10%" label="项目负责人"  align="center"/>
+			<listheader width="15%" label="项目级别"  align="center"/>
+			<listheader width="10%"  label="项目类别" align="center"/>
+			<listheader width="10%" label="类别"  align="center"/>
+			<listheader width="10%" label="年度"  align="center"/>
+			<listheader width="15%" label="功能" align="center"/>
+		</listhead>
+</listbox>
+</panelchildren>
+</panel>
+</window>
+</zk>

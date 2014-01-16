@@ -1,0 +1,19 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="项目详情" border="normal" closable="true" sclass="newin"
+		width="900px" height="430px" use="org.iti.projectmanage.science.statistic.ProjectWindow">
+
+       <listbox  mold="paging" pageSize="10"   sclass="new_listbox" id="xminfo">
+			<listhead>
+				<listheader width="5%" align="center" label="序号" />
+				<listheader  align="center" label="项目名称" />
+				<listheader width="20%" align="center" label="项目来源" />
+				<listheader width="10%" align="center" label="负责人" />
+				<listheader width="10%"  align="center" label="立项时间"/>
+				<listheader width="10%" align="center" label="开始时间" />
+				<listheader width="20%" align="center" label="项目组成员" />
+			</listhead>
+		</listbox>
+
+	</window>
+</zk>

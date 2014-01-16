@@ -1,0 +1,174 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="教材情况" border="normal" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.CkjcqkWindow"
+		width="800px">
+		<grid>
+			<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="20%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="教材名称" style="letter-spacing:5px" />
+
+					<hbox>
+						<textbox id="cgmc" cols="80" maxlength="100"/>
+						<button id="choice" label="选择"></button>
+					</hbox>
+				</row>
+				<row>
+					<label value="主编" id="first"
+						style="letter-spacing:25px" />
+					<hbox>
+						<textbox id="zb" cols="40" maxlength="50"/>
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="副主编" id="second"
+						style="letter-spacing:10px"/>
+					<textbox id="fzb" cols="40"  maxlength="50"/>
+				</row>
+				<row spans="1,3">
+					<label value="参编者" id="more"
+						style="letter-spacing:10px" />
+					<textbox id="bz" cols="80"  maxlength="100"/>
+				</row>
+				<row>
+					<label value="出版单位" style="letter-spacing:5px" />
+					<hbox>
+						<textbox id="kanwu" cols="40"  maxlength="100"/>
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="出版时间" style="letter-spacing:5px" />
+					<hbox>
+						<textbox id="publitime" cols="40"  maxlength="50"/>
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="版次" style="letter-spacing:25px" />
+					<textbox id="editionno" cols="40"  maxlength="50"/>
+					<label value="ISBN号" />
+					<hbox>
+						<textbox id="isbn" cols="40" maxlength="50" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+
+				<row>
+					<label value="著作类型 " style="letter-spacing:5px" />
+					<listbox id="worktype" mold="select"
+						width="280px">
+					</listbox>
+					<label value="学科分类 " style="letter-spacing:5px" />
+					<listbox id="subjetype" mold="select"
+						width="280px">
+					</listbox>
+				</row>
+				<row>
+					<label value="教材性质" style="letter-spacing:5px"></label>
+					<textbox id="nature" cols="40"  maxlength="100"/>
+				</row>
+
+				<!--
+					<row spans="1,3">
+					<label value="全部作者" style="letter-spacing:5px"/>
+					<textbox id="all" cols="80"/>
+					</row>
+					
+					<row spans="1,3">
+					<label />
+					<label value="注意：作者之间严格用英文逗号隔开，以便统计" style="color:red;valign:center"/>
+					</row>
+					
+					<row spans="1,3">
+					<label value="作者排名" style="letter-spacing:5px"/>
+					<textbox id="namesort"  cols="80"/>
+					</row>
+					
+					<row spans="1,3">
+					<label />
+					<label value="例如：邵春，第一主编；于艳华第二主编；李庆文第三主编；"/>
+					</row>
+				-->
+				<row>
+					<label value="本人署名情况" />
+					<hbox>
+						<label id="shuming" />
+					</hbox>
+					<label value="承担字数" style="letter-spacing:5px" />
+					<hbox>
+						<intbox id="words" cols="27" value="0" />
+						<label value="字数为一个正数"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="信息填写人" />
+					<hbox>
+						<label id="writer" />
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="备注" style="letter-spacing:5px" />
+					<textbox id="remark" cols="80" height="90px"  maxlength="500"/>
+				</row>
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+					<hbox>
+						<grid width="400px">
+							<rows>
+								<row>
+									<listbox id="upList"
+										style="border:0px" mold="select" rows="1" />
+
+								</row>
+							</rows>
+						</grid>
+						<hbox pack="center" width="100%">
+							<hbox>
+								<button label="下载" id="downFile" />
+								<button label="删除" id="deUpload" />
+							</hbox>
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit" />
+				<space width="3px" />
+				<button id="upFile" label="上传附件" />
+				<space width="3px" />
+				<button label="下载全部 " id="downFileZip" />
+				<space width="3px" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true"
+					value="1、出版时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9" />
+				<label pre="true" value="2、本人署名情况（排名/总人数），如：3/10" />
+				<label pre="true"
+					value="3、作者排名，如：例如：邵春，第一主编；于艳华第二主编；李庆文第三主编；" />
+				<label pre="true"
+					value="4、点击“上传附件”可以实现多文件的上传，并且可以删除上传的文件" />
+				<label pre="true" value="5、上传 附件后请点击“提交”保存， 以防丢失文件！" />
+
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

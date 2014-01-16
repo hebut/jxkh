@@ -1,0 +1,60 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window width="100%" height="100%" style="text-align:left" use="org.iti.human.ld.FudaoManagerWindow">
+		<borderlayout width="100%" height="580px">
+			<west size="200px" id="westPanel">
+				<tree zclass="z-dottree" rows="45" width="100%" id="westTree">
+					<treecols>
+						<treecol width="85%">
+							<label value="单位" />
+						</treecol>
+						<treecol width="15%">
+							<label value="人数" />
+						</treecol>
+					</treecols>
+				</tree>
+			</west>
+			<center flex="true">
+				<panel title="管理" framable="true" id="userPanel">
+					<caption>
+						<button id="addUser" />
+					</caption>
+					<panelchildren>
+						<grid style="border:0px">
+							<columns>
+								<column align="center" />
+							</columns>
+							<rows>
+								<row spans="3,1,3" style="padding:0;border-width:medium 0px 0px">
+									<vbox>
+										<separator spacing="1px" />
+										<hbox align="center">
+											<label value="姓名：" />
+											<textbox id="nameSearch" />
+											<space spacing="20px" />
+											<label value="教师号：" />
+											<textbox id="tnoSearch" />
+											<space spacing="20px" />
+											<button id="submit" label="查询" />
+										</hbox>
+										<separator spacing="1px" />
+									</vbox>
+								</row>
+							</rows>
+						</grid>
+						<listbox id="fdylist" mold="paging" pageSize="18">
+							<listhead>
+								<listheader label="序号" width="15%" align="center" />
+								<listheader label="教师号" width="15%" align="center" />
+								<listheader label="辅导员姓名" width="15%" align="center" />
+								<listheader label="辅导员所在学院" width="20%" align="center" />
+								<listheader label="负责班级" width="30%" align="center" />
+								<listheader label="操作" width="15%" align="center" />
+							</listhead>
+						</listbox>
+					</panelchildren>
+				</panel>
+			</center>
+		</borderlayout>
+	</window>
+</zk>

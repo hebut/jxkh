@@ -1,0 +1,23 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window  border="normal" width="350px"   height="500px"
+use="org.iti.projectmanage.science.member.MemberSortWindow"  sclass="newin">
+   <caption  label="成员排序:按贡献从大到小进行拖拽排序"  style="color:blue"/>
+   <listbox id="sortList" onDrop="move(event.dragged)" droppable="true" sclass="new_listbox"
+			multiple="true" rows="15">   
+   </listbox>
+ 		<div align="center" sclass="pop-win-b-div">
+   	<toolbarbutton id="submit" image="/css/default/images/common/actSave.gif" />						
+     	<toolbarbutton id="close" image="/css/default/images/common/actquit.gif"/>
+    </div>
+</window>
+<zscript>
+	void move(Component dragged) {
+		if (self instanceof Listitem) {	
+				self.parent.insertBefore(dragged, self.getNextSibling());
+		} else {
+			self.appendChild(dragged);
+		}
+	}
+ </zscript>
+</zk>

@@ -1,0 +1,160 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="审核软件著作" border="normal" closable="true" height="380px"
+		use="org.iti.gh.shxkjs.kyqk.ShrjzzWindow" width="800px" sclass="newin">
+		<listbox id="rjzzlist" style="border-bottom-width:0px"
+			mold="paging" pageSize="10" sclass="new_listbox">
+			<listhead>
+				<listheader label="序号" width="10%" align="center" />
+				<listheader label="软件著作名称" width="20%" align="center" />
+				<listheader label="出版单位" width="15%" align="center" />
+				<listheader label="首次发表时间" width="15%" align="center" />
+				<listheader label="登记时间" width="10%" align="center" />
+				<listheader label="软著登记号" width="15%" align="center" />
+				<listheader label="填写人" width="10%" align="center"></listheader>
+				<listheader label="功能" width="10%" align="center" />
+			</listhead>
+			<listitem>
+				<listcell label="1" />
+				<listcell label="绩效考核管理系统的研究与实现" style="color:blue" />
+				<listcell label="河北情报院" />
+				<listcell label="2010-06" />
+				<listcell label="11-09-20" />
+				<listcell label="it07" />
+				<listcell label="李鹏" />
+				<listcell>
+					<div align="center">
+						<toolbarbutton label="审核" style="color:blue">
+							<attribute name="onClick">
+	rjzzlist.setVisible(false);
+	AuditRjzz.setVisible(true);
+</attribute>
+						</toolbarbutton>
+					</div>
+				</listcell>
+			</listitem>
+		</listbox>
+		<grid id="AuditRjzz" visible="false">
+			<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="20%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="软件著作名称" />
+					<hbox>
+						<label id="xmmc" value="绩效考核管理系统的研究与实现" />
+					</hbox>
+				</row>
+				<row>
+					<label value="登记号" style="letter-spacing:10px" />
+					<label id="dengjino" value="07000" />
+					<label value="软著登记号" />
+					<hbox>
+						<label id="rjno" value="it07" />
+					</hbox>
+				</row>
+				<row>
+					<label value="登记时间" style="letter-spacing:5px" />
+					<label id="dengjisj" value="11-09-20" />
+					<label value="首次发表时间" />
+					<hbox>
+						<label id="firtime" value="2010-06" />
+					</hbox>
+				</row>
+				<row>
+					<label value="著作编制类别" />
+					<listbox mold="select" rows="1">
+						<listitem label="请选择" />
+						<listitem label="汇编" />
+						<listitem label="内部刊物" />
+					</listbox>
+					<label value="著作类型" />
+					<listbox mold="select" rows="1">
+						<listitem label="请选择" />
+						<listitem label="编著" />
+						<listitem label="译著" />
+					</listbox>
+				</row>
+				<row>
+					<label value="出版社是否国内外正式注册"></label>
+					<listbox mold="select" rows="1">
+						<listitem label="请选择" />
+						<listitem label="是" />
+						<listitem label="否" />
+					</listbox>
+					<label value="院内部门" />
+					<label value="科技评估中心" />
+				</row>
+				<row>
+					<label value="主办单位" />
+					<label value="情报院" />
+					<label value="合作单位" />
+					<label value="河北工业大学" />
+				</row>
+				<row spans="1,3">
+					<label value="项目人员情况" />
+					<label id="menbers" value="本项目共有三人负责：石头、李玉、王刚" />
+				</row>
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+					<hbox>
+						<grid width="400px">
+							<columns>
+								<column width="60%"></column>
+								<column width="20%"></column>
+								<column width="20%"></column>
+							</columns>
+							<rows>
+								<row>
+									<listbox id="upList"
+										style="border:0px" mold="select" rows="1" />
+								</row>
+							</rows>
+						</grid>
+						<hbox pack="center" width="100%">
+							<hbox>
+								<button label="下载" id="downFile" />
+							</hbox>
+						</hbox>
+					</hbox>
+				</row>
+				<row>
+					<label value="是否通过" style="letter-spacing:5px" />
+					<hbox>
+						<radiogroup id="audit">
+							<radio label="不通过" checked="true" />
+							<radio label="通过" />
+						</radiogroup>
+					</hbox>
+					<label value="填写人" />
+					<label value="李鹏" />
+				</row>
+				<row spans="1,3">
+					<label value="审核意见" style="letter-spacing:5px" />
+					<textbox id="reason" cols="80" rows="4"
+						height="30px">
+					</textbox>
+				</row>
+				<row spans="4">
+					<hbox pack="center" width="100%">
+						<hbox>
+							<button label="提交" id="submit" />
+							<space width="3px" />
+						<!--  	<button label="下载全部 " id="downFileZip" />
+							<space width="3px" /> -->
+							<button label="返回" id="close">
+								<attribute name="onClick">
+	rjzzlist.setVisible(true);
+	AuditRjzz.setVisible(false);
+</attribute>
+							</button>
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

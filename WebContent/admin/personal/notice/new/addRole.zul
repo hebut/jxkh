@@ -1,0 +1,18 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="选择通知对象" border="normal" width="50%" closable="true" use="org.iti.xypt.personal.notice.NoticeRoleSelectWindow">
+		<listbox id="roleSelect" checkmark="true" multiple="true">
+			<listhead>
+				<listheader label="序号" width="20%"></listheader>
+				<listheader label="角色名称" width="80%"></listheader>
+			</listhead>
+		</listbox>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button id="submit" label="确认"></button>
+				<button id="reset" label="重置"></button>
+				<button id="close" label="关闭"></button>
+			</hbox>
+		</hbox>
+	</window>
+</zk>

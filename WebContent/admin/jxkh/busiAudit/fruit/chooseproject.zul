@@ -1,0 +1,46 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="选择项目" border="normal" width="630px"	height="400px"  closable="true"  sclass="newin"
+	use="org.iti.jxkh.busiAudit.fruit.ChooserProjectWin">
+		<grid>
+			<columns>
+				<column align="center" />
+			</columns>
+			<rows>
+				<row>
+					<hbox align="center">
+							<label value="项目名称"/>
+							<textbox id="name" width="130px"/>
+							<space/>
+							<label value="项目类型"/>
+							<listbox id="sort" mold="select" rows="1" width="130px">
+							</listbox>
+							<space/>
+							<toolbarbutton id="query" image="/css/default/images/button/searAct.gif" />
+					</hbox>
+				</row>
+				</rows>
+			</grid>
+			<separator/>
+				<groupbox>
+				<caption>
+				<label value="[项目列表]" />
+				</caption>
+				<listbox id="projectListbox" paginal="${choosePaging}"  sclass="new_listbox" 
+					checkmark="true" rows="6">
+					<listhead>
+						<listheader label="" width="6%" align="center"/>
+						<listheader label="序号" width="16%" align="center"/>
+						<listheader label="项目名称" width="48%" align="left" style="text-align:center"/>
+						<listheader label="项目类型" width="30%" align="center" />	
+					</listhead>
+				</listbox>
+				<paging id="choosePaging" pageSize="5" detailed="true" />
+				</groupbox>
+				<div width="100%" align="center">
+					<toolbarbutton id="choose" image="/css/default/images/button/qd.gif"/>
+					<space/>
+					<toolbarbutton id="close" image="/css/default/images/button/actquit.gif"/>
+				</div>
+	</window>
+</zk>

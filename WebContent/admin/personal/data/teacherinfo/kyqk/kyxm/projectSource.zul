@@ -1,0 +1,39 @@
+<?page title="project source" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="项目来源"  border="normal" sclass="newin" width="650px" height="500px"
+	closable="true" use="org.iti.projectmanage.science.project.ProjectSourceWindow">
+	<grid zclass="pop-grid" width="100%">
+		<columns>
+			<column width="15%" align="right"></column>
+			<column width="45%"></column>
+			<column width="40%" align="right"></column>
+		</columns>
+		<rows>
+			<row zclass="pop-grid-rows">
+				<label value="来源名称："></label>
+				<textbox id="source" cols="45" maxlength="50"></textbox>
+				<hbox>
+					<toolbarbutton id="search" image="/css/default/images/common/searAct.gif"></toolbarbutton>
+					<toolbarbutton id="add" image="/css/default/images/common/addAct.gif"></toolbarbutton>
+				</hbox>
+			</row>
+		</rows>
+	</grid>
+	<space></space>
+	<listbox id="sourceListbox" paginal="${sourcePaging}" sclass="new_listbox" checkmark="true">
+		<listhead>
+			<listheader width="8%" align="center"></listheader>
+			<listheader label="序号" align="center" width="10%"></listheader>
+			<listheader label="来源名称" style="text-align:center" width="82%"></listheader>
+		</listhead>
+	</listbox>
+	<paging id="sourcePaging" pageSize="10" detailed="true" sclass="z-paging"></paging>
+	<space></space>
+	<div width="100%" align="center">
+		<hbox>
+			<toolbarbutton id="select" image="/css/default/images/common/xz.gif"></toolbarbutton>
+			<toolbarbutton id="quit" image="/css/default/images/common/actquit.gif"></toolbarbutton>
+		</hbox>
+	</div>
+</window>
+</zk>

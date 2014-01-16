@@ -1,0 +1,25 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="查看学术会议详细" border="normal" sclass="newin" width="600px" height="600px">
+	<div align="right" width="100%">
+			<listbox id="meetingListbox" paginal="${meetingPaging}"
+				sclass="new_listbox" checkmark="true" multiple="true">
+				<listhead>
+					<listheader label="序号" align="center" width="12%" />
+					<listheader label="会议名称" width="24%"
+						style="text-align:center" align="left" />
+					<listheader label="会议级别" align="center" width="20%" />
+					<listheader label="举办类型" align="center" width="18%" />
+					<listheader label="会议主席" align="center" width="13%"
+						style="text-align:center" />
+					<listheader label="提交人" align="center" width="18%" />
+				</listhead>
+			</listbox>
+			<paging id="meetingPaging" pageSize="10"/>
+		</div>
+		<separator/>
+		<div align="center">
+			<toolbarbutton id="close"	image="/css/img/actquit.gif" />
+		</div>
+</window>
+</zk>

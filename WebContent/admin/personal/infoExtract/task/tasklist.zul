@@ -1,0 +1,43 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window  border="normal"  use="org.iti.xypt.personal.infoCollect.TaskEditWindow" height="500px" width="100%">
+	
+	<caption>
+	<button  label="保留标记" id="signSet" tooltiptext="采集标志"/>
+	<button label="添加新任务" id="addtask"/>
+	</caption>
+<borderlayout>
+<center flex="true">
+<borderlayout>
+	<north splittable="true" collapsible="true">
+<listbox id="taskList" mold="paging" pageSize="6" height="150px" style="cursor:pointer">
+	<listhead>
+		<listheader label="序号"  width="10%"/>
+		<listheader label="任务名称" width="20%"/>
+		<listheader label="起始地址" width="10%"/>
+		<listheader label="备注" width="25%"/>
+		<listheader label="任务状态" width="20%"/>
+		<listheader label="开始时间" width="15%"/>
+	</listhead>
+</listbox>
+
+	</north>
+<center border="none" flex="true">
+<borderlayout>
+<center>
+<tabbox height="250px" id="box">
+<tabs id="tabs"></tabs>
+<tabpanels></tabpanels>
+</tabbox>
+</center>
+<south splittable="true" visible="false">
+<textbox multiline="true" value="09" height="100px" width="100%" id="logDetail"/>
+</south>
+</borderlayout>
+</center>
+</borderlayout>
+</center>
+
+</borderlayout>
+	</window>
+</zk>

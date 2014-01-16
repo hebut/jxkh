@@ -1,0 +1,78 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="审核交流合作项目" border="normal" width="800px"
+		use="org.iti.gh.shxkjs.xsjl.ShjlhzWindow" closable="true">
+		<listbox id="jlhzlist" style="border-bottom-width:0px"
+			mold="paging" pageSize="10">
+			<listhead>
+				<listheader label="序号" width="10%" align="center" />
+				<listheader label="国际交流合作项目名称" width="25%"
+					align="center" />
+				<listheader label="项目起止时间" width="15%" align="center" />
+				<listheader label="合作对象" width="20%" align="center" />
+				<listheader label="功能" width="10%" align="center" />
+				<listheader label="审核状态" width="10%" align="center" />
+			</listhead>
+		</listbox>
+		<grid id="AuditJlhz">
+			<columns>
+				<column width="25%" align="center" />
+				<column width="35%" />
+				<column width="15%" align="center" />
+				<column width="25%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="国际交流合作项目名称" />
+					<hbox>
+						<label id="cgmc" />
+					</hbox>
+				</row>
+				<row>
+					<label value="项目起止时间" />
+					<hbox>
+						<label id="shijian" />
+
+					</hbox>
+					<label value="合作对象" style="letter-spacing:10px" />
+					<hbox>
+						<label id="duixiang" />
+
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="备注" style="letter-spacing:20px" />
+					<label id="remarks" />
+				</row>
+				<row spans="1,3">
+					<label value="是否通过" />
+					<hbox>
+						<radiogroup id="audit">
+							<radio label="不通过" checked="true" />
+							<radio label="通过" />
+						</radiogroup>
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="审核意见" />
+					<textbox id="reason" cols="80" rows="4"
+						height="30px">
+					</textbox>
+				</row>
+				<row spans="4">
+					<hbox pack="center" width="100%">
+						<hbox>
+							<button label="提交" id="submit" />
+							<space width="3px" />
+							<!--  
+								<button label="下载全部 " id="downFileZip" />
+								<space width="3px" />
+							-->
+							<button label="返回" id="close" />
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

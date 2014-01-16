@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.iti.gh.entity">
+  <class name="org.iti.gh.entity.GH_PHASEREPORT" table="GH_PHASEREPORT" schema="dbo">
+  	<id name="id" type="java.lang.Long">
+  		<column name="ID" precision="18" scale="0" />
+  		<generator class="native" />
+  	</id>  	
+
+  	<property name="kuLid" type="java.lang.String">
+  		<column name="KULID" length="50" not-null="true"/>
+  	</property>
+  	<property name="kuId" type="java.lang.Long">
+            <column name="KUID" precision="18" scale="0"  not-null="true" />
+    </property>
+  	<property name="proId" type="java.lang.Long">
+  		<column name="PROID" />
+  	</property>
+  	<property name="phRepoName" type="java.lang.String">
+  		<column name="PHREPORNAME" />
+  	</property>
+  	<property name="keyWord" type="java.lang.String">
+  		<column name="KEYWORD" />
+  	</property>
+  	
+  	<property name="phRepoUser" type="java.lang.String">
+  		<column name="PHREPORUSER" />
+  	</property>
+  	
+  	<property name="phRepoDate" type="java.lang.String">
+  		<column name="PHREPORDATE" />
+  	</property>
+  	<property name="phRepoRemark" type="java.lang.String">
+  		<column name="PHREPORREMARK" />
+  	</property>
+  	<property name="phRepoState" type="java.lang.Integer">
+  		<column name="PHREPORSTATE" length="10"/>
+  	</property>
+  	<property name="phRepoPath" type="java.lang.String">
+  		<column name="PHREPORPATH" />
+  	</property>
+  	
+  </class>
+</hibernate-mapping>

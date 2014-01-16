@@ -1,0 +1,150 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="会议论文情况" border="normal" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.JylwqkWindow"
+		width="800px">
+		<grid>
+			<columns>
+				<column width="20%" align="center" />
+				<column width="30%" />
+				<column width="20%" align="center" />
+				<column width="30%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="论文名称 " style="letter-spacing:3px" />
+					<hbox>
+						<textbox id="cgmc" cols="78" maxlength="50" 
+							tooltiptext="填写或者点击右侧三角从已有的论文中选择">
+						</textbox>
+						<button id="choice" label="选择"></button>
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row>
+					<label value="刊物或会议论文集名称" />
+					<hbox>
+						<textbox id="kanwu" cols="30" maxlength="50"/>
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="发表时间" style="letter-spacing:5px" />
+					<textbox id="shijian" cols="30" />
+				</row>
+				<row spans="1,3">
+					<label value="全部作者" style="letter-spacing:5px" />
+					<hbox>
+						<textbox id="all" cols="78" maxlength="100"/>
+
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="英文作者 " style="letter-spacing:5px" />
+					<hbox>
+						<textbox id="ename" cols="78"  maxlength="200"/>
+					</hbox>
+				</row>
+				<row>
+					<label value="主办单位" style="letter-spacing:5px" />
+					<textbox id="host" cols="30" maxlength="50"/>
+
+				</row>
+				<row>
+					<label value="会议时间 " style="letter-spacing:5px" />
+					<hbox>
+						<textbox id="time" cols="30" />
+						<label value="*"
+							style="color:red;valign:center" />
+					</hbox>
+					<label value="会议地点" style="letter-spacing:5px" />
+					<textbox id="palce" cols="30" maxlength="100"/>
+				</row>
+				<row>
+					<label value="出版单位 " style="letter-spacing:5px" />
+					<textbox id="publish" cols="30" maxlength="100"/>
+
+					<label value="收录类别" style="letter-spacing:5px" />
+					<listbox id="record" mold="select" width="220px"></listbox>
+				</row>
+				<row>
+					<label value="收录编号" style="letter-spacing:5px" />
+					<textbox id="num" cols="30" />
+					<label value="卷/期/页码范围" style="letter-spacing:3px" />
+					<textbox id="pages" cols="30" />
+				</row>
+				<row>
+					<label value="本人排名 " style="letter-spacing:5px" />
+					<hbox>
+						<label id="selfs" />
+					</hbox>
+					<label value="研究方向" style="letter-spacing:5px" />
+					<listbox id="research" mold="select" width="220px"
+						use="org.iti.gh.ui.listbox.YjfxListbox">
+					</listbox>
+				</row>
+				<row>
+					<label value="指导情况" style="letter-spacing:5px" />
+					<hbox>
+						<radiogroup id="zd">
+							<radio label="指导学生" checked="true" />
+							<radio label="教师本人" />
+						</radiogroup>
+					</hbox>
+					<label value="信息填写人"></label>
+					<label id="writer"></label>
+				</row>
+				<row spans="1,3">
+					<label value="备注" style="letter-spacing:10px" />
+					<textbox id="remark" cols="80" height="90px" maxlength="250"/>
+				</row>
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+					<hbox>
+						<grid width="400px">
+							<rows>
+								<row>
+									<listbox id="upList"
+										style="border:0px" mold="select" rows="1" />
+
+								</row>
+							</rows>
+						</grid>
+						<hbox pack="center" width="100%">
+							<hbox>
+								<button label="下载" id="downFile" />
+								<button label="删除" id="deUpload" />
+							</hbox>
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit" />
+				<space width="3px" />
+				<button id="upFile" label="上传附件" />
+				<space width="3px" />
+				<button label="下载全部 " id="downFileZip" />
+				<space width="3px" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true"
+					value="1、发表时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9、2008/9-2008/10" />
+				<label pre="true" value="2 、注意：作者之间用英文顿号严格隔开，以便统计" />
+				<label pre="true"
+					value="3、点击“上传附件”可以实现多文件的上传，并且可以删除上传的文件" />
+					<label pre="true" value="4、上传附件后请点击“提交”进行保存，以防文件丢失" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

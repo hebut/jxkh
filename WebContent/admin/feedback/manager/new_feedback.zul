@@ -1,0 +1,46 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="反馈答复" border="normal" closable="true" use="com.uniwin.asm.personal.ui.feedback.NewFeedbackReplyWindow" width="45%">
+		<panel width="100%">
+			<panelchildren>
+				<grid>
+					<columns>
+						<column width="40%" align="center"></column>
+						<column width="60%" align="left"></column>
+					</columns>
+					<rows>
+						<row>
+							<label value="反馈功能模块" />
+							<label id="fkgn" />
+						</row>
+						<row>
+							<label value="反馈人角色" />
+							<label id="fkjs" />
+						</row>
+						<row>
+							<label value="反馈主题" />
+							<textbox id="fkzt" readonly="true" />
+						</row>
+						<row>
+							<label value="反馈内容" />
+							<textbox id="fknr" height="100px" cols="50" readonly="true" rows="5" />
+						</row>
+						<row>
+							<label value="答复内容" />
+							<hbox>
+								<textbox id="dfnr" cols="50" multiline="true" rows="10" height="100px" />
+								<label value="*" style="color:red;valign:center" />
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+				<hbox pack="center" align="center" width="100%">
+					<hbox>
+						<toolbarbutton id="submit" image="/css/default/images/button/qd.gif"/>
+						<toolbarbutton id="cancel" image="/css/default/images/common/fh.gif"/>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

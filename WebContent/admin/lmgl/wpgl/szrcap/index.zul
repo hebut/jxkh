@@ -1,0 +1,30 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window style="text-align:left"
+		use="org.iti.wp.szrc.SzrcWindow">
+		<panel title="设置日程安排" id="ap">
+			 	<panelchildren>
+				<listbox id="rclist">
+					<listhead>
+						<listheader label="序号" align="center"
+							width="6%" />
+						<listheader label="评审类别阶段" align="center"
+							width="20%" />
+						<listheader label="提交文档开始时间" align="center"
+							width="15%" />
+						<listheader label="提交文档结束时间" align="center"
+							width="15%" />
+							<listheader label="评审开始时间" align="center"
+							width="15%" />
+						<listheader label="评审结束时间" align="center"
+							width="15%" />
+						<listheader label="操作" align="center"
+							width="14%" />
+
+					</listhead>
+				</listbox>
+				 
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

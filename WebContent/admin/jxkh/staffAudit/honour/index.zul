@@ -1,0 +1,76 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" border="false" width="760px" style="text-align:left" sclass="newin"
+			use="org.iti.jxkh.honour.HonourAuditWindow">
+			<groupbox id="condition" width="740px" visible="false" >
+			<caption>
+				<label value="[查询条件]" />
+			</caption>
+		<grid  width="730px" >
+			<columns>
+				<column width="30%" align="right"></column>
+				<column width="20%" align="left"></column>
+				<column width="15%" align="right"></column>
+				<column width="35%" align="left"></column>
+			</columns>
+			<rows>
+				<row style="background:#D2E9FF">
+					<label value="荣誉名称:" />
+					<textbox id="honourName"  width="90%"/>
+					<label value="荣誉状态:"/>
+					<listbox id="auditState" mold="select" rows="1" width="60%">
+						<listitem label="-请选择-"/>
+						<listitem label="未审核"/>
+						<listitem label="审核通过"/>
+						<listitem label="审核退回"/>
+						<listitem label="已归档"/>
+					</listbox>
+				</row>
+				<row spans="4" style="background:#D2E9FF">
+					<div align="center">
+						<button   label="查   询"   id="query"/>
+						<button  label="重   置"   id="reset"/>
+					</div>
+				</row>
+			</rows>
+		</grid>		
+</groupbox>
+			<div align="right">	
+				<toolbarbutton id="searchcbutton" image="/css/default/images/button/data-btn-js.gif"/>				
+					<toolbarbutton id="passAll" image="/css/default/images/button/plsh.gif">	
+						<!-- <attribute name="onClick">
+							Window win = (Window)execution.createComponents("/admin/jxkh/audit/article/journal/batchAudit.zul",null,null);
+							win.doModal();
+						</attribute>	 -->		
+					</toolbarbutton>			
+					<toolbarbutton id="exportExcel" image="/css/default/images/button/dc.gif"/>					
+			</div>
+					
+				<div align="right" width="100%">	
+				<listbox id="honourList" checkmark="true" multiple="true"  style="border-bottom-width:0px" mold="paging"  sclass="new_listbox">
+					<listhead>
+						<listheader width="5%" align="center" />
+						<listheader label="序号" width="10%" align="center" />
+						<listheader label="荣誉名称" width="19%" align="left" style="text-align:center"/>
+						<listheader label="所属人员" width="15%" align="center" />						
+						<listheader label="颁发单位" width="20%" align="center" />
+						<listheader label="附件" width="10%" align="center" />	
+						<listheader label="档案号" width="11%" align="center" />				
+						<listheader label="审核状态" width="10%" align="center" />
+					</listhead>					
+				</listbox>
+				<!-- <paging id="zxPaging" zclass="z-paging"  pageSize="11" detailed="true" /> -->
+			</div>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:red" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击荣誉名称，可以查看该荣誉的详细信息。" />	
+				<label pre="true" value="2、如果已归档，请点“操作”列中的图标按钮填写档案号。" style="color:red"/>				
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

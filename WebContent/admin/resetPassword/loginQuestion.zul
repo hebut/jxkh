@@ -1,0 +1,31 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="loginQue" title="重新设置用户密码" border="normal" width="450px" position="center" mode="overlapped" use="com.uniwin.framework.ui.resetPassword.LoginQuestionWindow">
+		<grid>
+			<columns>
+				<column width="150px" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<label value="密码提示问题：" width="80px" />
+					<label id="kuQuestion" width="150px" sclass="red" />
+				</row>
+				<row>
+					<label value="密码问题答案：" width="80px" />
+					<hbox>
+						<textbox id="kuAnswer" width="240px" />
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row spans="2" align="center">
+					<hbox>
+						<button id="submit" label="确定" />
+						<button id="reset" label="重填" />
+						<button id="reto" label="返回" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

@@ -1,0 +1,38 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window style="text-align:left" border="false"    id="jxstageedit"  width="765px" use="org.iti.projectmanage.teach.member.StageEditWindow">
+	
+		<div   id="stageinfo"   width="765px">
+		    <div  width="765px" align="right">
+				<toolbarbutton image="/css/sat/addAct.gif" id="addmember"/>
+				<button label="成员排序"  id="order"/>
+				<toolbarbutton image="/css/sat/fh.gif" id="back"/>
+			</div>
+			<listbox id="stage"  paginal="${cyPaging}"  style="border-bottom-width:0px" sclass="new_listbox" width="765px"  checkmark="true" multiple="true" >
+		<listhead>
+			<listheader width="5%" align="center"/>
+			<listheader label="序号" align="center" width="7%"/>
+			<listheader label="成员名称" align="center" width="12%" />
+			<listheader label="负责任务描述" style="text-align:center" />			
+			<listheader label="参考文献" align="center" width="10%"/>
+			<listheader label="阶段报告" align="center" width="10%"></listheader>
+			<listheader label="操作" align="center" width="12%"/>			
+		</listhead>
+	</listbox>
+	<paging id="cyPaging" zclass="z-paging"  pageSize="10" detailed="true"/>
+	<space height="10px"/>
+	<groupbox visible="false">
+				<caption >
+					<label style="color:red" value="[提示]"/>
+				</caption>
+				<vbox>
+					<separator spacing="1px" />
+					<separator spacing="1px" />
+					<label pre="true" value="1、点击“添加”可以添加新的项目组成员" />
+					<label pre="true" value="2、点击“成员排序”，可以对已添加的成员进行排序，按贡献从大到小进行排列" />
+					<label pre="true" value="3、新添加的成员可以选择“操作”栏中的“编辑任务”按钮为成员分配任务" />
+				</vbox>
+			</groupbox>
+</div>
+</window>
+</zk>

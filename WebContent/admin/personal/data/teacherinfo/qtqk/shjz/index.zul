@@ -1,0 +1,33 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%" border="normal" use="com.uniwin.asm.personal.ui.data.teacherinfo.qtqk.ShjzWindow">
+		<panel title="社会团体兼职 ">
+			<caption>
+				<hbox>
+					<button id="button1" label="添加" visible="true"
+						style="color:blue" />
+					<button id="button1out" label="导出EXCEL"
+						visible="true" style="color:blue" />
+				</hbox>
+			</caption>
+			<panelchildren>
+				<listbox id="listbox1" style="border-bottom-width:0px"
+					mold="paging" pageSize="10">
+					<listhead>
+						<listheader label="序号" width="10%"
+							align="center" />
+						<listheader label="团体名称" width="40%"
+							align="center" />
+
+						<listheader label="担任职务" width="20%"
+							align="center" />
+						<listheader label="任职时间" width="20%"
+							align="center" />
+						<listheader label="功能" width="10%"
+							align="center" />
+					</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

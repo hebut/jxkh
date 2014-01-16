@@ -1,0 +1,25 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="反馈意见管理" border="normal" use="com.uniwin.asm.personal.ui.feedback.FeedbackReplyWindow">
+		<caption>
+			<toolbar align="end">
+				<button label="删除反馈" id="del" />
+			</toolbar>
+		</caption>
+		<listbox checkmark="true" multiple="true" id="fkyj" mold="paging" pageSize="20">
+			<listhead>
+				<listheader label="序号" align="center" width="10%" />
+				<listheader label="意见内容" align="center" width="30%" />
+				<listheader label="反馈人" align="center" width="10%" />
+				<listheader label="反馈人角色" align="center" width="10%" />
+				<listheader label="反馈时间" align="center" width="30%" />
+				<listheader label="已经回复" align="center" width="10%" />
+			</listhead>
+		</listbox>
+		<hbox pack="center" align="center" width="100%">
+			<hbox>
+				<button id="delete" label="删除答复" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

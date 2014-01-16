@@ -1,0 +1,37 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="添加调动部门" border="normal" sclass="newin" height="440px" width="500px" closable="true"
+		use="org.iti.jxkh.dutyChange.ChooseDeptWin">
+	<grid>
+		<columns>
+			<column width="100%" align="center"/>
+		</columns>
+		<rows>
+			<row>
+				<hbox>
+					<label value="部门姓名:"/>
+					<textbox width="180px"   id="deptName" />
+					<space width="15px"/>
+					<toolbarbutton  image="/css/default/images/button/searAct.gif" id="view"/>
+				</hbox>
+			</row>
+		</rows>
+	</grid>
+	<separator/>
+	<listbox paginal="${zxPaging1}" checkmark="true" mold="paging" id="listbox1" sclass="new_listbox" pageSize="9" rows="9">
+		<listhead>
+			<listheader width="10%" label="" />
+			<listheader label="序号"  width="20%" align="center"/>
+			<listheader label="部门名称" width="70%"  align="center"/>										
+		</listhead>												
+	</listbox>
+	<!-- <paging id="zxPaging1" zclass="z-paging" pageSize="8" 	detailed="true"/> -->
+	<separator/>
+	<div align="center">
+		<toolbarbutton id="submit"	image="/css/default/images/button/actSave.gif" />
+		<space />
+		<toolbarbutton id="close" image="/css/default/images/button/gb.gif">				
+		</toolbarbutton>
+	</div>
+</window>
+</zk>

@@ -1,0 +1,21 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window  id="infosel" title="信息列表" border="normal" use="org.iti.xypt.personal.infoCollect.newspub.InfoSelectWindow" width="70%">
+	
+		<listbox id="detaillistbox" fixedLayout="true"  checkmark="true" multiple="false" mold="paging" pageSize="10" >
+			<listhead height="25px">
+			    <listheader width="3%" />	
+				<listheader label="序号" width="5%" align="center"/>
+				<listheader label="标题" />
+				<listheader label="撰稿人" width="12%" align="center" />
+				<listheader label="发布时间" width="18%" align="center" />
+				<listheader label="点击量" width="7%" align="center" />
+			</listhead>
+		</listbox>
+<div sclass="pop-win-b-div" align="center">
+  <toolbarbutton  image="/images/content/3/qd.gif" id="choose" />
+  <space/>
+    <toolbarbutton image="/css/img/btn-close.gif" id="back" />
+</div>
+	</window>
+</zk>

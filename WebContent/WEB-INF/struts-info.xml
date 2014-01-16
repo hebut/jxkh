@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+	</form-beans>
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action path="/newsprint"
+			type="org.springframework.web.struts.DelegatingActionProxy" validate="false"
+			scope="request">
+			<forward name="newsprint" path="/admin/personal/newsaudit/newsprint.jsp"></forward>
+		</action>
+		<action path="/com/uniwin/framework/ui/login/notice"
+			type="org.springframework.web.struts.DelegatingActionProxy" validate="false"
+			scope="request">
+			<forward name="notice" path="/admin/notice.jsp"></forward>
+
+		</action>
+		<action path="/com/uniwin/asm/personal/ui/data/report"
+			type="org.springframework.web.struts.DelegatingActionProxy" validate="false" scope="request">
+			<forward name="indicator" path="/admin/personal/data/teacherregister/indicator/indicator.jsp"></forward>
+				
+		</action>
+	</action-mappings>
+ <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+    <set-property property="contextConfigLocation" value="classpath:struts1_applicationContext.xml"/>
+  </plug-in>
+</struts-config>

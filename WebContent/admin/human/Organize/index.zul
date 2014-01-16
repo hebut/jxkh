@@ -1,0 +1,10 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<panel framable="false" apply="org.iti.human.ld.OrganizeLeftTreeComposer" id="organizePanel" width="100%">
+		<panelchildren>
+			<listbox mold="select" width="200px" id="delist" />
+			<separator height="5" />
+			<tree zclass="z-dottree" id="organizeTree" rows="45" width="100%" />
+		</panelchildren>
+	</panel>
+</zk>

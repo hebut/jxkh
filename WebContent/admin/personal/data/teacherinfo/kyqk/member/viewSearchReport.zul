@@ -1,0 +1,43 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="viewReport" title="报告详情" border="normal" height="355px" width="450px"  closable="true" droppable="true" sclass="newin"
+		use="org.iti.projectmanage.science.member.SearchReportViewWindow">
+	<grid id="reportGrid" >
+		   <columns>
+				<column align="center" width="16%" />
+				<column />
+			</columns>
+			<rows id="rows" >
+				<row valign="center" height="20px">
+					<label value="所属项目" />
+					<label id="projectName" />
+				</row>
+				<row valign="center" height="98%">
+					<label value="报告名称"/>
+					<label id="reportName"/>
+				</row>
+				<row valign="center" height="20px">
+					<label value="关键词"  />											
+					<label id="keyWord"/>					
+				</row>
+				<row valign="center" height="150px">
+					<label value="备 注" />
+					<label id="remark" height="150px" width="345px"/>
+				</row>
+				<row valign="center" height="25px">
+					<label value="下载附件" />
+					<hbox align="center">						
+						<label id="downloadFile"/>
+						<space />						
+						<toolbarbutton id="download" image="/css/sat/down.png"/>												
+					</hbox>
+				</row>
+				<row valign="center" spans="2" height="25px">
+					<hbox>						
+						<toolbarbutton id="back" image="/css/sat/fh.gif"/>						
+					</hbox>					
+				</row>
+			</rows>
+		</grid>
+</window>
+</zk>

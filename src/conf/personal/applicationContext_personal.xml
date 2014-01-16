@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="usrfavTarget" class="com.uniwin.asm.personal.service.impl.UsrfavServiceImpl" parent="baseService"></bean>
+	<bean id="usrfavService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="usrfavTarget" />
+		</property>
+	</bean>
+	<bean id="xyFeedbackTarget" class="com.uniwin.asm.personal.service.impl.XYFeedBackServiceImpl" parent="baseService"></bean>
+	<bean id="xyFeedBackService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="xyFeedbackTarget" />
+		</property>
+	</bean>
+	<bean id="groupTarget" class="com.uniwin.asm.personal.service.impl.GroupServiceImpl" parent="baseService"></bean>
+	<bean id="groupService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="groupTarget" />
+		</property>
+	</bean>
+	<bean id="memberTarget" class="com.uniwin.asm.personal.service.impl.MemberServiceImpl" parent="baseService"></bean>
+	<bean id="memberService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="memberTarget" />
+		</property>
+	</bean>
+	<bean id="qzMessageTarget" class="com.uniwin.asm.personal.service.impl.QzMessageServiceImpl" parent="baseService"></bean>
+	<bean id="qzMessageService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="qzMessageTarget" />
+		</property>
+	</bean>
+	<bean id="subjectTarget" class="com.uniwin.asm.personal.service.impl.SubjectServiceImpl" parent="baseService"></bean>
+	<bean id="subjectService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="subjectTarget" />
+		</property>
+	</bean>
+	<bean id="relationTarget" class="com.uniwin.asm.personal.service.impl.RelationServiceImpl" parent="baseService"></bean>
+	<bean id="relationService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="relationTarget" />
+		</property>
+	</bean>
+	<bean id="doctreeTarget" class="com.uniwin.asm.personal.service.impl.DocTreeServiceImpl" parent="baseService"></bean>
+	<bean id="doctreeService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="doctreeTarget" />
+		</property>
+	</bean>
+	<bean id="doclistTarget" class="com.uniwin.asm.personal.service.impl.DocListServiceImpl" parent="baseService"></bean>
+	<bean id="doclistService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="doclistTarget" />
+		</property>
+	</bean>
+	<bean id="projectmemberTarget" class="org.iti.projectmanage.science.member.service.impl.ProjectMemberServiceImpl" parent="baseService"></bean>
+	<bean id="projectmemberService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="projectmemberTarget" />
+		</property>
+	</bean>
+</beans>

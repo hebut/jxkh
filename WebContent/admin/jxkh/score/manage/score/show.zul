@@ -1,0 +1,38 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="投票明细" border="normal" width="600px" closable="true" use="org.iti.jxkh.score.manage.ShowWindow">
+		<grid>
+			<columns>
+				<column width="25%" align="center" label="投票人员" />
+				<column width="25%" align="center" label="所占权值" />
+				<column width="25%" align="center" label="票数" />
+				<column width="25%" align="center" label="合计" />
+			</columns>
+			<rows>
+				<row>
+					<label value="院长" />
+					<label value="3" />
+					<label value="1" />
+					<label value="3" />
+				</row>
+				<row>
+					<label value="副院长" />
+					<label value="2" />
+					<label value="1" />
+					<label value="2" />
+				</row>
+				<row>
+					<label value="部门负责人及员工" />
+					<label value="1" />
+					<label value="1" />
+					<label value="1" />
+				</row>
+			</rows>
+			<foot>
+				<footer span="4" label="总分数：6分" style="text-align:right">
+					<space spacing="15px" />
+				</footer>
+			</foot>
+		</grid>
+	</window>
+</zk>

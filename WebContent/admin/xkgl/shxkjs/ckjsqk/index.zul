@@ -1,0 +1,78 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" border="false" use="org.iti.gh.shxkjs.kyqk.ShxkjsWindow" width="100%">
+		<panel title="审核业务信息" width="100%">
+			<panelchildren>
+				<grid id="grid4">
+					<columns>
+						<column width="20%" align="center" />
+						<column width="80%" align="center" />
+					</columns>
+					<rows>
+						<row id="ky">
+							<label value="部门业务情况"></label>
+							<grid id="grid5" style="border:0">
+								<columns>
+									<column label="类别" width="55%" align="center" />
+									<column label="待审核" width="45%"  align="center"/>
+								</columns>
+								<rows>
+									
+									<row>
+										<label value="会议论文" />
+										<hbox>
+										<toolbarbutton style="color:blue" id="hylw" label="30"></toolbarbutton>
+										</hbox>
+									</row>
+									<row>
+										<label value="期刊论文" />
+										<hbox  >
+										<toolbarbutton style="color:blue" id="qklw" label="20"></toolbarbutton>
+										</hbox>
+									</row>
+									<row>
+										<label value="著作" />
+										<hbox>
+										<toolbarbutton style="color:blue" id="xszz" label="3"></toolbarbutton>
+										</hbox>
+									</row>
+									<row>
+										<label value="科技奖励" />
+										<hbox>
+									    <toolbarbutton style="color:blue" id="kjjl" label="2"></toolbarbutton>
+										</hbox>
+									</row>
+									<row>
+										<label value="争取经费" />
+										<hbox >
+										<toolbarbutton style="color:blue" id="hjxm" label="4"></toolbarbutton>
+										</hbox>
+									</row>
+									<row>
+										<label value="专利及软件" />
+										<hbox>
+										<toolbarbutton style="color:blue" id="rjzz" label="5"></toolbarbutton>
+										</hbox>
+									</row>
+									<row>
+										<label value="学术会议" />
+										<hbox >
+										<toolbarbutton style="color:blue" id="fmzl" label="6"></toolbarbutton>
+										</hbox>
+									</row>
+									<row>
+										<label value="成果" />
+										<hbox >
+										<toolbarbutton style="color:blue" id="cg" label="7"></toolbarbutton>
+										</hbox>
+									</row>
+								
+								</rows>
+							</grid>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

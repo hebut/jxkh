@@ -1,0 +1,71 @@
+<?page  contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="normal" sclass="newin" width="920px" closable="true" height="560px" use="org.iti.jxkh.vote.manage.AddMemberWindow">
+		<grid>
+			<columns>
+				<column width="910px" />
+			</columns>
+			<rows>
+				<row>
+					<hbox>
+						<hbox pack="center" align="center">
+							<label value="人员姓名:" />
+							<textbox width="180px" id="perName"></textbox>
+							<space width="15px" />
+							<label value="人员编号:" />
+							<textbox width="130px" id="perId" />
+							<space width="15px" />
+							<label value="所在部门:" />
+							<listbox mold="select" id="deptlist" />
+						</hbox>
+						<toolbarbutton image="/css/default/images/button/searAct.gif" id="view" />
+					</hbox>
+				</row>
+				<row>
+					<hbox>
+						<hbox>
+							<panel width="400px" border="normal" title="人员列表">
+								<panelchildren>
+									<listbox checkmark="true" multiple="true" height="400px" mold="paging" pageSize="10" id="listbox1" sclass="new_listbox">
+										<listhead>
+											<listheader width="10%" label="" />
+											<listheader label="人员编号" width="20%" align="center" />
+											<listheader label="人员姓名" width="30%" align="center" />
+											<listheader label="所属部门" width="40%" align="center" />
+										</listhead>
+									</listbox>
+								</panelchildren>
+							</panel>
+							<space />
+							<vbox>
+								<separator spacing="180px" />
+								<button label="添加&gt;&gt;" id="add" />
+								<separator />
+								<button label="&lt;&lt;删除" id="delete" />
+							</vbox>
+							<space />
+							<panel width="400px" border="normal" title="选中人员列表">
+								<panelchildren>
+									<listbox checkmark="true" multiple="true" height="400px" mold="paging" pageSize="10" id="listbox2" sclass="new_listbox">
+										<listhead>
+											<listheader width="10%" label="" />
+											<listheader label="人员编号" width="20%" align="center" />
+											<listheader label="人员姓名" width="30%" align="center" />
+											<listheader label="所属部门" width="40%" align="center" />
+										</listhead>
+									</listbox>
+								</panelchildren>
+							</panel>
+						</hbox>
+					</hbox>
+				</row>
+				<row align="center">
+					<hbox>
+						<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif" />
+						<toolbarbutton id="close" image="/css/default/images/button/actquit.gif" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

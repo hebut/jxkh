@@ -1,0 +1,31 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="打印选项" border="normal" closable="true" width="300px" id="printWin"
+		height="150px" sclass="newin">
+		<groupbox height="50px">
+			<caption>
+				<label value="请选择是否加水印" />
+			</caption>
+			<separator />
+			<radiogroup>
+				<div align="center">
+					<radio label="是" id="yes"/>		
+					<space width="30px"></space>		
+					<radio label="否" id="no" checked="true"/>
+				</div>				
+			</radiogroup>
+		</groupbox>
+		<separator/>
+		<div align="center">
+			<toolbarbutton id="submit"
+				image="/css/default/images/button/qd.gif" />
+			<space />
+			<toolbarbutton id="close"
+				image="/css/default/images/button/gb.gif">
+				<attribute name="onClick">	
+					printWin.detach();				
+				</attribute>
+			</toolbarbutton>
+		</div>
+	</window>
+</zk>

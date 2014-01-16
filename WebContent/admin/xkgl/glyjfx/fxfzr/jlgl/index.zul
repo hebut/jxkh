@@ -1,0 +1,23 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window style="text-align:left" use="org.iti.xkgl.glyjfx.fxfzr.jlgl.JlglWindow" >
+<panel width="100%" border="false" title="奖励管理" collapsible="true">
+		<caption>
+		<toolbar align="end">
+      <button label="添加奖励" id="addjl"></button>
+   </toolbar>
+		</caption>
+		<panelchildren>
+		 <tabbox id="unitTabbox">
+        <tabs></tabs>
+        <tabpanels></tabpanels>
+     </tabbox>
+     <hbox pack="center" width="100%" id="hb">
+ <label value="当前暂无奖励" style="font-size:13"  ></label>
+ </hbox>
+		</panelchildren>
+	</panel>
+   
+     
+</window>
+</zk>

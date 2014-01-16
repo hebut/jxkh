@@ -1,0 +1,161 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="管理群组" border="normal" width="750px" height="485px" closable="true" use="org.iti.xypt.personal.group.GroupWindow">
+		<tabbox orient="vertical" height="100%">
+			<tabs width="110px">
+				<tab label="群组信息" />
+				<tab label="审批申请" />
+				<tab label="发出邀请" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<panel title="群组基本信息">
+						<caption>
+							<button label="提交修改" id="submit" />
+						</caption>
+						<panelchildren>
+							<grid>
+								<columns>
+									<column width="100px" align="center" />
+									<column />
+								</columns>
+								<rows>
+									<row>
+										<vbox>
+											<image id="groupLogo" height="80px" width="80px" src="/admin/image/group/default.jpg" />
+											<button id="upload" label="自定义图标" />
+										</vbox>
+										<grid>
+											<columns>
+												<column width="80px" align="center" />
+												<column />
+											</columns>
+											<rows>
+												<row>
+													<label value="群组名称" />
+													<hbox align="center">
+														<textbox id="name" width="300px" constraint="no empty" />
+														<label value="*" style="color:red" />
+													</hbox>
+												</row>
+												<row>
+													<label value="群组类型" />
+													<listbox id="typeList" mold="select" rows="1" width="100px">
+														<listitem label="普通群组" selected="true" />
+														<listitem label="兴趣联盟" />
+														<listitem label="组织机构" />
+														<listitem label="好友交流" />
+													</listbox>
+												</row>
+												<row>
+													<label value="群组描述" />
+													<textbox id="descript" width="395px" height="50px" multiline="true" />
+												</row>
+											</rows>
+										</grid>
+									</row>
+								</rows>
+							</grid>
+						</panelchildren>
+					</panel>
+					<separator spacing="3px" />
+					<panel title="群组成员列表">
+						<panelchildren>
+							<listbox id="memberList" rows="100" height="230px">
+								<listhead>
+									<listheader label="序号" width="10%" align="center" />
+									<listheader label="姓名" width="15%" align="center" />
+									<listheader label="性别" width="10%" align="center" />
+									<listheader label="所属部门" width="35%" align="center" />
+									<listheader label="群组角色" width="15%" align="center" />
+									<listheader label="操作" width="15%" align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+				</tabpanel>
+				<tabpanel>
+					<panel title="申请加入用户列表">
+						<panelchildren>
+							<listbox id="applyList" rows="100" height="400px">
+								<listhead>
+									<listheader label="序号" width="10%" align="center" />
+									<listheader label="姓名" width="15%" align="center" />
+									<listheader label="性别" width="15%" align="center" />
+									<listheader label="所属部门" width="45%" align="center" />
+									<listheader label="操作" width="15%" align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+				</tabpanel>
+				<tabpanel>
+					<panel>
+						<panelchildren>
+							<grid>
+								<columns>
+									<column />
+								</columns>
+								<rows>
+									<row>
+										<vbox>
+											<separator spacing="1px" />
+											<vbox>
+												<hbox align="baseline">
+													<space spacing="10px" />
+													<label value="部门:" />
+													<listbox id="deptSelect" mold="select" rows="1" width="200px" use="com.uniwin.framework.common.listbox.DeptListbox" />
+													<checkbox id="teacherCheck" label="教师" checked="true" />
+													<checkbox id="studentCheck" label="本科生" checked="true" />
+													<checkbox id="graduateCheck" label="研究生" checked="true" />
+													<space spacing="10px" />
+													<label value="姓名:" />
+													<textbox id="userName" width="50px" />
+													<button id="query" label="查询" />
+												</hbox>
+											</vbox>
+											<separator spacing="1px" />
+										</vbox>
+									</row>
+									<row>
+										<hbox>
+											<panel title="备选用户列表">
+												<panelchildren>
+													<listbox id="choiceList" rows="1000" width="233px" height="345px" checkmark="true" multiple="true">
+														<listhead>
+															<listheader label="" width="15%" align="center" />
+															<listheader label="姓名" width="20%" align="center" />
+															<listheader label="所属部门" width="65%" align="center" />
+														</listhead>
+													</listbox>
+												</panelchildren>
+											</panel>
+											<vbox>
+												<separator spacing="120px" />
+												<button id="invite" label="发出邀请 &gt;&gt;" />
+												<separator spacing="10px" />
+												<button id="cancel" label="&lt;&lt; 撤销邀请" />
+											</vbox>
+											<panel title="邀请用户列表">
+												<panelchildren>
+													<listbox id="inviteList" rows="100" width="233px" height="345px" checkmark="true" multiple="true">
+														<listhead>
+															<listheader label="" width="15%" align="center" />
+															<listheader label="姓名" width="20%" align="center" />
+															<listheader label="所属部门" width="65%" align="center" />
+														</listhead>
+													</listbox>
+												</panelchildren>
+											</panel>
+										</hbox>
+									</row>
+								</rows>
+							</grid>
+						</panelchildren>
+					</panel>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</window>
+</zk>

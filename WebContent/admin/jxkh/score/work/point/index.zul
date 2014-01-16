@@ -1,0 +1,39 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" use="org.iti.jxkh.score.work.PointWindow" style="text-align:left">
+		<panel title="指定上浮一档人员" border="normal" width="768px">
+			<panelchildren>
+				<grid>
+					<columns>
+						<column align="center" />
+					</columns>
+					<rows>
+						<row>
+							<hbox align="center">
+								<label value="指定上浮人数："></label>
+								<label id="number" style="color:red"></label>
+								<space spacing="250px" />
+								<label value="选择年份：" />
+								<listbox id="yearlist" width="150px" mold="select" use="org.iti.gh.ui.listbox.YearListbox">
+									<!-- <listitem label="2011" selected="true" /> -->
+								</listbox>
+								<space spacing="20px" />
+								<toolbarbutton image="/css/default/images/button/addAct.gif" id="add" />
+							</hbox>
+						</row>
+						<row>
+							<listbox id="listbox">
+								<listhead>
+									<listheader label="序号" width="15%" align="center" />
+									<listheader label="姓名" width="40%" align="center" />
+									<listheader label="性别" width="20%" align="center" />
+									<listheader label="部门" align="center" sort="auto" />
+								</listhead>
+							</listbox>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

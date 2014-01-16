@@ -1,0 +1,38 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" style="text-align:left" use="org.iti.jxkh.vote.result.ResultWindow">
+		<panel border="normal" width="768px">
+			<panelchildren>
+				<hbox>
+					<panel title="选择投票名称" width="200px" height="575px">
+						<caption>
+							<listbox id="yearlist" width="150px" mold="select" use="org.iti.gh.ui.listbox.YearListbox" />
+						</caption>
+						<panelchildren>
+							<listbox id="votelist" height="535px" />
+						</panelchildren>
+					</panel>
+					<panel title="人员列表" width="560" height="575">
+						<caption>
+							<button id="print" disabled="true" label="打印" target="blank" />
+							<button id="export" disabled="true" label="导出" />
+							<button id="clear" disabled="true" label="清空结果" />
+						</caption>
+						<panelchildren>
+							<listbox visible="false" id="memberlist" height="535px" multiple="true" checkmark="true" action="onshow:anima.slideDown(#{self})">
+								<listhead>
+									<listheader align="center" width="10%" />
+									<listheader align="center" width="30%" label="部门" />
+									<listheader align="center" width="15%" label="职工号" />
+									<listheader align="center" width="20%" label="姓名" />
+									<listheader align="center" width="10%" label="性别" />
+									<listheader align="center" width="15%" label="所得分数" sort="auto(vrNumber)" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

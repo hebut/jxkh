@@ -1,0 +1,204 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window  style="text-align:left"  border="normal" use="org.iti.gh.ghtj.hzqkdc.TjkyqkWindow">
+		<panel title="科研情况汇总" width="100%">
+			<!--  <caption>
+				<toolbar align="end">
+					<button label="导出科教交流" id="exportKjjl"
+						style="color:blue">
+					</button>
+				</toolbar>
+			</caption>-->
+			<panelchildren>
+				<grid width="100%">
+					<columns>
+						<column width="7%"></column>
+						<column width="10%"></column>
+						<column width="10%"></column>
+						<column width="7%"></column>
+						<column width="10%"></column>
+						<column width="10%"></column>
+						<column width="7%"></column>
+						<column width="12%"></column>
+						<column width="10%"></column>
+						<column width="7%"></column>
+						<column width="10%"></column>
+					</columns>
+					<rows>
+						<row
+							style="padding:0;border-width:medium 0px 0px">
+							<space  ></space>
+							<label value="部门"
+								style="letter-spacing:10px">
+							</label>
+							<listbox id="deplist"
+								use="org.iti.jxgl.ui.listbox.DeptListbox" mold="select">
+							</listbox>
+							<space  ></space>
+							<label value="年度"
+								style="letter-spacing:10px">
+							</label>
+							<listbox id="yearlist"
+								use="org.iti.jxgl.ui.listbox.YearListbox" mold="select">
+							</listbox>
+							<space ></space>
+							<label value="教师姓名"
+								style="letter-spacing:5px">
+							</label>
+							<listbox id="tealist"
+								use="org.iti.jxgl.ui.listbox.TeacherListbox" mold="select">
+							</listbox>
+							<space  ></space>
+							<button id="query" label="统计"></button>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+		<panel  width="100%">
+			<panelchildren>
+				<grid id="grid2" style="border:0">
+					<columns>
+						<column width="20%" align="center" label="大类" />
+						<column width="80%" align="center" label="统计结果" />
+					</columns>
+					<rows>
+						<row>
+							<label value="项目"></label>
+							<grid style="border:0">
+								<columns>
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国家级（项数）" />
+										<hbox style="color:blue"
+											id="gjj" />
+									</row>
+									<row>
+										<label value="省部级（项数）" />
+										<hbox style="color:blue"
+											id="sbj" />
+									</row>
+									<row>
+										<label value="横向（项数）" />
+										<hbox style="color:blue"
+											id="hx" />
+									</row>
+									<row>
+										<label value="其他（项数）" />
+										<hbox style="color:blue"
+											id="qt" />
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="成果"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label
+											value="会议论文 （SCI/EI/ISTP/其他）（篇数）" />
+										<hbox style="color:blue"
+											id="kyhylw" />
+									</row>
+									<row>
+										<label
+											value="期刊论文  （SCI/EI/ISTP/核心/其他）（篇数）" />
+										<hbox style="color:blue"
+											id="kyqklw" />
+									</row>
+									<row>
+										<label value="软件著作（篇数）/专利(项数）" />
+										<hbox style="color:blue"
+											id="zz" />
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="奖励"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国家级（等级/项数）" />
+										<hbox style="color:blue"
+											id="gjjjl" />
+									</row>
+									<row>
+										<label value="省部级（等级/项数）" />
+										<hbox style="color:blue"
+											id="sbjjl" />
+									</row>
+									<row>
+										<label value="其他（项数）" />
+										<hbox style="color:blue"
+											id="qtjl" />
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="交流与合作"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国际会议（主持/参加/独立）（次数）" />
+										<hbox style="color:blue"
+											id="gjhy" />
+									</row>
+									<row>
+										<label value="国内会议（主持/参加/独立）（次数）" />
+										<hbox style="color:blue"
+											id="gnhy" />
+									</row>
+									<row>
+										<label value="国际讲学（次数）" />
+										<hbox style="color:blue"
+											id="gjjx" />
+									</row>
+									<row>
+										<label value="国内讲学（次数）" />
+										<hbox style="color:blue"
+											id="gnjx" />
+									</row>
+										<row>
+										<label value="国际合作项目（项数）" />
+										<hbox style="color:blue"
+											id="gjhz" />
+									</row>
+									<row>
+										<label value="国内合作项目（项数）" />
+										<hbox style="color:blue"
+											id="gnhz" />
+									</row>
+									<!-- 
+									<row>
+										<label value="其他" />
+										<hbox style="color:blue"
+											id="qtqk" />
+									</row>
+									 -->
+								</rows>
+							</grid>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

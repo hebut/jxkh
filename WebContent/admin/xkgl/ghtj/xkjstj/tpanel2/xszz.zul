@@ -1,0 +1,14 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="出版专著情况" border="normal" width="800px">
+<listbox id="zz" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="10%" align="center" label="序号"/>
+		<listheader width="35%"  align="center" label="专著名称"/>
+		<listheader width="15%"   align="center" label="出版时间"/>
+		<listheader width="30%"  align="center" label="出版单位及ISBN"/>
+		<listheader width="10%" align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+</window>
+</zk>

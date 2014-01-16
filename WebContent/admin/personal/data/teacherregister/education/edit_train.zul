@@ -1,0 +1,51 @@
+<?page title="修改参加培训信息" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="修改参加培训信息" border="normal" closable="true" width="500px" height="360px"
+         use="com.uniwin.asm.personal.ui.data.EditTrain">
+<grid >
+  <columns>
+    <column width="35%" align="center"></column>
+    <column width="65%"></column>
+  </columns>
+  <rows>
+    <row>
+      <label value="信息项"></label>
+      <label value="内容"></label>
+    </row>
+    <row>
+      <label value="培训主题"></label>
+      <textbox id="mainpoint" width="200px"></textbox>
+    </row>
+    <row>
+      <label value="开始时间"></label>
+      <datebox id="starttime" focus="true" width="150px" />
+    </row>
+    <row>
+      <label value="结束时间"></label>
+      <datebox id="endtime" focus="true" width="150px" />
+    </row>
+    <row>
+      <label value="培训内容"></label>
+      <textbox id="content" width="200px" rows="3" height="100px"></textbox>
+    </row>
+    <row>
+      <label value="培训地点"></label>
+      <textbox id="place" width="200px"></textbox>    
+    </row>
+    <row>
+      <label value="证明人"></label>
+      <textbox id="proveperson" width="200px"></textbox>
+    </row>
+  </rows>
+</grid>
+<hbox pack="center" width="100%">
+  <hbox >
+    <button id="save" label="保存"></button>
+	<space />
+	<button id="reset" label="重填"></button>
+	<space />
+	<button id="close" label="关闭"></button>
+  </hbox>
+</hbox>
+</window>
+</zk>

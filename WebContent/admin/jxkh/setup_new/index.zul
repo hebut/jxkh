@@ -1,0 +1,259 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="参数设定" border="normal" width="750px" use="org.iti.jxkh.score.setup.StepupNewWindow" >
+ <groupbox >
+    <grid>
+       <columns>
+           <column width="100%" align="center" />
+       </columns>
+       <rows>
+          <row>
+          <hbox>
+              <label value="设置考核年度："/>
+              <listbox id="yearlist" mold="select" width="150px" use="org.iti.gh.ui.listbox.YearListbox" />
+		  <space />
+		   <button label="保存设置" id="save" />
+		  </hbox>
+          </row>
+          
+       </rows>
+    </grid>
+</groupbox>
+<separator /> 
+ <div >
+   <tabbox >
+      <tabs>
+         
+         <tab label="设定考核人员" width="25%"/>
+      </tabs>
+      <tabpanels>
+     <!--  <tabpanel>
+      设定考核参数
+        
+         <grid>
+					<columns>
+						<column align="center" />
+					</columns>
+					<rows>
+						<row style="background-color:#ffffff">
+							<groupbox>
+								<caption label="工资总额设置" />
+								<grid>
+									<columns>
+										<column width="30%" align="center" />
+										<column align="center" />
+									</columns>
+									<rows>
+										<row style="background-color:#ffffff">
+											<label value="奖励性工资总额" />
+											<hbox align="center">
+												<decimalbox id="money" width="250px"/>
+												<label value="元" />
+											</hbox>
+										</row>
+										<row style="background-color:#ffffff">
+											<label value="业务部门与管理部门分配比例" />
+											<hbox>
+												<label id="showRate1" />
+												<label value=" : " />
+												<label id="showRate2" />
+											</hbox>
+										</row>
+									</rows>
+								</grid>
+							</groupbox>
+						</row>
+						<row style="background-color:#ffffff">
+							<groupbox>
+								<caption label="业务部门评分设置" />
+								<grid>
+									<columns>
+										<column width="30%" align="center" />
+										<column align="center" />
+									</columns>
+									<rows>
+										<row style="background-color:#ffffff">
+											<label value="上浮一档比率" />
+											<hbox align="center">
+												<decimalbox value="30" id="rate" />
+												<label value="%" />
+											</hbox>
+										</row>
+										<row style="background-color:#ffffff" >
+											<label value="各档次部门数设置" />
+											<grid>
+												<columns>
+													<column width="40%" align="center" />
+													<column align="center" />
+												</columns>
+												<rows>
+													<row style="background-color:#ffffff">
+														<label value="三档" />
+														<intbox id="third" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="二档" />
+														<intbox  id="second" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="一档" />
+														<intbox id="first" />
+													</row>													
+												</rows>
+											</grid>
+										</row>
+
+									</rows>
+								</grid>
+							</groupbox>
+						</row>
+						<row style="background-color:#ffffff">
+							<groupbox>
+								<caption label="管理人员评分设置" />
+								<grid>
+									<columns>
+										<column width="30%" align="center" />
+										<column align="center" />
+									</columns>
+									<rows>
+										<row style="background-color:#ffffff">
+											<label value="各级所占权重" />
+											<grid>
+												<columns>
+													<column width="40%" align="center" />
+													<column align="center" />
+												</columns>
+												<rows>
+													<row style="background-color:#ffffff">
+														<label value="院长" />
+														<intbox value="3" id="weight1" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="副院长" />
+														<intbox value="3" id="weight2" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="部门负责人" />
+														<intbox value="2" id="weight3" />
+													</row>
+													<row style="background-color:#ffffff">
+														<label value="员工" />
+														<intbox value="1" id="weight4" />
+													</row>
+												</rows>
+											</grid>
+										</row>
+									</rows>
+								</grid>
+							</groupbox>
+						</row>
+						<row style="background-color:#ffffff">
+							<hbox>
+								<button label="保存设置" id="save" />
+							</hbox>
+						</row>
+					</rows>
+				</grid> 
+      </tabpanel> -->
+      <tabpanel>
+      <!-- 设定考核人员 -->
+      
+     <grid>
+        <columns>
+           <column width="100%"/>
+        </columns>
+        <rows>
+            <row>
+                <hbox>
+                   <panel border="normal" width="325px" title="人员列表">
+                      <panelchildren>
+                       <grid>
+                       <columns>
+                          <column width="100%">
+                          </column>
+                       </columns>
+                       <rows>
+                           <row>
+                             <hbox>
+                              <label value="所在部门："/>
+                              <listbox width="150px" id="deptListbox1" mold="select"/>
+                             </hbox>
+                           </row>
+                           <row>
+                           <hbox>
+                                <label  value="人员姓名："/>
+		                        <textbox width="150px"   id="userName" />
+		                    </hbox>
+                           </row>
+                           <row>
+                              <hbox>
+                                <label value="人员编号："/>
+		                        <textbox width="150px" id="staffId"/>
+		                        <space width="5px"/>
+		                        <toolbarbutton  image="/css/default/images/button/searAct.gif" id="view"/>
+                              </hbox>
+                           </row>
+                       </rows>
+                       </grid>
+                       <separator></separator>
+                         <listbox  rows="10"  checkmark="true" multiple="true" height="400px"  mold="paging" id="listbox1" sclass="new_listbox"  pageSize="10">
+                            <listhead>
+                               <listheader width="10%" label="" align="center"/>
+								<listheader label="姓名" width="15%" align="center"/>
+								<listheader label="编号" width="15%"  align="center"/>
+								<listheader label="类型" width="20%"  align="center"/>
+								<listheader label="所在部门"  width="40%" align="center"/>
+                            </listhead>
+                         </listbox>
+                      </panelchildren>
+                   </panel>
+                   <space width="5px"></space>
+                   <vbox>
+                       <separator spacing="200px" />
+					   <button  label="添加&gt;&gt;" id="add" />
+					   <separator />
+					   <button  label="&lt;&lt;删除"  id="delete"/>
+					  
+                   </vbox>
+                   <space width="5px"></space>
+                   <panel width="325px" border="normal"  title="已添加人员列表">
+                       <panelchildren>
+                       <grid>
+                          <columns>
+                             <column width="100%"/>
+                          </columns>
+                          <rows>
+                              <row>
+                              <hbox>
+                                 <label value="所在部门："/>
+                                 <listbox width="150px" id="deptListbox2" mold="select"/>
+                             </hbox>
+                              </row>
+                          </rows>
+                       </grid>
+                       <separator></separator>
+                       <vbox>
+                          <separator spacing="53px" />
+                       </vbox>
+                              <listbox multiple="true" rows="10" checkmark="true"  height="400px" mold="paging" id="listbox2" sclass="new_listbox" pageSize="10">
+                                    <listhead>
+                                    <listheader width="10%" label="" align="center"/>
+                                    <listheader label="姓名" width="15%"  align="center"/>
+								    <listheader label="编号" width="15%" align="center"/>
+								    <listheader label="类型" width="20%"  align="center"/>
+								    <listheader label="所在部门"  width="40%" align="center"/>
+                                    </listhead>
+                              </listbox>
+                       </panelchildren>
+                   </panel>
+                </hbox>
+            </row>
+        </rows>
+     </grid>
+     <separator/>
+      </tabpanel>
+      </tabpanels>
+   </tabbox>
+</div> 
+</window>
+</zk>

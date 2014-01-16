@@ -1,0 +1,43 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window id="jxoutmem" title="添加外部成员" border="normal" height="200px" closable="true" sclass="newin"
+			use="org.iti.projectmanage.teach.member.AddOutMemberWindow">
+		<grid id="outmember" >
+			<columns>
+				<column align="center" width="16%" />
+				<column />
+			</columns>
+			<rows  >
+				<row valign="center" height="20px">
+					<label value="成员姓名:" />
+					<hbox>
+					<textbox id="name" />
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row valign="center" height="20px">
+					<label value="所属部门:"/>
+					<hbox>
+					<textbox id="dept" width="345px"/>
+					<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				
+				<row valign="center" height="20px">
+					<label value="联系电话:" />
+					<textbox id="phone" width="345px"/>
+				</row>
+				<row valign="center"  height="20px">
+					<label value="联系地址:" />
+					<textbox id="address"  width="345px"/>
+				</row>
+				<row valign="center" spans="2" height="25px">
+					<hbox>
+						<toolbarbutton id="submit" image="/css/img/actSave.gif"/>
+						<toolbarbutton id="back" image="/css/sat/fh.gif"/>						
+					</hbox>					
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

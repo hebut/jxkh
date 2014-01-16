@@ -1,0 +1,48 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%" border="false"
+			use="com.uniwin.asm.personal.ui.data.teacherinfo.qtqk.RychviewWindow">
+			<div>
+				<div align="right">
+					<toolbarbutton  image="/css/sat/addAct.gif" id="button3">						
+					</toolbarbutton>
+					<toolbarbutton image="/css/default/images/button/delAct.gif" id="delete"/>
+					<toolbarbutton  image="/css/sat/dc.gif" id="button3out"/>					
+				</div>
+			</div>
+				<listbox id="listbox3" style="border-bottom-width:0px"
+					mold="paging" pageSize="10" sclass="new_listbox" checkmark="true" multiple="true">
+					<listhead>
+						<listheader width="3%" align="center"/>
+						<listheader label="序号" width="10%"
+							align="center" />
+						<listheader label="荣誉名称" width="27%"
+							align="center" />
+						<listheader label="年度" width="10%"
+							align="center" />
+						<listheader label="颁发单位" width="20%"
+							align="center" />
+						<listheader label="附件" width="10%"
+							align="center" />
+						<listheader label="审核状态" width="10%"
+						align="center"/>
+						<listheader label="操作" width="10%"
+							align="center" />
+					</listhead>
+				</listbox>
+
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击荣誉名称，查看详细信息" />
+				<label pre="true" style="color:red" value="2、上传的附件的名称长度最多不超过13个字" />
+				<label pre="true" style="color:red" value="3、添加荣誉称号时要注意区别荣誉称号和获得成果的区别，不能添加获得成果，只能添加获得的荣誉称号"/>
+			</vbox>
+		</groupbox>
+
+	</window>
+</zk>

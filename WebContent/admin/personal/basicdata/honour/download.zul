@@ -1,0 +1,23 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="附件下载" border="normal" sclass="newin" width="600px"
+		height="420px" closable="true"
+		use="org.iti.jxkh.business.meeting.DownloadWindow">
+		<!-- <div width="100%" align="right">
+			<toolbarbutton id="load"
+				image="/css/default/images/button/xz_.gif">
+			</toolbarbutton>
+		</div> -->
+		<listbox id="listbox" mold="paging" pageSize="10"
+			multiple="true" checkmark="true" sclass="new_listbox">
+			<listhead>
+				<listheader align="center" width="7%"></listheader>
+				<listheader align="center" label="序号" width="8%" />
+				<listheader align="center" label="文档名称" width="40%" />
+				<listheader align="center" label="文档类型" width="20%" />
+				<listheader align="center" label="上传时间" width="15%" />
+				<listheader align="center" label="操作" width="10%" />
+			</listhead>
+		</listbox>
+	</window>
+</zk>

@@ -1,0 +1,38 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="添加新指标" border="normal"
+		use="org.iti.wp.szlb.NewZbWindow" closable="true" width="600px">
+		<grid>
+			<columns>
+				<column width="20%" align="center"></column>
+				<column width="80%"></column>
+			</columns>
+			<rows>
+				<row>
+					<label value="指标名称"></label>
+					<textbox id="name" constraint="no empty"></textbox>
+				</row>
+				<row>
+					<label value="父标题"></label>
+					<listbox id="plist" mold="select"
+						use="org.iti.wp.listbox.ZbListbox">
+					</listbox>
+				</row>
+				<row>
+					<label value="指标权重"></label>
+					<hbox><doublebox id="weight" constraint="no empty"></doublebox> </hbox>
+				</row>
+				<row>
+					<label value="描述"></label>
+					<textbox id="content" multiline="true" height="53px" width="230px"></textbox>
+				</row>
+				<row spans="2">
+					<hbox>
+						<button label="提交" id="submit"></button>
+						<button label="返回" id="back"></button>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

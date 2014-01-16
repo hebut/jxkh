@@ -1,0 +1,34 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="new page title" border="normal" width="400px" style="text-align:left" use="com.uniwin.framework.ui.role.RoleGroupEditWindow">
+		<grid>
+			<columns>
+				<column width="40%" align="center" />
+				<column width="60%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="角色组名称" />
+					<hbox>
+						<textbox value="" id="roleGname" constraint="no empty" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="角色组描述" />
+					<textbox value="" id="roleGdesc" />
+				</row>
+			</rows>
+		</grid>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="重填" id="reset" />
+				<button label="增加角色" id="addRole" />
+				<button label="增加角色组" id="addRoleGroup" visible="false" />
+				<button label="删除" id="deleteRole" />
+				<button label="排序" id="sortRole" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

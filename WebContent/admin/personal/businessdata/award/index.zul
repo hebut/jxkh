@@ -1,0 +1,97 @@
+<?page title="奖励管理" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" border="false" style="text-align:left"
+		width="760px" sclass="newin"
+		use="org.iti.jxkh.business.award.PersonalWin">
+		<groupbox id="cxtj" width="760px" visible="false">
+			<caption>
+				<label value="[查询条件]" />
+			</caption>
+			<grid width="750px">
+				<columns>
+					<column width="12%" align="right"></column>
+					<column width="24%" align="left"></column>
+					<column width="12%" align="right"></column>
+					<column width="20%" align="left"></column>
+					<column width="12%" align="right"></column>
+					<column width="20%" align="left"></column>
+				</columns>
+				<rows>
+					<row style="background:#D2E9FF">
+						<label value="奖励名称" />
+						<textbox id="name" width="90%" />
+						<label value="绩分年度" />
+						<listbox id="year" mold="select" rows="1"
+							width="80%" use="org.iti.gh.ui.listbox.YearListbox" />
+
+						<label value="审核状态" />
+						<listbox id="auditState" mold="select" rows="1"
+							width="80%">
+						</listbox>
+					</row>
+					<row spans="6" style="background:#D2E9FF">
+						<div align="center">
+							<button label="查   询" id="query" />
+							<space></space>
+							<button label="重   置" id="reset" />
+						</div>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<div align="right" width="100%">
+			<toolbarbutton id="searchcbutton"
+				image="/css/default/images/button/data-btn-js.gif"
+				style="color:blue">
+				<attribute name="onClick">
+	if (cxtj.isVisible()) {
+		cxtj.setVisible(false);
+	} else if (!cxtj.isVisible()) {
+		cxtj.setVisible(true);
+	}
+</attribute>
+			</toolbarbutton>
+			<toolbarbutton id="add"
+				image="/css/default/images/button/addAct.gif" style="color:blue">
+			</toolbarbutton>
+			<toolbarbutton id="del"
+				image="/css/default/images/button/delAct.gif" style="color:blue" />
+			<toolbarbutton id="expert"
+				image="/css/default/images/button/dc.gif" style="color:blue" />
+		</div>
+		<div align="center">
+			<listbox id="awardListbox" mold="paging" pageSize="13"
+				sclass="new_listbox" checkmark="true" multiple="true">
+				<listhead>
+					<listheader align="center" width="5%" />
+					<listheader label="序号" width="7%" align="center" />
+					<listheader label="奖励名称" width="20%" align="left"
+						style="text-align:center" sort="auto(name)" />
+					<listheader label="奖励级别" width="13%" align="center"
+						sort="auto(type)" />
+					<listheader label="绩分年度" width="13%" align="center" />
+					<listheader label="附件" width="7%" align="center" />
+					<listheader label="该项得分" width="11%" align="left"
+						style="text-align:center" />
+					<listheader label="本人得分" width="11%" align="center"
+						sort="auto(score)" />
+					<listheader label="审核状态" width="13%" align="center"
+						sort="auto(State)" />
+				</listhead>
+			</listbox>
+		</div>
+		<!-- <div width="100%" align="center">
+			<paging id="awardPaging" pageSize="10" detailed="true" />
+			</div> -->
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:red" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击奖励名称，可以查看或修改详细信息。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

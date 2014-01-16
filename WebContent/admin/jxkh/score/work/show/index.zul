@@ -1,0 +1,469 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="normal" use="org.iti.jxkh.score.work.ShowWindow">
+		<panel border="normal" width="768px">
+			<panelchildren>
+				<hbox>
+					<panel title="部门列表" width="200px">
+						<caption>
+							<listbox id="yearlist" mold="select" width="80px" rows="1" use="org.iti.gh.ui.listbox.YearListbox">
+								<!-- <listitem label="2011" selected="true" /> -->
+							</listbox>
+						</caption>
+						<panelchildren>
+							<listbox id="deptlist" height="350px">
+								<listhead>
+									<listheader label="部门名称" width="80%" />
+									<listheader label="档次" width="20%" align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="查看明细" width="560px" visible="true" action="onshow:anima.slideDown(#{self})">
+						<panelchildren style="background-color: #FFFFFF">
+							<tabbox id="tabbox" orient="vertical" action="onshow:anima.slideDown(#{self})" visible="false">
+								<tabs width="120px" id="tabs">
+									<tab label="学术论文" />
+									<tab label="专著、编著、译著" />
+									<tab label="政府科技奖励" />
+									<tab label="影视专题片" />
+									<tab label="争取经费" />
+									<tab label="专利及计算机软件" />
+									<tab label="成果验收（鉴定）" />
+									<tab label="学术会议" />
+									<tab label="报告" />
+								</tabs>
+								<tabpanels>
+									<tabpanel>
+										<grid>
+											<columns>
+												<column width="25%" label="内 容" align="center" />
+												<column width="25%" label="量化分值" align="center" />
+												<column width="25%" label="数 目" align="center" />
+												<column width="25%" label="量化总分" align="center" />
+											</columns>
+											<rows>
+												<row>
+													<label id="flag1" value="SCI收录" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag2" value="EI收录" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag3" value="ISTP收录" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag4" value="中文核心期刊或外文期刊/国际会议" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag5" value="普通期刊" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag6" value="国家会议" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag7" value="省级会议" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+											</rows>
+										</grid>
+									</tabpanel>
+									<tabpanel>
+										<grid>
+											<columns>
+												<column width="25%" label="内 容" align="center" />
+												<column width="25%" label="量化分值" align="center" />
+												<column width="25%" label="数 目" align="center" />
+												<column width="25%" label="量化总分" align="center" />
+											</columns>
+											<rows>
+												<row style="background-color: #FFFFFF">
+													<label id="flag8" value="专著" />
+													<label value="分∕部" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag9" value="编著、译著" />
+													<label value="分∕部" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row style="background-color: #FFFFFF">
+													<label id="flag10" value="省、院汇编" />
+													<label value="分∕部" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag11" value="内部期刊" />
+													<label value="分∕部" />
+													<toolbarbutton />
+													<label />
+												</row>
+											</rows>
+										</grid>
+									</tabpanel>
+									<tabpanel>
+										<grid>
+											<columns>
+												<column width="25%" label="内 容" align="center" />
+												<column width="25%" label="量化分值" align="center" />
+												<column width="25%" label="数 目" align="center" />
+												<column width="25%" label="量化总分" align="center" />
+											</columns>
+											<rows>
+												<row style="background-color: #FFFFFF">
+													<label id="flag12" value="国家级一等" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag13" value="国家级二等" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row style="background-color: #FFFFFF">
+													<label id="flag14" value="省部级一等" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag15" value="省部级二等" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row style="background-color: #FFFFFF">
+													<label id="flag16" value="省部级三等" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag17" value="厅市级一等" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row style="background-color: #FFFFFF">
+													<label id="flag18" value="厅市级二等" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag19" value="厅市级三等" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+											</rows>
+										</grid>
+									</tabpanel>
+									<tabpanel>
+										<grid>
+											<columns>
+												<column width="25%" label="内 容" align="center" />
+												<column width="25%" label="量化分值" align="center" />
+												<column width="25%" label="数 目" align="center" />
+												<column width="25%" label="量化总分" align="center" />
+											</columns>
+											<rows>
+												<row>
+													<label id="flag20" value="国家级" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag21" value="省级" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag22" value="省级批示" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag23" value="厅级批示" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag24" value="省科技厅处级批示" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag25" value="中央" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag26" value="河北" />
+													<label value="分∕篇" />
+													<toolbarbutton />
+													<label />
+												</row>
+											</rows>
+										</grid>
+									</tabpanel>
+									<tabpanel>
+										<grid>
+											<columns>
+												<column width="25%" label="内 容" align="center" />
+												<column width="25%" label="量化分值" align="center" />
+												<column width="25%" label="数 目" align="center" />
+												<column width="25%" label="量化总分" align="center" />
+											</columns>
+											<rows>
+												<row style="background-color: #FFFFFF">
+													<label id="flag27" value="国家级研究项目" />
+													<label value="分∕万元" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag28" value="国家级工作项目" />
+													<label value="分∕万元" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag29" value="省级研究项目" />
+													<label value="分∕万元" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag30" value="省级工作项目" />
+													<label value="分∕万元" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag31" value="厅市级科研项目" />
+													<label value="分∕万元" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag32" value="横向项目" />
+													<label value="分∕万元" />
+													<toolbarbutton />
+													<label />
+												</row>
+											</rows>
+										</grid>
+									</tabpanel>
+									<tabpanel>
+										<grid>
+											<columns>
+												<column width="25%" label="内 容" align="center" />
+												<column width="25%" label="量化分值" align="center" />
+												<column width="25%" label="数 目" align="center" />
+												<column width="25%" label="量化总分" align="center" />
+											</columns>
+											<rows>
+												<row style="background-color: #FFFFFF">
+													<label id="flag33" value="国际发明专利" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag34" value="国内发明专利" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row style="background-color: #FFFFFF">
+													<label id="flag35" value="实用新型专利" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag36" value="软件著作权" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+											</rows>
+										</grid>
+									</tabpanel>
+									<tabpanel>
+										<grid>
+											<columns>
+												<column width="40%" label="内 容" align="center" />
+												<column width="20%" label="量化分值" align="center" />
+												<column width="20%" label="数 目" align="center" />
+												<column width="20%" label="量化总分" align="center" />
+											</columns>
+											<rows>
+												<row style="background-color: #FFFFFF">
+													<label id="flag37" value="国家级验收（或国际领先）" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag38" value="省级验收（或国际先进）" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag39" value="正常结题" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag40" value="国际领先" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag41" value="国际先进" />
+													<label value="分∕项" />
+													<toolbarbutton />
+													<label />
+												</row>
+											</rows>
+										</grid>
+									</tabpanel>
+									<tabpanel>
+										<grid>
+											<columns>
+												<column width="35%" label="内 容" align="center" />
+												<column width="25%" label="量化分值" align="center" />
+												<column width="20%" label="数 目" align="center" />
+												<column width="20%" label="量化总分" align="center" />
+											</columns>
+											<rows>
+												<row style="background-color: #FFFFFF">
+													<label id="flag42" value="国家级学会学术年会" />
+													<label value="分∕次" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag43" value="省级学会学术年会" />
+													<label value="分∕次" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag44" value="省际学会学术年会" />
+													<label value="分∕次" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row style="background-color: #FFFFFF">
+													<label id="flag45" value="省内专业学术研讨会" />
+													<label value="分∕次" />
+													<toolbarbutton />
+													<label />
+												</row>
+											</rows>
+										</grid>
+									</tabpanel>
+									<tabpanel>
+										<grid>
+											<columns>
+												<column width="35%" label="内 容" align="center" />
+												<column width="25%" label="量化分值" align="center" />
+												<column width="20%" label="数 目" align="center" />
+												<column width="20%" label="量化总分" align="center" />
+											</columns>
+											<rows>
+												<row style="background-color: #FFFFFF">
+													<label id="flag46" value="省级" />
+													<label value="分∕次" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag47" value="厅级" />
+													<label value="分∕次" />
+													<toolbarbutton />
+													<label />
+												</row>
+												<row>
+													<label id="flag48" value="省科技厅处级" />
+													<label value="分∕次" />
+													<toolbarbutton />
+													<label />
+												</row>
+											</rows>
+										</grid>
+									</tabpanel>
+								</tabpanels>
+							</tabbox>
+							<grid id="grid" action="onshow:anima.slideDown(#{self})" visible="false">
+								<columns>
+									<column width="40%" align="center" />
+									<column width="60%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="部门总积分" />
+										<label id="total" />
+									</row>
+									<row>
+										<label value="人均积分" />
+										<label id="average" />
+									</row>
+									<row>
+										<label value="部门同比增长率" />
+										<label id="rate" />
+									</row>
+									<row>
+										<label value="所在档次" />
+										<label id="level" />
+									</row>
+									<row>
+										<label value="上浮一档人员 " />
+										<label id="people" />
+									</row>
+								</rows>
+							</grid>
+						</panelchildren>
+					</panel>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

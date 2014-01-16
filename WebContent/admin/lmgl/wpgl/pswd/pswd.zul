@@ -1,0 +1,20 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  title="评审文档" border="normal" style="text-align:left" use="org.iti.wp.pswd.AddpsWindow" closable="true" width="80%">
+<listbox>
+<listhead id="pswdlisthead">
+</listhead>
+</listbox>
+<listbox id="pswd">
+<listhead id="pshead">
+<listheader width="20.0%" align="center"></listheader>
+</listhead>
+</listbox>
+<hbox width="100%" pack="center" id="certain">
+<hbox>
+<button label="确定" id="submit"></button>
+<button label="返回" id="back"></button>
+</hbox>
+</hbox>
+</window>
+</zk>

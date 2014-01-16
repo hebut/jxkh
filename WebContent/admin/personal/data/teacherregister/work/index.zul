@@ -1,0 +1,118 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="工作信息" width="100%" border="normal" style="text-align:left"  use="com.uniwin.asm.personal.ui.data.TeacherWork">
+<grid>
+						<columns>
+							<column width="15%" align="center" />
+							<column width="20%" />
+							<column width="15%" align="center" />
+							<column width="20%" />
+							<column width="12%" align="center" />
+							<column width="18%" />
+						</columns>
+						<rows>
+							<row>
+								<label value="参加工作时间"></label>
+								<hbox>
+									<datebox id="starworktime" width="120px"></datebox>
+								</hbox>
+								<label value="入本单位时间"></label>
+								<hbox>
+									<datebox id="entertime" width="120px"></datebox>
+								</hbox>
+								<label value="教师资格证"></label>
+								<hbox>
+									<listbox id="teaqualiry" mold="select" width="150px"></listbox>
+								</hbox>
+							</row>
+							<row>
+								<label value="用工性质" style="letter-spacing:5px"></label>
+								<hbox>
+									<listbox id="workproper" mold="select" width="120px"></listbox>
+								</hbox>
+								<label value="职工类别" style="letter-spacing:5px"></label>
+								<hbox>
+									<listbox id="worktype" mold="select" width="120px"></listbox>
+								</hbox>
+								<label value="职工性质" width="60px" style="letter-spacing:5px" />
+								<hbox>
+									<listbox id="staffproperty" mold="select" width="150px"></listbox>
+								</hbox>
+							</row>
+							<row id="state">
+								<label value="职工状态" width="60px" style="letter-spacing:5px" />
+								<listbox id="staffstate" mold="select" width="120px"></listbox>
+								<label value="离职时间" id="leave" style="letter-spacing:5px"></label>
+								<datebox id="entiretime" focus="true" width="120px" />
+								<label value="离职原因" id="reason" style="letter-spacing:5px"></label>
+								<hbox>
+									<textbox id="entirerea" width="150px"></textbox>
+								</hbox>
+							</row>
+						</rows>
+					</grid>
+					<hbox>
+						<space width="1px"></space>
+					</hbox>
+					<hbox>
+						<label value="聘用信息" style="font:bold"></label>
+					</hbox>
+					<grid>
+						<columns>
+							<column width="15%" align="center" />
+							<column width="20%" />
+							<column width="15%" align="center" />
+							<column width="20%" />
+							<column width="12%" align="center" />
+							<column width="18%" />
+						</columns>
+						<rows>
+							<row>
+								<label value="聘用资格" width="60px" style="letter-spacing:5px"></label>
+								<hbox>
+									<textbox id="emplquali" width="120px"></textbox>
+								</hbox>
+								<label value="聘用级别" width="60px" style="letter-spacing:5px"></label>
+								<hbox>
+									<textbox id="emplrank" width="120px"></textbox>
+								</hbox>
+								<label value="聘用岗位" width="60px" style="letter-spacing:5px"></label>
+								<hbox>
+									<textbox id="emplposition" width="150px"></textbox>
+								</hbox>
+							</row>
+							<row>
+								<label value="聘用时间" width="60px" style="letter-spacing:5px"></label>
+								<datebox id="empltime" focus="true" width="120px" />
+								<label value="聘用截止时间" width="60px"></label>
+								<datebox id="endtime" focus="true" width="120px" />
+								<label value="聘用状态" width="60px" style="letter-spacing:5px"></label>
+								<hbox>
+									<textbox id="emplstate" width="150px"></textbox>
+								</hbox>
+							</row>
+							<row>
+								<label value="解聘时间" width="60px" style="letter-spacing:5px"></label>
+								<datebox id="dismisstime" focus="true" width="120px" />
+								<label value="解聘文号" width="60px" style="letter-spacing:5px"></label>
+								<hbox>
+									<textbox id="dismissno" width="120px"></textbox>
+								</hbox>
+								<label value="解聘原因" width="60px" style="letter-spacing:5px"></label>
+								<hbox>
+									<textbox id="dismissreason" width="150px"></textbox>
+								</hbox>
+							</row>
+							<row spans="6">
+								<hbox pack="center" width="100%">
+									<hbox>
+										<button id="save2" label="保存"></button>
+										<space />
+										<button id="reset2" label="重填"></button>
+									</hbox>
+								</hbox>
+							</row>
+						</rows>
+					</grid>
+</window>
+</zk>

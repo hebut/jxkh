@@ -1,0 +1,19 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="已选标题排序" border="normal" sclass="new_window"
+		width="300px" height="400px" closable="true" use="org.iti.jxkh.selecttitle.SortTitleWindow">
+		<listbox id="titleListbox" sclass="new_listbox" width="280px"
+			height="350px" droppable="true">
+			<listhead>
+				<listheader width="12%" align="center" label="序号" />
+				<listheader width="44%" align="center" label="标题名" />
+				<listheader width="44%" align="center" label="父标题名" />
+			</listhead>
+		</listbox>
+		<div align="center">
+			<toolbarbutton id="saveBn" image="/css/sat/actSave.gif"/>
+			<space/>
+			<toolbarbutton id="closeBn" image="/css/sat/fh.gif"/>
+		</div>
+	</window>
+</zk>

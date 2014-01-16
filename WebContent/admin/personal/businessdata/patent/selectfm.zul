@@ -1,0 +1,57 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="选择专利" border="normal" width="800px" closable="true" sclass="newin" height="400px"
+		>
+		<panel>
+			<panelchildren>
+				<grid>
+					<columns>
+						<column align="center"></column>
+						<column align="center"></column>
+						<column align="center"></column>
+					</columns>
+					<rows>
+						<row>
+							<label value="专利名称"></label>
+							<textbox id="fmmc"></textbox>
+							<label value="负责人"></label>
+							<textbox id="fmr"></textbox>
+							<toolbarbutton id="query" image="/css/default/images/button/searAct.gif"></toolbarbutton>
+						</row>
+					</rows>
+				</grid>
+
+			</panelchildren>
+		</panel>
+		<panel title="您可能参与的发明专利列表" id="pl1">
+			<panelchildren>
+				<listbox id="xmlist" style="border-bottom-width:0px" sclass="new_listbox"
+					mold="paging" pageSize="10" checkmark="true">
+					<listhead>
+						<listheader label="序号" width="10%"
+							align="center" />
+						<listheader label="发明专利名称" width="30%"
+							align="center" />
+						<listheader label="授权时间" width="20%"
+							align="center" />
+						<listheader label="专利授权号" width="20%"
+							align="center" /> 
+						<listheader label="填写人" width="20%"
+							align="center" />
+					</listhead>
+				</listbox>
+				<hbox pack="center" width="100%">
+					<hbox>
+						<toolbarbutton id="submit" image="/css/default/images/button/qd.gif"></toolbarbutton>
+						<toolbarbutton id="close" image="/css/default/images/button/actquit.gif"></toolbarbutton>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+		<panel id="pl2" visible="false">
+		<panelchildren>
+		<label id="ll"></label>
+		</panelchildren>
+		</panel>
+	</window>
+</zk>

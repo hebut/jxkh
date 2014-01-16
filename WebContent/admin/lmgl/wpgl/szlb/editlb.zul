@@ -1,0 +1,33 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="编辑类别" border="normal" width="500px" closable="true" use="org.iti.wp.szlb.EditlbWindow">
+		<grid>
+			<columns>
+				<column width="20%" align="center"></column>
+				<column width="80%"></column>
+			</columns>
+			<rows>
+				<row>
+					<label value="类别名称"></label>
+					<textbox id="name" constraint="no empty"></textbox>
+				</row>
+				<row>
+					<label value="类别类型"></label>
+					
+						<radiogroup id="radio">
+							<radio label="百分制" ></radio>
+							<radio label="五级制" ></radio>
+						</radiogroup>
+					
+				</row>
+				 <row spans="2">
+					<hbox>
+						<button label="提交" id="commit"></button>
+						<space></space>
+						<button label="返回" id="back"></button>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

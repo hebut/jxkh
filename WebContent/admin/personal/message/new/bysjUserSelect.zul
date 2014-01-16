@@ -1,0 +1,21 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window use="org.iti.xypt.personal.message.MessageBysjSelectWindow">
+		<panel framable="false">
+			<panelchildren>
+				<tree id="bysjMessageTree" rows="15" zclass="z-dottree" checkmark="true" multiple="true">
+					<treecols>
+						<treecol label="用户" width="60%"></treecol>
+						<treecol label="操作" width="40%"></treecol>
+					</treecols>
+				</tree>
+				<hbox width="100%" pack="center">
+					<hbox>
+						<button label="提交" id="submit"></button>
+						<button label="重置" id="reset"></button>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

@@ -1,0 +1,108 @@
+<zk>
+<window id="win" title="发布信息" border="normal"  width="850px"   contentStyle="overflow:auto" use="org.iti.xypt.personal.infoCollect.newspub.NewsNewWindow" >
+ <zscript><![CDATA[
+import org.zkoss.io.Files; 
+import java.io.*;
+import java.util.Date;
+import org.iti.gh.common.util.DateUtil;
+import org.zkoss.zk.ui.util.Configuration;
+import com.uniwin.framework.entity.WkTUser;
+import org.zkoss.util.media.Media; 
+import org.zkoss.util.media.AMedia; 
+]]></zscript>
+<vbox>
+<hbox >
+<label value="标题:" width="70px" />
+<space width="24px"/>
+<textbox   width="600px"  id="kititle"  />
+<label value="*" style="color:red;valign:center" />
+<space width="17px"/>
+<checkbox label="粗体" id="cuti"/>
+</hbox>
+<separator />
+<hbox >
+<label value="副标题:"  width="170px" />
+<space width="12px"/>
+<textbox width="600px" id="kititle2"/>
+<space width="30px"/>
+<checkbox  label="发送到用户邮箱" id="kishow" />
+</hbox>
+<separator />
+<hbox>
+<label value="发布标题:" width="66px"/>
+<textbox width="600px" id="kbtitle"/>
+<space/>
+<label value="图片:"  width="66px"/>       
+		  <hbox align="start">
+            <toolbarbutton image="/images/content/1/sc.gif" id="upImage"/>
+	<hbox  id="pics" align="start">
+	</hbox>
+	</hbox>
+</hbox>
+<separator />
+<hbox>
+<label value="发布频道:" width="66px"/>
+<textbox  id="taskname"  width="250px"/>
+<space />
+<toolbarbutton image="/images/content/1/xz.gif" id="choose"/>
+<space width="25px"/>
+<label value="共享频道:" width="70px"/>
+<textbox width="250px" id="share"/>
+<space/>
+<toolbarbutton image="/images/content/1/xz.gif" id="choice1"/>
+</hbox>
+<separator />
+<hbox>
+<label value="来源:" width="70px"/>
+<space width="25px"/>
+<textbox width="170px"  id="kisource"/>
+<space width="10px"/>
+<listbox  mold="select"   width="170px" id="kisource1" use="com.uniwin.webkey.framework.listbox.SourceListbox"/>
+<space width="45px"/>
+<label value="失效日期:"/>
+<datebox id="kivaliddate" width="150px"/>
+</hbox>
+<separator />
+<hbox>
+<label value="关键字:" width="70px"/>
+<space width="10px"/>
+<textbox width="720px" id="kikeys"/>
+</hbox>
+<separator />
+<hbox >
+<label value="摘要信息:" width="70px"/>
+<textbox width="720px" id="kimemo"/>
+</hbox>
+<hbox width="900px"  id="wdnews" >
+<label value="文档内容:" />
+<fckeditor  height="300px" width="750px" id="kicontent" toolbarSet="webkeyCms"/> 
+</hbox>
+<separator />
+<hbox id="fjnews"> 
+<space width="100px"/>
+ <label value="附件:" width="100px"/>
+ <space/>
+<toolbarbutton id="up" image="/css/img/tianjiafujian.png">
+				       <attribute name="onClick">
+				         <![CDATA[{
+				           	Object media = Fileupload.get();
+                            	if(media!=null){
+                              	    win.getModelList().add(media);
+								} else {
+									Messagebox.show("您没有选择要上传的文件！", "提示！", Messagebox.OK, Messagebox.INFORMATION);				
+								}       
+                         }]]></attribute>
+				    </toolbarbutton> <space width="200px"/>
+<label value="附件列表:" width="70px"/>
+<listbox mold="select"  rows="1" width="250px" id="upList" />
+ <toolbarbutton image="/css/img/delAct.gif" id="deUpload"/>
+</hbox>
+<div sclass="pop-win-b-div">
+<toolbarbutton id="save"  image="/css/img/btn-save.gif"  />
+<toolbarbutton id="saudit"  image="/css/img/btn-pub.gif" />
+<toolbarbutton image="/css/img/btn-resetb.gif" id="reset" />
+<toolbarbutton image="/css/img/btn-close.gif"  id="back" onClick="win.detach()" />
+</div>
+</vbox>
+</window>
+</zk>

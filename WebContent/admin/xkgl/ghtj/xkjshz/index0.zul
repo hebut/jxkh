@@ -1,0 +1,197 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="normal" style="text-align:left"
+		use="org.iti.gh.ghtj.hzqkdc.XkjshzWindow">
+		<panel title="汇总学科建设情况">
+			<caption>
+				<toolbar align="end">
+					<button label="导出科教交流" id="exportKjjl"
+						style="color:blue">
+					</button>
+				</toolbar>
+			</caption>
+			<panelchildren>
+				<grid>
+					<columns>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row
+							style="padding:0;border-width:medium 0px 0px">
+							<space width="30px"></space>
+							<label value="部门" style="letter-spacing:20px"></label>
+							<listbox id="deplist"
+								use="org.iti.jxgl.ui.listbox.DeptListbox" mold="select">
+							</listbox>
+							<space width="25px"></space>
+							<label value="年度" style="letter-spacing:20px"></label>
+							<listbox id="yearlist"
+								use="org.iti.jxgl.ui.listbox.YearListbox" mold="select">
+							</listbox>
+							<space width="25px"></space>
+							<label value="教师姓名" style="letter-spacing:20px"></label>
+							<listbox id="tealist"
+								use="org.iti.jxgl.ui.listbox.TeacherListbox" mold="select">
+							</listbox>
+							<space width="25px"></space>
+							<button id="query" label="统计"></button>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+
+		<panel>
+		
+			<panelchildren>
+				<grid id="grid4">
+					<columns>
+						<column width="20%" align="center" />
+						<column width="80%" align="center" />
+					</columns>
+					<rows>
+						<row>
+							<label value="科研情况"></label>
+							<grid id="grid5" style="border:0">
+
+								<columns>
+									<column width="35%" align="center" />
+									<column width="15%" align="center" />
+									<column width="35%" align="center" />
+									<column width="15%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="科研项目" />
+										<toolbarbutton
+											style="color:blue" id="c11" />
+										<label value="获奖科研成果" />
+										<toolbarbutton
+											style="color:blue" id="c12" />
+
+									</row>
+									<row>
+										<label value="发表论文情况" />
+										<toolbarbutton
+											style="color:blue" id="c13" />
+										<label value="出版学术专著情况" />
+										<toolbarbutton
+											style="color:blue" id="c14" />
+									</row>
+									<row>
+										<label value="获授权发明专利情况" />
+										<toolbarbutton
+											style="color:blue" id="c15" />
+										<label value="目前承担的项目情况" />
+										<toolbarbutton
+											style="color:blue" id="c16" />
+									</row>
+									<row>
+										<label value="其他" />
+										<toolbarbutton
+											style="color:blue" id="c17" />
+										<label value="未来五年科研计划" />
+										<toolbarbutton
+											style="color:blue" id="c18" />
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="教研情况"></label>
+							<grid id="grid6" style="border:0">
+
+								<columns>
+									<column width="35%" align="center" />
+									<column width="15%" align="center" />
+									<column width="35%" align="center" />
+									<column width="15%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="已完成教研项目" />
+										<toolbarbutton
+											style="color:blue" id="c21" />
+										<label value="获奖情况" />
+										<toolbarbutton
+											style="color:blue" id="c22" />
+									</row>
+									<row>
+										<label value="论文情况" />
+										<toolbarbutton
+											style="color:blue" id="c23" />
+										<label value="教材情况" />
+										<toolbarbutton
+											style="color:blue" id="c24" />
+									</row>
+									<row>
+										<label value="培养学生参加竞赛情况" />
+										<toolbarbutton
+											style="color:blue" id="c25" />
+										<label value="授课情况（2006-2010）" />
+										<toolbarbutton
+											style="color:blue" id="c26" />
+									</row>
+									<row>
+										<label value="目前主持/参加的教研项目" />
+										<toolbarbutton
+											style="color:blue" id="c27" />
+										<label value="研究生招生情况" />
+										<toolbarbutton
+											style="color:blue" id="c28" />
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="学术交流情况"></label>
+							<grid id="grid7" style="border:0">
+
+								<columns>
+									<column width="35%" align="center" />
+									<column width="15%" align="center" />
+									<column width="35%" align="center" />
+									<column width="15%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="已参加的国际国内学术会议" />
+										<toolbarbutton
+											style="color:blue" id="c31" />
+										<label value="预期参加的国际国内学术会议" />
+										<toolbarbutton
+											style="color:blue" id="c32" />
+									</row>
+									<row>
+										<label value="国外讲学或在国际会议上做报告情况" />
+										<toolbarbutton
+											style="color:blue" id="c33" />
+										<label
+											value="预期国外讲学或在国际会议上做报告情况" />
+										<toolbarbutton
+											style="color:blue" id="c34" />
+									</row>
+									<row>
+										<label value="承担国际交流合作项目" />
+										<toolbarbutton
+											style="color:blue" id="c35" />
+										<label value="预期开展国际交流合作项目" />
+										<toolbarbutton
+											style="color:blue" id="c36" />
+									</row>
+								</rows>
+							</grid>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

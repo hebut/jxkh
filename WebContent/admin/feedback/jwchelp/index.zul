@@ -1,0 +1,8 @@
+<window  border="false" width="100%"  position="center,center">
+	<hbox width="80%" pack="end">
+	<button label="查看帮助文档" href="/admin/feedback/jwchelp/jwchelp.htm" target="_blank">
+ </button>
+	</hbox>	
+	<image src="/admin/image/bysj/2.jpg" width="647px" height="609px" align="center" /> 
+</window>
+

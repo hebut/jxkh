@@ -1,0 +1,196 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="教师个人主页" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="教师个人主页" border="normal" width="100%" style="text-align:left">
+  <tabbox>
+    <tabs>
+        <tab label="个人主页模板1" />
+		<tab label="个人主页模板2" />	
+    </tabs>
+    <tabpanels>
+   	<tabpanel>
+    <panel  width="100%">
+			<caption>
+			<hbox>
+				<button id="button17" label="定制为个人主页" visible="true" />
+			</hbox>
+			</caption>
+		<panelchildren>
+        <grid height="500px">
+          <columns>
+            <column width="35%"></column>
+            <column></column>
+          </columns>
+          <rows>
+            <row >
+               <hbox height="60px">
+                 <image id="img" width="50px" height="60px"></image>
+               </hbox>
+               <grid>
+                 <columns>
+                  <column></column>
+                 </columns>
+                 <rows>
+                   <row height="0px"></row>
+                   <row>
+                     <label value="个人简介">                    
+                     </label>                    
+                   </row>
+                   <row height="100px">
+                     <label id="briefintro"></label>
+                   </row>
+                   <row>
+                     <label value="研究方向"></label>
+                   </row>
+                   <row height="30px">
+                     <label id="field" ></label>
+                   </row>
+                   <row>
+                     <label value="主讲课程"></label>
+                   </row>
+                   <row height="30px">
+                     <label id="subject"></label>
+                   </row>
+                 </rows>
+               </grid>
+            </row>
+            <row spans="2">
+              <label value="科研项目"></label>
+            </row>
+            <row spans="2" height="50px">
+              <label id="study"></label>
+            </row>
+            <row spans="2">
+              <label value="学术成果"></label>
+            </row>
+            <row spans="2" height="50px">
+              <label id="fruit"></label>
+            </row>
+            <row spans="2">
+              <label value="联系方式"></label>
+            </row>
+            <row spans="2" height="50px">
+              <label id="contact"></label>
+            </row>            
+          </rows>
+        </grid>
+        </panelchildren>
+        </panel>
+      </tabpanel>
+      
+      <tabpanel>
+       <panel  width="100%">
+			<caption>
+			<hbox>
+				<button id="button1" label="定制为个人主页" visible="true" />
+			</hbox>
+			</caption>
+		<panelchildren>
+		<grid  height="500px">
+			<columns>
+				<column width="25%"  align="center"/>
+				<column width="75%" />
+			</columns>
+			<rows>
+				<row >
+				<hbox height="100px">
+                 <image id="img2" width="50px" height="100px"/>
+               	</hbox>
+					<grid width="100%">
+						<columns>
+							<column width="25%" align="center"/>
+							<column />
+						</columns>
+						<rows>
+							<row>
+								<hbox>								
+								    <label value="姓		名" ></label>
+								</hbox>  
+								<label value="xxxxx" id="kuName"/>
+							</row>
+							<row>
+					          	<label value="性		别" />
+					        <hbox>
+						    	 <label value="xxxxx" id="kuSex"/>
+					         </hbox>
+							</row>
+							<row >
+							  <label value="籍	贯"/>
+							  <label value="xxxxx" id="nativeplace"/>
+							</row>
+							<row>
+								<label value="电子邮箱"/>
+								<label value="xxxxx" id="kuEmail"></label>
+							</row>
+						</rows>
+					</grid>
+				</row>
+				<row>
+				<label value="研究方向："/>
+				<hbox>
+					<grid>
+						<columns>
+							<column />
+						</columns>
+						<rows>
+							<row height="100px">
+								<!--<label id="serach"/>
+							--></row>
+						</rows>
+					</grid>
+				</hbox>
+				</row>
+					<row>
+				<label value="主要经历："/>
+				<hbox>
+					<grid>
+						<columns>
+							<column />
+						</columns>
+						<rows>
+							<row height="100px">
+								<!--<label id="experience"/>
+							--></row>
+						</rows>
+					</grid>
+				</hbox>
+				</row>
+				<row>
+				<label value="主要著作："/>
+				<hbox>
+					<grid>
+						<columns>
+							<column />
+						</columns>
+						<rows>
+							<row height="100px">
+								<!--<label id="writings"/>
+							--></row>
+						</rows>
+					</grid>
+				</hbox>
+				</row>
+				<row>
+				<label value="主要论文："/>
+				<hbox>
+					<grid>
+						<columns>
+							<column />
+						</columns>
+						<rows>
+							<row height="50px">
+								<!--<label id="papers"/>
+							--></row>
+						</rows>
+					</grid>
+				</hbox>
+				</row>
+				</rows>			
+			</grid>
+			</panelchildren>
+			</panel>
+		</tabpanel>
+    </tabpanels>
+  </tabbox>
+</window>
+</zk>

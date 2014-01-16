@@ -1,0 +1,22 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="查看报告详细" border="normal" sclass="newin" width="600px" height="600px">
+	<listbox id="reportListbox" paginal="${reportPaging}"  sclass="new_listbox" checkmark="true" multiple="true" >
+			<listhead>
+				<listheader label="序号"  width="9%" />
+				<listheader label="报告名称" width="22%" align="left" style="text-align:center"  sort="auto(name)" />
+				<listheader label="完成人" width="25%"   align="left" style="text-align:center" />				
+				<listheader label="报告种类"  width="16%" align="center" sort="auto(types)" />
+				<listheader label="批示领导"  width="14%" align="center" sort="auto(types)" />
+				<listheader label="提交人"  width="14%" align="center" sort="auto(award_Year)" />
+			</listhead>
+		</listbox>
+		<div width="100%" align="right">
+			<paging id="reportPaging" pageSize="10" detailed="true" />
+		</div>
+		<separator/>
+		<div align="center">
+			<toolbarbutton id="close"	image="/css/img/actquit.gif" />
+		</div>
+</window>
+</zk>

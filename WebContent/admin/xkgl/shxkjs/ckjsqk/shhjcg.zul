@@ -1,0 +1,166 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="审核获奖成果" style="text-align:left" border="normal" height="380px"
+		use="org.iti.gh.shxkjs.kyqk.ShkycgWindow" width="800px" sclass="newin"
+		closable="true">
+		<listbox id="hjcglist" style="border-bottom-width:0px"
+			mold="paging" pageSize="10" sclass="new_listbox">
+			<listhead>
+				<listheader label="序号" width="5%" align="center" />
+				<listheader label="成果名称" width="20%" align="center" />
+				<listheader label="获奖时间" width="13%" align="center" />
+				<listheader label="获奖名称 " width="15%" align="center" />
+				<listheader label="获奖等级" width="10%" align="center" />
+				<listheader label="获奖人" width="20%" align="center" />
+				<listheader label="填写人" width="10%" align="center" />
+				<listheader label="操作" width="7%" align="center" />
+			</listhead>
+			<listitem>
+				<listcell label="1" />
+				<listcell label="绩效考核管理系统的研究与实现" style="color:blue" />
+				<listcell label="2011-09-20" />
+				<listcell label="诺贝尔奖" />
+				<listcell label="三等奖" />
+				<listcell label="张杰" />
+				<listcell label="李鹏" />
+				<listcell>
+					<div align="center">
+						<toolbarbutton label="审核" style="color:blue">
+							<attribute name="onClick">
+	hjcglist.setVisible(false);
+	auditcg.setVisible(true);
+</attribute>
+						</toolbarbutton>
+					</div>
+				</listcell>
+			</listitem>
+		</listbox>
+		<grid id="auditcg" visible="false">
+			<columns>
+				<column width="23%" align="center" />
+				<column width="27%" />
+				<column width="23%" align="center" />
+				<column width="27%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="成果名称" />
+					<label id="cgmc" value="绩效考核管理系统的研究与实现"/>
+				</row>
+				<row>
+					<label value="成果来源" />
+					<label id="ly" value="河北工业大学"/>
+					<label value="项目编号" />
+					<label id="number" value="IT1001"/>
+				</row>
+				<row>
+					<label value="获奖时间" />
+					<hbox>
+						<label id="shijian" value="2011-09-20"/>
+					</hbox>
+					<label value="获奖级别"/><!-- style="letter-spacing:5px"  -->
+					
+					<listbox id="jb" mold="select" rows="1"
+							width="220px" >
+						<listitem label="请选择"/>
+						<listitem label="国家级"/>
+						<listitem label="省市级"/>	
+					</listbox>
+				</row>
+				<row>
+					<label value="获奖名称 " />
+					<hbox>
+						<label id="hjmc" value="诺贝尔奖"/>
+					</hbox>
+					<label value="获奖等级" />
+					<hbox>
+						<label id="dengji" value="三等奖"/>
+					</hbox>
+				</row>
+				<row>
+				<label value="成果水平"/>
+				<listbox mold="select" rows="1">
+				<listitem label="国际领先"/>
+				<listitem label="国际先进"/>
+				<listitem label="正常结题"/>
+				</listbox>
+				<label value="验收等级"/>
+				<listbox mold="select" rows="1">
+				<listitem label="国际级"/>
+				<listitem label="省级"/>
+				<listitem label="正常结题"/>
+				</listbox>
+				</row>
+				<row>
+					<label value="获奖证书编号" />
+					<label id="prizenum" value="ISO2011"/>
+					<label value="颁奖部门" />
+					<label id="prizedep" value="教育部"/>
+				</row>
+
+				<row spans="1,3">
+					<label value="获奖人" />
+					<label id="prizepersons" value="张杰"/>
+				</row>
+				<row id="rowFile" visible="false" spans="1,3">
+					<label value="附件列表"></label>
+					<hbox>
+						<grid width="400px">
+
+							<rows>
+								<row>
+									<listbox id="upList"
+										style="border:0px" mold="select" rows="1" />
+								</row>
+							</rows>
+						</grid>
+						<hbox pack="center" width="100%">
+							<hbox>
+								<button label="下载" id="downFile" />
+							</hbox>
+						</hbox>
+					</hbox>
+				</row>
+				<row>
+				<label value="主办单位"/>
+				<label value="情报院"/>
+				<label value="合作单位"/>
+				<label value="无"/>
+				</row>
+				<row>
+					<label value="是否通过" />
+					<hbox>
+						<radiogroup id="audit">
+							<radio label="不通过" checked="true" />
+							<radio label="通过" />
+						</radiogroup>
+					</hbox>
+					<label value="填写人"/>
+					<label value="李鹏"/>
+				</row>
+				<row spans="1,3">
+					<label value="审核意见" />
+					<textbox id="reason" cols="80" rows="4"
+						height="30px">
+					</textbox>
+				</row>
+				<row spans="4">
+					<hbox pack="center" width="100%">
+						<hbox>
+							<button label="提交" id="submit" />
+							<space width="3px" />
+						<!--  	<button label="下载全部 " id="downFileZip" />
+							<space width="3px" /> -->
+							<button label="返回" id="close">
+							<attribute name="onClick">
+								hjcglist.setVisible(true);
+						        auditcg.setVisible(false);
+								</attribute>
+							</button>
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

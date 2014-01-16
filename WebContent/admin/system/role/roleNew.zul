@@ -1,0 +1,80 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="新建角色" width="50%" border="normal" use="com.uniwin.framework.ui.role.RoleNewWindow">
+		<grid>
+			<columns>
+				<column width="30%" align="center"></column>
+				<column width="70%"></column>
+			</columns>
+			<rows>
+				<row>
+					<label value="角色名称" />
+					<hbox>
+						<textbox value="" id="roleName" constraint="no empty" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="所属单位"></label>
+					<label id="schName"></label>
+				</row>
+				<row id="xtRow">
+					<label value="系统选项"></label>
+					<hbox>
+						<checkbox label="是否默认" id="isPro" />
+						<checkbox label="是否共享" id="isShare" />
+					</hbox>
+				</row>
+				<row id="ptRow">
+					<label value="平台选项"></label>
+					<hbox>
+						<!-- <hbox align="center">
+							<label>角色类型:</label>
+							<listbox id="roleTypeSelect" mold="select">
+								<listitem label="院领导" selected="true"></listitem>
+								<listitem label="部门领导"></listitem>
+								<listitem label="管理人员"></listitem>
+								<listitem label="业务人员"></listitem>
+							</listbox>
+						</hbox> -->
+						<hbox align="center">
+							<label>角色级别:</label>
+							<listbox id="roleGradeSelect" mold="select">
+								<listitem label="顶级"></listitem>
+								<listitem label="一级" selected="true"></listitem>
+								<listitem label="二级"></listitem>
+								<listitem label="三级"></listitem>
+							</listbox>
+						</hbox>
+					</hbox>
+				</row>
+				<row>
+					<label value="角色描述" />
+					<textbox value="" id="roleDesc" />
+				</row>
+				<!-- <row id="bsRow">
+					<label value="毕设选项"></label>
+					<hbox width="100%" pack="start">
+						<checkbox label="是否督导反馈对象 " id="isDd"></checkbox>
+						<checkbox label="是否基本管理员对象 " id="isGZL"></checkbox>
+					</hbox>
+				</row> -->
+				<!-- <row id="rowAdmins">
+					<label value="管理角色用户"></label>
+					<hbox>
+						<label id="roleAdmins"></label>
+						<label id="roleAdminID" visible="false"></label>
+						<button label="编辑" id="editAdmins"></button>
+					</hbox>
+				</row> -->
+			</rows>
+		</grid>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="重填" id="reset" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

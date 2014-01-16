@@ -1,0 +1,32 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="" border="none" sclass="newin"
+		use="org.iti.jxkh.indicator.businessdept.LockWindow">
+	<panel title="设置指标锁定方式" width="600px" height="120px">
+		<panelchildren>
+			<grid width="98%" height="60%">
+				<columns>
+					<column width="50%" align="right"/>
+					<column width="50%" align="left"/>
+				</columns>
+				<rows>
+					<row height="50px">
+						<label value="指标锁定方式："/>
+						<radiogroup>
+							<radio label="锁定" id="lock"/>
+							<space></space>
+							<radio label="解锁" id="unlock"/>
+						</radiogroup>
+					</row>
+				</rows>
+			</grid>
+			<separator></separator>
+			<div align="center">
+				<toolbarbutton image="/css/img/actSave.gif" id="submit" />
+				<space></space>
+				<toolbarbutton image="/css/sat/cz.gif" id="reset" />
+			</div>
+		</panelchildren>
+	</panel>
+</window>
+</zk>

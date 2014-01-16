@@ -1,0 +1,105 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%">
+		<panel title="管理好友" width="100%" height="580px">
+			<panelchildren>
+				<grid height="570px">
+					<columns>
+						<column width="20%" />
+						<column />
+					</columns>
+					<rows>
+						<row valign="top">
+							<panel title="好友列表" height="540px">
+								<panelchildren>
+									<tabbox mold="accordion">
+										<tabs>
+											<tab label="我的好友" />
+											<tab label="我的同学" />
+											<tab label="我的老师" />
+											<tab label="陌生人" />
+										</tabs>
+										<tabpanels>
+											<tabpanel>
+												<label value="暂时没有添加任何好友！" visible="false" />
+												<listbox style="border:0">
+													<listitem>
+														<listcell>
+															<hbox align="center">
+																<image src="image/default.gif" />
+																<space spacing="1px" />
+																<label value="蓝天白云飞" />
+															</hbox>
+														</listcell>
+													</listitem>
+													<listitem>
+														<listcell>
+															<hbox align="center">
+																<image src="image/default.gif" />
+																<space spacing="1px" />
+																<label value="艳阳高空照" />
+															</hbox>
+														</listcell>
+													</listitem>
+												</listbox>
+											</tabpanel>
+											<tabpanel>
+												<label value="暂无任何好友！" />
+												<listbox visible="false" />
+											</tabpanel>
+											<tabpanel>
+												<label value="暂无任何好友！" />
+												<listbox visible="false" />
+											</tabpanel>
+											<tabpanel>
+												<label value="暂无任何好友！" />
+												<listbox visible="false" />
+											</tabpanel>
+										</tabpanels>
+									</tabbox>
+								</panelchildren>
+							</panel>
+							<panel title="搜索好友">
+								<panelchildren>
+									<grid>
+										<columns>
+											<column align="center" />
+										</columns>
+										<rows>
+											<row>
+												<hbox align="center">
+													<label value="部门" style="letter-spacing:10px" />
+													<listbox mold="select" width="150px" />
+													<space spacing="10px" />
+													<label value="角色" style="letter-spacing:10px" />
+													<listbox mold="select" width="80px" />
+													<space spacing="10px" />
+													<label value="职工号/学号" />
+													<textbox width="80px" />
+													<space spacing="15px" />
+													<button label="查询" />
+												</hbox>
+											</row>
+											<row>
+												<listbox>
+													<listhead>
+														<listheader label="序号" align="center" width="10%" />
+														<listheader label="职工号/学号" align="center" width="20%" />
+														<listheader label="姓名" align="center" width="15%" />
+														<listheader label="所属部门" align="center" width="40%" />
+														<listheader label="详细信息" align="center" width="15%" />
+													</listhead>
+												</listbox>
+											</row>
+										</rows>
+									</grid>
+								</panelchildren>
+							</panel>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

@@ -1,0 +1,75 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window border="normal" width="100%" style="text-align:left"
+	use="org.iti.projectmanage.science.reference.ReferenceListWindow">	 
+	<div width="100%" align="center">
+		<grid width="700px" zclass="pop-grid">
+			<columns>
+				<column width="15%" align="right"></column>
+				<column width="10%"></column>
+				<column width="8%" align="right"></column>
+				<column width="12%" align="right"></column>
+				<column width="7%" align="right"></column>
+				<column width="8%"></column>
+				<column width="3%" align="center"></column>
+				<column width="15%"></column>
+				<column width="12%" align="right"></column>
+				<column width="10%"></column>
+			</columns>
+			<rows>
+				<row spans="1,2,1,2,1,1,1,1" height="30px" zclass="pop-grid-rows">
+					<label value="来源类别："/>
+					<listbox id="sourceTypeListbox" mold="select" rows="1" width="150px">
+						<listitem label="所有" value="0" selected="true"></listitem>
+						<listitem label="CNKI期刊全文库" value="1"/>
+						<listitem label="中国重要会议论文库" value="2"/>
+						<listitem label="EI" value="3"/>	
+						<listitem label="其他" value="4"/>			
+					</listbox>
+					<label value="发表时间："/>
+					<datebox id="startDate"/>
+					<label value="--"/>
+					<div width="100%" align="left">
+						<datebox id="endDate"/>
+					</div>
+					<label value="指定期："></label>
+					<textbox id="issue" width="65px"></textbox>
+				</row>
+				<row spans="1,1,1,1,1,3,2" height="30px" zclass="pop-grid-rows">
+					<label value="中图分类号："></label>
+					<textbox id="clc" width="80px"></textbox>
+					<label value="检索字段："/>
+					<listbox id="searchFieldsListbox" mold="select" rows="1">
+						<listitem label="题名" value="0" selected="true"/>
+						<listitem label="关键词" value="1"/>
+						<listitem label="作者" value="2"/>			
+						<listitem label="文献来源" value="3"/>
+						<listitem label="基金号" value="4"/>			
+					</listbox>
+					<label value="检索词："/>
+					<textbox id="searchContent" width="195px"/>
+					<div width="100%" align="right">
+						<hbox>
+							<toolbarbutton id="search" image="/css/sat/searInact.gif"/>
+							<toolbarbutton id="reset" image="/css/sat/ct.gif"/>
+						</hbox>
+					</div>
+				</row>
+			</rows>
+		</grid>
+	</div>
+	<separator/>
+	<listbox id="referenceListbox" paginal="${referencePaging}" sclass="new_listbox" >
+		<listhead>
+			<listheader label="序号" width="7%" align="center"/>
+			<listheader label="文献名称"  width="23%" style="text-align:center" />
+			<listheader label="作者" width="20%" style="text-align:center"/>
+			<listheader label="文献来源" width="20%" style="text-align:center"/>
+			<listheader label="发表时间" width="14%" align="center"/>
+			<listheader label="上传人" width="8%" align="center"/>
+			<listheader label="操作" width="8%" align="center"/>
+		</listhead>
+	</listbox>
+	<paging id="referencePaging" detailed="true" sclass="z-paging" pageSize="15"></paging>
+</window>
+</zk>

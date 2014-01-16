@@ -1,0 +1,49 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%" border="normal" use="com.uniwin.asm.personal.ui.data.teacherinfo.jlqk.XshyycjWindow">
+		<panel title="国际国内学术会议（预期参加） " width="100%">
+			<caption>
+				<hbox>
+					<button id="button18" label="添加" visible="true"
+						style="color:blue" />
+					<button id="button18out" label="导出EXCEL"
+						visible="true" style="color:blue" />
+				</hbox>
+			</caption>
+			<panelchildren>
+				<listbox id="listbox18" style="border-bottom-width:0px" sclass="new_listbox"
+					mold="paging" pageSize="10">
+					<listhead>
+						<listheader label="序号" width="10%"
+							align="center" />
+						<listheader label="会议名称" width="40%"
+							align="center" />
+						<listheader label="会议时间" width="10%"
+							align="center" />
+						<listheader label="参与人数" width="10%"
+							align="center" />
+						<listheader label="境外人数" width="10%"
+							align="center" />
+						<listheader label="功能" width="10%"
+							align="center" />
+						<listheader label="审核状态" width="10%"
+							align="center" />
+					</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击会议名称，可以查看或修改该会议详细信息。" />
+				<label pre="true"
+					value="2、举办时间必须按照指定的格式填写,如：2007/2/3-2007/3/5、2007/3/5、2008、2008/9。" />
+				<label pre="true" value="3、总人数和境外人数必须为正整数。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

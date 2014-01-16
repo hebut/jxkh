@@ -1,0 +1,90 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" width="760px" border="false" sclass="newin"
+		use="org.iti.jxkh.business.artical.meetArtical.MeetJournalWindow">
+		<groupbox id="cxtj" width="760px" visible="false">
+			<caption>
+				<label value="[查询条件]" />
+			</caption>
+			<grid width="750px">
+				<columns>
+					<column width="12%" align="right"></column>
+					<column width="21%" align="left"></column>
+					<column width="12%" align="right"></column>
+					<column width="21%" align="left"></column>
+					<column width="12%" align="right"></column>
+					<column width="22%" align="left"></column>
+				</columns>
+				<rows>
+					<row style="background:#D2E9FF">
+						<label value="期刊论文名称" />
+						<textbox id="name" width="90%" />
+						<label value="审核状态" />
+						<listbox id="auditState" mold="select" rows="1"
+							width="90%" />
+						<label value="会议级别" />
+						<listbox id="rank" mold="select" rows="1"
+							width="90%" />
+					</row>
+					<row spans="6" style="background:#D2E9FF">
+						<div align="center">
+							<button label="查   询" id="query" />
+							<button label="重   置" id="reset" />
+						</div>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<div align="right">
+			<hbox>
+				<toolbarbutton id="searchcbutton"
+					image="/css/default/images/button/data-btn-js.gif"
+					style="color:blue">
+					<attribute name="onClick">
+	if (cxtj.isVisible()) {
+		cxtj.setVisible(false);
+	} else if (!cxtj.isVisible()) {
+		cxtj.setVisible(true);
+	}
+</attribute>
+				</toolbarbutton>
+				<toolbarbutton id="addMeetartical"
+					image="/css/default/images/button/addAct.gif">
+				</toolbarbutton>
+				<toolbarbutton id="del"
+					image="/css/default/images/button/delAct.gif" />
+				<toolbarbutton id="exportExcel"
+					image="/css/default/images/button/dc.gif" />
+			</hbox>
+		</div>
+		<div align="center">
+			<listbox id="indexListbox" checkmark="true" multiple="true"
+				paginal="${zxPaging}" style="border-bottom-width:0px" mold="paging"
+				sclass="new_listbox">
+				<listhead>
+					<listheader width="4%" align="center" />
+					<listheader label="序号" width="5%" align="center" />
+					<listheader label="论文题目" width="23%" align="left"
+						style="text-align:center" />
+					<listheader label="会议级别" width="12%" align="center" />
+					<listheader label="绩分年度" width="10%" align="center" /> 
+					<listheader label="附件" width="9%" align="center" />
+					<listheader label="该项得分" width="13%" align="center" />
+					<listheader label="本人得分" width="13%" align="center" />
+					<listheader label="审核状态" width="15%" align="center" />
+				</listhead>				
+			</listbox>
+			<paging id="zxPaging" zclass="z-paging" pageSize="10" />
+		</div>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:red" value="[提示]" />
+			</caption>
+			<div align="left">
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击论文名称，可以查看或修改详细信息。" />
+			</div>
+		</groupbox>
+	</window>
+</zk>

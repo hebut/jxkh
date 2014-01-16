@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="cgTarget" class="org.iti.gh.service.impl.CgServiceImpl" parent="baseService"></bean>
+	<bean id="cgService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="cgTarget" />
+		</property>
+	</bean>
+	<bean id="fmzlTarget" class="org.iti.gh.service.impl.FmzlServiceImpl" parent="baseService"></bean>
+	<bean id="fmzlService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="fmzlTarget" />
+		</property>
+	</bean>
+	<bean id="jlhzTarget" class="org.iti.gh.service.impl.JlhzServiceImpl" parent="baseService"></bean>
+	<bean id="jlhzService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jlhzTarget" />
+		</property>
+	</bean>
+	<bean id="jxbgTarget" class="org.iti.gh.service.impl.JxbgServiceImpl" parent="baseService"></bean>
+	<bean id="jxbgService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jxbgTarget" />
+		</property>
+	</bean>
+	<bean id="kyjhTarget" class="org.iti.gh.service.impl.KyjhServiceImpl" parent="baseService"></bean>
+	<bean id="kyjhService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="kyjhTarget" />
+		</property>
+	</bean>
+	<bean id="lwzlTarget" class="org.iti.gh.service.impl.LwzlServiceImpl" parent="baseService"></bean>
+	<bean id="lwzlService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="lwzlTarget" />
+		</property>
+	</bean>
+	<bean id="pxTarget" class="org.iti.gh.service.impl.PxServiceImpl" parent="baseService"></bean>
+	<bean id="pxService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="pxTarget" />
+		</property>
+	</bean>
+	<bean id="xshyTarget" class="org.iti.gh.service.impl.XshyServiceImpl" parent="baseService"></bean>
+	<bean id="xshyService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="xshyTarget" />
+		</property>
+	</bean>
+	<bean id="qkdcTarget" class="org.iti.gh.service.impl.QkdcServiceImpl" parent="baseService"></bean>
+	<bean id="qkdcService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="qkdcTarget" />
+		</property>
+	</bean>
+	<bean id="qtTarget" class="org.iti.gh.service.impl.QtServiceImpl" parent="baseService"></bean>
+	<bean id="qtService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="qtTarget" />
+		</property>
+	</bean>
+	<bean id="skTarget" class="org.iti.gh.service.impl.SkServiceImpl" parent="baseService"></bean>
+	<bean id="skService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="skTarget" />
+		</property>
+	</bean>
+	<bean id="xmTarget" class="org.iti.gh.service.impl.XmServiceImpl" parent="baseService"></bean>
+	<bean id="xmService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="xmTarget" />
+		</property>
+	</bean>
+	<bean id="projectSourcetarget" class="org.iti.gh.service.impl.ProjectSourceServiceImpl" parent="baseService"></bean>
+	<bean id="projectSourceService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="projectSourcetarget" />
+		</property>
+	</bean>	
+
+	<bean id="ghZyTarget" class="org.iti.gh.service.impl.GhZyServiceImpl" parent="baseService"></bean>
+	<bean id="ghZyService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="ghZyTarget" />
+		</property>
+	</bean>
+
+	<bean id="yjfxTarget" class="org.iti.gh.service.impl.YjfxServiceImpl" parent="baseService"></bean>
+	<bean id="yjfxService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="yjfxTarget" />
+		</property>
+	</bean>
+	<bean id="pxqkTarget" class="org.iti.gh.service.impl.PxqkServiceImpl" parent="baseService"></bean>
+	<bean id="pxqkService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="pxqkTarget" />
+		</property>
+	</bean>
+	<bean id="zcqkTarget" class="org.iti.gh.service.impl.ZcqkServiceImpl" parent="baseService"></bean>
+	<bean id="zcqkService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="zcqkTarget" />
+		</property>
+	</bean>
+	<bean id="cszyTarget" class="org.iti.gh.service.impl.CszyServiceImpl" parent="baseService"></bean>
+	<bean id="cszyService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="cszyTarget" />
+		</property>
+	</bean>
+	<bean id="degreeTarget" class="org.iti.gh.service.impl.DegreeServiceImpl" parent="baseService"></bean>
+	<bean id="degreeService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="degreeTarget" />
+		</property>
+	</bean>
+	<bean id="educationalTarget" class="org.iti.gh.service.impl.EducationalServiceImpl" parent="baseService"></bean>
+	<bean id="educationalService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="educationalTarget" />
+		</property>
+	</bean>
+	<bean id="xmzzTarget" class="org.iti.gh.service.impl.XmzzServiceImpl" parent="baseService"></bean>
+	<bean id="xmzzService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="xmzzTarget" />
+		</property>
+	</bean>
+	<bean id="rjzzTarget" class="org.iti.gh.service.impl.RjzzServiceImpl" parent="baseService"></bean>
+	<bean id="rjzzService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="rjzzTarget" />
+		</property>
+	</bean>
+	<bean id="pkpyTarget" class="org.iti.gh.service.impl.PkpyServiceImpl" parent="baseService"></bean>
+	<bean id="pkpyService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="pkpyTarget" />
+		</property>
+	</bean>
+	<bean id="shjzTarget" class="org.iti.gh.service.impl.ShjzServiceImpl" parent="baseService"></bean>
+	<bean id="shjzService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="shjzTarget" />
+		</property>
+	</bean>	
+	<bean id="sgcfTarget" class="org.iti.gh.service.impl.SgcfServiceImpl" parent="baseService"></bean>
+	<bean id="sgcfService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="sgcfTarget" />
+		</property>
+	</bean>
+	<bean id="majorTarget" class="org.iti.gh.service.impl.MajorServiceImpl" parent="baseService"></bean>
+	<bean id="majorService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="majorTarget" />
+		</property>
+	</bean>
+	<bean id="ghfileTarget" class="org.iti.gh.service.impl.GhFileServiceImpl" parent="baseService"></bean>
+	<bean id="ghfileService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="ghfileTarget" />
+		</property>
+	</bean>
+	<bean id="jsxmTarget" class="org.iti.gh.service.impl.JsxmServiceImpl" parent="baseService"></bean>
+	<bean id="jsxmService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jsxmTarget" />
+		</property>
+
+	</bean>
+	<bean id="jslwTarget" class="org.iti.gh.service.impl.JslwServiceImpl" parent="baseService"></bean>
+	<bean id="jslwService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jslwTarget" />
+		</property>
+	</bean>
+	<bean id="jszzTarget" class="org.iti.gh.service.impl.JszzServiceImpl" parent="baseService"></bean>
+	<bean id="jszzService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jszzTarget" />
+		</property>
+	</bean>
+	<bean id="hylwTarget" class="org.iti.gh.service.impl.HylwServiceImpl" parent="baseService"></bean>
+	<bean id="hylwService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="hylwTarget" />
+		</property>
+	</bean>
+	<bean id="qklwTarget" class="org.iti.gh.service.impl.QklwServiceImpl" parent="baseService"></bean>
+	<bean id="qklwService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="qklwTarget" />
+		</property>
+	</bean>
+		<bean id="zzTarget" class="org.iti.gh.service.impl.ZzServiceImpl" parent="baseService"></bean>
+	<bean id="zzService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="zzTarget" />
+		</property>
+	</bean>
+	<bean id="thoughtTarget" class="org.iti.gh.service.impl.ThoughtServiceImpl" parent="baseService"></bean>
+	<bean id="thoughtService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="thoughtTarget" />
+		</property>
+	</bean>
+	<bean id="userdeptTarget" class="org.iti.gh.service.impl.UserdeptServiceImpl" parent="baseService"></bean>
+	<bean id="userdeptService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="userdeptTarget" />
+		</property>
+	</bean>
+	<bean id="useryjfxTarget" class="org.iti.gh.service.impl.UseryjfxServiceImpl" parent="baseService"></bean>
+	<bean id="useryjfxService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="useryjfxTarget" />
+		</property>
+	</bean>
+	<bean id="userfxfzTarget" class="org.iti.gh.service.impl.UserfxfzServiceImpl" parent="baseService"></bean>
+	<bean id="userfxfzService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="userfxfzTarget" />
+		</property>
+	</bean>
+	<bean id="yjfxxmTarget" class="org.iti.gh.service.impl.YjfxxmServiceImpl" parent="baseService"></bean>
+	<bean id="yjfxxmService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="yjfxxmTarget" />
+		</property>
+	</bean>
+	<bean id="yjfxlwTarget" class="org.iti.gh.service.impl.YjfxlwServiceImpl" parent="baseService"></bean>
+	<bean id="yjfxlwService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="yjfxlwTarget" />
+		</property>
+	</bean>
+	<bean id="yjfxjlTarget" class="org.iti.gh.service.impl.YjfxjlServiceImpl" parent="baseService"></bean>
+	<bean id="yjfxjlService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="yjfxjlTarget" />
+		</property>
+	</bean>
+	<bean id="yjfxzzTarget" class="org.iti.gh.service.impl.YjfxzzServiceImpl" parent="baseService"></bean>
+	<bean id="yjfxzzService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="yjfxzzTarget" />
+		</property>
+	</bean>
+	<bean id="yjfxhyTarget" class="org.iti.gh.service.impl.YjfxhyServiceImpl" parent="baseService"></bean>
+	<bean id="yjfxhyService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="yjfxhyTarget" />
+		</property>
+	</bean>
+		<bean id="zbTarget" class="org.iti.kyjf.service.impl.ZbServiceImpl" parent="baseService"></bean>
+	<bean id="zbService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="zbTarget" />
+		</property>
+	</bean>
+	<bean id="zbteacherTarget" class="org.iti.kyjf.service.impl.ZbteacherServiceImpl" parent="baseService"></bean>
+	<bean id="zbteacherService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="zbteacherTarget" />
+		</property>
+	</bean>
+	<bean id="zbdeptypeTarget" class="org.iti.kyjf.service.impl.ZbdeptypeServiceImpl" parent="baseService"></bean>
+	<bean id="zbdeptypeService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="zbdeptypeTarget" />
+		</property>
+	</bean>
+
+	
+	<bean id="gh_phasereportTarget" class="org.iti.gh.service.impl.GH_PHASEREPORTServiceImpl" parent="baseService"></bean>
+	<bean id="gh_phasereportService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="gh_phasereportTarget" />
+		</property>
+	</bean>
+
+	<bean id="archiverarget" class="org.iti.gh.service.impl.ArchiveServiceImpl" parent="baseService"></bean>
+	<bean id="archiveService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="archiverarget" />
+		</property>
+	</bean>
+	<bean id="commenttarget" class="org.iti.gh.service.impl.ArCommentServiceImpl" parent="baseService"></bean>
+	<bean id="arCommentService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="commenttarget" />
+		</property>
+	</bean>
+	<bean id="referencetarget" class="org.iti.projectmanage.science.reference.service.impl.ReferenceServiceImpl" parent="baseService"></bean>
+	<bean id="referenceService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="referencetarget" />
+		</property>
+	</bean>
+	<bean id="jspstarget" class="org.iti.gh.service.impl.JspsServiceImpl" parent="baseService"></bean>
+	<bean id="jspsService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jspstarget" />
+		</property>
+	</bean>
+	
+</beans>

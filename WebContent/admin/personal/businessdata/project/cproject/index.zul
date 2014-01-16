@@ -1,0 +1,96 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="false" style="text-align:left" sclass="newin"
+		width="100%" use="org.iti.jxkh.business.project.CprojectWindow">
+		<groupbox id="cxtj3" width="740px" visible="false">
+			<caption>
+				<label value="[查询条件]" />
+			</caption>
+			<grid width="730px">
+				<columns>
+					<column width="12%" align="right"></column>
+					<column width="24%" align="left"></column>
+					<column width="12%" align="right"></column>
+					<column width="20%" align="left"></column>
+					<column width="12%" align="right"></column>
+					<column width="20%" align="left"></column>
+				</columns>
+				<rows>
+					<row style="background:#D2E9FF">
+						<label value="项目名称" />
+						<textbox id="name3" width="90%" />
+						<label value="绩分年度" />
+						<listbox id="year3" mold="select" rows="1"
+							width="80%" use="org.iti.gh.ui.listbox.YearListbox">
+						</listbox>
+						<label value="审核状态" />
+						<listbox id="auditState3" mold="select" rows="1"
+							width="80%">
+						</listbox>
+					</row>
+					<row spans="6" style="background:#D2E9FF">
+						<div align="center">
+							<button label="查   询" id="query3" />
+							<space></space>
+							<button label="重   置" id="reset3" />
+						</div>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<div align="right">
+			<hbox>
+				<toolbarbutton id="searchcbutton3"
+					image="/css/default/images/button/data-btn-js.gif"
+					style="color:blue">
+					<attribute name="onClick">
+	if (cxtj3.isVisible()) {
+		cxtj3.setVisible(false);
+	} else if (!cxtj3.isVisible()) {
+		cxtj3.setVisible(true);
+	}
+</attribute>
+				</toolbarbutton>
+				<toolbarbutton id="add3"
+					image="/css/default/images/button/addAct.gif" visible="true"
+					style="color:blue">
+				</toolbarbutton>
+				<toolbarbutton id="del3"
+					image="/css/default/images/button/delAct.gif" />
+				<toolbarbutton id="export3"
+					image="/css/default/images/button/dc.gif" visible="true"
+					style="color:blue" />
+			</hbox>
+		</div>
+		<div align="center" width="100%">
+			<listbox id="zsListbox" mold="paging" pageSize="13"
+				sclass="new_listbox" checkmark="true" multiple="true"
+				fixedLayout="true">
+				<listhead>
+					<listheader width="5%" align="center" />
+					<listheader label="序号" width="5%" align="center" />
+					<listheader label="项目名称" width="20%"
+						style="text-align:center" />
+					<listheader label="项目负责人" width="15%" align="center"
+						style="text-align:center" />
+					<listheader label="绩分年度" width="12%" align="center"
+						style="text-align:center" />
+					<listheader label="合同始期" width="13%" align="center" />
+					<listheader label="附件" width="8%" align="center" />
+					<listheader label="审核状态" width="12%" align="center" />
+				</listhead>
+			</listbox>
+			<!-- <paging id="zsPaging" zclass="z-paging" pageSize="10"
+				detailed="true" /> -->
+		</div>
+		<groupbox closable="true">
+			<caption>
+				<label style="color:red" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击项目名称，可以查看或修改详细信息。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

@@ -1,0 +1,130 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="基本信息" width="100%" border="normal" style="text-align:left"  use="com.uniwin.asm.personal.ui.data.OtherBasicInfo">
+		<style>.red { color: red; font-style: oblique; font-size:18px; }</style>
+					<grid width="99%" height="515px">
+						<rows>
+							<row>
+								<grid>
+									<columns>
+										<column align="cneter" />
+										<column />
+										<column />
+										<column align="cneter" />
+										<column />
+										<column />
+									</columns>
+									<rows>
+										<row spans="1,2,1,2">
+											<label value="最高学历" style="letter-spacing:3px" />
+											<hbox>
+												<listbox id="kuEducational" mold="select" width="195px"></listbox>
+											</hbox>
+											<label value="学位" style="letter-spacing:25px" />
+											<hbox>
+												<listbox id="kuXuewei" mold="select" width="195px"></listbox>
+											</hbox>
+										</row>
+										<row spans="1,2,1,2">
+											<label value="所属学校" style="letter-spacing:3px" />
+											<label id="schoolSelect" />
+											<label value="所属部门" style="letter-spacing:3px" />
+											<label id="deptSelect" />
+										</row>
+										<row spans="1,5">
+											<label value="在校职务" style="letter-spacing:3px"></label>
+											<hbox>
+												<textbox id="zhiwu" width="195px"></textbox>
+											</hbox>
+										</row>
+										<row spans="1,5">
+											<label value="职称" style="letter-spacing:25px"></label>
+											<hbox>
+												<hbox id="selectTitle" use="org.iti.xypt.ui.base.TitleSelectHbox" width="130px"></hbox>
+											</hbox>
+										</row>
+										<row spans="1,2,1,2">
+											<label value="普通话等级" />
+											<hbox>
+												<listbox id="mandarin" mold="select" width="195px"></listbox>
+											</hbox>
+											<label value="计算机等级" />
+											<hbox>
+												<listbox id="computer" mold="select" width="195px"></listbox>
+											</hbox>
+										</row>
+										<row spans="1,2,1,2">
+											<label value="政治面貌" style="letter-spacing:3px" />
+											<hbox>
+												<listbox id="kuPolitical" mold="select" width="195px"></listbox>
+											</hbox>
+											<label value="入党时间" style="letter-spacing:3px" />
+											<datebox id="partytime" focus="true" width="195px" />
+										</row>
+										<row spans="1,2,1,2">
+											<label value="硕士生导师" style="letter-spacing:1px"></label>
+											<radiogroup id="shuodao">
+												<radio label="是" />
+												<space />
+												<radio label="否" checked="true" />
+											</radiogroup>
+											<label value="博士生导师" style="letter-spacing:1px"></label>
+											<radiogroup id="bodao">
+												<radio label="是" />
+												<space />
+												<radio label="否" checked="true" />
+											</radiogroup>
+										</row>
+										<row spans="1,2,1,2">
+											<label value="研究方向（一）"></label>
+											<listbox id="search1" width="195px" rows="1" mold="select" use="org.iti.gh.ui.listbox.YjfxListbox"></listbox>
+											<label value="研究方向（二）"></label>
+											<listbox id="search2" width="195px" rows="1" mold="select" use="org.iti.gh.ui.listbox.YjfxListbox"></listbox>
+										</row>
+										<row spans="1,2,1,2">
+											<label value="研究方向（三）"></label>
+											<listbox id="search3" width="195px" rows="1" mold="select" use="org.iti.gh.ui.listbox.YjfxListbox"></listbox>
+											<label value="研究方向（四）"></label>
+											<listbox id="search4" width="195px" rows="1" mold="select" use="org.iti.gh.ui.listbox.YjfxListbox"></listbox>
+										</row>
+										<row spans="1,5">
+											<label value="研究方向（五）"></label>
+											<listbox id="search5" width="195px" rows="1" mold="select" use="org.iti.gh.ui.listbox.YjfxListbox"></listbox>
+										
+										</row>
+										<row spans="1,5">
+											<label value="个人简介" style="letter-spacing:8px"></label>
+											<textbox id="uinfo" cols="70" height="100px" rows="6" />
+										</row>
+										<row spans="1,5">
+											<label value="绑定类型" style="letter-spacing:8px" />
+											<listbox id="bangType" mold="select">
+												<listitem label="不绑定" selected="true" />
+												<listitem label="IP绑定" />
+											</listbox>
+										</row>
+										<row spans="1,5" id="Band">
+											<label value="绑定地址" style="letter-spacing:8px" />
+											<hbox>
+												<textbox id="uBandIp" width="260px" />
+												<space spacing="30px"></space>
+												<checkbox label="自动登录" id="kuAutoenter" />
+											</hbox>
+										</row>
+										<row spans="6">
+											<hbox pack="center" width="100%">
+												<hbox>
+													<button id="save1" label="保存"></button>
+													<space />
+													<button id="reset1" label="重填"></button>
+												</hbox>
+											</hbox>
+										</row>
+									</rows>
+								</grid>
+							</row>
+						</rows>
+					</grid>
+				
+	</window>
+</zk>

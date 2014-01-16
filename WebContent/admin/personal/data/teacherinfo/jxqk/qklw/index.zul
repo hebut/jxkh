@@ -1,0 +1,34 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%" sclass="newin" border="false" use="com.uniwin.asm.personal.ui.data.teacherinfo.jyqk.QklwWindow">
+	<div align="right">
+				<hbox>
+					<toolbarbutton id="button101" image="/css/sat/addAct.gif" visible="true" style="color:blue" />
+					<toolbarbutton id="button101out" image="/css/sat/dc.gif" visible="true" style="color:blue" />
+				</hbox>
+			</div>
+				<listbox id="listbox101" style="border-bottom-width:0px" mold="paging" pageSize="10" sclass="new_listbox">
+					<listhead>
+						<listheader label="序号" width="8%" align="center" />
+						<listheader label="论文题目" width="20%" align="center" />
+						<listheader label="刊物名称" width="17%" align="center" />
+						<listheader label="发表时间" width="10%" align="center" />
+						<listheader label="卷/期/页码范围" width="15%" align="center" />
+						<listheader label="项目资助" width="10%" align="center" />
+						<listheader label="功能" width="10%" align="center" />
+						<listheader label="审核状态" width="10%" align="center" />
+					</listhead>
+				</listbox>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击论文名称，可以查看或修改论文的详细信息。" />
+				<label pre="true" value="2、发表时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

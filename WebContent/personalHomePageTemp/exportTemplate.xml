@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Word.Document"?>
+<w:wordDocument xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml"
+	xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word"
+	xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core"
+	xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint"
+	xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+	w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no"
+	xml:space="preserve"><o:DocumentProperties><o:Title>个人信息</o:Title><o:Author>信息技术研究所</o:Author><o:LastAuthor>信息技术研究所</o:LastAuthor><o:Revision>10</o:Revision><o:TotalTime>24</o:TotalTime><o:Created>2011-06-13T08:40:00Z</o:Created><o:LastSaved>2011-06-14T12:18:00Z</o:LastSaved><o:Pages>1</o:Pages><o:Words>81</o:Words><o:Characters>466</o:Characters><o:Company>WwW.YlmF.CoM</o:Company><o:Lines>3</o:Lines><o:Paragraphs>1</o:Paragraphs><o:CharactersWithSpaces>546</o:CharactersWithSpaces><o:Version>11.5604</o:Version></o:DocumentProperties><w:fonts><w:defaultFonts
+	w:ascii="Times New Roman" w:fareast="宋体" w:h-ansi="Times New Roman"
+	w:cs="Times New Roman" /><w:font w:name="宋体"><w:altName
+	w:val="SimSun" /><w:panose-1 w:val="02010600030101010101" /><w:charset
+	w:val="86" /><w:family w:val="Auto" /><w:pitch w:val="variable" /><w:sig
+	w:usb-0="00000003" w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000"
+	w:csb-0="00040001" w:csb-1="00000000" /></w:font><w:font w:name="@宋体"><w:panose-1
+	w:val="02010600030101010101" /><w:charset w:val="86" /><w:family
+	w:val="Auto" /><w:pitch w:val="variable" /><w:sig
+	w:usb-0="00000003" w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000"
+	w:csb-0="00040001" w:csb-1="00000000" /></w:font></w:fonts><w:styles><w:versionOfBuiltInStylenames
+	w:val="4" /><w:latentStyles w:defLockedState="off"
+	w:latentStyleCount="156" /><w:style w:type="paragraph"
+	w:default="on" w:styleId="a"><w:name w:val="Normal" /><wx:uiName
+	wx:val="正文" /><w:rsid w:val="00C25A7D" /><w:pPr><w:widowControl
+	w:val="off" /><w:jc w:val="both" /></w:pPr><w:rPr><wx:font
+	wx:val="Times New Roman" /><w:kern w:val="2" /><w:sz w:val="21" /><w:sz-cs
+	w:val="24" /><w:lang w:val="EN-US" w:fareast="ZH-CN" w:bidi="AR-SA" /></w:rPr></w:style><w:style
+	w:type="character" w:default="on" w:styleId="a0"><w:name
+	w:val="Default Paragraph Font" /><wx:uiName wx:val="默认段落字体" /><w:semiHidden /></w:style><w:style
+	w:type="table" w:default="on" w:styleId="a1"><w:name w:val="Normal Table" /><wx:uiName
+	wx:val="普通表格" /><w:semiHidden /><w:rPr><wx:font wx:val="Times New Roman" /></w:rPr><w:tblPr><w:tblInd
+	w:w="0" w:type="dxa" /><w:tblCellMar><w:top w:w="0" w:type="dxa" /><w:left
+	w:w="108" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /><w:right
+	w:w="108" w:type="dxa" /></w:tblCellMar></w:tblPr></w:style><w:style
+	w:type="list" w:default="on" w:styleId="a2"><w:name w:val="No List" /><wx:uiName
+	wx:val="无列表" /><w:semiHidden /></w:style><w:style w:type="table"
+	w:styleId="a3"><w:name w:val="Table Grid" /><wx:uiName
+	wx:val="网格型" /><w:basedOn w:val="a1" /><w:rsid w:val="00C25A7D" /><w:pPr><w:widowControl
+	w:val="off" /><w:jc w:val="both" /></w:pPr><w:rPr><wx:font
+	wx:val="Times New Roman" /></w:rPr><w:tblPr><w:tblInd w:w="0"
+	w:type="dxa" /><w:tblBorders><w:top w:val="single" w:sz="4"
+	wx:bdrwidth="10" w:space="0" w:color="auto" /><w:left w:val="single"
+	w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /><w:bottom
+	w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /><w:right
+	w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /><w:insideH
+	w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /><w:insideV
+	w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tblBorders><w:tblCellMar><w:top
+	w:w="0" w:type="dxa" /><w:left w:w="108" w:type="dxa" /><w:bottom
+	w:w="0" w:type="dxa" /><w:right w:w="108" w:type="dxa" /></w:tblCellMar></w:tblPr></w:style><w:style
+	w:type="character" w:styleId="trans"><w:name w:val="trans" /><w:basedOn
+	w:val="a0" /><w:rsid w:val="00C25A7D" /></w:style></w:styles><w:docPr><w:view
+	w:val="print" /><w:zoom w:percent="110" /><w:bordersDontSurroundHeader /><w:bordersDontSurroundFooter /><w:proofState
+	w:spelling="clean" w:grammar="clean" /><w:attachedTemplate
+	w:val="" /><w:defaultTabStop w:val="420" /><w:drawingGridVerticalSpacing
+	w:val="156" /><w:displayHorizontalDrawingGridEvery
+	w:val="0" /><w:displayVerticalDrawingGridEvery
+	w:val="2" /><w:punctuationKerning /><w:characterSpacingControl
+	w:val="CompressPunctuation" /><w:optimizeForBrowser /><w:validateAgainstSchema /><w:saveInvalidXML
+	w:val="off" /><w:ignoreMixedContent w:val="off" /><w:alwaysShowPlaceholderText
+	w:val="off" /><w:compat><w:spaceForUL /><w:balanceSingleByteDoubleByteWidth /><w:doNotLeaveBackslashAlone /><w:ulTrailSpace /><w:doNotExpandShiftReturn /><w:adjustLineHeightInTable /><w:breakWrappedTables /><w:snapToGridInCell /><w:wrapTextWithPunct /><w:useAsianBreakRules /><w:dontGrowAutofit /><w:useFELayout /></w:compat></w:docPr><w:body><wx:sect><w:p><w:pPr><w:jc
+	w:val="center" /><w:rPr><w:b /><w:sz w:val="28" /><w:sz-cs
+	w:val="28" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /><w:b /><w:sz w:val="28" /><w:sz-cs w:val="28" /></w:rPr><w:t>个人信息</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblStyle
+	w:val="a3" /><w:tblW w:w="0" w:type="auto" /><w:tblLook
+	w:val="01E0" /></w:tblPr><w:tblGrid><w:gridCol w:w="1703" /><w:gridCol
+	w:w="1704" /><w:gridCol w:w="1705" /><w:gridCol
+	w:w="1705" /><w:gridCol w:w="1705" /></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:shd
+	w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>个人基本信息</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>教师姓名</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="5114" w:type="dxa" /><w:gridSpan
+	w:val="3" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>TeacherName</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:proofErr w:type="spellStart" /><w:tc><w:tcPr><w:tcW
+	w:w="1705" w:type="dxa" /><w:vmerge w:val="restart" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>PersonPhoto</w:t></w:r><w:proofErr w:type="spellEnd" /></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW	w:w="1703" w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>曾用名</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1704" w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>UsedName</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /></w:rPr><w:t>性别</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:w="1705" w:type="dxa" /></w:tcPr><w:p><w:r><w:t>Sex</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:w="1705" w:type="dxa" /><w:vmerge /></w:tcPr><w:p /></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>民族</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:w="1704" w:type="dxa" /></w:tcPr><w:p><w:r><w:t>Nation</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:w="1705" w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>政治面貌</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1705" w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rStyle
+	w:val="trans" /><w:rFonts w:hint="fareast" /></w:rPr><w:t>PoliticalStatus</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /><w:vmerge /></w:tcPr><w:p /></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>最高学历</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1704" w:type="dxa" /></w:tcPr><w:p><w:r><w:t>HighestDegree</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /></w:rPr><w:t>学位</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:w="1705" w:type="dxa" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>Degree</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:w="1705" w:type="dxa" /><w:vmerge /></w:tcPr><w:p /></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /><w:tcBorders><w:bottom w:val="single"
+	w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>籍贯</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="5114" w:type="dxa" /><w:gridSpan
+	w:val="3" /><w:tcBorders><w:bottom w:val="single" w:sz="4"
+	wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>BirthPlace</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /><w:vmerge /><w:tcBorders><w:bottom w:val="single"
+	w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p /></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:shd
+	w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>学历</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /><w:shd w:val="clear" w:color="auto"
+	w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /></w:rPr><w:t>第一学位</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1704" w:type="dxa" /><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>FAcdegree</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>毕业学校</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="3410" w:type="dxa" /><w:gridSpan
+	w:val="2" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>FKuSchool</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /><w:shd w:val="clear" w:color="auto"
+	w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /></w:rPr><w:t>毕业时间</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1704" w:type="dxa" /><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>FGradutime</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>主修专业</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="3410" w:type="dxa" /><w:gridSpan
+	w:val="2" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>FHighMajor</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /><w:shd w:val="clear" w:color="auto"
+	w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /></w:rPr><w:t>最高学位</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1704" w:type="dxa" /><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>HAcdegree</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>毕业学校</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="3410" w:type="dxa" /><w:gridSpan
+	w:val="2" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>HKuSchool</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /><w:tcBorders><w:bottom w:val="single"
+	w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>毕业时间</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1704" w:type="dxa" /><w:tcBorders><w:bottom
+	w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>Highgradutime</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /><w:tcBorders><w:bottom w:val="single" w:sz="4"
+	wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>主修专业</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="3410" w:type="dxa" /><w:gridSpan
+	w:val="2" /><w:tcBorders><w:bottom w:val="single" w:sz="4"
+	wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>HighMajor</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:shd
+	w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>联系方式</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /><w:shd w:val="clear" w:color="auto"
+	w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /></w:rPr><w:t>手机</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="3409" w:type="dxa" /><w:gridSpan
+	w:val="2" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>KuPhone</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /></w:rPr><w:t>家庭电话</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1705" w:type="dxa" /><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>KuHomePhone</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /><w:shd w:val="clear" w:color="auto"
+	w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /></w:rPr><w:t>工作电话</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="3409" w:type="dxa" /><w:gridSpan
+	w:val="2" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>KuWorkPhone</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>QQ</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1705" w:type="dxa" /><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>KuQq</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /><w:shd w:val="clear" w:color="auto"
+	w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /></w:rPr><w:t>电子邮箱</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="3409" w:type="dxa" /><w:gridSpan
+	w:val="2" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>KuEmail</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1705"
+	w:type="dxa" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>MSN</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="1705" w:type="dxa" /><w:shd
+	w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>KuMsn</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="1703" w:type="dxa" /><w:shd w:val="clear" w:color="auto"
+	w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /><wx:font
+	wx:val="宋体" /></w:rPr><w:t>家庭住址</w:t></w:r></w:p></w:tc><w:proofErr
+	w:type="spellStart" /><w:tc><w:tcPr><w:tcW w:w="6819" w:type="dxa" /><w:gridSpan
+	w:val="4" /><w:shd w:val="clear" w:color="auto" w:fill="auto" /></w:tcPr><w:p><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>KuAddress</w:t></w:r><w:proofErr
+	w:type="spellEnd" /></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:shd
+	w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>科研项目</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>KYXM</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>教研项目</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>JYXM</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:rFonts w:hint="fareast" /><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>获奖成果</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>KYHJCG</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:rFonts w:hint="fareast" /><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>教研获奖成果</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>JYHJCG</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:rFonts w:hint="fareast" /><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>科研会议论文</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>KYHYLW</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:rFonts w:hint="fareast" /><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>教研会议论文</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>JYHYLW</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>科研期刊论文</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>KYQKLW</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:rFonts w:hint="fareast" /><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>教研期刊论文</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>JYQKLW</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>软件著作权</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>RJZZQ</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>发明专利</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>FMZL</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:rFonts w:hint="fareast" /><w:b /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>出版教材</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>CBJC</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0" /></w:tcPr><w:p><w:pPr><w:rPr><w:b /></w:rPr></w:pPr><w:r><w:rPr>
+	<w:rFonts w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /></w:rPr><w:t>授课情况</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+	w:w="8522" w:type="dxa" /><w:gridSpan w:val="5" /><w:tcBorders><w:bottom w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" /></w:tcBorders></w:tcPr><w:p><w:r><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>SKQK</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p /><w:sectPr><w:pgSz
+	w:w="11906" w:h="16838" /><w:pgMar w:top="1440" w:right="1800"
+	w:bottom="1440" w:left="1800" w:header="851" w:footer="992" w:gutter="0" /><w:cols
+	w:space="425" /><w:docGrid w:type="lines" w:line-pitch="312" /></w:sectPr></wx:sect></w:body></w:wordDocument>

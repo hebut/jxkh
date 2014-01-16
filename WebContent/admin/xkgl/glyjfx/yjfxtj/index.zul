@@ -1,0 +1,21 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" border="normal" use="org.iti.gh.yjfxtj.YftjWindow">
+		<panel title="研究方向统计结果" >
+		<caption >
+		<toolbar align="end">
+		<button id="Export" label="导出统计情况" style="color:blue"></button>
+		</toolbar>
+		</caption>
+			<panelchildren>
+				<listbox id="yjfztj">
+				<listhead>
+			<listheader  label="研究方向" align="center" width="30%"/>
+			<listheader  label="教师姓名" align="center" width="70%"/>
+			
+		</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

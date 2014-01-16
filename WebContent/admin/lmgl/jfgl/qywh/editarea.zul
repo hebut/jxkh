@@ -1,0 +1,30 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="编辑区域" id="areatitle" border="normal" closable="true" width="60%" use="org.iti.jg.qywh.EditareaWindow">
+<grid>
+					<columns>
+						<column ></column>
+						<column></column>
+					</columns>
+					<rows>
+					<row>
+						<label value="区域名称"/>
+						 <textbox id="areaname" constraint="no empty"></textbox></row>
+						<row>
+						<label value="所属校区"/>
+						<listbox id="scharea" mold="select" width="135px">
+						<listitem label="北辰校区" value="0"></listitem>
+						<listitem label="丁字沽校区" value="1"></listitem>
+						</listbox></row>
+						
+						
+					</rows>
+		</grid>
+				<hbox pack="center" width="100%">
+				<hbox>
+				<button label="确定" id="sure"></button> 
+				<button label="退出" id="back"></button> 
+				</hbox>
+				</hbox>
+</window>
+</zk>

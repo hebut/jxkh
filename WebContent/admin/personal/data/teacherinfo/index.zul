@@ -1,0 +1,899 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+	<window title="教师“十二五”规划情况" style="text-align:left" width="100%"
+		use="com.uniwin.asm.personal.ui.data.TeacherInfo">
+		<tabbox width="100%">
+			<tabs>
+				<tab id="t1" label="情况调查表" />
+				<tab id="t2" label="科研情况" />
+				<tab id="t3" label="教学情况" />
+				<tab id="t4" label="学术交流情况" />
+			</tabs>
+			<tabpanels>
+				<tabpanel width="100%">
+					<panel title="个人情况统计 " width="100%">
+						<panelchildren>
+							<grid id="grid1" width="100%">
+
+								<columns>
+									<column width="2%" align="center" />
+									<column width="98%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="科研情况"></label>
+										<grid id="grid2" width="100%">
+											<columns>
+												<column width="2%"
+													align="center" />
+												<column width="98%"
+													align="center" />
+											</columns>
+											<rows>
+												<row>
+													<label value="项目"></label>
+													<grid id="grid3"
+														width="100%">
+														<columns>
+															<column
+																width="20%" align="center" />
+															<column
+																width="15%" label="截至到2010年7月" align="center" />
+															<column
+																width="15%" label="2011-2015目标" align="center" />
+															<column
+																width="10%" label="2011" align="center" />
+															<column
+																width="10%" label="2012" align="center" />
+															<column
+																width="10%" label="2013" align="center" />
+															<column
+																width="10%" label="2014" align="center" />
+															<column
+																width="10%" label="2015" align="center" />
+														</columns>
+														<rows>
+															<row
+																id="row1">
+															</row>
+															<row
+																id="row2">
+															</row>
+															<row
+																id="row3">
+															</row>
+															<row
+																id="row4">
+															</row>
+														</rows>
+													</grid>
+												</row>
+												<row>
+													<label value="成果"></label>
+													<grid id="grid4" width="100%">
+														<columns>
+															<column
+																width="20%" align="center" />
+															<column
+																width="15%" align="center" />
+															<column
+																width="15%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+														</columns>
+														<rows>
+															<row
+																id="row5">
+															</row>
+															<row
+																id="row6">
+															</row>
+														</rows>
+													</grid>
+												</row>
+												<row>
+													<label value="奖励"></label>
+													<grid id="grid5" width="100%">
+														<columns>
+															<column
+																width="20%" align="center" />
+															<column
+																width="15%" align="center" />
+															<column
+																width="15%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+														</columns>
+														<rows>
+															<row
+																id="row7">
+															</row>
+															<row
+																id="row8">
+															</row>
+															<row
+																id="row9">
+															</row>
+														</rows>
+													</grid>
+												</row>
+												<row>
+													<label
+														value="交流与合作">
+													</label>
+													<grid id="grid6" width="100%">
+														<columns>
+															<column
+																width="20%" align="center" />
+															<column
+																width="15%" align="center" />
+															<column
+																width="15%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+														</columns>
+														<rows>
+															<row
+																id="row10">
+															</row>
+															<row
+																id="row11">
+															</row>
+															<row
+																id="row12">
+															</row>
+															<row
+																id="row13">
+															</row>
+														</rows>
+													</grid>
+												</row>
+											</rows>
+										</grid>
+									</row>
+									<row>
+										<label value="教学情况"></label>
+										<grid id="grid7" width="100%">
+											<columns>
+												<column width="2%"
+													align="center" />
+												<column width="98%"
+													align="center" />
+											</columns>
+											<rows>
+												<row>
+													<label
+														value="教学成果">
+													</label>
+													<grid id="grid9" width="100%">
+														<columns>
+															<column
+																width="20%" align="center" />
+															<column
+																width="15%" align="center" />
+															<column
+																width="15%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+															<column
+																width="10%" align="center" />
+														</columns>
+														<rows>
+															<row
+																id="row14">
+															</row>
+															<row
+																id="row15">
+															</row>
+															<row
+																id="row16">
+															</row>
+															<row
+																id="row17">
+															</row>
+														</rows>
+													</grid>
+												</row>
+											</rows>
+										</grid>
+									</row>
+								</rows>
+							</grid>
+							<hbox width="100%" pack="center" id="dcbutton" visible="false">
+								<hbox>
+									<button label="确定"  id="dcsubmit"></button>
+									<button label="重置"  id="dcreset"></button>
+								</hbox>
+							</hbox>
+						</panelchildren>
+					</panel>
+				</tabpanel>
+				<tabpanel>
+					<panel title="已获得的科研成果（验收或鉴定）" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button1" label="添加"
+									visible="true" />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox1"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="成果名称" width="32%"
+										align="center" />
+									<listheader label="来源" width="15%"
+										align="center" />
+									<listheader label="开始时间" width="10%"
+										align="center" />
+									<listheader label="结束时间" width="10%"
+										align="center" />
+									<listheader label="经费（万元）"
+										width="9%" align="center" />
+									<listheader label="本人贡献" width="6%"
+										align="center" />
+									<listheader label="功能" width="8%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="获奖科研成果" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button2" label="添加"
+									/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox2"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="成果名称" width="32%"
+										align="center" />
+									<listheader label="来源" width="15%"
+										align="center" />
+									<listheader label="获奖时间" width="10%"
+										align="center" />
+									<listheader label="获奖名称/等级"
+										align="center" />
+									<listheader label="本人名次" width="9%"
+										align="center" />
+									<listheader label="功能" width="8%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="发表论文情况" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button3" label="添加"
+									 />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox3"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" align="center" width="10%"/>
+									<listheader label="论文名称" align="center" />
+									<listheader label="发表时间" align="center" width="10%"/>
+									<listheader label="发表刊物、会议名称及检索号或ISSN" align="center" />
+									<listheader label="功能" align="center" width="10%"/>
+
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="出版学术专著情况" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button4" label="添加"
+									 />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox4"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="专著名称" width="40%"
+										align="center" />
+									<listheader label="出版时间" width="15%"
+										align="center" />
+									<listheader label="出版单位及ISBN"
+										width="25%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="获授权发明专利情况" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button5" label="添加"
+									/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox5"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="发明专利名称"
+										width="45%" align="center" />
+									<listheader label="授权时间" width="15%"
+										align="center" />
+									<listheader label="专利授权号"
+										width="20%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="其他" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button6" label="添加"
+									/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox6"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="名称" width="45%"
+										align="center" />
+									<listheader label="时间" width="15%"
+										align="center" />
+									<listheader label="备注（证书编号）"
+										width="20%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="目前承担项目" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button7" label="添加"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox7"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="项目名称" 
+										align="center" />
+									<listheader label="项目来源"
+										align="center" />
+									<listheader label="开始时间" width="10%"
+										align="center" />
+									<listheader label="结束时间" width="10%"
+										align="center" />
+									<listheader label="经费（万元）"
+										width="10%" align="center" />
+									<listheader label="本人作用" width="10%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="未来五年科研计划" collapsible="true"
+						style="text-align:left" width="100%">
+						<panelchildren>
+							<grid id="grid8">
+								<columns>
+									<column width="20%" align="center" />
+									<column />
+								</columns>
+								<rows>
+									<row>
+										<label value="研究内容"></label>
+										<textbox id="yjnr" cols="80"
+											height="200px" rows="15">
+										</textbox>
+									</row>
+									<row>
+										<label value="要解决的关键问题"></label>
+										<textbox id="jjwt" cols="80"
+											height="200px" rows="15">
+										</textbox>
+									</row>
+									<row>
+										<label value="预期研究成果"></label>
+										<textbox id="yqcg" cols="80"
+											height="120px" rows="15">
+										</textbox>
+									</row>
+								</rows>
+							</grid>
+							<hbox pack="center" width="100%">
+								<hbox>
+									<button label="提交" id="submit"></button>
+									<button label="重置" id="reset"></button>
+								</hbox>
+							</hbox>
+						</panelchildren>
+					</panel>
+				</tabpanel>
+				<tabpanel>
+					<panel title="已完成教研项目" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button8" label="添加"
+									/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox8"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="项目名称" width="30%"
+										align="center" />
+									<listheader label="来源" width="10%"
+										align="center" />
+									<listheader label="开始时间" width="10%"
+										align="center" />
+									<listheader label="结束时间" width="10%"
+										align="center" />
+									<listheader label="经费（万元）"
+										width="10%" align="center" />
+									<listheader label="本人贡献" width="10%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="获奖情况" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button9" label="添加"
+									/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox9"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="项目名称" width="30%"
+										align="center" />
+									<listheader label="来源" width="15%"
+										align="center" />
+									<listheader label="获奖时间" width="10%"
+										align="center" />
+									<listheader label="获奖名称/等级"
+										width="15%" align="center" />
+									<listheader label="本人名次" width="10%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="论文情况" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button10" label="添加"
+									/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox10"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="论文名称" width="35%"
+										align="center" />
+									<listheader label="发表时间" width="15%"
+										align="center" />
+									<listheader
+										label="发表刊物、会议名称及检索号或ISSN" width="30%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="教材情况" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button11" label="添加"
+									/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox11"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="教材名" width="35%"
+										align="center" />
+									<listheader label="出版单位" width="15%"
+										align="center" />
+									<listheader label="出版时间" width="15%"
+										align="center" />
+									<listheader label="本人署名情况"
+										width="15%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="培养学生参加竞赛情况" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button12" label="添加"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox12"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="名称" width="35%"
+										align="center" />
+									<listheader label="主办单位" width="15%"
+										align="center" />
+									<listheader label="获得奖项" width="15%"
+										align="center" />
+									<listheader label="本人作用" width="15%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="授课情况" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button13" label="添加" />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox13"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="课程名称" width="30%"
+										align="center" />
+									<listheader label="专业" width="25%"
+										align="center" />
+									<listheader label="学时（理论+试验）"
+										width="25%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="目前主持/参加的教研项目" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button14" label="添加"
+									/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox14"
+								style="text-align:left">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="项目名称" width="35%"
+										align="center" />
+									<listheader label="开始时间" width="10%"
+										align="center" />
+									<listheader label="结束时间" width="10%"
+										align="center" />
+									<listheader label="经费（万元）"
+										width="15%" align="center" />
+									<listheader label="本人作用" width="10%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="研究生招生情况" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button15" label="调整"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<grid id="grid15">
+								<columns>
+									<column align="center" width="25%" />
+									<column align="center" width="15%"
+										label="2006" />
+									<column align="center" width="15%"
+										label="2007" />
+									<column align="center" width="15%"
+										label="2008" />
+									<column align="center" width="15%"
+										label="2009" />
+									<column align="center" width="15%"
+										label="2010" />
+								</columns>
+								<rows>
+									<row>
+										<label value="五年情况（人数）" />
+										<label id="g15lable1" />
+										<label id="g15lable2" />
+										<label id="g15lable3" />
+										<label id="g15lable4" />
+										<label id="g15lable5" />
+									</row>
+								</rows>
+							</grid>
+							<grid id="grid16">
+								<columns>
+									<column align="center" width="25%" />
+									<column align="center" width="15%"
+										label="2011" />
+									<column align="center" width="15%"
+										label="2012" />
+									<column align="center" width="15%"
+										label="2013" />
+									<column align="center" width="15%"
+										label="2014" />
+									<column align="center" width="15%"
+										label="2015" />
+								</columns>
+								<rows>
+									<row>
+										<label value="未来五年情况（人数）" />
+										<label id="g16lable1" />
+										<label id="g16lable2" />
+										<label id="g16lable3" />
+										<label id="g16lable4" />
+										<label id="g16lable5" />
+									</row>
+								</rows>
+							</grid>
+						</panelchildren>
+					</panel>
+				</tabpanel>
+				<tabpanel>
+					<panel title="国际国内学术会议（已参加）" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button17" label="添加"
+									 />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox17">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="会议名称" width="44%"
+										align="center" />
+									<listheader label="举办时间" width="12%"
+										align="center" />
+									<listheader label="总人数" width="12%"
+										align="center" />
+									<listheader label="境外人员数"
+										width="12%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="国际国内学术会议（预期参加）" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button18" label="添加"
+									 />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox18">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="会议名称" width="44%"
+										align="center" />
+									<listheader label="预期举办时间"
+										width="12%" align="center" />
+									<listheader label="总人数" width="12%"
+										align="center" />
+									<listheader label="境外人员数"
+										width="12%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="国外讲学和报告情况（已进行）" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button19" label="添加"
+									 />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox19">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="讲学或报告人姓名"
+										width="12%" align="center" />
+									<listheader label="国外大学名称或国际会议名称"
+										width="32%" align="center" />
+									<listheader label="时间" width="12%"
+										align="center" />
+									<listheader label="讲学或报告名称"
+										width="24%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="国外讲学和报告情况（预期进行）" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button20" label="添加"
+									/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox20">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="讲学或报告人姓名"
+										width="12%" align="center" />
+									<listheader label="国外大学名称或国际会议名称"
+										width="32%" align="center" />
+									<listheader label="时间" width="12%"
+										align="center" />
+									<listheader label="讲学或报告名称"
+										width="24%" align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="承担国际交流合作项目（已开展）" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button21" label="添加"
+									 />
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox21">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="国际交流合作项目名称"
+										width="44%" align="center" />
+									<listheader label="项目起止时间"
+										width="24%" align="center" />
+									<listheader label="合作对象" width="12%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="承担国际交流合作项目（预期开展）" collapsible="true"
+						style="text-align:left" width="100%">
+						<caption>
+							<hbox>
+								<button id="button22" label="添加"/>
+							</hbox>
+						</caption>
+						<panelchildren>
+							<listbox id="listbox22">
+								<listhead>
+									<listheader label="序号" width="10%"
+										align="center" />
+									<listheader label="国际交流合作项目名称"
+										width="44%" align="center" />
+									<listheader label="项目预期起止时间"
+										width="24%" align="center" />
+									<listheader label="合作对象" width="12%"
+										align="center" />
+									<listheader label="功能" width="10%"
+										align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+		<caption>
+			<button label="导入“十二五”个规划" id="Import"></button>
+		</caption>
+	</window>
+</zk>

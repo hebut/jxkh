@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean name="/com/uniwin/framework/ui/login/notice" class=" com.uniwin.framework.ui.login.NoticeAction">
+		<property name="bsphaseService">
+			<ref bean="bsphaseService" />
+		</property>
+		<property name="gpunitService">
+			<ref bean="gpunitService" />
+		</property>
+		<property name="batchService">
+			<ref bean="batchService" />
+		</property>
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+		<property name="bsteacherService">
+			<ref bean="bsteacherService" />
+		</property>
+		<property name="bsStudentService">
+			<ref bean="bsStudentService" />
+		</property>
+		<property name="cqcsService">
+			<ref bean="cqcsService" />
+		</property>
+		<property name="calendarService">
+			<ref bean="calendarService" />
+		</property>
+		<property name="zccqService">
+			<ref bean="zccqService" />
+		</property>
+		<property name="kyhdcqService">
+			<ref bean="kyhdcqService" />
+		</property>
+		<property name="nstudentService">
+			<ref bean="nstudentService" />
+		</property>
+	</bean>
+	<bean name="/com/uniwin/asm/personal/ui/data/report" class="com.uniwin.asm.personal.ui.data.ReportAction">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+		<property name="teacherService">
+			<ref bean="teacherService"/>
+		</property>
+		<property name="xmService">
+			<ref bean="xmService"/>
+		</property>
+		<property name="cgService">
+			<ref bean="cgService"/>
+		</property>
+		<property name="hylwService">
+			<ref bean="hylwService"/>
+		</property>
+		<property name="qklwService">
+			<ref bean="qklwService"/>
+		</property>
+		<property name="rjzzService">
+			<ref bean="rjzzService"/>
+		</property>
+		<property name="fmzlService">
+			<ref bean="fmzlService"/>
+		</property>
+		<property name="zzService">
+			<ref bean="zzService"/>
+		</property>
+		<property name="jszzService">
+			<ref bean="jszzService"/>
+		</property>
+		<property name="skService">
+			<ref bean="skService"/>
+		</property>
+		<property name="rychService">
+			<ref bean="rychService"/>
+		</property>
+		<property name="xypttitleService">
+			<ref bean="xypttitleService"/>
+		</property>
+		<property name="pxService">
+			<ref bean="pxService"/>
+		</property>
+		<property name="jslwService">
+			<ref bean="jslwService"/>
+		</property>
+		<property name="jspsService">
+			<ref bean="jspsService"/>
+		</property>
+	</bean>
+</beans>

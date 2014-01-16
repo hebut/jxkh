@@ -1,0 +1,70 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="查看软件著作" width="800px" closable="true" border="normal"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.jyqk.SelectRjWindow">
+		<panel>
+			<panelchildren>
+				<grid>
+					<columns>
+						<column></column>
+						<column></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row>
+							<label value="软件著作名称"></label>
+							<textbox id="rjmc"></textbox>
+							<label value="软著登记号"></label>
+							<textbox id="djh"></textbox>
+							<button id="query" label="检索"></button>
+						</row>
+					</rows>
+				</grid>
+
+			</panelchildren>
+		</panel>
+		<panel title="您可能获奖的软件著作列表" id="rjpanel">
+			<panelchildren>
+				<listbox id="rjlist" style="border-bottom-width:0px" sclass="new_listbox"
+					mold="paging" pageSize="10" checkmark="true">
+					<listhead>
+						<listheader label="序号" width="10%"
+							align="center" />
+						<listheader label="软件著作名称" width="20%"
+							align="center" />
+						<listheader label="首次发表时间" width="15%"
+							align="center" />
+						<listheader label="登记号" width="20%"
+							align="center" />
+						<listheader label="软著登记号" width="10%"
+							align="center" />
+							<!-- 
+						<listheader label="项目组成员" width="15%"
+							align="center" />
+						 
+							<listheader label="项目资助情况" width="15%"
+							align="center" />
+						-->
+						<listheader label="填写人" width="10%"
+							align="center" />
+					</listhead>
+				</listbox>
+				<hbox pack="center" width="100%">
+					<hbox>
+						<button id="submit" label="确定"></button>
+						<button id="close" label="关闭"></button>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+		<panel id="exception" visible="false">
+			<panelchildren>
+				<hbox pack="center" width="100%">
+					<hbox>
+						<label value="没有符合条件的软件著作,请尝试选择其他条件......" style="font-family:'宋体';font-size:14px"></label>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

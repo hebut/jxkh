@@ -1,0 +1,44 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window border="normal" use="com.uniwin.asm.personal.group.discuss.GroupSubjectWindow">
+		<tabbox height="570px">
+			<tabs>
+				<tab id="selectGroupTopic" label="群组话题" />
+				<tab id="selectMyTopic" label="我的话题" />
+				<tab id="selectMyReply" label="我的回复" />
+			</tabs>
+			<tabpanels>
+				<tabpanel id="groupTopic">
+					<grid mold="paging" pageSize="10" id="group" height="532px">
+						<columns>
+							<column label="*" width="15%" align="center" />
+							<column label="群组" width="40%" />
+							<column label="最新主题" width="45%" />
+						</columns>
+					</grid>
+				</tabpanel>
+				<tabpanel id="myTopic">
+					<grid mold="paging" pageSize="10" id="subject" height="532px">
+						<columns>
+							<column label="*" align="center" width="8%" />
+							<column label="主题" align="center" width="30%" />
+							<column label="群组" align="center" width="25%" />
+							<column label="最后发表" align="center" width="25%" />
+							<column label="操作" align="center" width="12%" />
+						</columns>
+					</grid>
+				</tabpanel>
+				<tabpanel id="myReply">
+					<grid mold="paging" pageSize="10" id="reply" height="532px">
+						<columns>
+							<column label="*" align="center" width="10%" />
+							<column label="主题" align="center" width="30%" />
+							<column label="群组" align="center" width="30%" />
+							<column label="回复时间" align="center" width="30%" />
+						</columns>
+					</grid>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</window>
+</zk>

@@ -1,0 +1,26 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="修改情况调查表" border="normal" closable="true"
+		width="50%" style="text-align:left"
+		use="com.uniwin.asm.personal.ui.data.QkdcEditWindow">
+		<grid>
+			<columns>
+				<column align="center"></column>
+				<column id="col"></column>
+			</columns>
+			<rows>
+				<row>
+					<label  id="leibie"/>
+					<textbox id="qk" cols="25"></textbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit"></button>
+				<button label="重置" id="reset"></button>
+				<button label="关闭" id="close"></button>
+			</hbox>
+		</hbox>
+	</window>
+</zk>

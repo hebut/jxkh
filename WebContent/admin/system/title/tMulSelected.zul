@@ -1,0 +1,16 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window width="400px" closable="true" border="normal" use="com.uniwin.framework.ui.title.TitleAuditMulSelecteWindow">
+		<panel>
+			<panelchildren>
+				<tree id="tree" zclass="z-dottree" multiple="true" mold="paging" rows="20" checkmark="true" />
+			</panelchildren>
+		</panel>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="选择" id="choosed" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

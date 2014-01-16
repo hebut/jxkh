@@ -1,0 +1,120 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window id="win"  border="normal"  width="900px"   contentStyle="overflow:auto" >
+<caption image="/css/img/win-ico.gif" label="查看信息" />
+<zscript><![CDATA[
+import org.zkoss.io.Files; 
+import java.io.*;
+import java.util.Date;
+import com.uniwin.common.util.DateUtil;
+import org.zkoss.zk.ui.util.Configuration;
+import org.zkoss.util.media.Media; 
+import org.zkoss.util.media.AMedia; 
+import com.uniwin.framework.entity.WkTUser;
+]]></zscript>
+<vbox>
+<hbox >
+<label value="标题:" width="70px" />
+<space width="24px"/>
+<textbox   width="500px" id="kititle" constraint="no empty" value="河北工业大学2010年“Music time”演唱会顺利举办"/>
+<label value="*" style="color:red;valign:center" />
+<space width="19px"/>
+<checkbox label="斜体" id="xieti"/>
+<checkbox label="粗体" id="cuti"/>
+<space/>
+</hbox>
+<separator />
+<hbox >
+<label value="副标题:"  width="170px" />
+<space width="12px"/>
+<textbox width="300px" id="kititle2"/>
+<space width="30px"/>
+<label value="关键字:" width="70px"  />
+<textbox width="180px" id="kikeys" value="Music"/>
+<space/>
+<label value="显示序号:" width="70px"/>
+<textbox    width="70px" id="kiordno" value="10"/>
+<label value="*" style="color:red;valign:center" />
+
+</hbox>
+<separator />
+<hbox>
+<label value="所属分类:" width="66px"/>
+<listbox id="pselected" mold="select"  width="310px" >
+<listitem label="新闻"/>
+<listitem label="  国内新闻" />
+<listitem label="  国际新闻"/>
+<listitem label="  娱乐新闻"/>
+<listitem label="  论坛社区"/>
+<listitem label="企业名录"/>
+<listitem label="房屋信息"/>
+<listitem label="招聘信息"/>
+</listbox> 
+<label value="*" style="color:red;valign:center" />
+<space width="25px"/>
+<label value="来源:" width="70px"/>
+<textbox width="160px"  id="kisource" value="河北工业大学"/>
+<space width="50px"/>
+<label value="图片:"  width="66px"/>       
+		  <hbox align="start">
+            <toolbarbutton image="/images/content/1/sc.gif" id="upImage"></toolbarbutton>
+	<hbox  id="pics" align="start"></hbox>
+	</hbox>
+	<space width="25px"/>
+	<checkbox  label="显示" id="kishow" checked="true"/>
+</hbox>
+<separator />
+<hbox >
+<label value="摘要信息:" width="70px"/>
+<textbox width="730px" id="kimemo" value="河北工业大学2010年“Music time”演唱会在大学生活动中心礼堂和南院礼堂分别举行"/>
+</hbox>
+<separator />
+<hbox  id="wdnews">
+<label value="新闻内容:" />
+<fckeditor  height="300px" width="810px" id="kicontent"   value="为丰富广大同学的课余文化生活，浓厚校园文化氛围，2010年11月6-7日，由校团委主办、校学生会承办的河北工业大学2010年“Music time”演唱会在大学生活动中心礼堂和南院礼堂分别举行。校团委副书记赵庚老师、各学院团委老师观看本次演唱会，担任两场演唱任务的是获得我校“校园十佳歌手”称号的同学们，演唱会分别以“炫彩青春”和“青春激昂，放飞梦想”为主题。
+11月6日晚上6点半，在北辰校区大学生活动中心礼堂，演唱会随着一段精彩炫目的回顾历年“Music time”视频和痕迹乐队动听的歌声拉开帷幕。一首《至少还有你》为会场添加了一份温馨、一份神秘；歌曲《一眼瞬间》感人肺腑；一段街舞穿插表演再次将演唱会带入高潮，快感的节奏，有力的动作与滚动的荧光配合，让同学们随着节奏挥手起舞。接下来一首《All about loving you》动情的演唱让在场观众欣赏到英文歌曲的优美旋律。《听说爱会回来》、《我的爱》等细腻的歌词唱出了大学生活多彩的生活……
+">
+</fckeditor> 
+</hbox>
+<hbox id="tupian">
+ <space width="100px"/>
+ <label value="附件:" width="70px"/>
+<toolbarbutton id="up" image="/css/img/tianjiafujian.png">
+				       <attribute name="onClick">
+				         <![CDATA[{
+				        	  	Object media = Fileupload.get();
+                            	if(media!=null){
+                              	    win.getModelList().add(media);
+								} else {
+									Messagebox.show("您没有选择要上传的文件！", "提示！", Messagebox.OK, Messagebox.INFORMATION);				
+								}       
+                         }]]></attribute>
+				    </toolbarbutton>
+				     <space width="160px"/>
+<label value="附件列表:" width="70px"/>
+<listbox  width="200px" id="upList"  mold="select" />
+<space/>
+<toolbarbutton image="/css/img/delAct.gif" id="deUpload"/>
+<space/>
+<toolbarbutton image="/images/content/1/xz_.gif" id="down"/>
+</hbox>
+<separator />
+<hbox>
+<label value="退回意见:"/>
+<textbox width="800px"/>
+</hbox>
+</vbox>
+<div sclass="pop-win-b-div" align="center">
+<radiogroup id="right">	
+<radio label="对外发布" checked="true" />
+<radio label="对内发布"   />
+</radiogroup>	
+<toolbarbutton id="save"   image="/css/img/btn-save.gif"  />
+<toolbarbutton id="saudit"  image="/css/img/btn-pub.gif" />
+<toolbarbutton id="reback"  image="/css/img/btn-back.gif" />
+<toolbarbutton image="/css/img/btn-resetb.gif" id="reset" />
+<toolbarbutton id="delete" image="/css/img/btn-del.gif"/>
+<toolbarbutton image="/css/img/btn-close.gif"  id="back" onClick="win.detach()" />
+</div>
+</window>
+</zk>

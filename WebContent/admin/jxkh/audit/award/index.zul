@@ -1,0 +1,100 @@
+<?page title="奖励管理" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="" border="false" style="text-align:left"
+		width="760px" sclass="newin" use="org.iti.jxkh.audit.award.DeptWin">
+		<groupbox id="cxtj" width="740px" visible="false">
+			<caption>
+				<label value="[查询条件]" />
+			</caption>
+			<grid width="730px">
+				<columns>
+					<column width="15%" align="right"></column>
+					<column width="35%" align="left"></column>
+					<column width="15%" align="right"></column>
+					<column width="35%" align="left"></column>
+				</columns>
+				<rows>
+					<row style="background:#D2E9FF">
+						<label value="奖励名称" />
+						<textbox id="awardName" width="90%" />
+						<label value="奖励状态" />
+						<listbox id="auditState" mold="select" rows="1"
+							width="90%" />
+					</row>
+					<row style="background:#D2E9FF">
+						<label value="奖励级别" />
+						<listbox id="rank" mold="select" rows="1"
+							width="90%" />
+						<label value="绩分年度" />
+						<listbox id="year" mold="select" rows="1"
+							width="90%" use="org.iti.gh.ui.listbox.YearListbox" />
+					</row>
+					<row spans="6" style="background:#D2E9FF">
+						<div align="center">
+							<button label="查   询" id="query" />
+							<space></space>
+							<button label="重   置" id="reset" />
+						</div>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<div align="right" width="100%">
+			<toolbarbutton id="searchcbutton"
+				image="/css/default/images/button/data-btn-js.gif"
+				style="color:blue" />
+			<toolbarbutton id="add"
+				image="/css/default/images/button/plsh.gif" style="color:blue"
+				visible="false">
+
+				<attribute name="onClick">
+	org.zkoss.zul.Window w = (org.zkoss.zul.Window) Executions
+			.createComponents(
+					"/admin/personal/businessdata/award/addaward.zul", null,
+					null);
+	w.doModal();
+	w.setClosable(true);
+</attribute>
+			</toolbarbutton>
+			<toolbarbutton id="passAll"
+				image="/css/default/images/button/plsh.gif" />
+			<toolbarbutton id="del"
+				image="/css/default/images/button/delAct.gif" visible="false"
+				style="color:blue" />
+
+			<toolbarbutton id="expert"
+				image="/css/default/images/button/dc.gif" style="color:blue" />
+		</div>
+		<div width="100%" align="center">
+		<listbox id="awardListbox" paginal="${awardPaging}"
+			sclass="new_listbox" checkmark="true" multiple="true">
+			<listhead>
+				<listheader align="center" width="5%" />
+				<listheader label="序号" width="7%" align="center" />
+				<listheader label="奖励名称" width="25%" align="left"
+					style="text-align:center" sort="auto(name)" />
+				<listheader label="奖励级别" width="15%" align="center"
+					sort="auto(type)" />
+				<listheader label="绩分年度" width="13%" align="center" />
+				<listheader label="附件" width="9%" align="center" />
+				<listheader label="该项总分" width="11%" align="left"
+					style="text-align:center" />
+				<listheader label="审核状态" width="15%" align="center"
+					sort="auto(State)" />
+			</listhead>
+		</listbox>
+		
+			<paging id="awardPaging" pageSize="13" detailed="true"/>
+		</div>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:red" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击奖励名称，可以查看详细信息。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

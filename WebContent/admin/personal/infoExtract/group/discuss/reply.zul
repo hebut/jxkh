@@ -1,0 +1,25 @@
+<?page title="话题回复" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="参与回复" border="normal" width="600px" id="win" closable="true">
+		<grid style="border:0px">
+			<rows>
+				<row style="padding:0;border-width:medium 0px 0px" height="30px">
+					<hbox>
+						<label value="数据库设计文档" style="font-family:'宋体';font-size:15px" />
+						<label value="陈磊发表于6小时前" style="color:gray" />
+					</hbox>
+				</row>
+				<row>
+					<fckeditor height="400px" />
+				</row>
+				<row>
+					<toolbarbutton label="回复主题">
+						<attribute name="onClick">						
+							win.detach();
+						</attribute>
+					</toolbarbutton>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

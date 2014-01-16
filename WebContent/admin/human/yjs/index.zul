@@ -1,0 +1,56 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window use="org.iti.human.ld.YjsManagerWindow" width="100%" height="100%" style="text-align:left">
+		<borderlayout width="100%" height="580px">
+			<west size="200px" id="westPanel">
+				<tree zclass="z-dottree" rows="45" width="100%" id="westTree" />
+			</west>
+			<center flex="true">
+				<panel title="管理" framable="true" id="userPanel">
+					<caption>
+						<button id="addUser" />
+						<button id="importStudent" label="导入研究生" />
+					</caption>
+					<panelchildren>
+						<grid style="border:0px">
+							<columns>
+								<column align="center" />
+							</columns>
+							<rows>
+								<row spans="3,1,3" style="padding:0;border-width:medium 0px 0px">
+									<vbox>
+										<separator spacing="1px" />
+										<hbox align="center">
+											<label value="年级：" />
+											<listbox id="gradeList" mold="select" use="org.iti.bysj.ui.listbox.GradeListbox" rows="1" />
+											<space spacing="20px" />
+											<label value="姓名：" />
+											<textbox id="nameSearch" />
+											<space spacing="20px" />
+											<label value="学号：" />
+											<textbox id="tnoSearch" />
+											<space spacing="20px" />
+											<button id="search" label="查询" />
+										</hbox>
+										<separator spacing="1px" />
+									</vbox>
+								</row>
+							</rows>
+						</grid>
+						<listbox id="leaderlist" mold="paging" pageSize="14">
+							<listhead>
+								<listheader label="序号" width="5%" align="center" />
+								<listheader label="学号" width="10%" align="center" sort="auto(yjsId)" />
+								<listheader label="姓名" width="15%" align="center" sort="auto(user.kuName)" />
+								<listheader label="班级" width="15%" align="center" sort="auto(stClass)" />
+								<listheader label="系" width="20%" align="center" id="xi" sort="auto(user.xiDept)" />
+								<listheader label="学院" width="20%" align="center" id="yuan" sort="auto" />
+								<listheader label="操作" width="15%" align="center" />
+							</listhead>
+						</listbox>
+					</panelchildren>
+				</panel>
+			</center>
+		</borderlayout>
+	</window>
+</zk>

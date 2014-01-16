@@ -1,0 +1,209 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%"
+		use="com.uniwin.asm.personal.ui.data.QktjWindow">
+		<panel title="个人规划 ">
+			<caption>
+				<button label="导入“十二五”规划" id="Import" style="color:blue"> </button>
+			</caption>
+
+			<panelchildren>
+				<hbox width="100%">
+					<groupbox closable="true" open="true">
+						<caption>
+							<label value="[说明]" style="color:blue"></label>
+						</caption>
+						<vbox>
+							<label value="1 、样式的表头字段只有符合样例格式才能导入;" />
+							<hbox>
+								<label value="2、如果需要查看Excel格式模板，请点击" />
+								<button id="downloadts" label="下载样例" />
+							</hbox>
+						</vbox>
+					</groupbox>
+				</hbox>
+				<grid id="grid1">
+					<columns>
+						<column width="2%" align="center" />
+						<column width="98%" align="center" />
+					</columns>
+					<rows>
+						<row>
+							<label value="科研情况"></label>
+							<grid id="grid2">
+								<columns>
+									<column width="2%" align="center" />
+									<column width="98%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="项目"></label>
+										<grid id="grid3">
+											<columns>
+												<column width="20%"
+													align="center" />
+												<column width="15%"
+													label="2010.7之前" align="center" />
+												<column width="15%"
+													label="2011-2015" align="center" />
+												<column width="10%"
+													label="2011" align="center" />
+												<column width="10%"
+													label="2012" align="center" />
+												<column width="10%"
+													label="2013" align="center" />
+												<column width="10%"
+													label="2014" align="center" />
+												<column width="10%"
+													label="2015" align="center" />
+											</columns>
+											<rows>
+												<row id="row1"></row>
+												<row id="row2"></row>
+												<row id="row3"></row>
+												<row id="row4"></row>
+											</rows>
+										</grid>
+									</row>
+									<row>
+										<label value="成果"></label>
+										<grid id="grid4">
+											<columns>
+												<column width="20%"
+													align="center" />
+												<column width="15%"
+													align="center" />
+												<column width="15%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+											</columns>
+											<rows>
+												<row id="row5"></row>
+												<row id="row6"></row>
+											</rows>
+										</grid>
+									</row>
+									<row>
+										<label value="奖励"></label>
+										<grid id="grid5">
+											<columns>
+												<column width="20%"
+													align="center" />
+												<column width="15%"
+													align="center" />
+												<column width="15%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+											</columns>
+											<rows>
+												<row id="row7"></row>
+												<row id="row8"></row>
+												<row id="row9"></row>
+											</rows>
+										</grid>
+									</row>
+									<row>
+										<label value="交流与合作"></label>
+										<grid id="grid6">
+											<columns>
+												<column width="20%"
+													align="center" />
+												<column width="15%"
+													align="center" />
+												<column width="15%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+											</columns>
+											<rows>
+												<row id="row10"></row>
+												<row id="row11"></row>
+												<row id="row12"></row>
+												<row id="row13"></row>
+											</rows>
+										</grid>
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="教学情况"></label>
+							<grid id="grid7">
+								<columns>
+									<column width="2%" align="center" />
+									<column width="98%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="教学成果"></label>
+										<grid id="grid9">
+											<columns>
+												<column width="20%"
+													align="center" />
+												<column width="15%"
+													align="center" />
+												<column width="15%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+												<column width="10%"
+													align="center" />
+											</columns>
+											<rows>
+												<row id="row14"></row>
+												<row id="row15"></row>
+												<row id="row16"></row>
+												<row id="row17"></row>
+											</rows>
+										</grid>
+									</row>
+								</rows>
+							</grid>
+						</row>
+					</rows>
+				</grid>
+				<hbox width="100%" pack="center" id="dcbutton"
+					visible="false">
+					<hbox>
+						<button label="确定" id="dcsubmit"></button>
+						<button label="重置" id="dcreset"></button>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+
+
+	</window>
+</zk>

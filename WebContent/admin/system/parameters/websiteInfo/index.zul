@@ -1,0 +1,62 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="修改网站信息" border="normal" width="500px" use="com.uniwin.framework.ui.parameter.WebsiteInfoEditWindow">
+		<grid>
+			<columns>
+				<column width="30%" />
+				<column width="70%" />
+			</columns>
+			<rows>
+				<row>
+					<label value="单位名称" />
+					<hbox>
+						<textbox id="enterpriseName" width="300px" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="法人代表" />
+					<textbox id="legalPerson" width="300px" />
+				</row>
+				<row>
+					<label value="电话" />
+					<textbox id="telephone" constraint="no negative,no zero" width="300px" />
+				</row>
+				<row>
+					<label value="传真" />
+					<textbox id="fax" constraint="no negative,no zero" width="300px" />
+				</row>
+				<row>
+					<label value="E-MAIL地址" />
+					<textbox id="email" width="300px" />
+				</row>
+				<row>
+					<label value="地址" />
+					<textbox id="address" width="300px" />
+				</row>
+				<row>
+					<label value="邮政编码" />
+					<textbox id="postCoder" width="300px" />
+				</row>
+				<row>
+					<label value="默认界面风格" />
+					<hbox>
+						<listbox id="style" mold="select" rows="1" width="100px">
+							<listitem id="defaultStyle" label="默认" />
+							<listitem id="crystalblueStyle" label="水晶蓝" />
+							<listitem id="redStyle" label="red" />
+						</listbox>
+						<checkbox id="application" label="应用所有用户" />
+					</hbox>
+				</row>
+				<row spans="2" align="center">
+					<hbox>
+						<button id="save" label="保存"></button>
+						<button id="reset" label="重置"></button>
+						<button id="clearCache" label="清空缓存"></button>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

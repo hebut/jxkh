@@ -1,0 +1,43 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" use="org.iti.jxkh.score.manage.ScoreWindow">
+		<panel title="管理人员评分结果" border="normal" width="768px">
+			<caption>
+				<toolbarbutton id="expor1" image="/css/default/images/button/dc.gif" visible="true" style="color:blue" />
+			</caption>
+			<panelchildren>                                        
+				<grid>
+					<columns>
+						<column align="center" />
+					</columns>
+					<rows>
+						<row>
+							<hbox align="center">
+								<label value="选择年份：" />
+								<listbox id="yearlist" width="150px" mold="select" use="org.iti.gh.ui.listbox.YearListbox">
+									<!-- <listitem label="2011" selected="true" /> -->
+								</listbox>
+								<button id="compute" label="计算" />
+							</hbox>
+						</row>
+						<row>
+							<listbox id="listbox">
+								<listhead>
+									<listheader label="序号" width="5%" align="center" />
+									<listheader label="姓名" width="12%" align="center" />
+									<listheader label="职工号" width="10%" align="center" />
+									<listheader label="性别" width="10%" align="center" />
+									<listheader label="所在部门" width="20%" align="center" />
+									<listheader label="所在档次" width="10%" align="center" />
+									<listheader label="系数" width="8%" align="center" />
+									<listheader label="基数额度" width="10%" align="center" />
+									<listheader label="所分奖金" width="15%" align="center" />
+								</listhead>
+							</listbox>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

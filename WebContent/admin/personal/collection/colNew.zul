@@ -1,0 +1,70 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?><zk>
+<window title="添加收藏" border="normal" width="500px" closable="true"  style="text-align:left" 
+        use="com.uniwin.asm.personal.ui.data.CollectionNewWin"> 
+       
+     <grid>
+         <columns>
+            <column width="20%"/>
+            <column width="80%"/>
+         </columns>
+         <rows>
+            <row>           
+              <label value="收藏名称" />
+               <hbox>
+                   <textbox id="kufName" constraint="no empty,no zero" width="180px"/>
+                   <label style="color:red" value="*"/>
+              </hbox>
+            </row>
+            <row>
+              <label value="收藏类型"/>
+               <radiogroup id="cType" >
+                 <radio id="diyCol" label="自定义" >
+                   <attribute name="onCheck">                    
+                     if(diyCol.isChecked()){
+                        title.setVisible(false);
+                        diy.setVisible(true);                        
+                     }else{
+                        title.setVisible(true);
+                        diy.setVisible(false); 
+                     }
+                   </attribute>
+                 </radio>
+                 <radio id="titCol" checked="true" label="标题" >
+                  <attribute name="onCheck">
+                     if(titCol.isChecked()){
+                        diy.setVisible(false);
+                        title.setVisible(true);                        
+                     }else{                        
+                        diy.setVisible(true);
+                        title.setVisible(false); 
+                     }
+                   </attribute>
+                 </radio>
+               </radiogroup>
+            </row>     
+             <row visible="true" id="title" >
+                  <label value="选择标题"/>
+                  <hbox>
+                    <label id="colTitle"/>
+                    <listbox mold="select" id="pselect"  use="com.uniwin.asm.personal.common.listbox.TitleListbox" width="180px"/>
+                     <label style="color:red" value="*"/>
+                  </hbox>
+             </row>    
+             <row visible="false" id="diy">
+                   <label value="输入地址"/>
+                   <hbox>
+                      <textbox id="kufUrl" width="180px" value="http://"> </textbox>
+                        <label style="color:red" value="*"/>
+                        <label  value="请输入正确的网址(http://......)"/>
+                   </hbox>
+             </row>     
+         </rows>
+     </grid>    
+     <hbox pack="center" width="100%"   >
+      <hbox>
+        <button id="save" label="保存"/>
+        <button id="reSend" label="重填"/>
+       </hbox>
+     </hbox>
+</window>
+</zk>

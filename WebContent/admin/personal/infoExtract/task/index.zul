@@ -1,0 +1,15 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>	
+<zk>
+
+  <panel framable="false" apply="org.iti.xypt.personal.infoCollect.TasktypeTreeComposer" id="taskpanel" height="780px">			    	    
+			    <panelchildren>
+
+				  <tree id="tree" style="border:0;background:#FFFFFF;"   mold="paging"  pageSize="24" rows="24"/> 
+
+				  </panelchildren>
+  
+  
+  </panel>
+  
+  
+</zk>

@@ -1,0 +1,33 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="选择反馈功能模块" border="normal" closable="true" width="30%" use="com.uniwin.asm.personal.ui.feedback.FuncToRebackWindow">
+		<grid>
+			<columns>
+				<column width="100px" align="right" />
+				<column width="70px" />
+			</columns>
+			<rows>
+
+				<row spans="1">
+					<label value="学校"></label>
+					<listbox mold="select" id="rolegroup"></listbox>
+				</row>
+				<row>
+					<label value="角色"></label>
+					<listbox mold="select" id="role"></listbox>
+				</row>
+				<row spans="1,3">
+					<label value="功能"></label>
+					<listbox mold="select" id="func" />
+				</row>
+
+			</rows>
+		</grid>
+		<hbox pack="center" align="center" width="100%">
+			<hbox>
+				<toolbarbutton id="submit" image="/css/default/images/button/qd.gif"/>
+				<toolbarbutton id="cancel" image="/css/default/images/common/fh.gif"/>
+			</hbox>
+		</hbox>
+	</window>
+</zk>

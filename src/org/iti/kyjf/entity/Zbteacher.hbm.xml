@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.iti.kyjf.entity.Zbteacher" table="ZB_Teacher"
+		schema="dbo">
+		<id name="ztId" type="java.lang.Long">
+			<column name="ZT_ID" precision="18" scale="0" />
+			<generator class="native" />
+		</id>
+		 <property name="kuId" type="java.lang.Long">
+            <column name="KU_ID" not-null="true" />
+        </property>
+         <property name="kdId" type="java.lang.Long">
+            <column name="KD_ID"  />
+        </property>
+        
+          <property name="ztDs" type="java.lang.Short">
+            <column name="ZT_DS"  />
+        </property>
+         <property name="ztZc" type="java.lang.Short">
+            <column name="ZT_ZC"  />
+        </property>
+		 <property name="ztIfgg" type="java.lang.Short">
+            <column name="ZT_IFGG"  />
+        </property>
+         <property name="ztIfcj" type="java.lang.Short">
+            <column name="ZT_IFCJ" />
+        </property>
+         <property name="ztSum" type="java.lang.Float">
+            <column name="ZT_SUM" />
+        </property>
+         <property name="ztYear" type="java.lang.Integer">
+            <column name="ZT_YEAR" />
+        </property>
+     
+	</class>
+</hibernate-mapping>

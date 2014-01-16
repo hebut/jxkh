@@ -1,0 +1,64 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="编辑话题" border="normal" closable="true" width="700px" id="w" use="com.uniwin.asm.personal.group.discuss.EditSubjectWindow" style="background-image:'/images/background.gif'">
+		<grid>
+			<columns>
+				<column align="center" width="15%" />
+				<column width="85%" />
+			</columns>
+			<rows>
+				<row valign="center">
+					<label value="群组名称" />
+					<label id="groupName" />
+				</row>
+				<row valign="center">
+					<label value="主题" style="letter-spacing:20px" />
+					<hbox align="center">
+						<image id="image" visible="false" />
+						<listbox mold="select" rows="1" id="imagelist" width="80px">
+							<listitem label="选择图片" image="/admin/image/group/icon1.gif" selected="true" />
+							<listitem label="普通" />
+							<listitem label="爱心" />
+							<listitem label="绿色" />
+							<listitem label="音乐" />
+							<listitem label="磁盘" />
+							<listitem label="足球" />
+							<listitem label="照片" />
+							<listitem label="排球" />
+							<listitem label="视频" />
+							<listitem label="红叶" />
+						</listbox>
+						<textbox width="200px" id="title" />
+					</hbox>
+				</row>
+				<row valign="center">
+					<label value="主题类型" />
+					<listbox id="typelist" rows="1" mold="select">
+						<listitem label="普通" value="0" selected="true" />
+						<listitem label="讨论" value="1" />
+						<listitem label="推荐" value="2" />
+					</listbox>
+				</row>
+				<row valign="center">
+					<label value="话题内容" />
+					<fckeditor id="content" height="400px" toolbarSet="Basic" />
+				</row>
+				<row valign="center">
+					<label value="上传附件" />
+					<hbox align="center">
+						<label id="filename" />
+						<button label="上传" id="upload" />
+						<button label="删除" id="delete" />
+					</hbox>
+				</row>
+				<row spans="2">
+					<hbox width="100%" pack="center">
+						<hbox>
+							<button label="保存发布" id="publish" />
+						</hbox>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

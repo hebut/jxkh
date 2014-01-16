@@ -1,0 +1,123 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="编辑用户" border="normal" width="700px" use="com.uniwin.framework.ui.user.UserDetialEditWindow">
+		<grid>
+			<columns>
+				<column width="17%" />
+				<column width="30%" />
+				<column width="17%" />
+				<column width="36%" />
+			</columns>
+			<rows>
+				<row> 
+					<label value="登录名" />
+					<textbox id="loginName" constraint="no empty" />	
+					<label value="员工编号"/>
+					<hbox>
+						<textbox id="folkId" />
+						<label value="*" style="color:red" />	
+					</hbox>				
+				</row>
+				<row>
+					<label value="员工类型" />
+					<hbox>
+						<radiogroup>
+							<radio label="在编" id="jobIn" checked="true"/>
+							<radio label="外聘" id="jobOut"/>
+						</radiogroup>
+						<label value="*" style="color:red" />
+					</hbox>
+					<label value="真实姓名" />
+					<hbox>
+						<textbox id="trueName" constraint="no empty" />
+						<label value="*" style="color:red" />
+					</hbox>									
+				</row>
+				<row>
+					<label value="电子邮箱" />
+					<hbox>
+						<textbox id="uEmail" />
+						<label value="*" style="color:red" />
+					</hbox>
+					<label value="电话" />
+					<hbox>
+						<textbox id="uPhone" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="密码" />
+					<textbox id="uPass" />
+					<label value="确认密码" />
+					<textbox id="uRpass" />
+				</row>
+				<row>
+					<label value="密码提示问题" />
+					<textbox id="uQuestion" />
+					<label value="密码问题答案" />
+					<textbox id="uAnswer" />
+				</row>
+				<row>
+					<label value="出生日期" />
+					<datebox id="uBirth" />
+					<label value="性别" />
+					<radiogroup>
+						<radio id="uMan" label="男" checked="true" />
+						<radio id="uWonmen" label="女" />
+					</radiogroup>
+				</row>
+				<row>
+					<label value="部门" />
+					<listbox use="com.uniwin.framework.common.listbox.DeptListbox" id="deptSelect" mold="select" width="150px" />
+					<label value="级别" />
+					<hbox>
+						<intbox id="uLeave" constraint="no empty,no negative" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="单位" />
+					<textbox id="uOrangize" />
+					<label value="界面风格" />
+					<listbox mold="select" id="uStyle">
+						<listitem label="默认" selected="true" />
+					</listbox>
+				</row>
+				<row>
+					<label value="用户状态" />
+					<listbox mold="select" id="uStatus">
+						<listitem label="未审核" />
+						<listitem label="正常" selected="true" />
+						<listitem label="查杀" />
+					</listbox>
+					<label value="允许登录次数" />
+					<hbox>
+						<intbox id="lTimes" value="0" constraint="no empty,no negative" />
+						<label value="0为无限制" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="绑定类型" />
+					<listbox id="bangType" mold="select">
+						<listitem label="不绑定" selected="true" />
+						<listitem label="IP绑定" />
+					</listbox>
+					<label value="绑定地址" />
+					<hbox>
+						<textbox id="uBandIp" />
+						<checkbox label="自动登录" id="autoLogin" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="重填" id="reset" />
+				<button label="权限" id="userRole" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

@@ -1,0 +1,63 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window id="newWin" width="99%" style="text-align:left" use="org.iti.xypt.personal.message.MessageNewWindow" sclass="newin">
+		<panel title="发送消息">
+			<panelchildren>
+				<grid>
+					<columns>
+						<column width="65px" />
+					</columns>
+					<rows>
+						<row spans="2">
+							<label value="注意: * 为必填项,支持10MB内多附件！" style="color:red" width="50px" />
+						</row>
+						<row>
+							<label value="标题:" />
+							<hbox>
+								<textbox id="mlSubject" width="520px" />
+								<label style="color:red" value="*" />
+								<label id="help1" visible="false" value="请填写标题." />
+							</hbox>
+						</row>
+						<row>
+							<label value="关键词:" />
+							<hbox>
+								<combobox id="keyword" />
+							</hbox>
+						</row>
+						<row>
+							<label value="收件人 :" width="50px" />
+							<hbox>
+								<textbox id="user_to" width="520px" readonly="true" />
+								<label style="color:red" value="*" />
+								<button label="添加收件人" id="addUser" />
+							</hbox>
+						</row>
+						<row>
+							<label value="正文:" width="50px" />
+							<hbox width="100%">
+								<fckeditor height="270px" id="mlContent" width="100%" toolbarSet="Basic" />
+							</hbox>
+						</row>
+						<row id="rowFile" visible="false">
+							<label value="附件列表" />
+							<hbox>
+								<listbox id="upList" mold="select" rows="1" />
+								<button label="删除" id="deUpload" />
+							</hbox>
+						</row>
+						<row spans="2" align="center">
+							<hbox>
+								<toolbarbutton id="save" image="/css/default/images/button/fs.gif"></toolbarbutton>								
+								<space width="3px" />
+								<toolbarbutton id="upFile" image="/css/default/images/button/scfj.gif"></toolbarbutton>								
+								<space width="3px" />
+								<toolbarbutton id="reSend" image="/css/default/images/button/cz.gif"></toolbarbutton>								
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

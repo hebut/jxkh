@@ -1,0 +1,22 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  title="调整方向负责人" use="org.iti.gh.glfzfzr.TzfxfzrWindow" width="80%" closable="true" border="normal">
+<listbox id="fxfzrlist" checkmark="true" multiple="true">
+		<listhead>
+			<listheader width="10%" label="序号" align="center" />
+			<listheader width="18%" label="教师号"  align="center"/>
+			<listheader width="18%" label="教师姓名"  align="center"/>
+			<listheader width="14%" label="职称"  align="center"/>
+			<listheader width="20%" id="gradeThrLabel"  align="center"/>
+			<listheader width="20%" id="gradeTwoLabel"  align="center"/>
+			
+		</listhead>
+</listbox>
+<hbox width="100%" pack="center">
+							<hbox>
+								<button label="添加" id="submit"></button>
+								<button label="删除" id="delete"></button>
+							</hbox>
+						</hbox>
+</window>
+</zk>

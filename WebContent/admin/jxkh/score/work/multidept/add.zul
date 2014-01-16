@@ -1,0 +1,18 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="设置权重" border="normal" sclass="newin" width="450px" style="text-align:left" use="org.iti.jxkh.score.work.AddMultiDeptWindow" closable="true">
+		<grid>
+			<columns>
+				<column width="60%" />
+				<column />
+			</columns>
+			<rows id="rows" />
+		</grid>
+		<div align="center">
+			<hbox>
+				<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif" />
+				<toolbarbutton id="close" image="/css/default/images/button/actquit.gif" />
+			</hbox>
+		</div>
+	</window>
+</zk>

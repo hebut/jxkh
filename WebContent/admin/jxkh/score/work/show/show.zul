@@ -1,0 +1,9 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="查看详细" border="normal" sclass="newin" width="600px"
+		closable="true" use="org.iti.jxkh.score.work.ShowDetailWindow">
+		<listbox id="listbox" sclass="new_listbox">
+			<listhead id="head"></listhead>
+		</listbox>
+	</window>
+</zk>

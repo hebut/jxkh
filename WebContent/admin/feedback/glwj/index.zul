@@ -1,0 +1,54 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  width="50%" style="text-align:left" use="com.uniwin.asm.personal.ui.feedback.GlwjWindow ">
+<panel title="当前您正在查看管理文件"  border="normal" >
+  <panelchildren>
+<listbox>
+	<listhead>
+		<listheader label="编号" align="center" width="20%"></listheader>
+		<listheader label="名称" align="center" width="80%"></listheader>
+	</listhead>
+	<listitem>
+		<listcell>
+			<label value="1"/>
+		</listcell>
+		<listcell id="bswjtz">
+			
+		</listcell>
+	</listitem>
+	<listitem>
+		<listcell>
+			<label value="2"/>
+		</listcell>
+		<listcell id="gzglgd" >
+		</listcell>
+	</listitem>
+	<listitem>
+		<listcell>
+			<label value="3"/>
+		</listcell>
+		<listcell id="gzywgf">
+			
+		</listcell>
+	</listitem>
+	<listitem>
+		<listcell>
+			<label value="4"/>
+		</listcell>
+		<listcell id="gzssxz">
+			
+		</listcell>
+	</listitem>
+	<listitem>
+		<listcell>
+			<label value="5"/>
+		</listcell>
+		<listcell id="gzlhdbf">
+			
+		</listcell>
+	</listitem>
+</listbox>
+</panelchildren>
+</panel>
+</window>
+</zk>

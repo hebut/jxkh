@@ -1,0 +1,27 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="new page title" border="normal" use="org.iti.gh.ghtj.tpanel2.KyjhWindow" closable="true" width="80%">
+<!-- <listbox id="kyjh">
+	<listhead>
+		<listheader width="3%" align="center" valign="middle" label="序号"/>
+		<listheader width="7%" align="center" valign="middle" label="教师姓名"/>
+		<listheader width="25%" align="center" valign="middle" label="科研研究内容"/>
+		<listheader width="20%" align="center" valign="middle" label="科研研究问题"/>
+		<listheader width="20%" align="center" valign="middle" label="科研研究成果"/>
+		<listheader width="25%" align="center" valign="middle" label="教研设想及成果"/>
+	</listhead>
+</listbox>
+ -->
+ <grid id="jh" mold="paging" pageSize="6">
+ <columns sizable="true">
+ <column align="center" valign="middle" width="7%" label="序号"/>
+ <column align="center" valign="middle" width="13%" label="教师姓名"/>
+ <column align="center" valign="middle" width="20%"  label="科研研究内容"/>
+ <column align="center" valign="middle" width="20%"  label="科研研究问题"/>
+ <column align="center" valign="middle" width="20%"  label="科研研究成果"/>
+ <column align="center" valign="middle" width="20%"  label="教研设想及成果"/> 
+ </columns>
+ </grid>
+</window>
+</zk>

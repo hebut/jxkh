@@ -1,0 +1,59 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="选择部门" border="normal" sclass="newin" width="920px" closable="true" height="580px"
+	use="org.iti.jxkh.tools.chooseDeptWindow">
+	<grid>
+		<columns>
+			<column  width="910px"/>
+		</columns>
+	<rows>
+		<row>
+			<hbox>
+			<panel width="400px" border="normal" title="部门列表">
+				<panelchildren>
+					<listbox id="listbox1" checkmark="true" multiple="true" height="400px"  mold="paging" pageSize="13" sclass="new_listbox" >
+						<listhead>
+							<listheader width="10%" label="" />
+							<listheader label="序号"  width="15%" align="center"/>
+							<listheader label="部门编号" width="30%" align="center"/>
+							<listheader label="部门名称" width="45%"  align="center"/>										
+						</listhead>		
+					</listbox>
+				</panelchildren>
+			</panel>		
+			<space />
+				<vbox>
+					<separator spacing="180px" />
+					<button  label="添加&gt;&gt;" id="add" />
+					<separator />
+					<button  label="&lt;&lt;删除"  id="delete"/>
+				</vbox>
+			<space />
+			<panel width="400px" border="normal" title="已添加部门列表">
+				<panelchildren>
+					<listbox id="listbox2" checkmark="true" multiple="true" height="400px" mold="paging" pageSize="13"  sclass="new_listbox">
+						<listhead>
+							<listheader width="10%" label="" />
+							<listheader label="排名"  width="15%" align="center"/>
+							<listheader label="部门编号" width="30%" align="center"/>
+							<listheader label="部门名称" width="45%"  align="center"/>
+						</listhead>	
+					</listbox>
+				</panelchildren>
+			</panel>
+		</hbox>
+		</row>
+	</rows>
+	</grid>
+	<separator/>
+	<separator/>
+	<separator/>
+	<div align="center">
+		<hbox>
+			<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif" />
+			<space />
+			<toolbarbutton id="close" image="/css/default/images/button/actquit.gif" />
+		</hbox>
+	</div>
+</window>
+</zk>

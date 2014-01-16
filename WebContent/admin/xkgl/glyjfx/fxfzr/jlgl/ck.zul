@@ -1,0 +1,15 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="查看奖励情况" width="80%" border="normal"  style="text-align:left" closable="true" use="org.iti.xkgl.glyjfx.fxfzr.jlgl.CkWindow">
+<listbox id="jldetailList" mold="paging" pageSize="15">
+		<listhead>
+			<listheader width="10%" label="序号"  align="center"/>
+			<listheader width="17%" label="获奖教师"  align="center"/>
+			<listheader width="17%" label="获奖数量"  align="center"/>
+			<listheader width="40%"  label="获奖内容" align="center"/>
+		<listheader width="10%"  label="操作" align="center"/>
+		</listhead>
+</listbox>
+
+</window>
+</zk>

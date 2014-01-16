@@ -1,0 +1,56 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="添加奖励" border="normal" width="600px" style="text-align:left" closable="true" use="org.iti.xkgl.glyjfx.fxfzr.jlgl.AddjlWindow">
+<grid>
+		<columns>
+			<column width="30%" align="center"/>
+			<column width="70%" align="left"/>
+		</columns>
+		<rows>		
+			<row>
+				<label value="获奖人员"/>
+				<listbox id="rylist"  rows="1" mold="select" width="105px"/>
+					
+					</row>		
+			<row>
+				<label value="获奖类型"/>
+					<listbox id="jltype"  rows="1" mold="select" width="105px"/>
+			</row>	
+		
+			<row>
+				<label value="获奖级别"/>				
+					<listbox id="jljb"  rows="1" mold="select" width="105px"/>					
+			</row>
+			<row>
+				<label value="获奖等级"/>
+				<listbox id="jldj"  rows="1" mold="select" width="105px"/>
+			</row>
+			<row>
+				<label value="获奖年度"/>
+				<listbox id="jlnd"  rows="1" mold="select" width="105px"/>
+			</row>
+			<row>
+				<label value="获奖数量"/>
+				<intbox id="num" width="100px" constraint="no empty,no negative "/>
+			</row>
+			
+			
+			<row>
+				<label value="获奖内容"/>
+					<textbox id="content" width="95%"  rows="14" height="150"/>
+			</row>
+			
+		</rows>
+	</grid>
+	<separator/>
+	<hbox align="center" pack="center" width="100%">
+	<hbox>
+		<button id="submit" label="提交"/>
+		<space spacing="5px"/>
+		<button id="reset" label="重置"/>
+		<space spacing="5px"/>
+		<button id="close" label="关闭"/>
+	</hbox>
+	</hbox>
+</window>
+</zk>

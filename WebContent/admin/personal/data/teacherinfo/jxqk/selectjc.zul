@@ -1,0 +1,73 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="选择教材" border="normal" width="800px" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.jyqk.SelectJcWindow">
+
+		<panel>
+			<panelchildren>
+				<grid>
+					<columns>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row
+							style="padding:0;border-width:medium 0px 0px">
+							<space width="25px" />
+							<label value="教材名称"></label>
+							<textbox id="jcmc"></textbox>
+							<space width="25px" />
+							<label value="主编"></label>
+							<textbox id="zbj"></textbox>
+							<space width="25px" />
+							<button id="query" label="检索"></button>
+						</row>
+					</rows>
+				</grid>
+
+			</panelchildren>
+		</panel>
+		<panel title="您可能参与编写的教材" id="jcpanel">
+			<panelchildren>
+				<listbox id="jclist" style="border-bottom-width:0px"
+					mold="paging" pageSize="10" checkmark="true">
+					<listhead>
+						<listheader label="序号" width="10%"
+							align="center" />
+						<listheader label="教材名称" width="25%"
+							align="center" />
+						<listheader label="出版单位" width="20%"
+							align="center" />
+						<listheader label="出版时间" width="15%"
+							align="center" />
+						<listheader label="主编" width="15%"
+							align="center" />
+						<listheader label="信息填写人" width="15%"
+							align="center" />
+					</listhead>
+				</listbox>
+				<hbox pack="center" width="100%">
+					<hbox>
+						<button id="submit" label="确定"></button>
+						<button id="close" label="关闭"></button>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+		<panel id="exception" visible="false">
+			<panelchildren>
+				<hbox pack="center" width="100%">
+					<hbox>
+						<label value="没有符合条件的教材,请尝试选择其他条件......" style="font-family:'宋体';font-size:14px"></label>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

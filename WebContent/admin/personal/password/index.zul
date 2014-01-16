@@ -1,0 +1,37 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="密码修改" width="300px" border="normal" sclass="wndcyan" position="center" style="text-align:left" apply="com.uniwin.asm.personal.ui.data.ResetPassword">
+		<style>.red { color: red; font-style: oblique; font-size:18px; }</style>
+		<grid>
+			<columns>
+				<column width="80px" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<label value="登录名：" width="80px" />
+					<label id="user_to" width="150px" sclass="red" />
+				</row>
+				<row>
+					<label value="旧密码：" width="80px" />
+					<textbox id="old_password" type="password" width="150px" />
+				</row>
+				<row>
+					<label value="新密码：" width="80px" />
+					<textbox id="new_password" type="password" width="150px" />
+				</row>
+				<row>
+					<label value="确认密码：" width="80px" />
+					<textbox id="sure_password" type="password" width="150px" />
+				</row>
+				<row spans="2" align="center">
+					<hbox>
+						<toolbarbutton id="submit" image="/css/img/actSave.gif" />
+						<space />
+						<toolbarbutton id="reset" image="/css/default/images/button/cz.gif"/>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

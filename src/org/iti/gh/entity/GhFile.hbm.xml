@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.iti.gh.entity">
+  <class name="org.iti.gh.entity.GhFile" table="GH_FILE" schema="dbo">
+  	<id name="fId" type="java.lang.Long">
+  		<column name="F_ID" precision="18" scale="0" />
+  		<generator class="native" />
+  	</id>
+  	<property name="fxmId" type="java.lang.Long">
+  		<column name="FXM_ID" precision="18" scale="0" />
+  	</property>
+  	<property name="xmType" type="java.lang.Integer">
+  		<column name="XM_TYPE" />
+  	</property>
+  	<property name="fPath" type="java.lang.String">
+  		<column name="F_PATH" />
+  	</property>
+  	
+  	<property name="kuid" type="java.lang.Long">
+  		<column name="KU_ID" />
+  	</property>
+  	
+  	<property name="fbackup" type="java.lang.Integer">
+  		<column name="F_BACKUP" />
+  	</property>
+  </class>
+</hibernate-mapping>

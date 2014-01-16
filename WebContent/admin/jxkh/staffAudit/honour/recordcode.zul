@@ -1,0 +1,19 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="添加档案号" border="normal" width="300px" height="130px" closable="true" sclass="newin"
+  use="org.iti.jxkh.honour.RecordWindow">
+	<div align="center" width="100%">
+		<label value="档案号"></label>
+		<textbox id="record" width="200px"></textbox>
+		<label style="color:red" value="*"/>
+	</div>
+	<separator/>
+	<div align="center">
+		<toolbarbutton id="save" image="/css/default/images/button/actSave.gif"/>
+		<space/>
+		<toolbarbutton id="close" image="/css/default/images/button/gb.gif"/>
+		<space/>
+	</div>
+	<separator/>
+</window>
+</zk>

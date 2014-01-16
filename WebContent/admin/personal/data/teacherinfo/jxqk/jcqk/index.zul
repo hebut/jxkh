@@ -1,0 +1,45 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window  style="text-align:left" width="100%" border="false" sclass="newin" use="com.uniwin.asm.personal.ui.data.teacherinfo.jyqk.JcqkWindow">
+	<div align="right">
+				<hbox>
+					<toolbarbutton id="button11" image="/css/sat/addAct.gif" visible="true"
+						style="color:blue" />
+					<toolbarbutton id="button11out" image="/css/sat/dc.gif"
+						visible="true" style="color:blue" />
+				</hbox>
+			</div>
+				<listbox id="listbox11" style="border-bottom-width:0px" sclass="new_listbox"
+					mold="paging" pageSize="10">
+					<listhead>
+						<listheader label="序号" width="6%"
+							align="center" />
+						<listheader label="教材名称" width="25%"
+							align="center" />
+						<listheader label="出版单位" width="20%"
+							align="center" />
+						<listheader label="出版时间" width="15%"
+							align="center" />
+						<listheader label="本人署名情况 " width="10%"
+			align="center" />
+						<listheader label="功能" width="7%"
+							align="center" />
+						<listheader label="审核状态" width="8%"
+							align="center" />
+					</listhead>
+				</listbox>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击教材名称，可以查看或修改教材的详细信息。" />
+				<label pre="true"
+					value="2、出版时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+				<label pre="true" value="3、本人署名情况（排名/总人数），如：3/10。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

@@ -1,0 +1,157 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  width="100%" style="text-align:left" >
+<panel title="河北工业大学本科毕业设计（论文）教学信息系统技术支持"  border="normal" >
+  <panelchildren>
+  <label value="为了建立“本科毕业设计（论文）教学信息系统”技术支持服务体系，畅通服务通道，及时解决系统出现的问题，提高工作效率，充分发挥项目效益。系统支持团队实施全面服务工作。具体联系部门和人员构成如下："></label>
+<listbox>
+	<listhead>
+		<listheader label="内容" align="center" width="20%"></listheader>
+		<listheader label="部门" align="center" width="20%"></listheader>
+		<listheader label="联系人" align="center" width="20%"></listheader>
+		<listheader label="联系电话" align="center" width="20%"></listheader>
+		<listheader label="E-Mail" align="center" width="20%"></listheader>
+	</listhead>
+	<listitem>
+		<listcell>
+			<label value="政策规定"/>
+		</listcell>
+		<listcell>
+			<label value="教务处"/>
+		</listcell>
+		<listcell>
+			<label value="周秀玲"/>
+		</listcell>
+		<listcell>
+			<label value="60438320"/>
+		</listcell>
+		<listcell>
+			<label value=""/>
+		</listcell>
+	</listitem>
+	<listitem>
+		<listcell>
+			<label value="网络环境"/>
+		</listcell>
+		<listcell>
+			<label value="网络管理中心"/>
+		</listcell>
+		<listcell>
+			<label value="张海涛"/>
+		</listcell>
+		<listcell>
+			<label value="60204389"/>
+		</listcell>
+		<listcell>
+			<label value=""/>
+		</listcell>
+	</listitem>
+	<listitem>
+		<listcell>
+			<label value="软件系统"/>
+		</listcell>
+		<listcell>
+			<label value="信息技术研究所"/>
+		</listcell>
+		<listcell>
+			<label value="董永峰"/>
+		</listcell>
+		<listcell>
+			<label value="60435853、13820865534"/>
+		</listcell>
+		<listcell>
+			<label value="dongyf@hebut.edu.cn"/>
+		</listcell>
+	</listitem>
+</listbox>
+<separator height="10px"></separator>
+<hbox height="30px">
+<label  value="教学系统各学院支持人员详细名单如下："></label>
+</hbox>
+<listbox>
+	<listhead>
+		<listheader label="学院名称" align="center" width="30%"></listheader>
+		<listheader label="姓名" align="center" width="20%"></listheader>
+		<listheader label="电话" align="center" width="20%"></listheader>
+		<listheader label="E-Mail" align="center" width="20%"></listheader>
+	</listhead>
+	<listitem>
+		<listcell >
+		<vbox width="100%" align="center">
+			<label value="化工学院"/> 
+			<label value="电气与自动化学院"/>
+			<label value="机械工程学院"/>
+			<label value="材料科学与工程学院"/>
+			</vbox>
+		</listcell>
+		<listcell>
+			<label value="李英双"/>
+		</listcell>
+		<listcell>
+			<label value="13502138840"/>
+		</listcell>
+		<listcell>
+			<label value="546105179@qq.com"/>
+		</listcell>
+	</listitem>
+	<listitem>
+		<listcell >
+		<vbox width="100%" align="center">
+			<label value="土木工程学院"/> 
+			<label value="建筑与艺术设计学院"/>
+			<label value="信息工程学院"/>
+			<label value="管理学院"/>
+			</vbox>
+		</listcell>
+		<listcell>
+			<label value="冯新红"/>
+		</listcell>
+		<listcell>
+			<label value="13821167634"/>
+		</listcell>
+		<listcell>
+			<label value="673402711@qq.com"/>
+		</listcell>
+	</listitem>
+	<listitem>
+		<listcell >
+		<vbox width="100%" align="center">
+			<label value="人文与法律学院"/> 
+			<label value="理学院"/>
+			<label value="廊坊分校"/>
+			<label value="能源与环境工程学院"/>
+			</vbox>
+		</listcell>
+		<listcell>
+			<label value="李伟"/>
+		</listcell>
+		<listcell>
+			<label value="13702114695"/>
+		</listcell>
+		<listcell>
+			<label value="471146799@qq.com"/>
+		</listcell>
+	</listitem>
+	<listitem>
+		<listcell >
+		<vbox width="100%" align="center">
+			<label value="计算机科学与软件学院"/> 
+			<label value="外国语学院"/>
+			<label value="控制科学与工程学院"/>
+			</vbox>
+		</listcell>
+		<listcell>
+			<label value="梁丽业"/>
+		</listcell>
+		<listcell>
+			<label value="15822037569"/>
+		</listcell>
+		<listcell>
+			<label value="big_tree157@126.com"/>
+		</listcell>
+	</listitem>
+</listbox>
+</panelchildren>
+</panel>
+</window>
+</zk>

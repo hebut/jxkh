@@ -1,0 +1,23 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window  border="false" use="org.iti.gh.glyjfx.fxfzr.hygl.HyglWindow">
+<panel width="100%" border="false" title="会议管理" collapsible="true">
+		<caption>
+		<toolbar align="end">
+      <button label="添加会议" id="addhy"></button>
+   </toolbar>
+		</caption>
+		<panelchildren>
+		<grid id="hygrid">
+			<columns>
+			<column width="3%" align="center"/>
+			<column width="97%" align="center" />
+			</columns>
+		</grid>
+       
+     
+		</panelchildren>
+	</panel>
+
+</window>
+</zk>

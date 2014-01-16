@@ -1,0 +1,17 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="选择用户角色-用户名" border="normal" width="400px" closable="true" use="com.uniwin.framework.ui.user.UserRoleSelectWindow">
+		<panel>
+			<panelchildren>
+				<tree id="tree" zclass="z-dottree" checkmark="true" multiple="true" />
+			</panelchildren>
+		</panel>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="重置" id="reset" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

@@ -1,0 +1,29 @@
+<zk>
+	<window  border="normal"  use="org.iti.xypt.personal.infoCollect.TaskWindow" width="100%" >
+		   <caption image="/css/img/win-ico.gif"  label="权限管理：任务权限">
+		<toolbar align="end">
+				<button id="newcom"  image="/images/news.gif" label="新任务" visible="false" tooltiptext="点击查看用户新定制的内容" />
+				<toolbarbutton id="auth" image="/images/content/1/qx.gif"  hoverImage="/images/content/2/qx.gif" tooltiptext="点击进行权限设置"/>
+				<toolbarbutton id="addnew" style="border:0;"
+					width="58px" height="20px" image="/css/img/addAct.gif"
+					hoverImage="/css/img/addAct1.gif" tooltiptext="点击增加新的分类" >
+					</toolbarbutton>				
+				<toolbarbutton id="delete" style="border:0;"
+					width="58px" height="20px" image="/css/img/delAct.gif"
+					hoverImage="/css/img/delAct1.gif" tooltiptext="选择权限点此删除"/>
+	</toolbar>
+		</caption>
+		<listbox id="wlist" mold="paging" fixedLayout="true" pageSize="8" style="text-align:left"   height="430px">
+			<listhead>
+				<listheader label="序号" width="5%" align="center"/>
+				<listheader label="所属分类" width="20%"/>
+				<listheader label="任务" width="20%"/>
+				<listheader label="角色/部门/IP" />
+				<listheader label="当前权限" width="20%"/>
+				<listheader label="增加" width="5%" align="center"/>
+				<listheader label="删除" width="5%" align="center"/>
+				<listheader label="修改" width="5%" align="center"/>
+			</listhead>
+		</listbox>
+	</window>
+</zk>

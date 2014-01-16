@@ -1,0 +1,12 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<panel apply="org.iti.jxkh.dutyChange.DutyTreeComposer" id="treePanel">
+	<panelchildren>
+		<tree id="tree" zclass="z-dottree" rows="47">
+			<treecols>
+				<treecol label="部门名称" width="90%" />
+			</treecols>
+		</tree>
+	</panelchildren>
+</panel>
+</zk>

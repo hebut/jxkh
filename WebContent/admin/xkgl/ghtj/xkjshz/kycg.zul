@@ -1,0 +1,21 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="科研成果" border="normal">
+		<grid style="border:0">
+			<columns visible="false">
+				<column width="20%" align="center" />
+				<column width="80%" align="center" />
+			</columns>
+			<rows>
+				<row>
+					<label value="论文 （SCI/EI/ISTP/核心）（篇数）" />
+					<toolbarbutton style="color:blue" id="lw" />
+				</row>
+				<row>
+					<label value="著作/专利" />
+					<toolbarbutton style="color:blue" id="zzzl" />
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

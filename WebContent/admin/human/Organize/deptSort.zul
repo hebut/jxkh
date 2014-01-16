@@ -1,0 +1,23 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="组织排序:选择组织向下拖拽" border="normal" width="400px" closable="true" use="com.uniwin.framework.ui.dept.DepartmentSortWindow">
+
+		<listbox id="sortList" onDrop="move(event.dragged)" droppable="true" multiple="true" rows="10"></listbox>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="保存" id="submit" />
+				<button label="还原" id="reset" />
+				<button label="返回" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+	<zscript>
+	void move(Component dragged) {
+		if (self instanceof Listitem) {	
+				self.parent.insertBefore(dragged, self.getNextSibling());
+		} else {
+			self.appendChild(dragged);
+		}
+	}
+ </zscript>
+</zk>

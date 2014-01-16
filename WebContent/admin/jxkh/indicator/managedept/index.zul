@@ -1,0 +1,8 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<panel apply="" id="businesspanel">			    	    
+			    <panelchildren>
+				  <tree id="tree" zclass="z-dottree"  mold="paging"  pageSize="27" rows="27"/> 
+				</panelchildren>
+   </panel>
+</zk>

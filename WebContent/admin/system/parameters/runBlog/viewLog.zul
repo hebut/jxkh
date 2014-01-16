@@ -1,0 +1,5 @@
+<zk>
+	<window title="查看日志" border="normal" width="800" maximizable="true" closable="true" use="com.uniwin.framework.ui.parameter.LogViewWindow">
+		<textbox id="logContent" height="100%" rows="25" width="100%" />
+	</window>
+</zk>

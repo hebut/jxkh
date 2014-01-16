@@ -1,0 +1,37 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="上传文件" border="normal" width="40%"  closable="true">
+<grid>
+			<columns>
+				<column width="25%" align="center" />
+				<column width="70%" />
+			</columns>
+			<rows>
+			<row>
+			<label value="上传申请书" />
+					<hbox>
+						<listbox   maxlength="50" rows="1"  width="150px" mold="select"/>
+						<button  label="上传"></button>
+						<checkbox id="appId" label="是否有复印件备份"></checkbox>
+					</hbox>
+			</row>
+			<row>
+			<label value="上传合同书" />
+					<hbox>
+						<listbox  maxlength="50" rows="1"   width="150px"  mold="select"/>
+						<button  label="上传"></button>
+						<checkbox id="htId" label="是否有复印件备份"></checkbox>
+					</hbox>
+			</row>
+				<row>
+			<label value="上传中期报告" />
+					<hbox>
+						<listbox   maxlength="50" rows="1"  width="150px"   mold="select"/>
+						<button  label="上传"></button>
+						<checkbox id="zqId" label="是否有复印件备份"></checkbox>
+					</hbox>
+			</row>
+			</rows>
+			</grid>
+</window>
+</zk>

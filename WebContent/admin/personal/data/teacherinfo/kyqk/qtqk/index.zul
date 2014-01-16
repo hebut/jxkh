@@ -1,0 +1,45 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left" width="100%" border="normal" use="com.uniwin.asm.personal.ui.data.teacherinfo.kyqk.QtWindow">
+		<panel title="其他" width="100%">
+			<caption>
+				<hbox>
+					<toolbarbutton id="button6" image="/css/sat/addAct.gif" style="color:blue"
+						visible="true" />
+					<toolbarbutton id="button6out" image="/css/sat/dc.gif"
+						visible="true" style="color:blue" />
+				</hbox>
+			</caption>
+			<panelchildren>
+				<listbox id="listbox6" style="border-bottom-width:0px" sclass="new_listbox"
+					mold="paging" pageSize="10">
+					<listhead>
+						<listheader label="序号" width="10%"
+							align="center" />
+						<listheader label="名称" width="45%"
+							align="center" />
+						<listheader label="时间" width="20%"
+							align="center" />
+						<listheader label="备注（证书编号）" width="15%"
+							align="center" />
+						<listheader label="功能" width="10%"
+							align="center" />
+					</listhead>
+				</listbox>
+
+			</panelchildren>
+		</panel>
+		<separator />
+		<groupbox closable="true">
+			<caption>
+				<label style="color:blue" value="[提示]" />
+			</caption>
+			<vbox>
+				<separator spacing="1px" />
+				<label pre="true" value="1、点击名称，可以查看或修改详细信息。" />
+				<label pre="true"
+					value="2、时间必须按照指定的格式填写，如：2008/9/28、2008、2008/9。" />
+			</vbox>
+		</groupbox>
+	</window>
+</zk>

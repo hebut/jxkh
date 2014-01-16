@@ -1,0 +1,34 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="交流合作详情" border="normal" use="org.iti.gh.ghtj.hzqkdc.JlhzWindow" width="800px" closable="true">
+ <listbox id="xshy" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="10%" align="center" label="序号"/>
+		<listheader width="30%"  align="center" label="会议名称"/>
+		<listheader width="25%"  align="center" label="举办时间"/>
+		<listheader width="12%"  align="center" label="总人数"/>
+		<listheader width="13%"  align="center" label="境外人数"/>
+		<listheader width="10%" align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+<listbox id="jxbg" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="5%"  align="center" label="序号"/>
+		<listheader width="15%"  align="center" label="讲学或报告人姓名"/>
+		<listheader width="25%"  align="center" label="国外大学名称或国际会议名称"/>
+		<listheader width="15%"  align="center" label="时间"/>
+		<listheader width="25%"  align="center" label="讲学或报告名称"/>
+		<listheader width="15%"  align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+<listbox id="jlhz" mold="paging" pageSize="15">
+	<listhead>
+		<listheader width="10%" align="center" label="序号"/>
+		<listheader width="35%"  align="center" label="国际交流合作项目名称"/>
+		<listheader width="20%"  align="center" label="起讫时间"/>
+		<listheader width="20%"  align="center" label="合作对象"/>
+		<listheader width="15%" align="center" label="教师姓名"/>
+	</listhead>
+</listbox>
+</window>
+</zk>

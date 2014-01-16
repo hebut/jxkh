@@ -1,0 +1,13 @@
+<zk>
+	<listbox>
+		<listhead>
+			<listheader label="级别" align="center" width="20%"  />
+       <listheader label="等级"  align="center" width="20%" />
+        <listheader label="2011" align="center"  width="12%" />
+        <listheader label="2012" align="center" width="12%"  />
+        <listheader label="2013" align="center"  width="12%" />
+        <listheader label="2014" align="center"  width="12%" />
+        <listheader label="2015" align="center" width="12%"  />
+		</listhead>
+	</listbox>
+</zk>

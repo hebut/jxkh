@@ -1,0 +1,30 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" use="org.iti.jxkh.vote.manage.ManageWindow">
+		<panel border="normal" title="投票列表">
+			<caption>
+				<hbox align="center">
+					<label value="年份：" />
+
+					<listbox id="yearlist" width="150px" mold="select" use="org.iti.gh.ui.listbox.YearListbox"></listbox>
+					<space spacing="10px" />
+					<toolbarbutton id="add" image="/images/system/add.gif" hoverImage="/images/system/addhover.gif" />
+					<space spacing="2px" />
+				</hbox>
+			</caption>
+			<panelchildren>
+				<listbox id="votelist">
+					<listhead>
+						<listheader align="center" width="10%" label="序号" />
+						<listheader align="center" width="15%" label="投票名称" />
+						<listheader align="center" width="15%" label="开始时间" />
+						<listheader align="center" width="15%" label="截止时间" />
+						<listheader align="center" width="15%" label="投票对象" />
+						<listheader align="center" width="15%" label="投票人员范围" />
+						<listheader align="center" width="15%" label="操作" />
+					</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

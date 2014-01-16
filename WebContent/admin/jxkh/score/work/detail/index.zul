@@ -1,0 +1,46 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" use="org.iti.jxkh.score.work.DetailWindow">
+		<panel border="normal" width="768px">
+			<panelchildren>
+				<hbox>
+					<panel title="人员列表" width="200px">
+						<caption>
+							<listbox id="yearlist" width="150px" mold="select" use="org.iti.gh.ui.listbox.YearListbox">
+							</listbox>
+						</caption>
+						<panelchildren>
+							<listbox id="deptlist" height="350px">
+								<listhead>
+									<listheader label="姓名" width="70%" align="center" />
+									<listheader label="排名" width="30%" align="center" />
+								</listhead>
+							</listbox>
+						</panelchildren>
+					</panel>
+					<panel title="查看明细" width="560px" visible="true" action="onshow:anima.slideDown(#{self})">
+						<panelchildren style="background-color: #FFFFFF">
+
+							<grid id="grid" action="onshow:anima.slideDown(#{self})" visible="false">
+								<columns>
+									<column width="40%" align="center" />
+									<column width="60%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="所在档次" />
+										<label id="level" />
+									</row>
+									<row>
+										<label value="所得奖励性绩效工资数 (元)" />
+										<label id="money" />
+									</row>
+								</rows>
+							</grid>
+						</panelchildren>
+					</panel>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

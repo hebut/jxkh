@@ -1,0 +1,554 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="发表期刊论文" border="normal" closable="true" width="740px"
+		sclass="newin" height="880px"
+		use="org.iti.jxkh.business.artical.journal.AddJournalWindow">
+		<caption>
+			<button label="打印论文信息" id="print" visible="false"></button>
+			<space />
+		</caption>
+		<tabbox sclass="new-tabbox">
+			<tabs>
+				<tab label="论文信息" id="baseTab" />
+				<tab label="文档信息" id="fileTab" />
+				<tab label="绩分信息" id="scoreTab" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<groupbox>
+						<caption>
+							<label value="基本信息" />
+						</caption>
+						<separator />
+						<grid>
+							<columns>
+								<column width="28%" align="right" />
+								<column width="30%" />
+								<column width="15%" align="right" />
+								<column width="27%" />
+							</columns>
+							<rows>
+								<row spans="1,3" valign="center">
+									<label value="论文题目：" />
+									<hbox>
+										<textbox width="500px"
+											id="lwName" constraint="no empty" />
+										<label value="*"
+											style="color:red" />
+										<toolbarbutton id="chooseLw"
+											image="/css/default/images/common/xz.gif" visible="false">
+										</toolbarbutton>
+									</hbox>
+								</row>
+								<row valign="center" spans="1,3">
+									<label value="全部作者：" />
+									<hbox>
+										<textbox id="author"
+											width="500px" readonly="true" />
+										<label value="*"
+											style="color:red" />
+										<toolbarbutton id="chooseMember"
+											image="/css/default/images/common/xz.gif">
+										</toolbarbutton>
+									</hbox>
+								</row>
+								<row valign="center" spans="1,3">
+									<label value="院内完成部门：" />
+									<hbox>
+										<textbox id="department"
+											readonly="true" width="500px" />
+										<label value="*"
+											style="color:red" />
+										<toolbarbutton id="chooseDept"
+											image="/css/default/images/common/xz.gif">
+										</toolbarbutton>
+									</hbox>
+								</row>
+								<row valign="center" spans="1,3">
+									<label value="是否与外单位合作：" />
+									<hbox>
+										<radiogroup>
+											<radio label="是" id="yes">
+											</radio>
+											<space></space>
+											<space></space>
+											<radio label="否"
+												checked="true" id="no">
+											</radio>
+										</radiogroup>
+										<label value="*"
+											style="color:red" />
+									</hbox>
+
+								</row>
+								<row valign="center" id="coUnitRow"
+									visible="false">
+									<label value="我院是否是第一署名:" />
+									<hbox>
+										<radiogroup>
+											<radio label="是" id="first"
+												checked="true" />
+											<space></space>
+											<space></space>
+											<radio label="否"
+												id="unFirst" />
+										</radiogroup>
+										<label value="*"
+											style="color:red" />
+									</hbox>
+									<label value="合作单位：" />
+									<hbox>
+										<textbox id="coUnit"
+											width="190px" />
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+								<row valign="center" spans="1,3">
+									<label value="信息填写人：" />
+									<hbox>
+										<label id="writer" />
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+					<separator bar="true" />
+					<groupbox open="true">
+						<caption>
+							<label value="期刊论文发表信息" />
+						</caption>
+						<separator />
+						<grid>
+							<columns>
+								<column width="16%" align="right" />
+								<column width="35%" />
+								<column width="14%" align="right" />
+								<column width="35%" />
+							</columns>
+							<rows>
+								<row>
+									<label value="期刊类别：" />
+									<hbox>
+										<listbox mold="select"
+											id="qkType" width="190px">
+										</listbox>
+										<label value="*"
+											style="color:red" />
+									</hbox>
+									<label value="绩分年度：" />
+									<hbox>
+										<listbox width="190px"
+											mold="select" id="jiFenTime"
+											use="org.iti.gh.ui.listbox.YearListbox" />
+										<label value="*"
+											style="color:red" />
+									</hbox>
+								</row>
+								<row valign="center">
+									<label value="发表时间：" />
+									<datebox id="publicDate"
+										width="175px" />
+									<label value="通讯作者：" />
+									<textbox width="190px"
+										id="infoAuthor" />
+								</row>
+								<row valign="center">
+									<label value="发表刊物名称：" />
+									<textbox id="jourName"
+										width="190px" />
+									<label value="发表刊物期次：" />
+									<textbox id="qc" width="190px" />
+								</row>
+								<row valign="center" spans="1,3">
+									<label value="起止页：" />
+									<textbox id="startPage"
+										width="190px" />
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+					<groupbox>
+						<caption>
+							<label value="期刊论文收录信息" />
+						</caption>
+						<separator />
+						<grid>
+							<rows>
+								<row>
+									<label value="收录类别：" />
+
+									<listbox mold="select" id="slType"
+										width="100px">
+									</listbox>
+									<label value="收录时间：" />
+									<datebox width="110px"
+										id="shouLuTime" />
+									<label value="绩分年度：" />
+									<listbox mold="select"
+										id="jiFenTime1" width="100px"
+										use="org.iti.gh.ui.listbox.YearListbox">
+									</listbox>
+									<div>
+										<button label="添加" id="add" />
+										<button label="删除" id="del" />
+									</div>
+								</row>
+							</rows>
+						</grid>
+
+						<listbox sclass="new_listbox" checkmark="true"
+							multiple="true" id="slMessListbox" height="100px">
+							<listhead>
+								<listheader width="10%" align="center" />
+								<listheader label="收录类别" width="30%"
+									align="center">
+								</listheader>
+								<listheader label="收录时间" width="30%"
+									align="center">
+								</listheader>
+								<listheader label="绩分年度" width="30%"
+									align="center">
+								</listheader>
+							</listhead>
+						</listbox>
+					</groupbox>
+					<separator />
+					<groupbox closable="true">
+						<caption>
+							<label style="color:red" value="[提示]" />
+						</caption>
+						<vbox>
+							<separator spacing="1px" />
+							<label pre="true" value="1、带*的为必填项 " />
+							<label pre="true"
+								value="2、“论文第一署名单位信息”中选择部门时，可以进行排序，主持部门放在第一位，其他参与部门按贡献排序 " />
+							<label pre="true"
+								value="3、点击“保存”按钮可以暂存您正在编辑的文档信息，点击“提交”按钮您可以将文档提交到部门(注：提交到部门后您将不能再修改)。" />
+							<label pre="true"
+								value="4、中文核心期刊的增刊，按普通期刊处理" />
+						</vbox>
+					</groupbox>
+				</tabpanel>
+				<!-- 文档信息 -->
+				<tabpanel>
+					<borderlayout height="670px">
+						<center autoscroll="true">
+							<div>
+								<groupbox>
+									<caption>
+										<label value="杂志封面：" />
+										<label value="(必传)"
+											style="color:red" />
+									</caption>
+									<div align="right">
+										<space />
+										<toolbarbutton
+											image="/css/default/images/button/sc.gif" id="ups1">
+										</toolbarbutton>
+									</div>
+									<separator />
+									<listbox sclass="new_listbox"
+										mold="paging" id="applyList1" pageSize="1" rows="1">
+										<listhead>
+											<listheader label="序号"
+												width="10%" align="center" />
+											<listheader label="标题"
+												width="50%" align="left" style="text-align:center" />
+											<listheader label="上传日期"
+												width="25%" align="center" />
+											<listheader label="操作"
+												width="15%" align="center" />
+										</listhead>
+									</listbox>
+								</groupbox>
+								<separator />
+								<html>
+
+
+									
+									<![CDATA[ <hr color="##8470FF"/> ]]>
+									
+								
+							
+					</html>
+								<separator />
+								<groupbox>
+									<caption>
+										<label value="杂志出版信息页：" />
+										<label value="(必传)"
+											style="color:red" />
+									</caption>
+									<div align="right">
+										<space />
+										<toolbarbutton
+											image="/css/default/images/button/sc.gif" id="ups2">
+										</toolbarbutton>
+									</div>
+									<separator />
+									<listbox sclass="new_listbox"
+										mold="paging" id="applyList2" pageSize="1" rows="1">
+										<listhead>
+											<listheader label="序号"
+												width="10%" align="center" />
+											<listheader label="标题"
+												width="50%" align="left" style="text-align:center" />
+											<listheader label="上传日期"
+												width="25%" align="center" />
+											<listheader label="操作"
+												width="15%" align="center" />
+										</listhead>
+									</listbox>
+								</groupbox>
+								<separator />
+								<html>
+
+
+									
+									<![CDATA[ <hr color="##8470FF"/> ]]>
+									
+								
+							
+					</html>
+								<separator />
+								<groupbox>
+									<caption>
+										<label value="杂志目录页：" />
+										<label value="(必传)"
+											style="color:red" />
+									</caption>
+									<div align="right">
+										<space />
+										<toolbarbutton
+											image="/css/default/images/button/sc.gif" id="ups3">
+										</toolbarbutton>
+									</div>
+									<separator />
+									<listbox sclass="new_listbox"
+										mold="paging" id="applyList3" pageSize="1" rows="1">
+										<listhead>
+											<listheader label="序号"
+												width="10%" align="center" />
+											<listheader label="标题"
+												width="50%" align="left" style="text-align:center" />
+											<listheader label="上传日期"
+												width="25%" align="center" />
+											<listheader label="操作"
+												width="15%" align="center" />
+										</listhead>
+									</listbox>
+								</groupbox>
+								<separator />
+								<html>
+
+
+									
+									<![CDATA[ <hr color="##8470FF"/> ]]>
+									
+								
+													
+					</html>
+								<separator />
+								<groupbox>
+									<caption>
+										<label value="杂志论文所在页（全部）：" />
+										<label value="(必传)"
+											style="color:red" />
+									</caption>
+									<div align="right">
+										<space />
+										<toolbarbutton
+											image="/css/default/images/button/sc.gif" id="ups4">
+										</toolbarbutton>
+									</div>
+									<separator />
+									<listbox sclass="new_listbox"
+										mold="paging" id="applyList4" pageSize="1" rows="1">
+										<listhead>
+											<listheader label="序号"
+												width="10%" align="center" />
+											<listheader label="标题"
+												width="50%" align="left" style="text-align:center" />
+											<listheader label="上传日期"
+												width="25%" align="center" />
+											<listheader label="操作"
+												width="15%" align="center" />
+										</listhead>
+									</listbox>
+								</groupbox>
+								<separator />
+								<html>
+
+
+
+									
+									<![CDATA[ <hr color="##8470FF"/> ]]>
+									
+								
+							
+						
+					</html>
+								<separator />
+								<groupbox>
+									<caption>
+										<label value="获奖证书：" />
+									</caption>
+									<div align="right">
+										<space />
+										<toolbarbutton
+											image="/css/default/images/button/sc.gif" id="ups5">
+										</toolbarbutton>
+									</div>
+									<separator />
+									<listbox sclass="new_listbox"
+										mold="paging" id="applyList5" pageSize="1" rows="1">
+										<listhead>
+											<listheader label="序号"
+												width="10%" align="center" />
+											<listheader label="标题"
+												width="50%" align="left" style="text-align:center" />
+											<listheader label="上传日期"
+												width="25%" align="center" />
+											<listheader label="操作"
+												width="15%" align="center" />
+										</listhead>
+									</listbox>
+								</groupbox>
+								<separator />
+								<html>
+
+
+
+									
+									<![CDATA[ <hr color="##8470FF"/> ]]>
+									
+								
+							
+						
+					</html>
+								<separator />
+								<groupbox>
+									<caption>
+										<label value="收录证明附件：" />
+									</caption>
+									<div align="right">
+										<space />
+										<toolbarbutton
+											image="/css/default/images/button/sc.gif" id="ups6">
+										</toolbarbutton>
+									</div>
+									<separator />
+									<listbox sclass="new_listbox"
+										mold="paging" id="applyList6" pageSize="1" rows="1">
+										<listhead>
+											<listheader label="序号"
+												width="10%" align="center" />
+											<listheader label="标题"
+												width="50%" align="left" style="text-align:center" />
+											<listheader label="上传日期"
+												width="25%" align="center" />
+											<listheader label="操作"
+												width="15%" align="center" />
+										</listhead>
+									</listbox>
+								</groupbox>
+							</div>
+						</center>
+					</borderlayout>
+				</tabpanel>
+				<!-- 绩分信息 -->
+				<tabpanel>
+					<groupbox>
+						<caption>
+							<label value="个人绩分" />
+						</caption>
+						<listbox sclass="new_listbox" rows="10"
+							id="personScore">
+							<listhead>
+								<listheader label="序号" width="10%"
+									align="center" />
+								<listheader label="完成人" width="15%"
+									align="center" />
+								<listheader label="人员类型" width="15%"
+									align="center" />
+								<listheader label="所属部门" width="15%"
+									align="center" />
+								<listheader label="所占比例(共10)"
+									width="15%" align="center" />
+								<listheader label="绩分归属部门" width="15%"
+									align="center" />
+								<listheader label="绩分" width="15%"
+									align="center" />
+							</listhead>
+						</listbox>
+					</groupbox>
+					<separator />
+					<html>
+
+
+
+						
+						<![CDATA[ <hr color="##8470FF"/> ]]>
+						
+						
+						
+						
+					</html>
+					<separator />
+					<groupbox>
+						<caption>
+							<label value="部门绩分" />
+						</caption>
+						<listbox sclass="new_listbox"
+							id="departmentScore" height="100px">
+							<listhead>
+								<listheader label="序号" align="center"
+									width="20%" />
+								<listheader label="完成部门" align="center"
+									width="50%" />
+								<listheader label="部门绩分" align="center"
+									width="30%" />
+							</listhead>
+						</listbox>
+					</groupbox>
+					<groupbox closable="true">
+						<caption>
+							<label style="color:red" value="[提示]" />
+						</caption>
+						<vbox>
+							<separator spacing="1px" />
+							<hbox>
+								<label pre="true"
+									value="“所占比例(共10)”调整完保存成功后，再请进行“绩分归属部门”的" />
+								<label value="指定" style="color:blue" />
+							</hbox>
+							<separator spacing="1px" />
+						</vbox>
+					</groupbox>
+					<separator />
+					<div align="center">
+						<toolbarbutton id="submitScore"
+							image="/css/img/actSave2.gif" />
+						<space width="3px" />
+						<toolbarbutton id="closeScore"
+							image="/css/img/actquit.gif" />
+					</div>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+		<separator />
+		<div align="center">
+			<toolbarbutton id="tempSave"
+				image="/css/img/tempsave.gif" visible="false" />
+			<space />
+			<toolbarbutton id="submit"
+				image="/css/default/images/button/actSave.gif" visible="false" />
+			<space />
+			<toolbarbutton id="close"
+				image="/css/default/images/button/actquit.gif">
+			</toolbarbutton>
+		</div>
+	</window>
+</zk>

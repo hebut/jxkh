@@ -1,0 +1,35 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" use="org.iti.jxkh.statistics.LeaderWindow">
+		<panel width="768px" visible="true">
+			<caption height="40px">
+				<div align="right">
+					<label value="选择统计年份：" />
+					<listbox id="yearlist" mold="select" width="80px" rows="1" use="org.iti.gh.ui.listbox.YearListbox">
+						<!-- <listitem label="2011" selected="true" /> -->
+					</listbox>
+					<space />
+					<toolbarbutton image="/css/img/searAct.gif" />
+				</div>
+			</caption>
+			<panelchildren style="background-color: #FFFFFF">
+				<grid id="grid" visible="false">
+					<columns>
+						<column width="40%" align="center" />
+						<column width="60%" align="center" />
+					</columns>
+					<rows>
+						<row>
+							<label value="考核结果" />
+							<label id="level" />
+						</row>
+						<row>
+							<label value="个人奖励性绩效工资（元）" />
+							<label id="money" />
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

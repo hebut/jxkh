@@ -1,0 +1,116 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window id="win"  border="normal"  width="900px"   contentStyle="overflow:auto" >
+<caption image="/css/img/win-ico.gif" label="查看信息" />
+<zscript><![CDATA[
+import org.zkoss.io.Files; 
+import java.io.*;
+import java.util.Date;
+import org.iti.gh.common.util.DateUtil;
+import org.zkoss.zk.ui.util.Configuration;
+import org.zkoss.util.media.Media; 
+import org.zkoss.util.media.AMedia; 
+import com.uniwin.framework.entity.WkTUser;
+]]></zscript>
+<vbox>
+<hbox >
+<label value="标题:" width="70px" />
+<space width="24px"/>
+<textbox   width="500px" id="kititle" constraint="no empty" value="美国哈佛大学研究员朱晟伟来校作学术交流"/>
+<label value="*" style="color:red;valign:center" />
+<space width="19px"/>
+<checkbox label="斜体" id="xieti"/>
+<checkbox label="粗体" id="cuti"/>
+<space/>
+</hbox>
+<separator />
+<hbox >
+<label value="副标题:"  width="170px" />
+<space width="12px"/>
+<textbox width="300px" id="kititle2"/>
+<space width="30px"/>
+<label value="关键字:" width="70px"  />
+<textbox width="180px" id="kikeys" value="哈佛，学术交流"/>
+<space width="30px"/>
+<label value="显示序号:" width="70px"/>
+<textbox    width="70px" id="kiordno" value="10"/>
+<label value="*" style="color:red;valign:center" />
+</hbox>
+<separator />
+<hbox>
+<label value="所属分类:" width="66px"/>
+<listbox id="pselected" mold="select"  width="310px" >
+<listitem label="  国内新闻" />
+<listitem label="  国际新闻"/>
+<listitem label="  娱乐新闻"/>
+<listitem label="  论坛社区"/>
+<listitem label="企业名录"/>
+<listitem label="房屋信息"/>
+<listitem label="招聘信息"/>
+</listbox> 
+<label value="*" style="color:red;valign:center" />
+<space width="25px"/>
+<label value="来源:" width="70px"/>
+<textbox width="180px"  id="kisource" value="河北工业大学"/>
+<space width="25px"/>
+<checkbox  label="发送到邮箱" id="kishow" />
+</hbox>
+<separator />
+<hbox>
+<label value="共享分类:" width="70px"/>
+<textbox width="300px" id="share"/>
+<space/>
+<toolbarbutton image="/images/content/1/xz.gif" id="choice1"/>
+<space width="80px"/>
+<label value="图片:"  width="66px"/>       
+		  <hbox align="start">
+            <toolbarbutton image="/images/content/1/sc.gif" id="upImage"></toolbarbutton>
+	<hbox  id="pics" align="start"></hbox>
+	</hbox>
+</hbox>
+<separator />
+<hbox >
+<label value="摘要信息:" width="70px"/>
+<textbox width="730px" id="kimemo" value="美国哈佛大学公共健康学院环境健康系研究员，室内环境与能源专家朱晟伟博士来校作学术交流活动"/>
+</hbox>
+<separator />
+<hbox  id="wdnews">
+<label value="新闻内容:" />
+<fckeditor  height="300px" width="810px" id="kicontent" toolbarSet="webkeyCms"  value="2010年11月7日,应能源与环境工程学院建筑环境与设备系邀请，美国哈佛大学公共健康学院环境健康系研究员,室内环境与能源专家朱晟伟博士来校作学术交流活动。
+
+朱晟伟博士毕业于日本东京大学，曾经在日本东京大学从事博士后研究工作，在丹麦技术大学室内环境与能源国际研究中心及哈佛大学公共健康学院环境健康系等国际知名大学与研究中心从事研究员工作，是行业内知名杂志ASHRAE Transactions, ASHRAE HVACR Research, International Journal of Indoor Environment and Health (Indoor Air), Building and Environment审稿人及编委。
+11月7日上午，朱晟伟博士以“基于CFD（计算流体力学）的数值实验方法在室内热和空气环境领域的应用”为题，在能源与环境工程学院学术报告厅做学术报告。报告面向能环学院教师、研究生及本科生。由能环学院副院长黄超教授主持">
+</fckeditor> 
+</hbox>
+<hbox id="tupian">
+ <space width="100px"/>
+ <label value="附件:" width="70px"/>
+<toolbarbutton id="up" image="/css/img/tianjiafujian.png">
+				       <attribute name="onClick">
+				         <![CDATA[{
+				        	  	Object media = Fileupload.get();
+                            	if(media!=null){
+                              	    win.getModelList().add(media);
+								} else {
+									Messagebox.show("您没有选择要上传的文件！", "提示！", Messagebox.OK, Messagebox.INFORMATION);				
+								}       
+                         }]]></attribute>
+				    </toolbarbutton>
+				     <space width="160px"/>
+<label value="附件列表:" width="70px"/>
+<listbox  width="200px" id="upList"  mold="select" />
+<space/>
+<toolbarbutton image="/css/img/delAct.gif" id="deUpload"/>
+<space/>
+<toolbarbutton image="/images/content/1/xz_.gif" id="down"/>
+</hbox>
+</vbox>
+<div sclass="pop-win-b-div" align="center">
+<toolbarbutton id="save"   image="/css/img/btn-save.gif"  />
+<toolbarbutton id="saudit"  image="/css/img/btn-pub.gif" />
+<toolbarbutton image="/css/img/btn-resetb.gif" id="reset" />
+<toolbarbutton id="delete" image="/css/img/btn-del.gif"/>
+<toolbarbutton image="/css/img/btn-close.gif"  id="back" onClick="win.detach()" />
+</div>
+</window>
+</zk>

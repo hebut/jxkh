@@ -1,0 +1,54 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="创建新群组" border="normal" width="400px" closable="true" use="org.iti.xypt.personal.group.AddNewWindow">
+		<grid>
+			<columns>
+				<column width="25%" align="center" />
+				<column width="75%" />
+			</columns>
+			<rows>
+				<row>
+					<vbox>
+						<image id="groupLogo" height="80px" width="80px" src="/admin/image/group/default.jpg" />
+						<button id="upload" label="自定义图标" />
+					</vbox>
+					<grid>
+						<columns>
+							<column align="center" />
+							<column />
+						</columns>
+						<rows>
+							<row>
+								<label value="群组名称" />
+								<hbox align="center">
+									<textbox id="name" width="180px" constraint="no empty" />
+									<label value="*" style="color:red" />
+								</hbox>
+							</row>
+							<row>
+								<label value="群组类型" />
+								<listbox id="typeList" mold="select" rows="1" width="100px">
+									<listitem label="普通群组" selected="true" />
+									<listitem label="兴趣联盟" />
+									<listitem label="组织机构" />
+									<listitem label="好友交流" />
+								</listbox>
+							</row>
+							<row>
+								<label value="群组描述" />
+								<textbox id="descript" width="200px" height="40px" multiline="true" />
+							</row>
+						</rows>
+					</grid>
+				</row>
+				<row spans="2,0">
+					<hbox>
+						<button label="确定" id="submit" />
+						<button label="取消" id="cancel" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

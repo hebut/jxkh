@@ -1,0 +1,22 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="查看影视专题片详细" border="normal" sclass="newin"  width="600px" height="600px">
+	<listbox id="videoListbox" paginal="${videoPaging}"  sclass="new_listbox" checkmark="true" multiple="true" >
+			<listhead>
+				<listheader label="序号"  width="5%" align="center"/>
+				<listheader label="影视名称" width="22%" align="left" style="text-align:center"  sort="auto(name)" />
+				<listheader label="完成人" width="29%"   align="left" style="text-align:center" />				
+				<listheader label="影视种类"  width="13%" align="center" />
+				<listheader label="批示领导"  width="15%" align="center" />
+				<listheader label="提交人"  width="16%" align="center"/>
+			</listhead>
+		</listbox>
+		<div width="100%" align="right">
+			<paging id="videoPaging" pageSize="10" detailed="true" />
+		</div>
+		<separator/>
+		<div align="center">
+			<toolbarbutton id="close"	image="/css/img/actquit.gif" />
+		</div>
+</window>
+</zk>

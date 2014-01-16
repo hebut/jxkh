@@ -1,0 +1,42 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="添加招生情况" border="normal" width="400px" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.jyqk.Addwindow">
+		<grid id="addlist">
+			<columns>
+				<column width="20%" align="center"></column>
+				<column width="80%"></column>
+			</columns>
+			<rows>
+				<row>
+					<label value="年份" style="letter-spacing:10px"></label>
+					<listbox mold="select" rows="1" width="80px"
+						id="gradelist" use="org.iti.jxgl.ui.listbox.GradeListbox">
+					</listbox>
+				</row>
+				<row>
+					<label value="学生名单"></label>
+					<hbox>
+						<textbox id="na" rows="3" width="200px"
+							height="90px" constraint="no empty">
+						</textbox>
+						<label value="注：名字以“、”号隔开" style="color:red"></label>
+					</hbox>
+				</row>
+				<row>
+					<label value="总人数"></label>
+					<textbox id="no" disabled="true"></textbox>
+				</row>
+
+			</rows>
+		</grid>
+		<hbox id="hb" pack="center" width="100%">
+			<hbox>
+				<button id="submit" label="提交" visible="true" />
+				<button id="reset" label="重置" visible="true" />
+				<button id="back" label="返回" visible="true" />
+			</hbox>
+		</hbox>
+
+	</window>
+</zk>

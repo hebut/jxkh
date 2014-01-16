@@ -1,0 +1,23 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" use="org.iti.jxkh.score.work.AddMultiDeptWindow">
+		<panel width="600px" visible="true">
+			<panelchildren style="background-color: #FFFFFF">
+				<grid id="grid">
+					<columns>
+						<column width="40%" align="center" />
+						<column width="60%" align="center" />
+					</columns>
+					<rows id="rows" />
+				</grid>
+				<div align="center">
+					<separator bar="true" spacing="15px" />
+					<hbox>
+						<toolbarbutton id="submit" image="/css/default/images/button/actSave.gif" />
+						<toolbarbutton id="close" image="/css/default/images/button/actquit.gif" />
+					</hbox>
+				</div>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

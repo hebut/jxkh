@@ -1,0 +1,18 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="选择通知班级" border="normal" width="50%" closable="true" use="org.iti.xypt.personal.notice.NoticeFdyClassAddWindow">
+		<listbox id="classSelect" checkmark="true" multiple="true">
+			<listhead>
+				<listheader label="序号" width="20%" />
+				<listheader label="班级名称" width="80%" />
+			</listhead>
+		</listbox>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button id="submit" label="确认" />
+				<button id="reset" label="重置" />
+				<button id="close" label="关闭" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

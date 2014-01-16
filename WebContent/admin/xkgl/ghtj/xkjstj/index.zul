@@ -1,0 +1,24 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window style="text-align:left" use="org.iti.gh.ghtj.GhtjWindow">
+		<panel title="学科建设统计">
+			<!--  <caption>
+				<button label="情况调查汇总" id="exportQkdt"></button>
+				<button label="科教交流汇总" id="exportKjjl"></button>
+				</caption>
+			-->
+			<panelchildren>
+				<tabbox width="100%">
+					<tabs>
+						<tab id="t1" label="情况调查汇总" />
+						<tab id="t2" label="科研/教学/学术交流汇总" />
+					</tabs>
+					<tabpanels id="panels">
+
+					</tabpanels>
+				</tabbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

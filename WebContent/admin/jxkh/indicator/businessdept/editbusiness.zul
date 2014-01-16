@@ -1,0 +1,71 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="编辑指标信息" border="normal"  sclass="newin"  width="500px" style="text-align:left" use="org.iti.jxkh.indicator.businessdept.BusinessEditWindow">
+		<grid>
+			<columns>
+				<column width="20%" />
+				<column width="75%" />
+			</columns>
+			<rows>
+				<row height="35px" zclass="pop-grid-rows">
+					<label value="指标名称: " />
+					<hbox>
+						<textbox id="name" constraint="no empty"  width="300px" height="20px"/>
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+			
+				<row height="35px" zclass="pop-grid-rows">
+					<label value="所属指标:" />
+					<!-- <listbox id="pselect" height="20px"  mold="select"
+					use="org.iti.jxkh.indicator.businessdept.IndicatorListbox"> -->
+                  <!--   <listitem label="绩效指标"></listitem>
+					<listitem label="学术论文"></listitem>
+					<listitem label="学术著作"></listitem>
+					<listitem label="科技奖励"></listitem>
+					<listitem label="科研经费"></listitem> -->
+					<!-- </listbox> -->
+					<label id="pselect" width="20px">					
+					</label>
+				</row>
+			    <row height="35px" zclass="pop-grid-rows">
+					<label value="指标序号:" />
+					<textbox id="num"  width="200px" height="20px"/>
+				</row>
+				 <row height="35px" zclass="pop-grid-rows">
+					<label value="量化分值:" />
+					<hbox>
+					<intbox id="mark"  width="200px" height="20px"/>
+					<label  value="分/"/>
+					<textbox id="size" width="80px">					
+					</textbox>
+					</hbox>
+				</row>
+				 <row id="bindex" height="35px" zclass="pop-grid-rows">
+					<label value="指标系数:" />
+					<textbox id="index" width="200px" height="20px"/>
+				</row>
+				<row height="35px" zclass="pop-grid-rows">
+					<label value="锁定状态:" />
+					<radiogroup>
+						<radio id="open" label="启用" checked="true" />
+						<radio id="stop" label="停用" />
+					</radiogroup>
+				</row>
+					<row zclass="pop-grid-rows">
+					<label value="指标描述:" />
+					<textbox id="desc" width="350px" rows="5" height="70px"/>
+				</row>
+			</rows>
+		</grid>
+		<space height="5px"/>
+		<hbox width="100%" pack="center">
+			<hbox>
+				<toolbarbutton image="/css/img/actSave.gif" id="submit" />
+				<toolbarbutton image="/css/img/addAct.gif" id="add" />
+			    <toolbarbutton image="/css/sat/cz.gif" id="reset" />
+				<!--  <toolbarbutton image="/css/img/delAct.gif" id="delete" /> -->
+			</hbox>
+		</hbox>
+	</window>
+</zk>

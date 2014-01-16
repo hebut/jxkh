@@ -1,0 +1,87 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="岗位调动信息" border="normal" closable="true" width="500px" height="390px" sclass="newin"
+         use="org.iti.jxkh.dutyChange.AddDutyChangeWindow">
+<grid >
+  <columns>
+    <column width="25%" align="center"></column>
+    <column width="75%"></column>
+  </columns>
+  <rows>
+    <row>
+    	<div align="center">
+      		<label value="信息项"></label>
+        </div>
+      
+      <div align="center">
+      	<label value="内容"></label>
+      </div>
+      
+    </row>
+    <row>
+      <label value="人员姓名"></label>
+      <hbox>
+      	<textbox id="name" width="280px" readonly="true"></textbox>
+      	<label value="*" style="color:red"/>
+      	<toolbarbutton id="nameChoose" image="/css/default/images/common/xz.gif">			
+		</toolbarbutton>
+      </hbox>      
+    </row>
+    <row>
+      <label value="原部门"></label>
+      <label id="olddept"/>
+      <!-- <hbox>
+      	<textbox id="oldDepart" width="280px" readonly="true"></textbox>
+      	<label value="*" style="color:red"/>
+      	<toolbarbutton id="oldChoose" image="/css/default/images/common/xz.gif">
+		</toolbarbutton>
+      </hbox> -->      
+    </row>
+    <row>
+      <label value="原职务"></label>
+      <hbox>
+	      <textbox id="oldPost" focus="true" width="250px" />
+	      <label value="*" style="color:red"/>
+      </hbox>
+    </row>
+    <row>
+    	<label value="新部门"/>
+    	<hbox>
+      	<textbox id="newDepart" width="280px" readonly="true"></textbox>
+      	<label value="*" style="color:red"/>
+      	<toolbarbutton id="newChoose" image="/css/default/images/common/xz.gif">
+		</toolbarbutton>
+      </hbox>
+    </row>
+     <row>
+      <label value="新职务"></label>
+      <hbox>
+	      <textbox id="newPost" focus="true" width="250px" />
+	      <label value="*" style="color:red"/>
+      </hbox>
+    </row>
+    <row>
+      <label value="调动时间"></label>
+      <hbox>
+	      <datebox id="changetime" focus="true" width="150px" />
+	      <label value="*" style="color:red"/>
+      </hbox>
+    </row>
+    <row>
+      <label value="调动原因"></label>
+      <textbox id="content" width="300px" rows="3" height="100px"></textbox>
+    </row>    
+  </rows>
+</grid>
+<separator/>
+<hbox pack="center" width="100%">
+  <hbox >
+    <toolbarbutton id="save" image="/css/default/images/button/actSave.gif" ></toolbarbutton>
+	<space />
+	<toolbarbutton id="reset" image="/css/default/images/button/cz.gif"></toolbarbutton>
+	<space />
+	<toolbarbutton id="close" image="/css/default/images/button/gb.gif"></toolbarbutton>
+  </hbox>
+</hbox>
+</window>
+</zk>

@@ -1,0 +1,38 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="上传文件" border="normal" closable="true" width="400px"
+		height="150px" sclass="newin"
+		use="org.iti.jxkh.business.meeting.UpfileWindow">
+		<grid>
+			<columns>
+				<column width="20%" align="center" />
+				<column width="80%" align="left" />
+			</columns>
+			<rows>
+				<row>
+					<label value="文件标题:" />
+					<hbox>
+						<textbox width="290px" id="fileTitle" />
+						<label value="*" style="color:red" />
+					</hbox>
+				</row>
+				<row>
+					<label value="选择文件:" />
+					<hbox>						
+						<toolbarbutton
+							image="/css/default/images/button/up.gif" id="up" />
+						<label id="hasUp" value="上传成功" style="color:red" visible="false"/>
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<separator />
+		<div align="center">
+			<toolbarbutton
+				image="/css/default/images/button/actSave.gif" id="submit" />
+			<space />
+			<toolbarbutton
+				image="/css/default/images/button/actquit.gif" id="close" />
+		</div>
+	</window>
+</zk>

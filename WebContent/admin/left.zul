@@ -1,0 +1,10 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<panel framable="false" apply="com.uniwin.framework.ui.userlogin.TitleLeftComposer" width="100%" id="titleleft" >
+		<panelchildren>
+			<tree id="tree" height="600px"  style="border:0;background:#FFFFFF;" zclass="z-filetree">
+				
+			</tree>
+		</panelchildren>
+	</panel>
+</zk>

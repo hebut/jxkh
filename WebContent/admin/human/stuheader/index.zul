@@ -1,0 +1,10 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<panel framable="false" apply="org.iti.human.ld.StuHeaderLeftTreeComposer" id="humanPanel" width="100%">
+		<panelchildren>
+			<listbox mold="select" width="200px" id="schlist"></listbox>
+			<separator height="5" />
+			<tree zclass="z-dottree" id="humanTree" rows="45" width="100%"></tree>
+		</panelchildren>
+	</panel>
+</zk>

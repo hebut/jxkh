@@ -1,0 +1,44 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="职称信息" width="100%" border="normal" style="text-align:left" use="com.uniwin.asm.personal.ui.data.TeacherLevel">
+<hbox>
+						<label value="个人职称信息" style="font:bold"></label>
+					</hbox>
+					<hbox width="100%" pack="end">
+						<hbox>
+							<toolbarbutton style="color:blue" label="添加职称信息" visible="true" id="addtitle"></toolbarbutton>
+						</hbox>
+					</hbox>
+					<listbox id="title" sclass="new_listbox">
+						<listhead>
+							<listheader align="center" width="4%">
+								<label value="序号"></label>
+							</listheader>
+							<listheader align="center" width="11%">
+								<label value="职称"></label>
+							</listheader>
+							<listheader align="center" width="10%">
+								<label value="取得时间"></label>
+							</listheader>
+							<listheader align="center" width="10%">
+								<label value="发证时间"></label>
+							</listheader>
+							<listheader align="center" width="15%">
+								<label value="证书号码"></label>
+							</listheader>
+							<listheader align="center" width="15%">
+								<label value="发证机构"></label>
+							</listheader>
+							<listheader align="center" width="10%">
+								<label value="资格文号"></label>
+							</listheader>
+							<listheader align="center" width="15%">
+								<label value="认定机构"></label>
+							</listheader>
+							<listheader align="center" width="10%">
+								<label value="操作"></label>
+							</listheader>
+						</listhead>
+					</listbox>
+</window>
+</zk>

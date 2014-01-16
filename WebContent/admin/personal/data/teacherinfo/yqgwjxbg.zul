@@ -1,0 +1,73 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="国外讲学和报告情况（预期进行）" border="normal" closable="true"
+		use="com.uniwin.asm.personal.ui.data.teacherinfo.YqGwjxbgWindow" width="800px">
+		<grid>
+			<columns>
+				<column width="25%" align="center" />
+				<column width="25%" />
+				<column width="25%" align="center" />
+				<column width="25%" />
+			</columns>
+			<rows>
+				<row spans="1,3">
+					<label value="讲学或报告人姓名" style="letter-spacing:5px"/>
+					<hbox>
+						<textbox id="cgmc" cols="30" />
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row >
+					<label value="国外大学名称或国际会议名称"/>
+					<hbox>
+						<textbox id="huiyi" cols="20" rows="2" height="30px"></textbox>
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+						<label value="讲学或报告名称" style="letter-spacing:5px"/>
+						<hbox>
+							<textbox id="baogao" cols="20"  rows="2" height="30px"/>
+							<label value="*" style="color:red;valign:center" />
+						</hbox>
+				</row>
+					<row spans="1,3">
+						<label value="报告主题" style="letter-spacing:10px"/>
+						<textbox id="zhuti" cols="20"  rows="2" height="30px"></textbox>
+					</row>
+				<row>
+					<label value="报告举办时间" style="letter-spacing:5px"/>
+					<hbox>
+						<textbox id="shijian" cols="20"/>
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+						<label value="报告举办地点" style="letter-spacing:5px"/>
+					<hbox>
+						<textbox id="didian" cols="20"/>
+						<label value="*" style="color:red;valign:center" />
+					</hbox>
+				</row>
+				<row spans="1,3">
+					<label value="备注" style="letter-spacing:25px"/>
+					<textbox id="remarks" cols="70" height="90px"></textbox>
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<hbox>
+				<button label="提交" id="submit"></button>
+			<!--  <button label="重置" id="reset"></button>-->	
+				<button label="关闭" id="close"></button>
+			</hbox>
+		</hbox>
+		<separator />
+			<groupbox closable="true">
+					<caption>
+						<label style="color:blue" value="[提示]" />
+					</caption>
+					<vbox>
+						<separator spacing="1px" />
+						<label pre="true" value="1、点击讲学或报告人姓名，可以查看或修改该报告或讲学详细信息" />
+						<label pre="true" value="2、时间必须按照指定的格式填写,如：2007/2/3-2007/3/5、2007/3/5、2008、2008/9" />
+					</vbox>
+			</groupbox>
+	</window>
+</zk>

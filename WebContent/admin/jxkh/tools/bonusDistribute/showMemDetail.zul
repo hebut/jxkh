@@ -1,0 +1,62 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="查看人员详细" border="normal" sclass="eagle-window" 
+	width="760px" closable="true" height="530px"
+		use="org.iti.jxkh.tools.ShowMemDetailWin">
+		<separator />
+		<grid>
+			<columns>
+				<column width="15%" />
+				<column width="35%" />
+				<column width="15%" />
+				<column width="35%" />
+			</columns>
+			<rows >
+				<row align="left">
+					<label value="部门：" />
+					<label id="deptName" />
+					<label value="上浮一档人数：" />
+					<decimalbox id="UpMemNum" />
+				</row>
+				<row spans="1,3">
+					<label value="选择上浮一档人员：" />
+					<hbox>
+					<textbox id="UpMember" width="520px" readonly="true" />
+					<space />
+				    <toolbarbutton id="chooseMem"  image="/css/default/images/common/xz.gif">
+					</toolbarbutton> 
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<separator />
+		<div align="center">
+			<button label="计算" id="compute" />
+		</div>
+		<separator />
+		<groupbox> 
+			<caption>
+				<label value="计算结果：" />
+			</caption>
+		<div align="left">
+		<space/>
+		<label value="一个基数额度："/>
+		<label id="perBasicAcount" />
+		<space width="520px"/>
+		<toolbarbutton id="export" visible="true" style="color:blue"
+		 image="/css/default/images/button/dc.gif" />
+		</div>
+		<separator />
+		<listbox id="showMemAcount"  mold="paging" pageSize="10"
+					 sclass="new_listbox" height="308px">
+		<listhead>
+			<listheader label="序号" width="10%" align="center" style="letter-spacing:5px"/>
+			<listheader label="人员编号" width="15%" align="center" style="letter-spacing:5px"/>
+			<listheader label="人员姓名" width="20%" align="center" style="letter-spacing:5px"/>
+			<listheader label="所在档次" width="20%" align="center" style="letter-spacing:5px"/>
+			<listheader label="绩效工资总额" width="35%" align="center" style="letter-spacing:5px"/>
+		</listhead>
+		</listbox>
+	</groupbox>
+	</window>
+</zk>

@@ -1,0 +1,24 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="文档类别管理" border="normal"
+		use="org.iti.wp.szwdlb.SzwdlbWindow" closable="true" width="600px">
+		<panel>
+			<caption>
+				<button label="添加新文档类别" id="newlb"></button>
+			</caption>
+			<panelchildren>
+
+				<listbox id="lblist">
+					<listhead>
+						<listheader label="序号" width="10%"
+							align="center">
+						</listheader>
+						<listheader label="文档类别名称" width="35%" align="center"></listheader>
+						<listheader label="所属类别" width="35%" align="center"></listheader>
+						<listheader label="操作" width="20%" align="center"></listheader>
+					</listhead>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

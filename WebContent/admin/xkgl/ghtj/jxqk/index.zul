@@ -1,0 +1,154 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window style="text-align:left"   border="normal" use="org.iti.gh.ghtj.hzqkdc.TjjxqkWindow">
+		<panel title="教研情况汇总" width="100%">
+			<!--  <caption>
+				<toolbar align="end">
+					<button label="导出教研情况" id="exportKjjl"
+						style="color:blue">
+					</button>
+				</toolbar>
+			</caption>
+			-->
+			<panelchildren >
+				<grid width="100%">
+					<columns>
+						<column width="7%"></column>
+						<column width="10%"></column>
+						<column width="10%"></column>
+						<column width="7%"></column>
+						<column width="10%"></column>
+						<column width="10%"></column>
+						<column width="7%"></column>
+						<column width="12%"></column>
+						<column width="10%"></column>
+						<column width="7%"></column>
+						<column width="10%"></column>
+					</columns>
+					<rows>
+						<row
+							style="padding:0;border-width:medium 0px 0px">
+							<space ></space>
+							<label value="部门"
+								style="letter-spacing:10px">
+							</label>
+							<listbox id="deplist"
+								use="org.iti.jxgl.ui.listbox.DeptListbox" mold="select">
+							</listbox>
+							<space ></space>
+							<label value="年度"
+								style="letter-spacing:10px">
+							</label>
+							<listbox id="yearlist"
+								use="org.iti.jxgl.ui.listbox.YearListbox" mold="select">
+							</listbox>
+							<space  ></space>
+							<label value="教师姓名"
+								style="letter-spacing:5px">
+							</label>
+							<listbox id="tealist"
+								use="org.iti.jxgl.ui.listbox.TeacherListbox" mold="select">
+							</listbox>
+							<space ></space>
+							<button id="query" label="统计"></button>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+		<panel  width="100%">
+			<panelchildren>
+				<grid id="grid3" style="border:0">
+					<columns>
+						<column width="20%" align="center" label="大类" />
+						<column width="80%" align="center" label="统计结果" />
+					</columns>
+					<rows>
+						<row>
+							<label value="项目"></label>
+							<grid style="border:0">
+								<columns>
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国家级（类别/项数）" />
+										<hbox id="gjxm"></hbox>
+									</row>
+									<row>
+										<label value="省部级（类别/项数）" />
+										<hbox id="sbxm"></hbox>
+									</row>
+									<row>
+										<label value="横向（项数）" />
+										<hbox id="hxxm"></hbox>
+									</row>
+									<row>
+										<label value="其他（项数）" />
+										<hbox id="qtxm"></hbox>
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="成果"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label
+											value="会议论文 （SCI/EI/ISTP/其他）（篇数）" />
+										<hbox id="hylw"></hbox>
+									</row>
+									<row>
+										<label
+											value="期刊论文 （SCI/EI/ISTP/核心/其他）（篇数）" />
+										<hbox id="qklw"></hbox>
+									</row>
+									<row>
+										<label value="科研专著（数量）" />
+										<hbox id="kyzz"></hbox>
+									</row>
+									<row>
+										<label value="出版教材（数量）" />
+										<hbox id="cbjc"></hbox>
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="奖励"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+
+								</columns>
+								<rows>
+									<row>
+										<label value="国家级奖励（等级/数量）" />
+										<hbox id="gjjl"></hbox>
+									</row>
+									<row>
+										<label value="省部级奖励（等级/数量）" />
+										<hbox id="sbjl"></hbox>
+									</row>
+
+									<row>
+										<label value="其他" />
+										<hbox id="qtjl"></hbox>
+									</row>
+								</rows>
+							</grid>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+
+	</window>
+</zk>

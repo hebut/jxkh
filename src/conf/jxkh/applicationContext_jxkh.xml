@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="businessIndicatorTarget" class="org.iti.jxkh.service.impl.BusinessIndicatorServiceImpl"
+		parent="baseService"></bean>
+	<bean id="businessIndicatorService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="businessIndicatorTarget" />
+		</property>
+	</bean>
+	<bean id="jxkhMeetingTarget" class="org.iti.jxkh.service.impl.JXKHMeetingServiceImpl"
+		parent="baseService"></bean>
+	<bean id="jxkhMeetingService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jxkhMeetingTarget" />
+		</property>
+	</bean>
+	<bean id="jxkhProjectTarget" class="org.iti.jxkh.service.impl.JxkhProjectServiceImpl"
+		parent="baseService"></bean>
+	<bean id="jxkhProjectService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jxkhProjectTarget" />
+		</property>
+	</bean>
+	<bean id="jxkhHylwTarget" class="org.iti.jxkh.service.impl.JxkhHylwServiceImpl"
+		parent="baseService"></bean>
+	<bean id="jxkhHylwService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jxkhHylwTarget" />
+		</property>
+	</bean>
+	<bean id="jxkhAwardTarget" class="org.iti.jxkh.service.impl.JxkhAwardServiceImp"
+		parent="baseService"></bean>
+	<bean id="jxkhAwardService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jxkhAwardTarget" />
+		</property>
+	</bean>
+	<bean id="jxkhFruitTarget" class="org.iti.jxkh.service.impl.JxkhFruitServiceImp"
+		parent="baseService"></bean>
+	<bean id="jxkhFruitService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jxkhFruitTarget" />
+		</property>
+	</bean>
+	<bean id="jxkhReportTarget" class="org.iti.jxkh.service.impl.JxkhReportServiceImp"
+		parent="baseService"></bean>
+	<bean id="jxkhReportService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jxkhReportTarget" />
+		</property>
+	</bean>
+	<bean id="jxkhVideoTarget" class="org.iti.jxkh.service.impl.JxkhVideoServiceImp"
+		parent="baseService"></bean>
+	<bean id="jxkhVideoService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jxkhVideoTarget" />
+		</property>
+	</bean>
+	<bean id="jxkhQklwTarget" class="org.iti.jxkh.service.impl.JxkhQklwServiceImpl"
+		parent="baseService"></bean>
+	<bean id="jxkhQklwService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="jxkhQklwTarget" />
+		</property>
+	</bean>
+	
+	<bean id="dutyChangeTarget" class="org.iti.jxkh.service.impl.DutyChangeServiceImpl"
+		parent="baseService"></bean>
+	<bean id="dutyChangeService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="dutyChangeTarget" />
+		</property>
+	</bean>
+	
+	<bean id="userDetailTarget" class="org.iti.jxkh.service.impl.UserDetailServiceImpl"
+		parent="baseService"></bean>
+	<bean id="userDetailService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="userDetailTarget" />
+		</property>
+	</bean>
+	
+	<bean id="rychTarget" class="org.iti.jxkh.service.impl.RychServiceImpl"
+		parent="baseService"></bean>
+	<bean id="rychService" parent="baseTxProxy">
+		<property name="target">
+			<ref local="rychTarget" />
+		</property>
+	</bean>
+</beans>

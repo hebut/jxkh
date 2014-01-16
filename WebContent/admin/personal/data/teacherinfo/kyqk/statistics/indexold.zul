@@ -1,0 +1,441 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window  style="text-align:left"  border="normal" >
+		
+		<caption>
+		<label value="年度:"		>
+							</label>
+							<listbox  mold="select" rows="1" width="80px">
+							<listitem label="请选择"/>
+							<listitem label="2011"/>
+							<listitem label="2010"/>
+							<listitem label="2009"/>
+							<listitem label="2008"/>
+							</listbox>
+							<space/>
+				<label value="项目名称:"		>
+							</label>
+							<listbox  mold="select" rows="1" width="160px">
+							<listitem label="请选择"/>
+							<listitem label="科技项目经费信息系统"/>
+							<listitem label="科技信息自动采集系统"/>
+							</listbox>	
+							<toolbarbutton  image="/css/sat/dc.gif">
+							<attribute name="onClick">
+							Window w=Executions.createComponents
+		("/admin/personal/data/teacherinfo/kyqk/statistics/test.zul", null, null);
+		w.doHighlighted();
+							</attribute>
+							</toolbarbutton>
+		</caption>
+		
+		<tabbox>
+		<tabs>
+		<tab label="项目统计"/>
+		<tab label="成果指标统计"/>
+		</tabs>
+		<tabpanels>
+		<tabpanel>
+				<grid  style="border:0">
+					<columns>
+						<column width="20%" align="center" label="大类" />
+						<column width="80%" align="center" label="统计结果" />
+					</columns>
+					<rows>
+						<row>
+							<label value="项目"></label>
+							<grid style="border:0">
+								<columns>
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国家级（项数）" />
+										<hbox style="color:blue"
+											 >
+										<toolbarbutton  label="0(项)"/>
+										</hbox>
+									</row>
+									<row>
+										<label value="省部级（项数）" />
+										<hbox style="color:blue"
+											 >
+											<toolbarbutton  label="1(项)">
+											<attribute name="onClick">
+											org.zkoss.zul.Window w=(org.zkoss.zul.Window)Executions.createComponents("/admin/personal/data/teacherinfo/kyqk/statistics/project.zul", null, null);
+	                    		w.doHighlighted();	   
+											</attribute>
+											</toolbarbutton>
+											</hbox>
+									</row>
+									<row>
+										<label value="横向（项数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0(项)"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="其他（项数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0(项)"/>
+											</hbox>
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="成果"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label
+											value="会议论文 （SCI/EI/ISTP/其他）（篇数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0/0/0/0(篇)">
+											<attribute name="onClick">
+											org.zkoss.zul.Window w=(org.zkoss.zul.Window)Executions.createComponents("/admin/personal/data/teacherinfo/kyqk/statistics/artical.zul", null, null);
+	                    		w.doHighlighted();	   
+											</attribute>
+							            </toolbarbutton>
+											</hbox>
+									</row>
+									<row>
+										<label
+											value="期刊论文  （SCI/EI/ISTP/核心/其他）（篇数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0/0/0/0(篇)">
+											<attribute name="onClick">
+											org.zkoss.zul.Window w=(org.zkoss.zul.Window)Executions.createComponents("/admin/personal/data/teacherinfo/kyqk/statistics/artical.zul", null, null);
+	                    		w.doHighlighted();	   
+											</attribute>
+											</toolbarbutton>
+											</hbox>
+									</row>
+									<row>
+										<label value="软件著作（篇数）/专利(项数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0/0(篇)"/>
+											</hbox>
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="奖励"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国家级（等级/项数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0/0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="省部级（等级/项数）" />
+										<hbox style="color:blue"
+											>
+												<toolbarbutton  label="0/0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="其他（项数）" />
+										<hbox style="color:blue"
+											>
+												<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="交流与合作"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国际会议（主持/参加/独立）（次数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0/0/0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="国内会议（主持/参加/独立）（次数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0/0/0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="国际讲学（次数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="国内讲学（次数）" />
+										<hbox style="color:blue"
+											 >
+											<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+										<row>
+										<label value="国际合作项目（项数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="国内合作项目（项数）" />
+										<hbox style="color:blue"
+											>
+											<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+							
+								</rows>
+							</grid>
+						</row>
+					</rows>
+				</grid>
+		</tabpanel>
+		<tabpanel>
+		<panel title="个人科研情况汇总" width="100%">
+			<panelchildren>
+				<grid width="100%">
+					<columns>
+						<column width="7%"></column>
+						<column width="10%"></column>
+						<column width="10%"></column>
+						<column width="7%"></column>
+						<column width="10%"></column>
+						<column width="10%"></column>
+						<column width="7%"></column>
+						<column width="12%"></column>
+						<column width="10%"></column>
+						<column width="7%"></column>
+						<column width="10%"></column>
+					</columns>
+					<rows>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+		<panel  width="100%">
+			<panelchildren>
+				<grid id="grid2" style="border:0">
+					<columns>
+						<column width="20%" align="center" label="大类" />
+						<column width="80%" align="center" label="统计结果" />
+					</columns>
+					<rows>
+						<row>
+							<label value="项目"></label>
+							<grid style="border:0">
+								<columns>
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国家级（项数）" />
+										<hbox style="color:blue"
+											id="gjj" >
+										<toolbarbutton  label="0(项)"/>
+										</hbox>
+									</row>
+									<row>
+										<label value="省部级（项数）" />
+										<hbox style="color:blue"
+											id="sbj" >
+											<toolbarbutton  label="1(项)">
+											<attribute name="onClick">
+											org.zkoss.zul.Window w=(org.zkoss.zul.Window)Executions.createComponents("/admin/personal/data/teacherinfo/kyqk/statistics/project.zul", null, null);
+	                    		w.doHighlighted();	   
+											</attribute>
+											</toolbarbutton>
+											</hbox>
+									</row>
+									<row>
+										<label value="横向（项数）" />
+										<hbox style="color:blue"
+											id="hx" >
+											<toolbarbutton  label="0(项)"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="其他（项数）" />
+										<hbox style="color:blue"
+											id="qt">
+											<toolbarbutton  label="0(项)"/>
+											</hbox>
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="成果"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label
+											value="会议论文 （SCI/EI/ISTP/其他）（篇数）" />
+										<hbox style="color:blue"
+											id="kyhylw" >
+											<toolbarbutton  label="0/0/0/0(篇)">
+											<attribute name="onClick">
+											org.zkoss.zul.Window w=(org.zkoss.zul.Window)Executions.createComponents("/admin/personal/data/teacherinfo/kyqk/statistics/artical.zul", null, null);
+	                    		w.doHighlighted();	   
+											</attribute>
+							            </toolbarbutton>
+											</hbox>
+									</row>
+									<row>
+										<label
+											value="期刊论文  （SCI/EI/ISTP/核心/其他）（篇数）" />
+										<hbox style="color:blue"
+											id="kyqklw" >
+											<toolbarbutton  label="0/0/0/0(篇)">
+											<attribute name="onClick">
+											org.zkoss.zul.Window w=(org.zkoss.zul.Window)Executions.createComponents("/admin/personal/data/teacherinfo/kyqk/statistics/artical.zul", null, null);
+	                    		w.doHighlighted();	   
+											</attribute>
+											</toolbarbutton>
+											</hbox>
+									</row>
+									<row>
+										<label value="软件著作（篇数）/专利(项数）" />
+										<hbox style="color:blue"
+											id="zz" >
+											<toolbarbutton  label="0/0(篇)"/>
+											</hbox>
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="奖励"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国家级（等级/项数）" />
+										<hbox style="color:blue"
+											id="gjjjl" >
+											<toolbarbutton  label="0/0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="省部级（等级/项数）" />
+										<hbox style="color:blue"
+											id="sbjjl" >
+												<toolbarbutton  label="0/0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="其他（项数）" />
+										<hbox style="color:blue"
+											id="qtjl" >
+												<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+								</rows>
+							</grid>
+						</row>
+						<row>
+							<label value="交流与合作"></label>
+							<grid style="border:0">
+								<columns visible="false">
+									<column width="60%" align="center" />
+									<column width="40%" align="center" />
+								</columns>
+								<rows>
+									<row>
+										<label value="国际会议（主持/参加/独立）（次数）" />
+										<hbox style="color:blue"
+											id="gjhy" >
+											<toolbarbutton  label="0/0/0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="国内会议（主持/参加/独立）（次数）" />
+										<hbox style="color:blue"
+											id="gnhy" >
+											<toolbarbutton  label="0/0/0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="国际讲学（次数）" />
+										<hbox style="color:blue"
+											id="gjjx" >
+											<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="国内讲学（次数）" />
+										<hbox style="color:blue"
+											id="gnjx" >
+											<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+										<row>
+										<label value="国际合作项目（项数）" />
+										<hbox style="color:blue"
+											id="gjhz" >
+											<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+									<row>
+										<label value="国内合作项目（项数）" />
+										<hbox style="color:blue"
+											id="gnhz" >
+											<toolbarbutton  label="0"/>
+											</hbox>
+									</row>
+									<!-- 
+									<row>
+										<label value="其他" />
+										<hbox style="color:blue"
+											id="qtqk" />
+									</row>
+									 -->
+								</rows>
+							</grid>
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+		</tabpanel>
+		</tabpanels>
+		</tabbox>
+		
+	</window>
+</zk>

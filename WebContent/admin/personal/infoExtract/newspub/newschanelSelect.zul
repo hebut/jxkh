@@ -1,0 +1,20 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window  id="select" title="选择栏目"  width="400px"  
+use="org.iti.xypt.personal.infoCollect.newspub.NewsChanelSelectWindow">
+   <panel  >			    	    
+			    <panelchildren>
+				  <tree id="tree" zclass="z-dottree" rows="17" checkmark="true"
+				  multiple="true" mold="paging" fixedLayout="true" pageSize="17" /> 
+				</panelchildren>
+   </panel>
+<hbox pack="center" width="100%">
+<hbox>
+   <toolbarbutton image="/images/content/3/zk.gif" id="open" />
+   <toolbarbutton image="/images/content/3/hb.gif" id="clo"/>
+   <toolbarbutton image="/images/content/3/qd.gif" id="submit" />
+   <toolbarbutton image="/css/img/btn-close.gif" onClick="select.detach()"/>
+   </hbox>
+</hbox>
+</window>
+</zk>

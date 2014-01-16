@@ -1,0 +1,26 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window  use="org.iti.gh.glyjfx.fxfzr.lwgl.LwglWindox">
+<panel title="管理论文" width="100%" border="normal" collapsible="true" style="text-align:left" >
+<caption>
+   <toolbar align="end">
+      <button label="添加论文" id="addLw">
+      </button>
+
+   </toolbar>
+</caption>
+<panelchildren>
+<listbox id="typeList" mold="paging" pageSize="15">
+		<listhead>
+			<listheader width="20%" label="论文种类" align="center"/>
+			<listheader width="17%" label="2011年"  align="center"/>
+			<listheader width="17%" label="2012年"  align="center"/>
+			<listheader width="17%" label="2013年"  align="center"/>
+			<listheader width="17%"  label="2014年" align="center"/>
+			<listheader width="16%" label="2015年"  align="center"/>
+		</listhead>
+</listbox>
+</panelchildren>
+</panel>
+</window>
+</zk>

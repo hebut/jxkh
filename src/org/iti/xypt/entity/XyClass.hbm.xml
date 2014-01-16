@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+	<class name="org.iti.xypt.entity.XyClass" table="XY_CLASS" schema="dbo">
+		<id name="clId" type="java.lang.Long">
+			<column name="C_ID" precision="18" scale="0" />
+			<generator class="native" />
+		</id>
+		<property name="clName" type="java.lang.String">
+			<column name="C_NAME" length="50" not-null="true" />
+		</property>
+		<property name="clSname" type="java.lang.String">
+			<column name="C_SNAME" length="50" not-null="true" />
+		</property>
+		<property name="kdId" type="java.lang.Long">
+			<column name="KD_ID" precision="18" scale="0" not-null="true" />
+		</property>
+		<property name="clGrade" type="java.lang.Integer">
+			<column name="C_GRADE" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

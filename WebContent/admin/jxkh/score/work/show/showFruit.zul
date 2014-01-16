@@ -1,0 +1,23 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="查看鉴定成果详细" border="normal"  sclass="newin" width="600px" height="600px">
+	<listbox id="fruitListbox" paginal="${fruitPaging}" multiple="true" checkmark="true" sclass="new_listbox">
+		<listhead >
+				<listheader align="center" width="10%" label="序号"/>
+				<listheader style="text-align:center" width="25%" align="left" label="成果名称"/>
+				<listheader style="text-align:center" width="24%" align="left" label="完成人"/>
+				<listheader align="center" width="13%" label="成果水平"/>
+				<listheader align="center" width="13%" label="验收等级"/>
+				<listheader label="提交人"  width="15%" align="center" sort="auto(type)" />
+				
+		</listhead>
+	</listbox>
+	<div align="right">
+		<paging id="fruitPaging" zclass="z-paging"  pageSize="10" detailed="true"/>
+	</div>
+	<separator/>
+		<div align="center">
+			<toolbarbutton id="close"	image="/css/img/actquit.gif" />
+		</div>
+</window>
+</zk>

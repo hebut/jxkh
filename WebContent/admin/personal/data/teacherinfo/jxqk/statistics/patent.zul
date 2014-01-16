@@ -1,0 +1,28 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="软件著作详情" border="normal" closable="true" width="800px" sclass="newin" height="430px"
+		use="org.iti.projectmanage.teach.statistic.RjzzandZlWindow">
+		
+		<listbox id="rjzzlist" mold="paging" pageSize="10" sclass="new_listbox">
+			<listhead>
+				<listheader label="序号" width="7%" align="center" />
+				<listheader label="软件著作名称"  align="center" />
+				<listheader label="首次发表时间" width="18%" align="center" />
+				<listheader label="登记号" width="10%" align="center" />
+				<listheader label="登记时间" width="10%" align="center" />
+				<listheader label="软著登记号" width="17%" align="center" />
+				<listheader label="教师姓名" width="10%" align="center"/>
+			</listhead>
+		</listbox>
+		<listbox id="fmzllist" mold="paging" pageSize="10" sclass="new_listbox">
+			<listhead>
+				<listheader label="序号" width="7%" align="center" />
+				<listheader label="发明专利名称"  align="center" />
+				<listheader label="授权时间" width="15%" align="center" />
+				<listheader label="专利授权号" width="20%" align="center" />
+				<listheader label="发明人" width="10%" align="center" />
+
+			</listhead>
+		</listbox>
+	</window>
+</zk>

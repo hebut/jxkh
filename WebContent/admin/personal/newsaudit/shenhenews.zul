@@ -1,0 +1,126 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window id="win"  border="normal"  width="920px"   contentStyle="overflow:auto" use="org.iti.xypt.personal.infoCollect.newsaudit.NewsauditDetailWindow">
+<caption image="/css/img/win-ico.gif" label="查看信息" />
+<zscript><![CDATA[
+import org.zkoss.io.Files; 
+import java.io.*;
+import java.util.Date;
+import com.uniwin.common.util.DateUtil;
+import org.zkoss.zk.ui.util.Configuration;
+import org.zkoss.util.media.Media; 
+import org.zkoss.util.media.AMedia; 
+import com.uniwin.framework.entity.WkTUser;
+]]></zscript>
+<vbox>
+<hbox >
+<label value="标题:" width="70px" />
+<space width="20px"/>
+<textbox   width="580px" id="kititle" constraint="no empty"/>
+<label value="*" style="color:red;valign:center" />
+<space width="19px"/>
+<checkbox label="粗体" id="cuti"/>
+<space/>
+</hbox>
+<hbox >
+<label value="副标题:"  width="170px" />
+<space width="8px"/>
+<textbox width="580px" id="kititle2"/>
+<space width="25px"/>
+	<checkbox  label="发送到邮箱" id="kishow" visible="false" />
+</hbox>
+<hbox>
+<label value="发布标题:" width="66px"/>
+<textbox width="580px"  id="kbtitle"/>
+<space width="30px"/>
+<label value="图片:"  width="66px"/>       
+		  <hbox align="start">
+            <toolbarbutton image="/images/content/1/sc.gif" id="upImage"></toolbarbutton>
+	<hbox  id="pics" align="start"></hbox>
+	</hbox>
+</hbox>
+<hbox>
+<label value="发布频道:" width="66px"/>
+<textbox id="taskname"   width="300px" />
+<space/>
+<toolbarbutton image="/images/content/1/xz.gif" id="choose"/>
+<space width="57px"/>
+<label value="来源:" width="70px"/>
+<textbox width="290px"  id="kisource" />
+</hbox>
+<hbox id="sharehbox" visible="false">
+<label value="共享频道:"/>
+<textbox width="300px" id="share"/>
+<space/>
+<toolbarbutton image="/images/content/1/xz.gif" id="choice1"/>
+				<space width="32px"/>
+<label value="失效日期:" width="90px"/>
+<datebox  width="150px" id="kivaliddate" />
+</hbox>
+<hbox>
+<label value="关键字:" width="70px"  />
+<space width="7px"/>
+<textbox width="770px" id="kikeys" />
+</hbox>
+<hbox >
+<label value="摘要信息:" width="70px"/>
+<textbox width="500px" id="kimemo" />
+
+<label>查看权限</label>
+<listbox mold="select" id="shenheAuthoriation">
+<listitem label="教师" value="0" id="teacher" />
+<listitem label="学生" value="1" id="student" />
+<listitem label="全部" selected="true" value="2" id="all"/>
+</listbox>
+
+</hbox>
+
+<hbox  id="wdnews">
+<label value="新闻内容:" />
+</hbox>
+<separator bar="true" id="sep1" visible="false"/>
+<hbox>
+<space width="25px"/>
+<fckeditor  height="340px" width="840px" id="kicontent" >
+</fckeditor> 
+<html id="content" height="300px" width="685px" visible="false"/>
+</hbox>
+<separator bar="true" id="sep2" visible="false"/>
+<hbox id="tupian">
+ <space width="50px"/>
+ <label value="附件:" width="70px"/>
+<toolbarbutton id="up" image="/css/img/tianjiafujian.png">
+				       <attribute name="onClick">
+				         <![CDATA[{
+				        	  	Object media = Fileupload.get();
+                            	if(media!=null){
+                              	    win.getModelList().add(media);
+								} else {
+									Messagebox.show("您没有选择要上传的文件！", "提示！", Messagebox.OK, Messagebox.INFORMATION);				
+								}       
+                         }]]></attribute>
+				    </toolbarbutton>
+				     <space width="160px"/>
+<label value="附件列表:" width="70px"/>
+<listbox  width="200px" id="upList"  mold="select" />
+<space/>
+<toolbarbutton image="/css/img/delAct.gif" id="deUpload"/>
+<space/>
+<toolbarbutton image="/images/content/1/xz_.gif" id="down"/>
+</hbox>
+
+<hbox id="adv" visible="false">
+<label value="处理意见:" width="70px"/>
+<textbox width="760px" id="kflmemo"/>
+</hbox>
+</vbox>
+<div sclass="pop-win-b-div" align="center">
+<toolbarbutton image="/css/img/btn-save.gif" id="save"/>
+<toolbarbutton image="/css/img/btn-pub.gif" id="pass"/>
+<toolbarbutton image="/css/img/btn-back.gif" id="reback"/>
+<toolbarbutton image="/css/img/btn-resetb.gif" id="reset"/>
+<toolbarbutton image="/css/img/btn-del.gif"  id="delete"/>
+<toolbarbutton image="/css/img/btn-close.gif"  id="back" onClick="win.detach()"/>
+</div>
+</window>
+</zk>

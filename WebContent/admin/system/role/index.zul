@@ -1,0 +1,8 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<panel width="100%" apply="com.uniwin.framework.ui.role.RoleTreeComposer" id="rolePanel">
+		<panelchildren>
+			<tree id="roleTree" zclass="z-dottree" rows="47" />
+		</panelchildren>
+	</panel>
+</zk>

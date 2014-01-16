@@ -1,0 +1,33 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="" border="none" sclass="newin">
+	 <panel title="设置统计方式" height="300px" width="400px">
+		<panelchildren>
+			<groupbox height="250px">
+				<caption>
+					<label value="请选择统计的显示方式"/>
+				</caption>
+				<separator height="50px"></separator>
+				<div align="center">
+					<label value="是否显示积分："/>
+					<radiogroup>
+						<radio label="是" checked="true"/>
+						<radio label="否"/>
+					</radiogroup>
+				</div>
+				<separator height="20px"></separator>
+				<div align="center">
+			<toolbarbutton id="submit"
+				image="/css/default/images/button/actSave.gif" />
+			<space />
+			<toolbarbutton id="close"
+				image="/css/default/images/button/gb.gif">
+				<attribute name="onClick">					
+				</attribute>
+			</toolbarbutton>
+		</div>
+			</groupbox>
+		</panelchildren>
+	</panel>
+</window>
+</zk>

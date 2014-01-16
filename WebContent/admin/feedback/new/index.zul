@@ -1,0 +1,20 @@
+<zk>
+	<window title="反馈意见(如果反馈已经被回复，那么原反馈内容不能修改。)" border="normal" use="com.uniwin.asm.personal.ui.feedback.FeedbackWindow">
+		<caption>
+			<toolbar align="end">
+				<toolbarbutton image="/css/default/images/button/addAct.gif" id="add" />
+				<toolbarbutton image="/css/default/images/button/delAct.gif" id="del" />
+			</toolbar>
+		</caption>
+		<listbox checkmark="true" multiple="true" id="fk">
+			<listhead>
+				<listheader label="序号" align="center" width="10%" />
+				<listheader label="反馈模块" align="center" width="15%" />
+				<listheader label="反馈主题" align="center" />
+				<listheader label="反馈人" align="center" width="10%" />
+				<listheader label="反馈时间" align="center" width="25%" />
+				<listheader label="已经回复" align="center" width="10%" />
+			</listhead>
+		</listbox>
+	</window>
+</zk>

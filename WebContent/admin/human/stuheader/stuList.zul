@@ -1,0 +1,24 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="normal" use="org.iti.human.ld.StuHeaderListWindow" width="60%" title="选择学生" closable="true">
+		<panel>
+			<panelchildren>
+				<listbox checkmark="true" multiple="true" id="stulist" mold="paging" pageSize="15" rows="15">
+					<listhead>
+						<listheader width="10%" align="center" />
+						<listheader width="20%" label="学号" align="center" />
+						<listheader width="20%" label="姓名" align="center" />
+						<listheader width="25%" label="班级" align="center" />
+						<listheader width="25%" label="专业" align="center" />
+					</listhead>
+				</listbox>
+				<hbox align="center" width="100%" pack="center">
+					<hbox>
+						<button label="选择" id="submit" />
+						<button label="返回" id="close" />
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

@@ -1,0 +1,70 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="选择项目" border="normal" width="800px"
+		
+		closable="true">
+		<panel>
+			<panelchildren>
+				<grid>
+					<columns>
+						<column></column>
+						<column></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row>
+							<label value="项目名称"></label>
+							<textbox id="xmmc"></textbox>
+							<label value="项目来源"></label>
+							<textbox id="ly"></textbox>
+							<label value="负责人"></label>
+							<textbox id="fzr"></textbox>
+							<button id="query" label="检索"></button>
+						</row>
+					</rows>
+				</grid>
+			
+			</panelchildren>
+		</panel>
+		<panel title="您可能参与的项目列表" id="xmpanel" >
+		<panelchildren>
+			<listbox id="xmlist" style="border-bottom-width:0px"
+					mold="paging" pageSize="10" checkmark="true" sclass="new_listbox">
+					<listhead>
+						<listheader label="序号" width="5%"
+							align="center" />
+						<listheader label="项目名称" width="20%"
+							align="center" />
+						<listheader label="项目来源" width="15%"
+							align="center" />
+						<listheader label="负责人" width="10%"
+							align="center" />
+						<listheader label="项目开始时间" width="12%"
+							align="center" />
+						<listheader label="项目结束时间" width="13%"
+							align="center" />
+						<listheader label="项目进展" width="15%"
+							align="center" />
+						<listheader label="填写人" width="10%"
+							align="center" />
+					</listhead>
+				</listbox>
+				<hbox pack="center" width="100%">
+					<hbox >
+						<button id="submit" label="确定"></button>
+						<button id="close" label="关闭"></button>
+					</hbox>
+				</hbox>
+		</panelchildren>
+		</panel>
+		<panel id="exception"  visible="false" >
+			<panelchildren>
+				<hbox pack="center" width="100%">
+					<hbox>
+						<label value="没有符合条件的科研项目,请尝试选择其他条件......" style="font-family:'宋体';font-size:14px"></label>
+					</hbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

@@ -1,0 +1,13 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="选择通知班级" width="50%" closable="true" border="normal" use="org.iti.xypt.personal.notice.NoticeRkjsTargetSelectWindow">
+		<tree id="targetTree" zclass="z-dottree" width="100%" mold="paging" rows="20" checkmark="true" multiple="true" />
+		<hbox width="100%" pack="center">
+			<hbox>
+				<button label="提交" id="submit" />
+				<button label="重置" id="reset" />
+				<button label="关闭" id="close" />
+			</hbox>
+		</hbox>
+	</window>
+</zk>

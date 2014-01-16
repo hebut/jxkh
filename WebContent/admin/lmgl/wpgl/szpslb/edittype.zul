@@ -1,0 +1,49 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="编辑评审类别" border="normal" closable="true" width="60%" use="org.iti.wp.szpslb.EditpslbWindow">
+<grid>
+					<columns>
+						<column ></column>
+						<column></column>
+					</columns>
+					<rows>
+					<row>
+						<label value="评审类别名称"/>
+						 <textbox id="pslbname" constraint="no empty"></textbox></row>
+						<row id="ttype">
+						<label value="类别"/>
+						<listbox id="lbname" mold="select" width="135px"></listbox></row>
+						<row>
+						<label value="评审开始时间"/>
+						<datebox id="psstart" constraint="no empty" width="115px"> </datebox></row>
+						<row>
+						<label value="评审结束时间"/>
+						<datebox id="psend" constraint="no empty" width="115px"></datebox></row>
+						<row id="tjtype" >
+						<label value="提交类型"/>
+						<hbox>
+						<listbox id="szlx" mold="select" width="135px">
+						<listitem label="角色" value="0" selected="true"></listitem>
+						<listitem label="用户" value="1"></listitem>
+						</listbox>
+						
+						</hbox></row>
+						<row  id="tjr" visible="false">
+						<label value="提交角色"/>
+						<listbox id="tjrole" mold="select" width="135px">
+						<listitem label="教师" value="0" selected="true"></listitem>
+						<listitem label="学生" value="1"></listitem>
+						</listbox>
+						</row>
+						
+						
+					</rows>
+		</grid>
+				<hbox pack="center" width="100%">
+				<hbox>
+				<button label="确定" id="sure"></button> 
+				<button label="退出" id="back"></button> 
+				</hbox>
+				</hbox>
+</window>
+</zk>

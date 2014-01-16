@@ -1,0 +1,46 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="添加会议" border="normal" width="600px" style="text-align:left" closable="true" use="org.iti.gh.glyjfx.fxfzr.hygl.AddhyWindow">
+<grid>
+		<columns>
+			<column width="30%" align="center"/>
+			<column width="70%" align="left"/>
+		</columns>
+		<rows>		
+			<row>
+				<label value="参加人员"/>
+				<listbox id="rylist"  rows="1" mold="select" width="105px"/>
+					
+					</row>		
+			<row>
+				<label value="会议类型"/>
+					<listbox id="hytype"  rows="1" mold="select" width="105px"/>
+			</row>	
+		
+			<row>
+				<label value="会议方式"/>				
+					<listbox id="hyfs"  rows="1" mold="select" width="105px"/>					
+			</row>
+			<row>
+				<label value="举办年度"/>
+				<listbox id="hynd"  rows="1" mold="select" width="105px"/>
+			</row>
+			<row>
+				<label value="会议内容"/>
+					<textbox id="content" width="95%"  rows="14" height="150"/>
+			</row>
+			
+		</rows>
+	</grid>
+	<separator/>
+	<hbox align="center" pack="center" width="100%">
+	<hbox>
+		<button id="submit" label="提交"/>
+		<space spacing="5px"/>
+		<button id="reset" label="重置"/>
+		<space spacing="5px"/>
+		<button id="close" label="关闭"/>
+	</hbox>
+	</hbox>
+</window>
+</zk>

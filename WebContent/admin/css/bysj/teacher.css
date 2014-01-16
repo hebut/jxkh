@@ -1,0 +1,124 @@
+body {
+	
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.STYLE6 {color: #004e00; 
+         font-size: 12px;
+	     font-family: "宋体";}
+
+.STYLE11 {color: #FFFF99; font-size: 12px; font-family: "宋体"; }
+.STYLE12 {
+	color: #FFFFFF;
+	font-size: 12px;
+	font-family: "宋体";
+	font-weight: bold;
+}
+.STYLE13 {color: #000000; font-size: 12px; font-family: "宋体"; }
+.STYLE14 {color: #FF0000}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #006699;
+}
+a:active {
+	text-decoration: none;
+}
+A.Link2:link {
+	FONT-SIZE: 12px;
+	COLOR: #004e00;
+	TEXT-DECORATION: none;
+	font-weight: bold;
+}
+A.Link2:visited {
+	FONT-SIZE: 12px;
+	COLOR: #004e00;
+	TEXT-DECORATION: none;
+	font-weight: bold;
+}
+A.Link2:hover {
+	FONT-SIZE: 12px;
+	COLOR: #CC3300;
+	TEXT-DECORATION: none;
+	font-weight: bold;
+}
+A.Link3:link {
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+}
+A.Link3:visited {
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+}
+A.Link3:hover {
+	FONT-SIZE: 12px;
+	COLOR: #CC3300;
+	TEXT-DECORATION: none;
+}
+A.Link4:link {
+	FONT-SIZE: 12px;
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: none;
+	font-weight: bold;
+}
+A.Link4:visited {
+	FONT-SIZE: 12px;
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: none;
+	font-weight: bold;
+}
+A.Link4:hover {
+	FONT-SIZE: 12px;
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: none;
+	font-weight: bold;
+}
+A.Link5:link {
+	FONT-SIZE: 12px;
+	COLOR: #004e00;
+	TEXT-DECORATION: none;
+}
+A.Link5:visited {
+	FONT-SIZE: 12px;
+	COLOR: #004e00;
+	TEXT-DECORATION: none;
+}
+A.Link5:hover {
+	FONT-SIZE: 12px;
+	COLOR: #CC3300;
+	TEXT-DECORATION: none;
+}
+.STYLE13 {color: #000000; font-size: 12px; font-family: "宋体"; }
+.STYLE17 {
+	font-size: 12px;
+	color: #FF0000;
+}
+.STYLE18 {color: #FF0000}
+.STYLE19 {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+.table1 {
+	margin: 0px;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #4cb77c;
+	border-right-color: #4cb77c;
+	border-bottom-color: #4cb77c;
+	border-right-width: 2px;
+	border-right-style: solid;
+}
