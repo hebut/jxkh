@@ -635,7 +635,7 @@ public class SortWindow extends BaseWindow {
 				res.setArYear(year + "");//设置积分年度
 				auditResultService.save(res);
 			}
-			arlist.get().setArMoney(base * TmpArray[i]); 
+			//arlist.get().setArMoney(base * TmpArray[i]); 
 			auditResultService.update(arlist.get(i));
 		}
 		
