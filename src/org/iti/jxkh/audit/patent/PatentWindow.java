@@ -6,12 +6,9 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.business.patent.AddPatentWindow;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.entity.Jxkh_Patent;
@@ -28,7 +25,6 @@ import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.ext.AfterCompose;
 import org.zkoss.zul.Groupbox;
-import org.zkoss.zul.Image;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
@@ -38,7 +34,6 @@ import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -137,7 +132,7 @@ public class PatentWindow extends Window implements AfterCompose {
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(project.getName().length() <= 14?project.getName():project.getName().substring(0, 14) + "...");
 			c2.setStyle("color:blue");
-			c2.setTooltiptext("点击查看专利(软件)信息");
+			c2.setTooltiptext(project.getName());
 			c2.addEventListener(Events.ON_CLICK, new EventListener() {
 				public void onEvent(Event arg0) throws Exception {
 
@@ -157,36 +152,26 @@ public class PatentWindow extends Window implements AfterCompose {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					// initShow();
 
 				}
 			});
-
+			//专利类型
 			Listcell c3 = new Listcell(project.getSort().getKbName());
+			//积分年度
 			Listcell c4 = new Listcell();
 			if (project.getjxYear() != null) {
 				c4 = new Listcell(project.getjxYear());
 			} else {
 				c4 = new Listcell("");
 			}
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Image download = new Image("/css/default/images/button/down.gif");
-			download.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-					win.setFiles(project.getPatentFile());
-					win.setFlag("patent");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			c5.appendChild(download);
-			Listcell c6 = new Listcell(project.getScore() == null ? ""
+			//该项得分
+			Listcell c5 = new Listcell(project.getScore() == null ? ""
 					: project.getScore().toString());
+			//填写人
+			Listcell c6 = new Listcell();
+			WkTUser user = jxkhProjectService.findWktUserByMemberUserId(project.getInfoWriter());
+			c6.setLabel(user.getKuName());
+			//审核状态
 			String strC8;
 			switch (project.getState()) {
 			case Jxkh_Patent.NOT_AUDIT:
@@ -286,6 +271,7 @@ public class PatentWindow extends Window implements AfterCompose {
 			}
 			return;
 		}
+		@SuppressWarnings("unchecked")
 		Iterator<Listitem> items = zxListbox.getSelectedItems().iterator();
 		List<Jxkh_Patent> awardList = new ArrayList<Jxkh_Patent>();
 		Jxkh_Patent award = new Jxkh_Patent();

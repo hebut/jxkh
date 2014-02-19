@@ -6,13 +6,10 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
 import org.iti.jxkh.audit.project.HPWindow;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.entity.Jxkh_Project;
@@ -29,7 +26,6 @@ import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.ext.AfterCompose;
 import org.zkoss.zul.Groupbox;
-import org.zkoss.zul.Image;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
@@ -39,7 +35,6 @@ import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -116,6 +111,8 @@ public class DeptHprojectWindow extends Window implements AfterCompose {
 		auditState2.setSelectedIndex(0);
 		List<Jxkh_Project> hProjectList = jxkhProjectService.findAllHPByDept1(user.getDept().getKdNumber());
 		hxListbox.setModel(new ListModelList(hProjectList));
+		
+		hxPaging.setTotalSize(hProjectList.size());
 	}
 
 	public class auditStateRenderer implements ListitemRenderer {
@@ -161,78 +158,42 @@ public class DeptHprojectWindow extends Window implements AfterCompose {
 			Listcell c2 = new Listcell(project.getName().length()>10?project.getName().substring(0, 10)+"...":project.getName());
 			c2.setTooltiptext(project.getName());
 			c2.setStyle("color:blue");
+			c2.addEventListener(Events.ON_CLICK, new EventListener() {
+				public void onEvent(Event arg0) throws Exception {
 
-			if (project.getState() == JXKH_MEETING.WRITING || project.getState() == Jxkh_Project.NOT_AUDIT || project.getState() == Jxkh_Project.DEPT_NOT_PASS || project.getState() == Jxkh_Project.BUSINESS_NOT_PASS) {
+					HPWindow w = (HPWindow) Executions.createComponents("/admin/personal/businessdata/project/showHP.zul", null, null);
+					try {
+						w.setTitle("查看项目信息");
+						w.setProject(project);
+						//w.setDept("dept");
+						w.initShow();
+						w.initWindow();
+						w.doModal();
 
-				//c2.setTooltiptext("点击编辑横向项目信息");
-				c2.addEventListener(Events.ON_CLICK, new EventListener() {
-					public void onEvent(Event arg0) throws Exception {
-
-						AddHPWindow w = (AddHPWindow) Executions.createComponents("/admin/personal/businessdata/project/addHP.zul", null, null);
-						try {
-							w.setTitle("编辑项目信息");
-							w.setProject(project);
-							w.setDept("dept");
-							w.initShow();
-							w.initWindow();
-							w.doModal();
-
-						} catch (SuspendNotAllowedException e) {
-							e.printStackTrace();
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-						initShow();
-
+					} catch (SuspendNotAllowedException e) {
+						e.printStackTrace();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
 					}
-				});
-
-			} else {
-
-				c2.setTooltiptext("点击查看横向项目信息");
-				c2.addEventListener(Events.ON_CLICK, new EventListener() {
-					public void onEvent(Event arg0) throws Exception {
-
-						HPWindow w = (HPWindow) Executions.createComponents("/admin/personal/businessdata/project/showHP.zul", null, null);
-						try {
-							w.setTitle("查看项目信息");
-							w.setProject(project);
-							w.setDept("dept");
-							w.initShow();
-							w.initWindow();
-							w.doModal();
-
-						} catch (SuspendNotAllowedException e) {
-							e.printStackTrace();
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-						initShow();
-
-					}
-				});
-			}
+					initShow();
+				}
+			});
+			//项目级别
 			Listcell c3 = new Listcell("");
 			if (project.getRank() == null) {
 				c3.setLabel("");
 			} else {
 				c3.setLabel(project.getRank().getKbName());
 			}
+			//积分年度
 			Listcell c4 = new Listcell(project.getjxYear());
-			Listcell c5 = new Listcell(project.getBeginDate());
+			//该项得分
+			Listcell c5 = new Listcell(project.getScore() == null ? "0" : project.getScore().toString());
+			//填写人
 			Listcell c6 = new Listcell();
-			Image download = new Image("/css/default/images/button/down.gif");
-			download.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions.createComponents("/admin/personal/businessdata/meeting/download.zul", null, null);
-					win.setFiles(project.getProjectFile());
-					win.setFlag("hp");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			c6.appendChild(download);
-			Listcell c7 = new Listcell(project.getScore() == null ? "0" : project.getScore().toString());
+			WkTUser user = jxkhProjectService.findWktUserByMemberUserId(project.getInfoWriter());
+			c6.setLabel(user.getKuName());
+			//审核状态
 			String strC8;
 			switch (project.getState()) {
 			case Jxkh_Project.NOT_AUDIT:
@@ -281,7 +242,6 @@ public class DeptHprojectWindow extends Window implements AfterCompose {
 			item.appendChild(c4);
 			item.appendChild(c5);
 			item.appendChild(c6);
-			item.appendChild(c7);
 			item.appendChild(c8);
 		}
 	}

@@ -6,16 +6,12 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_Fruit;
 import org.iti.jxkh.entity.Jxkh_FruitDept;
-import org.iti.jxkh.entity.Jxkh_FruitFile;
 import org.iti.jxkh.entity.Jxkh_FruitMember;
 import org.iti.jxkh.service.JxkhFruitService;
 import org.zkoss.zk.ui.Components;
@@ -33,7 +29,6 @@ import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
 
 import com.iti.common.util.ConvertUtil;
@@ -48,7 +43,6 @@ public class PersonWin extends Window implements AfterCompose {
 	private WkTUser user;
 	private Listbox fruitListbox;
 	private List<Jxkh_Fruit> fruitList = new ArrayList<Jxkh_Fruit>();
-	private Set<Jxkh_FruitFile> filesList;
 	private JxkhFruitService jxkhFruitService;
 	private Textbox name;
 	private YearListbox year;
@@ -93,7 +87,7 @@ public class PersonWin extends Window implements AfterCompose {
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(fruit.getName().length() <= 11?
 					fruit.getName():fruit.getName().substring(0, 11) + "...");
-			c2.setTooltiptext("点击查看鉴定成果信息");
+			c2.setTooltiptext(fruit.getName());
 			c2.setStyle("color:blue");
 			if (user.getKuLid().equals(fruit.getSubmitId())) {
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
@@ -101,14 +95,14 @@ public class PersonWin extends Window implements AfterCompose {
 						Listitem item = (Listitem) event.getTarget()
 								.getParent();
 						Jxkh_Fruit fruit = (Jxkh_Fruit) item.getValue();
-						if (fruit.getState() == JXKH_MEETING.WRITING || fruit.getState() == Jxkh_Fruit.NOT_AUDIT
+						/*if (fruit.getState() == JXKH_MEETING.WRITING || fruit.getState() == Jxkh_Fruit.NOT_AUDIT
 								|| fruit.getState() == Jxkh_Fruit.DEPT_NOT_PASS
 								|| fruit.getState() == Jxkh_Fruit.BUSINESS_NOT_PASS) {
 						} else {
 							Messagebox.show(
 									"部门已经审核通过或者业务办已经审核通过，您只能查看，无权再编辑 ！", "提示",
 									Messagebox.OK, Messagebox.ERROR);
-						}
+						}*/
 						AddFruitWin w = (AddFruitWin) Executions
 								.createComponents(
 										"/admin/personal/businessdata/fruit/addfruit.zul",
@@ -149,33 +143,16 @@ public class PersonWin extends Window implements AfterCompose {
 					}
 				});
 			}
+			//成果水平
 			Listcell c3 = new Listcell();
 			if (fruit.getAppraiseRank() != null)
 				c3 = new Listcell(fruit.getAppraiseRank().getKbName());
+			//积分年度
 			Listcell c4 = new Listcell(fruit.getjxYear());
-
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.setHeight("20px");
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-
-					filesList = fruit.getFruitFile();
-					win.setFiles(filesList);
-					win.setFlag("FRUIT");
-					win.initWindow();
-					win.doModal();
-				}
-			});
+			//该项得分
 			Listcell c6 = new Listcell(fruit.getScore() == null ? "0" : fruit
 					.getScore().toString());
+			//本人得分
 			Listcell c7 = new Listcell("");
 			List<Jxkh_FruitMember> mlist = fruit.getFruitMember();
 			for (int j = 0; j < mlist.size(); j++) {
@@ -186,7 +163,10 @@ public class PersonWin extends Window implements AfterCompose {
 					}
 				}
 			}
-
+			//填写人
+			Listcell c72 = new Listcell();
+			c72.setLabel(fruit.getSubmitName());
+			//审核状态
 			Listcell c8 = new Listcell();
 			c8.setTooltiptext("点击查看审核结果");
 			if (fruit.getState() == null || fruit.getState() == 0) {
@@ -255,9 +235,9 @@ public class PersonWin extends Window implements AfterCompose {
 			item.appendChild(c2);
 			item.appendChild(c3);
 			item.appendChild(c4);
-			item.appendChild(c5);
 			item.appendChild(c6);
 			item.appendChild(c7);
+			item.appendChild(c72);
 			item.appendChild(c8);
 		}
 	}

@@ -8,15 +8,11 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.JXKH_QKLW;
 import org.iti.jxkh.entity.JXKH_QKLWDept;
-import org.iti.jxkh.entity.JXKH_QKLWFile;
 import org.iti.jxkh.entity.JXKH_QKLWMember;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.service.JXKHMeetingService;
@@ -37,9 +33,7 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -58,7 +52,6 @@ public class JournalWindow extends Window implements AfterCompose {
 	private WkTUser user;
 	private List<JXKH_QKLW> qklwList = new ArrayList<JXKH_QKLW>();
 	private List<JXKH_QKLW> meetingList = new ArrayList<JXKH_QKLW>();
-	private Set<JXKH_QKLWFile> filesList;
 	private String nameSearch;
 	private Textbox name;
 	private Listbox auditState, rank;
@@ -129,7 +122,7 @@ public class JournalWindow extends Window implements AfterCompose {
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(meeting.getLwName().length() <= 12?
 					meeting.getLwName():meeting.getLwName().substring(0, 12) + "...");
-			c2.setTooltiptext("点击查看期刊论文信息");
+			c2.setTooltiptext(meeting.getLwName());
 			c2.setStyle("color:blue");
 			c2.addEventListener(Events.ON_CLICK, new EditListener());
 			Listcell c3 = new Listcell();
@@ -138,25 +131,7 @@ public class JournalWindow extends Window implements AfterCompose {
 			else
 				c3.setLabel(meeting.getQkGrade().getKbName());
 			Listcell c4 = new Listcell(meeting.getjxYear());
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("附件");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-					filesList = jxkhQklwService
-							.findMeetingFilesByMeetingId(meeting);
-					win.setFiles(filesList);
-					win.setFlag("QKLW");
-					win.initWindow();
-					win.doModal();
-				}
-			});
+			
 			Listcell c6 = new Listcell();
 			if(meeting.getScore() != null) {
 				BigDecimal bd = new BigDecimal(meeting.getScore().floatValue());
@@ -176,6 +151,10 @@ public class JournalWindow extends Window implements AfterCompose {
 					}
 				}
 			}
+			//填写人
+			Listcell c71 = new Listcell();
+			c71.setLabel(meeting.getLwWriter());
+			//审核状态
 			Listcell c8 = new Listcell();
 			c8.setTooltiptext("点击查看审核结果");
 			if (meeting.getLwState() == null) {
@@ -246,9 +225,9 @@ public class JournalWindow extends Window implements AfterCompose {
 			item.appendChild(c2);
 			item.appendChild(c3);
 			item.appendChild(c4);
-			item.appendChild(c5);
 			item.appendChild(c6);
 			item.appendChild(c7);
+			item.appendChild(c71);
 			item.appendChild(c8);
 		}
 	}
@@ -262,13 +241,13 @@ public class JournalWindow extends Window implements AfterCompose {
 			Listitem item = (Listitem) event.getTarget().getParent();
 			JXKH_QKLW meeting = (JXKH_QKLW) item.getValue();
 			if (user.getKuLid().equals(meeting.getWriterId())) {
-				if (meeting.getLwState() == null || meeting.getLwState() == JXKH_MEETING.WRITING || meeting.getLwState() == 0
+				/*if (meeting.getLwState() == null || meeting.getLwState() == JXKH_MEETING.WRITING || meeting.getLwState() == 0
 						|| meeting.getLwState() == 3
 						|| meeting.getLwState() == 5) {
 				} else {
 					Messagebox.show("部门已经审核通过或者业务办已经审核通过，您只能查看，无权再编辑 ！", "提示",
 							Messagebox.OK, Messagebox.ERROR);
-				}
+				}*/
 				AddJournalWindow w = (AddJournalWindow) Executions
 						.createComponents(
 								"/admin/personal/businessdata/artical/journal/addJournal.zul",

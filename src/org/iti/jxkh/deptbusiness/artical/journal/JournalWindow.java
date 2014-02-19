@@ -6,16 +6,12 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.jxkh.business.artical.journal.AdviceWin;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.JXKH_QKLW;
 import org.iti.jxkh.entity.JXKH_QKLWDept;
-import org.iti.jxkh.entity.JXKH_QKLWFile;
 import org.iti.jxkh.entity.JXKH_QKLWMember;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.service.JXKHMeetingService;
@@ -37,9 +33,7 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -64,7 +58,6 @@ public class JournalWindow extends Window implements AfterCompose {
 	private WkTUser user;
 	private List<JXKH_QKLW> qklwList = new ArrayList<JXKH_QKLW>();
 	private List<JXKH_QKLW> meetingList = new ArrayList<JXKH_QKLW>();
-	private Set<JXKH_QKLWFile> filesList;
 	public static final Integer qikan = 12;
 	private Long indicatorId;
 
@@ -73,8 +66,8 @@ public class JournalWindow extends Window implements AfterCompose {
 		Components.wireVariables(this, this);
 		Components.addForwards(this, this);
 		user = (WkTUser) Sessions.getCurrent().getAttribute("user");// 获取当前登录用户
-		String[] s = { "","填写中", "待审核", "部门审核中", "部门通过", "部门不通过","业务办暂缓通过", "业务办通过", "业务办不通过",
-				"归档" };
+		String[] s = { "", "填写中", "待审核", "部门审核中", "部门通过", "部门不通过", "业务办暂缓通过",
+				"业务办通过", "业务办不通过", "归档" };
 		List<String> lwjbList = new ArrayList<String>();
 		for (int i = 0; i < 8; i++) {
 			lwjbList.add(s[i]);
@@ -127,38 +120,27 @@ public class JournalWindow extends Window implements AfterCompose {
 			item.setValue(meeting);
 			Listcell c0 = new Listcell();
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
-			Listcell c2 = new Listcell(meeting.getLwName().length()>10?meeting.getLwName().substring(0, 10)+"...":meeting.getLwName());
+			Listcell c2 = new Listcell(
+					meeting.getLwName().length() > 10 ? meeting.getLwName()
+							.substring(0, 10) + "..." : meeting.getLwName());
 			c2.setTooltiptext(meeting.getLwName());
 			c2.setStyle("color:blue");
 			c2.addEventListener(Events.ON_CLICK, new EditListener());
+			// 期刊类别
 			Listcell c3 = new Listcell();
 			if (meeting.getQkGrade() == null)
 				c3.setLabel("");
 			else
 				c3.setLabel(meeting.getQkGrade().getKbName());
-
-			 Listcell c4 = new Listcell(meeting.getjxYear());
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("附件");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-					filesList = jxkhQklwService
-							.findMeetingFilesByMeetingId(meeting);
-					win.setFiles(filesList);
-					win.setFlag("QKLW");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			Listcell c6 = new Listcell(meeting.getScore() == null ? ""
+			//积分年度
+			Listcell c4 = new Listcell(meeting.getjxYear());
+			//该项得分
+			Listcell c5 = new Listcell(meeting.getScore() == null ? ""
 					: meeting.getScore().toString());
+			//填写人
+			Listcell c6 = new Listcell();
+			c6.setLabel(meeting.getLwWriter());
+			//审核状态
 			Listcell c7 = new Listcell();
 			c7.setTooltiptext("点击查看审核结果");
 			if (meeting.getLwState() == null) {
@@ -228,7 +210,7 @@ public class JournalWindow extends Window implements AfterCompose {
 			item.appendChild(c1);
 			item.appendChild(c2);
 			item.appendChild(c3);
-			 item.appendChild(c4);
+			item.appendChild(c4);
 			item.appendChild(c5);
 			item.appendChild(c6);
 			item.appendChild(c7);
@@ -307,7 +289,7 @@ public class JournalWindow extends Window implements AfterCompose {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	// 單擊刪除按鈕后响应的事件
@@ -327,8 +309,8 @@ public class JournalWindow extends Window implements AfterCompose {
 				Messagebox.QUESTION, new org.zkoss.zk.ui.event.EventListener() {
 					public void onEvent(Event evt) throws InterruptedException {
 						if (evt.getName().equals("onOK")) {
-							Iterator<?> it = journalListbox
-									.getSelectedItems().iterator();
+							Iterator<?> it = journalListbox.getSelectedItems()
+									.iterator();
 							JXKH_QKLW lw = new JXKH_QKLW();
 							while (it.hasNext()) {
 								Listitem item = (Listitem) it.next();
@@ -336,7 +318,8 @@ public class JournalWindow extends Window implements AfterCompose {
 								if (lw.getLwState() == null) {
 								} else if (lw.getLwState() == JXKH_QKLW.First_Dept_Pass
 										|| lw.getLwState() == JXKH_QKLW.DEPT_PASS
-										|| lw.getLwState() == JXKH_QKLW.BUSINESS_PASS || lw.getLwState().shortValue() == JXKH_MEETING.BUSINESS_TEMP_PASS
+										|| lw.getLwState() == JXKH_QKLW.BUSINESS_PASS
+										|| lw.getLwState().shortValue() == JXKH_MEETING.BUSINESS_TEMP_PASS
 										|| lw.getLwState() == JXKH_QKLW.SAVE_RECORD) {
 									try {
 										Messagebox.show(
@@ -392,9 +375,9 @@ public class JournalWindow extends Window implements AfterCompose {
 			auditStateSearch = 5;
 		} else if (auditState.getSelectedItem().getValue().equals("归档")) {
 			auditStateSearch = 6;
-		}else if (auditState.getSelectedItem().getValue().equals("填写中")) {
+		} else if (auditState.getSelectedItem().getValue().equals("填写中")) {
 			auditStateSearch = Integer.valueOf(JXKH_MEETING.WRITING);
-		}else if (auditState.getSelectedItem().getValue().equals("业务办暂缓通过")) {
+		} else if (auditState.getSelectedItem().getValue().equals("业务办暂缓通过")) {
 			auditStateSearch = Integer.valueOf(JXKH_MEETING.BUSINESS_TEMP_PASS);
 		}
 		if (rank.getSelectedIndex() != 0) {

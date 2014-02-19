@@ -6,16 +6,12 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_Award;
 import org.iti.jxkh.entity.Jxkh_AwardDept;
-import org.iti.jxkh.entity.Jxkh_AwardFile;
 import org.iti.jxkh.entity.Jxkh_AwardMember;
 import org.iti.jxkh.service.JxkhAwardService;
 import org.zkoss.zk.ui.Components;
@@ -33,9 +29,7 @@ import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -48,15 +42,12 @@ public class PersonalWin extends Window implements AfterCompose {
 	private Listbox awardListbox;
 	private JxkhAwardService jxkhAwardService;
 	private List<Jxkh_Award> awardList = new ArrayList<Jxkh_Award>();
-	private Set<Jxkh_AwardFile> filesList;
 	private WkTUser user;
 	private Textbox name;
 	private YearListbox year;
 	private String nameSearch, yearSearch;
 	private Listbox auditState;
 	private Integer auditStateSearch;
-
-//	private BusinessIndicatorService businessIndicatorService;
 
 	@Override
 	public void afterCompose() {
@@ -92,9 +83,10 @@ public class PersonalWin extends Window implements AfterCompose {
 			item.setValue(award);
 			Listcell c0 = new Listcell();
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
+			//奖励名称
 			Listcell c2 = new Listcell(award.getName().length() <= 12?
 					award.getName():award.getName().substring(0, 12) + "...");
-			c2.setTooltiptext("点击查看科技奖励信息");
+			c2.setTooltiptext(award.getName());
 			c2.setStyle("color:blue");
 			if (user.getKuLid().equals(award.getSubmitId())) {
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
@@ -102,7 +94,7 @@ public class PersonalWin extends Window implements AfterCompose {
 						Listitem item = (Listitem) event.getTarget()
 								.getParent();
 						Jxkh_Award award = (Jxkh_Award) item.getValue();
-						if (award.getState() == JXKH_MEETING.WRITING || award.getState() == Jxkh_Award.NOT_AUDIT
+						/*if (award.getState() == JXKH_MEETING.WRITING || award.getState() == Jxkh_Award.NOT_AUDIT
 								|| award.getState() == Jxkh_Award.DEPT_NOT_PASS
 								|| award.getState() == Jxkh_Award.BUSINESS_NOT_PASS) {
 						} else {
@@ -110,7 +102,7 @@ public class PersonalWin extends Window implements AfterCompose {
 							Messagebox.show(
 									"部门已经审核通过或者业务办已经审核通过，您只能查看，无权再编辑 ！", "提示",
 									Messagebox.OK, Messagebox.ERROR);
-						}
+						}*/
 						AddAwardWin w = (AddAwardWin) Executions
 								.createComponents(
 										"/admin/personal/businessdata/award/addaward.zul",
@@ -127,7 +119,6 @@ public class PersonalWin extends Window implements AfterCompose {
 						initWindow();
 					}
 				});
-
 			} else {
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
 					public void onEvent(Event event) throws Exception {
@@ -151,46 +142,33 @@ public class PersonalWin extends Window implements AfterCompose {
 					}
 				});
 			}
+			//奖励级别
 			Listcell c3 = new Listcell();
 			if (award.getRank() != null) {
 				c3 = new Listcell(award.getRank().getKbName());
 			} else {
 				c3 = new Listcell("");
 			}
+			//积分年度
 			Listcell c4 = new Listcell(award.getjxYear());
-
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.setHeight("20px");
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-
-					filesList = award.getAwardFile();
-					win.setFiles(filesList);
-					win.setFlag("AWARD");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			Listcell c6 = new Listcell(award.getScore() == null ? "" : award
+			//该项得分
+			Listcell c5 = new Listcell(award.getScore() == null ? "" : award
 					.getScore().toString());
-			Listcell c7 = new Listcell("");
+			//个人得分
+			Listcell c6 = new Listcell("");
 			List<Jxkh_AwardMember> mlist = award.getAwardMember();
 			for (int j = 0; j < mlist.size(); j++) {
 				Jxkh_AwardMember m = mlist.get(j);
 				if (user.getKuName().equals(m.getName())) {
 					if (m.getScore() != null && !m.getScore().equals("")) {
-						c7.setLabel(m.getScore() + "");
+						c6.setLabel(m.getScore() + "");
 					}
 				}
 			}
+			//填写人
+			Listcell c7 =  new Listcell();
+			c7.setLabel(award.getSubmitName());
+			//审核状态
 			Listcell c8 = new Listcell();
 			c8.setTooltiptext("点击查看审核结果");
 			if (award.getState() == null || award.getState() == 0) {

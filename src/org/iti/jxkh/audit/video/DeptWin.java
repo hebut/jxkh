@@ -6,19 +6,12 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.deptbusiness.video.AddVideoWin;
-import org.iti.jxkh.entity.JXKH_MEETING;
-import org.iti.jxkh.entity.JXKH_QKLW;
-import org.iti.jxkh.entity.JXKH_QKLWDept;
 import org.iti.jxkh.entity.Jxkh_Video;
 import org.iti.jxkh.entity.Jxkh_VideoDept;
-import org.iti.jxkh.entity.Jxkh_VideoFile;
 import org.iti.jxkh.entity.Jxkh_VideoMember;
 import org.iti.jxkh.service.JxkhVideoService;
 import org.zkoss.zk.ui.Components;
@@ -38,7 +31,6 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
 
 import com.iti.common.util.ConvertUtil;
@@ -56,7 +48,6 @@ public class DeptWin extends Window implements AfterCompose {
 	private YearListbox year;
 	private JxkhVideoService jxkhVideoService;
 	private List<Jxkh_Video> videoList = new ArrayList<Jxkh_Video>();
-	private Set<Jxkh_VideoFile> filesList;
 	private WkTUser user;
 	private Paging videoPaging;
 	private boolean isQuery = false;
@@ -118,7 +109,7 @@ public class DeptWin extends Window implements AfterCompose {
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(video.getName().length() <= 14?
 					video.getName():video.getName().substring(0, 14) + "...");
-			c2.setTooltiptext("点击查看影视专题片信息");
+			c2.setTooltiptext(video.getName());
 			c2.setStyle("color:blue");
 			c2.addEventListener(Events.ON_CLICK, new EventListener() {
 				public void onEvent(Event event) throws Exception {
@@ -140,36 +131,22 @@ public class DeptWin extends Window implements AfterCompose {
 					}
 				}
 			});
-
+			//影视种类
 			Listcell c3 = new Listcell(video.getType());
+			//积分年度
 			Listcell c4 = new Listcell();
 			if (video.getjxYear() != null) {
 				c4 = new Listcell(video.getjxYear());
 			} else {
 				c4 = new Listcell("");
 			}
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.setHeight("20px");
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-
-					filesList = video.getVideoFile();
-					win.setFiles(filesList);
-					win.setFlag("VIDEO");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			Listcell c6 = new Listcell(video.getScore() == null ? "" : video
+			//该项得分
+			Listcell c5 = new Listcell(video.getScore() == null ? "" : video
 					.getScore().toString());
+			//填写人
+			Listcell c6 = new Listcell();
+			c6.setLabel(video.getSubmitName());
+			//审核状态
 			Listcell c7 = new Listcell();
 			c7.setTooltiptext("点击填写审核意见");
 			if (video.getState() == null || video.getState() == 0) {
@@ -252,6 +229,7 @@ public class DeptWin extends Window implements AfterCompose {
 			}
 			return;
 		}
+		@SuppressWarnings("unchecked")
 		Iterator<Listitem> items = videoListbox.getSelectedItems().iterator();
 		List<Jxkh_Video> videoList = new ArrayList<Jxkh_Video>();
 		Jxkh_Video video = new Jxkh_Video();

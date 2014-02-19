@@ -53,11 +53,11 @@ public class ChooseDeptWin extends Window implements AfterCompose{
 				WkTDept user = (WkTDept) arg1;
 				Listcell c0 = new Listcell();
 				Listcell c1 = new Listcell(arg0.getIndex()+1+"");
-				Listcell c2 = new Listcell(user.getKdNumber());
+				/*Listcell c2 = new Listcell(user.getKdNumber());*/
 				Listcell c3 = new Listcell(user.getKdName());
 				arg0.appendChild(c0);
 				arg0.appendChild(c1);
-				arg0.appendChild(c2);
+				//arg0.appendChild(c2);
 				arg0.appendChild(c3);
 				arg0.setValue(arg1);
 			}
@@ -67,11 +67,11 @@ public class ChooseDeptWin extends Window implements AfterCompose{
 				WkTDept dept = (WkTDept) arg1;
 				Listcell c0 = new Listcell();
 				Listcell c1 = new Listcell(arg0.getIndex()+1+"");
-				Listcell c2 = new Listcell(dept.getKdNumber());
+			/*	Listcell c2 = new Listcell(dept.getKdNumber());*/
 				Listcell c3 = new Listcell(dept.getKdName());
 				arg0.appendChild(c0);
 				arg0.appendChild(c1);
-				arg0.appendChild(c2);
+				//arg0.appendChild(c2);
 				arg0.appendChild(c3);
 				arg0.setValue(arg1);
 				arg0.setDraggable("true");

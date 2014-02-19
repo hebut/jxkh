@@ -6,13 +6,10 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
 import org.iti.jxkh.audit.project.CPWindow;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_Project;
 import org.iti.jxkh.entity.Jxkh_ProjectDept;
@@ -26,7 +23,6 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.ext.AfterCompose;
-import org.zkoss.zul.Image;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
@@ -83,18 +79,15 @@ public class CprojectWindow extends Window implements AfterCompose {
 			item.setValue(project);
 			Listcell c0 = new Listcell();
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
-			Listcell c2 = new Listcell(project.getName().length() <= 14?
-					project.getName():project.getName().substring(0, 14) + "...");
-			c2.setTooltiptext("点击查看院内自设项目信息");
+			Listcell c2 = new Listcell(project.getName().length() <= 18?
+					project.getName():project.getName().substring(0, 18) + "...");
+			c2.setTooltiptext(project.getName());
 			c2.setStyle("color:blue");
-
 			if (user.getKuLid().equals(project.getInfoWriter())) {
 				if (project.getState() == JXKH_MEETING.WRITING || project.getState() == Jxkh_Project.NOT_AUDIT || project.getState() == Jxkh_Project.DEPT_NOT_PASS || project.getState() == Jxkh_Project.BUSINESS_NOT_PASS) {
 
-					c2.setTooltiptext("点击编辑自设项目信息");
 					c2.addEventListener(Events.ON_CLICK, new EventListener() {
 						public void onEvent(Event arg0) throws Exception {
-
 							AddCPWindow w = (AddCPWindow) Executions.createComponents("/admin/personal/businessdata/project/addCP.zul", null, null);
 							try {
 								w.setTitle("编辑自设项目信息");
@@ -102,23 +95,18 @@ public class CprojectWindow extends Window implements AfterCompose {
 								w.initShow();
 								w.initWindow();
 								w.doModal();
-
 							} catch (SuspendNotAllowedException e) {
 								e.printStackTrace();
 							} catch (InterruptedException e) {
 								e.printStackTrace();
 							}
 							initShow();
-
 						}
 					});
 
 				} else {
-
-					c2.setTooltiptext("点击查看自设项目信息");
 					c2.addEventListener(Events.ON_CLICK, new EventListener() {
 						public void onEvent(Event arg0) throws Exception {
-
 							CPWindow w = (CPWindow) Executions.createComponents("/admin/personal/businessdata/project/showCP.zul", null, null);
 							try {
 								w.setTitle("查看自设项目信息");
@@ -127,7 +115,6 @@ public class CprojectWindow extends Window implements AfterCompose {
 								w.initShow();
 								w.initWindow();
 								w.doModal();
-
 							} catch (SuspendNotAllowedException e) {
 								e.printStackTrace();
 							} catch (InterruptedException e) {
@@ -138,11 +125,8 @@ public class CprojectWindow extends Window implements AfterCompose {
 					});
 				}
 			} else {
-
-				c2.setTooltiptext("点击查看自设项目信息");
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
 					public void onEvent(Event arg0) throws Exception {
-
 						CPWindow w = (CPWindow) Executions.createComponents("/admin/personal/businessdata/project/showCP.zul", null, null);
 						try {
 							w.setTitle("查看项目信息");
@@ -150,33 +134,24 @@ public class CprojectWindow extends Window implements AfterCompose {
 							w.initShow();
 							w.initWindow();
 							w.doModal();
-
 						} catch (SuspendNotAllowedException e) {
 							e.printStackTrace();
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
 						initShow();
-
 					}
 				});
 			}
-			
+			//项目负责人
 			Listcell c4 = new Listcell(project.getHeader());
-			Listcell c05 = new Listcell(project.getjxYear()!=null?project.getjxYear():"");
-			Listcell c5 = new Listcell(project.getBeginDate());
+			//积分年度
+			Listcell c5 = new Listcell(project.getjxYear()!=null?project.getjxYear():"");
+			//填写人
 			Listcell c6 = new Listcell();
-			Image download = new Image("/css/default/images/button/down.gif");
-			download.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions.createComponents("/admin/personal/businessdata/meeting/download.zul", null, null);
-					win.setFiles(project.getProjectFile());
-					win.setFlag("cp");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			c6.appendChild(download);
+			WkTUser user = jxkhProjectService.findWktUserByMemberUserId(project.getInfoWriter());
+			c6.setLabel(user.getKuName());
+			//审核状态
 			String strC8;
 			switch (project.getState()) {
 			case Jxkh_Project.NOT_AUDIT:
@@ -225,7 +200,6 @@ public class CprojectWindow extends Window implements AfterCompose {
 			item.appendChild(c1);
 			item.appendChild(c2);
 			item.appendChild(c4);
-			item.appendChild(c05);
 			item.appendChild(c5);
 			item.appendChild(c6);
 			item.appendChild(c8);

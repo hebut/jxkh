@@ -6,16 +6,12 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.deptbusiness.artical.journal.AddJournalWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.JXKH_QKLW;
 import org.iti.jxkh.entity.JXKH_QKLWDept;
-import org.iti.jxkh.entity.JXKH_QKLWFile;
 import org.iti.jxkh.entity.JXKH_QKLWMember;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.service.JXKHMeetingService;
@@ -37,9 +33,7 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -54,7 +48,6 @@ public class DeptAuditWindow extends Window implements AfterCompose {
 	private JXKHMeetingService jxkhMeetingService;
 	private WkTUser user;
 	private List<JXKH_QKLW> meetingList = new ArrayList<JXKH_QKLW>();
-	private Set<JXKH_QKLWFile> filesList;
 	private Paging zxPaging;
 	private Groupbox cxtj;
 	private Boolean isQuery = false;
@@ -143,7 +136,7 @@ public class DeptAuditWindow extends Window implements AfterCompose {
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(meeting.getLwName().length() <= 14?
 					meeting.getLwName():meeting.getLwName().substring(0, 14) + "...");
-			c2.setTooltiptext("点击查看期刊论文信息");
+			c2.setTooltiptext(meeting.getLwName());
 			c2.setStyle("color:blue");
 			c2.addEventListener(Events.ON_CLICK, new EventListener() {
 				public void onEvent(Event event) throws Exception {
@@ -170,39 +163,21 @@ public class DeptAuditWindow extends Window implements AfterCompose {
 					}
 				}
 			});
+			//期刊类别
 			Listcell c3 = new Listcell();
 			if (meeting.getQkGrade() == null)
 				c3.setLabel("");
 			else
 				c3.setLabel(meeting.getQkGrade().getKbName());
-			// Listcell c4 = new Listcell();
-			// if (meeting.getLwType() == null)
-			// c4.setLabel("");
-			// else
-			// c4.setLabel(meeting.getLwType().getKbName());
+			//积分年度
 			Listcell c4 = new Listcell(meeting.getjxYear());
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-					filesList = jxkhQklwService
-							.findMeetingFilesByMeetingId(meeting);
-					// win.setFiles(meeting.getFiles());
-					win.setFiles(filesList);
-					win.setFlag("QKLW");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			Listcell c6 = new Listcell(meeting.getScore() == null ? ""
+			//该项得分
+			Listcell c5 = new Listcell(meeting.getScore() == null ? ""
 					: meeting.getScore().toString());
+			//填写人
+			Listcell c6 = new Listcell();
+			c6.setLabel(meeting.getLwWriter());
+			//审核状态
 			Listcell c7 = new Listcell();
 			c7.setTooltiptext("点击填写审核意见");
 			if (meeting.getLwState() == null) {

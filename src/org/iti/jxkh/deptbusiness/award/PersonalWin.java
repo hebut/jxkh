@@ -6,17 +6,13 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
 import org.iti.jxkh.business.award.AdviceWin;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_Award;
 import org.iti.jxkh.entity.Jxkh_AwardDept;
-import org.iti.jxkh.entity.Jxkh_AwardFile;
 import org.iti.jxkh.entity.Jxkh_AwardMember;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.service.JXKHMeetingService;
@@ -38,9 +34,7 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -61,7 +55,6 @@ public class PersonalWin extends Window implements AfterCompose {
 	private Listbox auditState, rank;
 	private JxkhAwardService jxkhAwardService;
 	private List<Jxkh_Award> awardList = new ArrayList<Jxkh_Award>();
-	private Set<Jxkh_AwardFile> filesList;
 	private Paging awardPaging;
 	private WkTUser user;
 	private JXKHMeetingService jxkhMeetingService;
@@ -189,38 +182,24 @@ public class PersonalWin extends Window implements AfterCompose {
 					}
 				}
 			});
-
+			//奖励级别
 			Listcell c3 = new Listcell();
 			if (award.getRank() != null) {
 				c3 = new Listcell(award.getRank().getKbName());
 			} else {
 				c3 = new Listcell("");
 			}
+			//积分年度
 			Listcell c4 = new Listcell();
-			c4.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c4);
-			downlowd.setHeight("20px");
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/deptbusinessdata/award/download.zul",
-									null, null);
-
-					filesList = award.getAwardFile();
-					win.setFiles(filesList);
-					win.setFlag("AWARD");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			Listcell c5 = new Listcell();
 			if (award.getjxYear() != null)
-				c5 = new Listcell(award.getjxYear());
-			Listcell c6 = new Listcell(award.getScore() == null ? "" : award
+				c4 = new Listcell(award.getjxYear());
+			//该项得分
+			Listcell c5 = new Listcell(award.getScore() == null ? "" : award
 					.getScore().toString());
+			//填写人
+			Listcell c6 = new Listcell();
+			c6.setLabel(award.getSubmitName());
+			//审核状态
 			Listcell c7 = new Listcell();
 			c7.setTooltiptext("点击查看审核结果");
 			if (award.getState() == null || award.getState() == 0) {
@@ -286,8 +265,8 @@ public class PersonalWin extends Window implements AfterCompose {
 			item.appendChild(c1);
 			item.appendChild(c2);
 			item.appendChild(c3);
-			item.appendChild(c5);
 			item.appendChild(c4);
+			item.appendChild(c5);
 			item.appendChild(c6);
 			item.appendChild(c7);
 		}
@@ -299,10 +278,8 @@ public class PersonalWin extends Window implements AfterCompose {
 				"/admin/personal/deptbusinessdata/award/addaward.zul", null,
 				null);
 		try {
-
 			win.initWindow();
 			win.doModal();
-
 		} catch (SuspendNotAllowedException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {

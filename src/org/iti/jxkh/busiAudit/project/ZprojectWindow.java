@@ -155,7 +155,7 @@ public class ZprojectWindow extends Window implements AfterCompose {
 			Listcell c2 = new Listcell(project.getName().length() <= 9?
 					project.getName():project.getName().substring(0, 9) + "...");
 			c2.setStyle("color:blue");
-			c2.setTooltiptext("点击编辑纵向项目信息");
+			c2.setTooltiptext(project.getName());
 			c2.addEventListener(Events.ON_CLICK, new EventListener() {
 				public void onEvent(Event arg0) throws Exception {
 
@@ -165,7 +165,6 @@ public class ZprojectWindow extends Window implements AfterCompose {
 					try {
 						w.setTitle("编辑纵向项目信息");
 						w.setProject(project);
-//						w.initShow();
 						w.initWindow();
 						w.doModal();
 					} catch (SuspendNotAllowedException e) {

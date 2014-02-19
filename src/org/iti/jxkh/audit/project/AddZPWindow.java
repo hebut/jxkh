@@ -1,4 +1,4 @@
-package org.iti.jxkh.business.project;
+package org.iti.jxkh.audit.project;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,13 +14,15 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
 
+import org.iti.gh.common.util.MessageBoxshow;
 import org.iti.gh.ui.listbox.YearListbox;
 import org.iti.jxkh.business.award.ChooseDeptWin;
 import org.iti.jxkh.business.award.ChooseMemberWin;
 import org.iti.jxkh.business.fruit.ChooserProjectWin;
 import org.iti.jxkh.business.meeting.AssignDeptWindow;
 import org.iti.jxkh.business.meeting.UpfileWindow;
-import org.iti.jxkh.entity.JXKH_MEETING;
+import org.iti.jxkh.business.project.AddFundWindow;
+import org.iti.jxkh.business.project.EditFundWindow;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.entity.Jxkh_Project;
 import org.iti.jxkh.entity.Jxkh_ProjectDept;
@@ -56,7 +58,6 @@ import org.zkoss.zul.Tab;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.iti.common.util.PropertiesLoader;
 import com.iti.common.util.UploadUtil;
@@ -72,7 +73,7 @@ public class AddZPWindow extends Window implements AfterCompose {
 	private static final long serialVersionUID = -3664613977051724505L;
 	private Tab baseTab, funds, fileTab, scoreTab;
 	private Listbox personScore, departmentScore;
-	private Toolbarbutton tempSave, submit, fileSubmit/* , submitFund */, submitScore, addFund1, addFund2, ups1, ups2, ups3;
+	private Toolbarbutton submit, fileSubmit/* , submitFund */, submitScore, addFund1, addFund2, ups1, ups2, ups3;
 	private WkTUser user;
 	private JxkhProjectService jxkhProjectService;
 	private JXKHMeetingService jxkhMeetingService;
@@ -99,12 +100,7 @@ public class AddZPWindow extends Window implements AfterCompose {
 	private Listbox applyList1, applyList2, applyList3/*, applyList4*/;
 	private Set<Jxkh_ProjectFile> fileList1;
 
-	private String audit;// 如果有值，就表示是部门审核调用这个后台，其保存按钮就隐藏
 	private int temp;
-
-	public void setAudit(String audit) {
-		this.audit = audit;
-	}
 
 	@Override
 	public void afterCompose() {
@@ -134,102 +130,15 @@ public class AddZPWindow extends Window implements AfterCompose {
 			}
 		});
 
-		// 点击绩分页面时会议信息页面和文档信息页面的保存和退出按钮隐藏
 		scoreTab.addEventListener(Events.ON_CLICK, new EventListener() {
 			public void onEvent(Event arg0) throws Exception {
 				if (project != null) {
-					if (dept1 == "dept" || dept == "dept") {// 部门添加或者部门编辑
-						List<WkTUser> wktUser = jxkhMeetingService.findWkTUserByManId(project.getInfoWriter());
-						WkTUser u = wktUser.get(0);
-						Jxkh_ProjectDept d = jxkhProjectService.findProjectDept(project, user.getDept().getKdNumber());
-						if (!user.getDept().getKdNumber().equals(u.getDept().getKdNumber()) && d.getRank() != 1) {
-							submit.setVisible(false);
-							tempSave.setVisible(false);
-							submitScore.setVisible(false);
-							fileSubmit.setVisible(false);
-							// submitFund.setVisible(false);
-						}
-					}
 					projectMemberList = jxkhProjectService.findProjectMember(project);
 					personScore.setModel(new ListModelList(projectMemberList));
 				}
-				if (audit == "AUDIT") {
-					submit.setVisible(false);
-					tempSave.setVisible(false);
-					fileSubmit.setVisible(false);
-					submitScore.setVisible(false);
-					// submitFund.setVisible(false);
-				}
 			}
 		});
-		// 点击会议信息页面和文档信息页面时根据审核状态来控制保存和退出按钮的显隐性
-		baseTab.addEventListener(Events.ON_CLICK, new EventListener() {
-			public void onEvent(Event arg0) throws Exception {
-				if (project != null) {
-					if (dept1 == "dept" || dept == "dept") {// 部门添加或者部门编辑
-						List<WkTUser> wktUser = jxkhMeetingService.findWkTUserByManId(project.getInfoWriter());
-						WkTUser u = wktUser.get(0);
-						if (!user.getDept().getKdNumber().equals(u.getDept().getKdNumber())) {
-							submit.setVisible(false);
-							tempSave.setVisible(false);
-							fileSubmit.setVisible(false);
-							submitScore.setVisible(false);
-						}
-					}
-				}
-				if (audit == "AUDIT") {
-					submit.setVisible(false);
-					tempSave.setVisible(false);
-					fileSubmit.setVisible(false);
-					submitScore.setVisible(false);
-				}
-			}
-		});
-		fileTab.addEventListener(Events.ON_CLICK, new EventListener() {
-			public void onEvent(Event arg0) throws Exception {
-				// submit.setVisible(true);
-				// close.setVisible(true);
-				if (project != null) {
-					if (dept1 == "dept" || dept == "dept") {// 部门添加或者部门编辑
-						List<WkTUser> wktUser = jxkhMeetingService.findWkTUserByManId(project.getInfoWriter());
-						WkTUser u = wktUser.get(0);
-						if (!user.getDept().getKdNumber().equals(u.getDept().getKdNumber())) {
-							submit.setVisible(false);
-							tempSave.setVisible(false);
-							fileSubmit.setVisible(false);
-							submitScore.setVisible(false);
-						}
-					}
-				}
-				if (audit == "AUDIT") {
-					submit.setVisible(false);
-					tempSave.setVisible(false);
-					fileSubmit.setVisible(false);
-					submitScore.setVisible(false);
-				}
 
-			}
-		});
-		funds.addEventListener(Events.ON_CLICK, new EventListener() {
-			public void onEvent(Event arg0) throws Exception {
-				// submit.setVisible(false);
-				// close.setVisible(false);
-				if (project != null) {
-					if (dept1 == "dept" || dept == "dept") {// 部门添加或者部门编辑
-						List<WkTUser> wktUser = jxkhMeetingService.findWkTUserByManId(project.getInfoWriter());
-						WkTUser u = wktUser.get(0);
-						if (!user.getDept().getKdNumber().equals(u.getDept().getKdNumber())) {
-							addFund1.setVisible(false);
-							addFund2.setVisible(false);
-						}
-					}
-				}
-				if (audit == "AUDIT") {
-					addFund1.setVisible(false);
-					addFund2.setVisible(false);
-				}
-			}
-		});
 
 	}
 
@@ -244,46 +153,12 @@ public class AddZPWindow extends Window implements AfterCompose {
 			scoreTab.setDisabled(true);
 			fileTab.setDisabled(true);
 		}
-		// 判断当前登录人员是否是信息填写人的部门负责人
-		if (dept1 == "dept" || dept == "dept") {// 部门添加或者部门编辑
-			List<WkTUser> wktUser = jxkhMeetingService.findWkTUserByManId(project.getInfoWriter());
-			WkTUser u = wktUser.get(0);
-			if (!user.getDept().getKdNumber().equals(u.getDept().getKdNumber())) {
-				submit.setVisible(false);
-				tempSave.setVisible(false);
-				// submitFund.setVisible(false);
-				submitScore.setVisible(false);
-				fileSubmit.setVisible(false);
-				ups1.setDisabled(true);
-				ups2.setDisabled(true);
-				ups3.setDisabled(true);
-//				ups4.setDisabled(true);
-			}
-		}
-		if (audit == "AUDIT") {
-			submit.setVisible(false);
-			tempSave.setVisible(false);
-			// submitFund.setVisible(false);
-			submitScore.setVisible(false);
-			fileSubmit.setVisible(false);
-			ups1.setDisabled(true);
-			ups2.setDisabled(true);
-			ups3.setDisabled(true);
-//			ups4.setDisabled(true);
-		}
-		
-		//判断如果是未审核状态则暂存按钮不显示
-		if(project.getState() == null || project.getState() == JXKH_MEETING.WRITING || project.getState() == Jxkh_Project.BUSINESS_NOT_PASS || project.getState() == Jxkh_Project.DEPT_NOT_PASS)
-			tempSave.setVisible(true);
-		else 
-			tempSave.setVisible(false);
 		
 		projectName.setValue(project.getName());
 		WkTUser infoWriter = jxkhProjectService.findWktUserByMemberUserId(project.getInfoWriter());
 		writer.setValue(infoWriter.getKuName());
 		sumFund.setValue(project.getSumFund().toString());
 		projecCode.setValue(project.getProjecCode());
-		// takeCompany.setValue(project.getTakeCompany());
 		header.setValue(project.getHeader());
 		standDept.setValue(project.getStandDept());
 
@@ -371,11 +246,6 @@ public class AddZPWindow extends Window implements AfterCompose {
 			}
 			department.setValue(deptName.substring(0, deptName.length() - 1));
 		}
-		// 新的附件初始化20120305
-		// arrList1.clear();
-		// arrList2.clear();
-		// arrList3.clear();
-		// arrList4.clear();
 		fileList1 = project.getProjectFile();
 		Object[] file = fileList1.toArray();
 		for (int j = 0; j < file.length; j++) {
@@ -412,8 +282,6 @@ public class AddZPWindow extends Window implements AfterCompose {
 		applyList2.setModel(new ListModelList(arrList2));
 		applyList3.setItemRenderer(new FilesRenderer3());
 		applyList3.setModel(new ListModelList(arrList3));
-//		applyList4.setItemRenderer(new FilesRenderer4());
-//		applyList4.setModel(new ListModelList(arrList4));
 
 		// 基金
 		List<Jxkh_ProjectFund> fundList1 = jxkhProjectService.findFunds(project, Jxkh_ProjectFund.ZXF);
@@ -463,14 +331,13 @@ public class AddZPWindow extends Window implements AfterCompose {
 
 		}
 
-		//jiFenTime.initYearlist();
 		jiFenTime.initYearListbox("");
 
 		List<Jxkh_BusinessIndicator> typeList = new ArrayList<Jxkh_BusinessIndicator>();
 		typeList.add(new Jxkh_BusinessIndicator());
 		typeList.addAll(jxkhProjectService.findRank());
 		rank.setModel(new ListModelList(typeList));
-		//
+		
 		String[] t = { "--请选择--", "在研", "延期", "结题" };
 		List<String> progressList = new ArrayList<String>();
 		for (int i = 0; i < 4; i++) {
@@ -489,26 +356,6 @@ public class AddZPWindow extends Window implements AfterCompose {
 			project.setInfoWriter(user.getKuLid());
 			writer.setValue(user.getKuName());
 			project.setSubmitTime(ConvertUtil.convertDateAndTimeString(new Date()));
-		}
-		// 判断是否是成员，不是成员不能进行录入
-		if (dept1 == "dept" || dept == "dept") {// 部门添加或者部门编辑
-		} else {
-			String member1 = "";
-			int t = 0;
-			for (WkTUser user : memberList) {
-				member1 = user.getKuName();
-				if (this.user.getKuName().equals(member1)) {
-					t = 1;
-				}
-			}
-			if (t == 0) {
-				try {
-					Messagebox.show("您不是项目组成员，不能进行录入！", "提示", Messagebox.OK, Messagebox.INFORMATION);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				return;
-			}
 		}
 
 		project.setName(projectName.getValue());
@@ -597,7 +444,6 @@ public class AddZPWindow extends Window implements AfterCompose {
 					}
 				}
 				
-				
 				switch (user.getType()) {
 				case WkTUser.TYPE_IN:
 					member.setType(Short.valueOf(WkTUser.TYPE_IN));
@@ -663,46 +509,6 @@ public class AddZPWindow extends Window implements AfterCompose {
 	}
 
 	/**
-	 * 暂存
-	 */
-	public void onClick$tempSave() {
-		if (projectName.getValue().equals("")) {
-			throw new WrongValueException(projectName, "项目名称不能为空");
-		}
-		if (rank.getSelectedItem() == null || rank.getSelectedItem().getIndex() == 0) {
-			throw new WrongValueException(rank, "项目级别不能为空");
-		}
-		if (projectMember.getValue() == null || projectMember.getValue().equals("")) {
-			throw new WrongValueException(projectMember, "请选择成员");
-		}
-		if (department.getValue() == null || department.getValue().equals("")) {
-			throw new WrongValueException(department, "请选择部门");
-		}
-		if (jiFenTime.getSelectedItem() == null || jiFenTime.getSelectedItem().getLabel().equals("-请选择-")) {
-			throw new WrongValueException(jiFenTime, "请选择绩分年度");
-		}
-		saveEntity();
-		if (dept1 != "dept") {
-			project.setState(JXKH_MEETING.WRITING);
-		} else {
-			project.setState(JXKH_MEETING.WRITING);
-		}
-		if (project != null && project.getId() != null)
-			jxkhProjectService.update(project);
-		else
-			jxkhProjectService.save(project);
-		try {
-			Messagebox.show("纵向项目保存成功，如果您想提交到部门，请点击“提交”按钮！", "提示", Messagebox.OK, Messagebox.INFORMATION);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		funds.setDisabled(false);
-		fileTab.setDisabled(false);
-		
-		
-	}
-
-	/**
 	 * <li>功能描述：保存纵向项目。 void
 	 * 
 	 * @author songyu
@@ -725,22 +531,16 @@ public class AddZPWindow extends Window implements AfterCompose {
 			throw new WrongValueException(jiFenTime, "请选择绩分年度");
 		}
 		saveEntity();
-		if (dept1 != "dept") {
-			project.setState(Jxkh_Project.NOT_AUDIT);
-		} else {
-			project.setState(Jxkh_Project.NOT_AUDIT);
-		}
+		project.setState(Jxkh_Project.NOT_AUDIT);
+
 		if (project != null && project.getId() != null)
 			jxkhProjectService.update(project);
 		else
 			jxkhProjectService.save(project);
-		if(Messagebox.show("纵向项目提交到部门，请耐心等待部门负责人审核！", "提示", Messagebox.OK,
-				Messagebox.INFORMATION) == Messagebox.OK){
-			funds.setDisabled(false);
-			fileTab.setDisabled(false);
-			this.detach();
-		}
 		
+		Messagebox.show("保存成功！");
+		funds.setDisabled(false);
+		fileTab.setDisabled(false);
 		
 	}
 
@@ -1247,13 +1047,6 @@ public class AddZPWindow extends Window implements AfterCompose {
 //				ups4.setDisabled(true);
 			}
 		}
-		if (audit == "AUDIT") {
-			submit.setVisible(false);
-			ups1.setDisabled(true);
-			ups2.setDisabled(true);
-			ups3.setDisabled(true);
-//			ups4.setDisabled(true);
-		}
 		projectName.setValue(project.getName());
 		WkTUser infoWriter = jxkhProjectService.findWktUserByMemberUserId(project.getInfoWriter());
 		writer.setValue(infoWriter.getKuName());
@@ -1390,8 +1183,6 @@ public class AddZPWindow extends Window implements AfterCompose {
 //		applyList4.setItemRenderer(new FilesRenderer4());
 //		applyList4.setModel(new ListModelList(arrList4));
 
-		// personScore.setModel(new ListModelList(projectMemberList));
-		// departmentScore.setModel(new ListModelList(projectDeptList));
 		// 初始化项目级别列表
 		List<Jxkh_BusinessIndicator> typeList = new ArrayList<Jxkh_BusinessIndicator>();
 		typeList.add(new Jxkh_BusinessIndicator());
@@ -2018,5 +1809,41 @@ public class AddZPWindow extends Window implements AfterCompose {
 
 	public void onClick$fileClose() {
 		this.detach();
+	}
+	
+	public void onClick$pass(){
+		try {
+			if(Messagebox.show("确定审核通过？", "提示", Messagebox.YES
+					| Messagebox.NO, Messagebox.INFORMATION ) == Messagebox.YES){
+				project.setState(Jxkh_Project.DEPT_PASS);
+
+				if (project != null && project.getId() != null)
+					jxkhProjectService.update(project);
+				else
+					jxkhProjectService.save(project);
+				this.detach();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void onClick$back(){
+		try {
+			if(Messagebox.show("确定退回？", "提示", Messagebox.YES
+					| Messagebox.NO, Messagebox.INFORMATION ) == Messagebox.YES){
+				project.setState(Jxkh_Project.DEPT_NOT_PASS);
+
+				if (project != null && project.getId() != null)
+					jxkhProjectService.update(project);
+				else
+					jxkhProjectService.save(project);
+				this.detach();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 	}
 }

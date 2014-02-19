@@ -6,17 +6,13 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.deptbusiness.fruit.AddFruitWin;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.entity.Jxkh_Fruit;
 import org.iti.jxkh.entity.Jxkh_FruitDept;
-import org.iti.jxkh.entity.Jxkh_FruitFile;
 import org.iti.jxkh.entity.Jxkh_FruitMember;
 import org.iti.jxkh.service.JXKHMeetingService;
 import org.iti.jxkh.service.JxkhFruitService;
@@ -37,9 +33,7 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -56,7 +50,6 @@ public class DeptWin extends Window implements AfterCompose {
 	private Long indicatorId;
 	private Paging fruitPaging;
 	private List<Jxkh_Fruit> fruitList = new ArrayList<Jxkh_Fruit>();
-	private Set<Jxkh_FruitFile> filesList;
 	private JxkhFruitService jxkhFruitService;
 	private WkTUser user;
 	private boolean isQuery = false;
@@ -138,13 +131,11 @@ public class DeptWin extends Window implements AfterCompose {
 			if (data == null)
 				return;
 			final Jxkh_Fruit fruit = (Jxkh_Fruit) data;
-			List<Jxkh_FruitMember> memberList = fruit.getFruitMember();
-			String member = "";
 			item.setValue(fruit);
 			Listcell c0 = new Listcell();
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(fruit.getName().length() <= 14?fruit.getName():fruit.getName().substring(0, 14) + "...");
-			c2.setTooltiptext("点击查看鉴定成果信息");
+			c2.setTooltiptext(fruit.getName());
 			c2.setStyle("color:blue");
 			c2.addEventListener(Events.ON_CLICK, new EventListener() {
 				public void onEvent(Event event) throws Exception {
@@ -166,38 +157,20 @@ public class DeptWin extends Window implements AfterCompose {
 					}
 				}
 			});
-
+			//成果水平
 			Listcell c3 = new Listcell("");
 			if (fruit.getAppraiseRank() != null)
 				c3 = new Listcell(fruit.getAppraiseRank().getKbName());
-			Listcell c4 = new Listcell("");
-			// if (fruit.getAcceptRank() != null)
-			// c4 = new Listcell(fruit.getAcceptRank().getKbName());
+			//积分年度
+			Listcell c4 = new Listcell();
 			if (fruit.getjxYear() != null)
 				c4 = new Listcell(fruit.getjxYear());
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.setHeight("20px");
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-
-					filesList = fruit.getFruitFile();
-					win.setFiles(filesList);
-					win.setFlag("FRUIT");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			//Listcell c6 = new Listcell();// (fruit.getScore() == null ? "" :
-			// fruit.getScore().toString());
-			Listcell c6 = new Listcell(fruit.getScore() == null ? "0" : fruit.getScore().toString());
+			//该项得分
+			Listcell c5 = new Listcell(fruit.getScore() == null ? "0" : fruit.getScore().toString());
+			//填写人
+			Listcell c6 = new Listcell();
+			c6.setLabel(fruit.getSubmitName());
+			//审核意见
 			Listcell c7 = new Listcell();
 			c7.setTooltiptext("点击填写审核意见");
 			if (fruit.getState() == null || fruit.getState() == 0) {
@@ -279,6 +252,7 @@ public class DeptWin extends Window implements AfterCompose {
 			}
 			return;
 		}
+		@SuppressWarnings("unchecked")
 		Iterator<Listitem> items = fruitListbox.getSelectedItems().iterator();
 		List<Jxkh_Fruit> fruitList = new ArrayList<Jxkh_Fruit>();
 		Jxkh_Fruit fruit = new Jxkh_Fruit();

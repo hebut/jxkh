@@ -6,12 +6,9 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_Patent;
 import org.iti.jxkh.entity.Jxkh_PatentDept;
@@ -25,7 +22,6 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.ext.AfterCompose;
-import org.zkoss.zul.Image;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
@@ -34,7 +30,6 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -71,7 +66,6 @@ public class PatentWindow extends Window implements AfterCompose {
 	}
 
 	public void initShow() {
-		// List<Jxkh_Patent> patentList = jxkhProjectService.findAllPatent();
 		List<Jxkh_Patent> patentList = jxkhProjectService
 				.findPatentBymemberId(user.getKuLid());
 		zxListbox.setModel(new ListModelList(patentList));
@@ -93,20 +87,19 @@ public class PatentWindow extends Window implements AfterCompose {
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(project.getName().length() <= 11?
 					project.getName():project.getName().substring(0, 11) + "...");
-			c2.setTooltiptext("点击查看知识产权信息");
+			c2.setTooltiptext(project.getName());
 			c2.setStyle("color:blue");
 			if (user.getKuLid().equals(project.getInfoWriter())) {
-				c2.setTooltiptext("点击编辑专利(软件)信息");
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
 					public void onEvent(Event arg0) throws Exception {
-						if (project.getState() == JXKH_MEETING.WRITING || project.getState() == Jxkh_Patent.NOT_AUDIT
+						/*if (project.getState() == JXKH_MEETING.WRITING || project.getState() == Jxkh_Patent.NOT_AUDIT
 								|| project.getState() == Jxkh_Patent.DEPT_NOT_PASS
 								|| project.getState() == Jxkh_Patent.BUSINESS_NOT_PASS) {
 						} else {
 							Messagebox.show(
 									"部门已经审核通过或者业务办已经审核通过，您只能查看，无权再编辑 ！", "提示",
 									Messagebox.OK, Messagebox.ERROR);
-						}
+						}*/
 						AddPatentWindow w = (AddPatentWindow) Executions
 								.createComponents(
 										"/admin/personal/businessdata/patent/addPatent.zul",
@@ -128,15 +121,11 @@ public class PatentWindow extends Window implements AfterCompose {
 							e.printStackTrace();
 						}
 						initShow();
-
 					}
 				});
-
 			} else {
-				c2.setTooltiptext("点击查看专利(软件)信息");
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
 					public void onEvent(Event arg0) throws Exception {
-
 						AddPatentWindow w = (AddPatentWindow) Executions
 								.createComponents(
 										"/admin/personal/businessdata/patent/addPatent.zul",
@@ -158,28 +147,15 @@ public class PatentWindow extends Window implements AfterCompose {
 				});
 
 			}
-
+			//类型
 			Listcell c3 = new Listcell(project.getSort().getKbName());
+			//积分年度
 			Listcell c4 = new Listcell(project.getjxYear());
-
-			Listcell c5 = new Listcell();
-			Image download = new Image("/css/default/images/button/down.gif");
-			download.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-					win.setFiles(project.getPatentFile());
-					win.setFlag("patent");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			c5.appendChild(download);
+			//该项得分
 			Listcell c6 = new Listcell(project.getScore() == null ? ""
 					: project.getScore().toString());
-			Listcell c7 = new Listcell("");
+			//个人得分
+			Listcell c7 = new Listcell();
 			List<Jxkh_PatentInventor> mlist = jxkhProjectService.findPatentMember(project);
 			for (int j = 0; j < mlist.size(); j++) {
 				Jxkh_PatentInventor m = mlist.get(j);
@@ -189,6 +165,11 @@ public class PatentWindow extends Window implements AfterCompose {
 					}
 				}
 			}
+			//填写人
+			Listcell c72 = new Listcell();
+			WkTUser user = jxkhProjectService.findWktUserByMemberUserId(project.getInfoWriter());
+			c72.setLabel(user.getKuName());
+			//审核状态
 			String strC8 = "";
 			switch (project.getState()) {
 			case Jxkh_Patent.NOT_AUDIT:
@@ -241,9 +222,9 @@ public class PatentWindow extends Window implements AfterCompose {
 			item.appendChild(c2);
 			item.appendChild(c3);
 			item.appendChild(c4);
-			item.appendChild(c5);
 			item.appendChild(c6);
 			item.appendChild(c7);
+			item.appendChild(c72);
 			item.appendChild(c8);
 		}
 	}

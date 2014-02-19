@@ -10,11 +10,9 @@ import java.util.Set;
 import jxl.write.WriteException;
 
 import org.iti.gh.common.util.ExportExcel;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_HULWMember;
 import org.iti.jxkh.entity.JXKH_HYLW;
 import org.iti.jxkh.entity.JXKH_HYLWDept;
-import org.iti.jxkh.entity.JXKH_HYLWFile;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.JXKH_QKLW;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
@@ -36,7 +34,6 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
 
 import com.iti.common.util.ConvertUtil;
@@ -56,8 +53,6 @@ public class MeetJournalWindow extends Window implements AfterCompose {
 	private JXKHMeetingService jxkhMeetingService;
 	private WkTUser user;
 	private List<JXKH_HYLW> meetingList = new ArrayList<JXKH_HYLW>();
-	private Set<JXKH_HYLWFile> filesList;
-	
 	private String nameSearch;
 	private Textbox name;
 	private Listbox auditState, rank;
@@ -126,40 +121,25 @@ public class MeetJournalWindow extends Window implements AfterCompose {
 			item.setValue(meeting);
 			Listcell c0 = new Listcell();
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
+			//论文题目
 			Listcell c2 = new Listcell(meeting.getLwName().length() <= 12?
 					meeting.getLwName():meeting.getLwName().substring(0, 12) + "...");
-			c2.setTooltiptext("点击查看会议论文信息");
+			c2.setTooltiptext(meeting.getLwName());
 			c2.setStyle("color:blue");
 			c2.addEventListener(Events.ON_CLICK, new EditListener());
+			//会议级别
 			Listcell c3 = new Listcell();
 			if (meeting.getLwGrade() == null) {
 				c3.setLabel("");
 			} else {
 				c3.setLabel(meeting.getLwGrade().getKbName());
 			}
-			// Listcell c4 = new
-			// Listcell(((Jxkh_BusinessIndicator)meeting.getLwGrade()).getKbName());
-			Listcell c8 = new Listcell(meeting.getjxYear());
-			Listcell c4 = new Listcell();
-			c4.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c4);
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-					filesList = jxkhHylwService
-							.findMeetingFilesByMeetingId(meeting);
-					// win.setFiles(meeting.getFiles());
-					win.setFiles(filesList);
-					win.setFlag("HYLW");
-					win.initWindow();
-					win.doModal();
-				}
-			});
+			//积分年度
+			Listcell c4 = new Listcell(meeting.getjxYear());
+			//该项得分
+			Listcell c5 = new Listcell(meeting.getScore() == null ? ""
+					: meeting.getScore().toString());
+			//本人得分
 			Listcell c6 = new Listcell("");
 			List<JXKH_HULWMember> mlist = jxkhHylwService
 					.findAwardMemberByAwardId(meeting);
@@ -171,8 +151,10 @@ public class MeetJournalWindow extends Window implements AfterCompose {
 					}
 				}
 			}
-			Listcell c5 = new Listcell(meeting.getScore() == null ? ""
-					: meeting.getScore().toString());
+			//填写人
+			Listcell c61 = new Listcell();
+			c61.setLabel(meeting.getLwWriter());
+			//审核状态
 			Listcell c7 = new Listcell();
 			c7.setTooltiptext("点击查看审核结果");
 			if (meeting.getLwState() == null) {
@@ -216,10 +198,7 @@ public class MeetJournalWindow extends Window implements AfterCompose {
 					c7.setLabel("填写中");
 					c7.setStyle("color:red");
 					break;
-				case 9:
-					c8.setLabel("部门审核中");
-					c8.setStyle("color:red");
-					break;
+			
 				}
 			}
 			// 弹出审核意见事件
@@ -246,10 +225,10 @@ public class MeetJournalWindow extends Window implements AfterCompose {
 			item.appendChild(c1);
 			item.appendChild(c2);
 			item.appendChild(c3);
-			item.appendChild(c8);
 			item.appendChild(c4);
 			item.appendChild(c5);
 			item.appendChild(c6);
+			item.appendChild(c61);
 			item.appendChild(c7);
 		}
 	}
@@ -263,13 +242,13 @@ public class MeetJournalWindow extends Window implements AfterCompose {
 			Listitem item = (Listitem) event.getTarget().getParent();
 			JXKH_HYLW meeting = (JXKH_HYLW) item.getValue();
 			if (user.getKuLid().equals(meeting.getWriterId())) {
-				if (meeting.getLwState() == null || meeting.getLwState() == JXKH_MEETING.WRITING || meeting.getLwState() == 0
+				/*if (meeting.getLwState() == null || meeting.getLwState() == JXKH_MEETING.WRITING || meeting.getLwState() == 0
 						|| meeting.getLwState() == 3
 						|| meeting.getLwState() == 5) {
 				} else {
 					Messagebox.show("部门已经审核通过或者业务办已经审核通过，您只能查看，无权再编辑 ！", "提示",
 							Messagebox.OK, Messagebox.ERROR);
-				}
+				}*/
 				AddMeetArticalWindow w = (AddMeetArticalWindow) Executions
 						.createComponents(
 								"/admin/personal/businessdata/artical/meetartical/addMeetarti.zul",

@@ -1,16 +1,18 @@
 package org.iti.jxkh.audit.project;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
+import java.util.Set;
 import org.iti.jxkh.business.project.AddFundWindow;
 import org.iti.jxkh.business.project.EditFundWindow;
-//import org.iti.jxkh.business.project.AddZPWindow.EditListener;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.entity.Jxkh_Project;
 import org.iti.jxkh.entity.Jxkh_ProjectDept;
+import org.iti.jxkh.entity.Jxkh_ProjectFile;
 import org.iti.jxkh.entity.Jxkh_ProjectFund;
 import org.iti.jxkh.entity.Jxkh_ProjectMember;
 import org.iti.jxkh.service.JxkhProjectService;
@@ -24,7 +26,7 @@ import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.ext.AfterCompose;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Datebox;
-import org.zkoss.zul.Hbox;
+import org.zkoss.zul.Filedownload;
 import org.zkoss.zul.Label;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
@@ -39,8 +41,8 @@ import org.zkoss.zul.Tab;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
+import com.iti.common.util.UploadUtil;
 import com.uniwin.framework.entity.WkTDept;
 import com.uniwin.framework.entity.WkTUser;
 import com.uniwin.framework.service.DepartmentService;
@@ -57,16 +59,13 @@ public class ZPWindow extends Window implements AfterCompose {
 	private Textbox projectName, projectMember, department, coUnit, sumFund,
 			projecCode, takeCompany, header, standDept;
 	private Label yearFund, writer;
-	private Datebox begin, end, standYear;
+	private Datebox begin, end;
 	private Listbox rank, progress, fundsListbox1, fundsListbox2;
 	private Radiogroup ifCoo, ifHum, ifSoft;
 	private Row coUnitRow;
 	private Button print;
 	private Jxkh_Project project;
 	private String subnum, outnum, innum;
-	private Label recordlabel;
-	private Hbox recordhbox;
-	private Textbox record;
 	private String dept = "";
 	private Toolbarbutton addFund1, delFund1, addFund2, delFund2;
 	private List<WkTUser> memberList = new ArrayList<WkTUser>();
@@ -74,6 +73,15 @@ public class ZPWindow extends Window implements AfterCompose {
 	private List<Jxkh_ProjectMember> projectMemberList = new ArrayList<Jxkh_ProjectMember>();
 	private List<Jxkh_ProjectDept> projectDeptList = new ArrayList<Jxkh_ProjectDept>();
 	private Radio firstSignTrue, firstSignFalse;
+	/**
+	 * 添加文档和积分选项卡
+	 */
+	private Listbox applyList1, applyList2, applyList3;
+	private Listbox personScore, departmentScore;
+	private Set<Jxkh_ProjectFile> fileList1;
+	private List<String[]> arrList1 = new ArrayList<String[]>();
+	private List<String[]> arrList2 = new ArrayList<String[]>();
+	private List<String[]> arrList3 = new ArrayList<String[]>();
 	
 	private DepartmentService departmentService;
 
@@ -87,23 +95,235 @@ public class ZPWindow extends Window implements AfterCompose {
 		progress.setItemRenderer(new TypeRenderer());
 		fundsListbox1.setItemRenderer(new FundsRenderer());
 		fundsListbox2.setItemRenderer(new FundsRenderer());
+		
+		personScore.setItemRenderer(new ListitemRenderer() {
+			
+			@Override
+			public void render(Listitem item, Object data) throws Exception {
 
+				if (data == null)
+					return;
+				final Jxkh_ProjectMember member = (Jxkh_ProjectMember) data;
+				item.setValue(member);
+				Listcell c1 = new Listcell(item.getIndex() + 1 + "");
+				Listcell c2 = new Listcell(member.getName());
+				Listcell c3 = new Listcell();
+				if (member.getType() == 1) {
+					c3 = new Listcell("院外");
+				} else {
+					c3 = new Listcell("院内");
+				}
+				Listcell c4 = new Listcell();
+				if (member.getType() == 1) {
+					c4 = new Listcell("院外");
+				} else {
+					c4 = new Listcell(member.getDept());
+				}
+				Listcell c5 = new Listcell();
+				Textbox t = new Textbox();
+				t.setDisabled(true);
+				t.setParent(c5);
+				if (member.getPer() != null)
+					t.setValue(member.getPer() + "");
+				//指定积分归属
+				Listcell c6 = new Listcell();
+				Toolbarbutton bar = new Toolbarbutton();
+				if (member.getAssignDep() == null || member.getAssignDep().equals("")) {
+					bar.setLabel("指定");
+					bar.setStyle("color:blue");
+				} else {
+					bar.setLabel(member.getAssignDep());
+				}
+				c6.appendChild(bar);
+				Listcell c7 = new Listcell();
+				if (member.getScore() != null)
+					c7.setLabel(member.getScore() + "");
+
+				item.appendChild(c1);
+				item.appendChild(c2);
+				item.appendChild(c3);
+				item.appendChild(c4);
+				item.appendChild(c5);
+				item.appendChild(c6);
+				item.appendChild(c7);
+			}
+		});
+		
+		departmentScore.setItemRenderer(new ListitemRenderer() {
+			
+			@Override
+			public void render(Listitem arg0, Object arg1) throws Exception {
+				if (arg0 == null)
+					return;
+				final Jxkh_ProjectDept dept = (Jxkh_ProjectDept) arg1;
+				arg0.setValue(dept);
+				Listcell c1 = new Listcell(arg0.getIndex() + 1 + "");
+				Listcell c2 = new Listcell(dept.getName());
+				Listcell c3 = new Listcell();
+				if (dept.getScore() != null)
+					c3.setLabel(dept.getScore() + "");
+				arg0.appendChild(c1);
+				arg0.appendChild(c2);
+				arg0.appendChild(c3);
+			}
+		});
+		
+		applyList1.setItemRenderer(new FilesRenderer1());
+		applyList2.setItemRenderer(new FilesRenderer2());
+		applyList3.setItemRenderer(new FilesRenderer3());
+
+	}
+	
+	/**
+	 * <li>功能描述：文档信息的listbox(20120305)
+	 */
+	public class FilesRenderer1 implements ListitemRenderer {
+
+		@Override
+		public void render(Listitem arg0, Object arg1) throws Exception {
+			final String[] str = (String[]) arg1;
+			arg0.setValue(str);
+			Listcell c1 = new Listcell(arg0.getIndex() + 1 + "");
+			Listcell c2 = new Listcell(str[1]);
+			Listcell c3 = new Listcell(str[2]);
+			Listcell c4 = new Listcell();
+			Toolbarbutton downlowd = new Toolbarbutton();
+			downlowd.setImage("/css/default/images/button/down.gif");
+			downlowd.setParent(c4);
+			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
+				@Override
+				public void onEvent(Event arg0) throws Exception {
+					download(str[0], str[1]);
+				}
+			});
+			
+			arg0.appendChild(c1);
+			arg0.appendChild(c2);
+			arg0.appendChild(c3);
+			arg0.appendChild(c4);
+		}
+	}
+	
+	/**
+	 * <li>功能描述：文档信息的listbox(20120305)
+	 */
+	public class FilesRenderer2 implements ListitemRenderer {
+
+		@Override
+		public void render(Listitem arg0, Object arg1) throws Exception {
+			final String[] str = (String[]) arg1;
+			arg0.setValue(str);
+			Listcell c1 = new Listcell(arg0.getIndex() + 1 + "");
+			Listcell c2 = new Listcell(str[1]);
+			Listcell c3 = new Listcell(str[2]);
+			Listcell c4 = new Listcell();
+			Toolbarbutton downlowd = new Toolbarbutton();
+			downlowd.setImage("/css/default/images/button/down.gif");
+			downlowd.setParent(c4);
+			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
+				@Override
+				public void onEvent(Event arg0) throws Exception {
+					download(str[0], str[1]);
+				}
+			});
+			
+			arg0.appendChild(c1);
+			arg0.appendChild(c2);
+			arg0.appendChild(c3);
+			arg0.appendChild(c4);
+		}
+	}
+	
+	/**
+	 * <li>功能描述：文档信息的listbox(20120305)
+	 */
+	public class FilesRenderer3 implements ListitemRenderer {
+
+		@Override
+		public void render(Listitem arg0, Object arg1) throws Exception {
+			final String[] str = (String[]) arg1;
+			arg0.setValue(str);
+			Listcell c1 = new Listcell(arg0.getIndex() + 1 + "");
+			Listcell c2 = new Listcell(str[1]);
+			Listcell c3 = new Listcell(str[2]);
+			Listcell c4 = new Listcell();
+			Toolbarbutton downlowd = new Toolbarbutton();
+			downlowd.setImage("/css/default/images/button/down.gif");
+			downlowd.setParent(c4);
+			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
+				@Override
+				public void onEvent(Event arg0) throws Exception {
+					download(str[0], str[1]);
+				}
+			});
+			
+			arg0.appendChild(c1);
+			arg0.appendChild(c2);
+			arg0.appendChild(c3);
+			arg0.appendChild(c4);
+		}
+	}
+	
+	public void download(String fpath, String fname) throws InterruptedException {
+		File file = new File(UploadUtil.getRootPath() + fpath);
+		if (file.exists()) {
+			try {
+				Filedownload.save(file, fname);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		} else {
+			Messagebox.show("无法下载，可能是因为文件没有被上传！ ", "错误", Messagebox.OK, Messagebox.ERROR);
+		}
 	}
 
 	public void initWindow() {
+		projectMemberList = jxkhProjectService.findProjectMember(project);
+		personScore.setModel(new ListModelList(projectMemberList));
+		List<Jxkh_ProjectDept> tempDeptList = jxkhProjectService.findProjectDept(project);
+		departmentScore.setModel(new ListModelList(tempDeptList));
+		
+		fileList1 = project.getProjectFile();
+		Object[] file = fileList1.toArray();
+		for (int j = 0; j < file.length; j++) {
+			Jxkh_ProjectFile f = (Jxkh_ProjectFile) file[j];
+			if (f.getBelongType().equals("项目申请书")) {
+				String[] arr = new String[4];
+				arr[0] = f.getPath();
+				arr[1] = f.getName();
+				arr[2] = f.getSubmitDate();
+				arr[3] = f.getBelongType();
+				arrList1.add(arr);
+			}
+			if (f.getBelongType().equals("项目合同书")) {
+				String[] arr = new String[4];
+				arr[0] = f.getPath();
+				arr[1] = f.getName();
+				arr[2] = f.getSubmitDate();
+				arr[3] = f.getBelongType();
+				arrList2.add(arr);
+			}
+			if (f.getBelongType().equals("年度进度文档")) {
+				String[] arr = new String[4];
+				arr[0] = f.getPath();
+				arr[1] = f.getName();
+				arr[2] = f.getSubmitDate();
+				arr[3] = f.getBelongType();
+				arrList3.add(arr);
+			}
+
+		}
+		
+		applyList1.setModel(new ListModelList(arrList1));
+		applyList2.setModel(new ListModelList(arrList2));
+		applyList3.setModel(new ListModelList(arrList3));
+		
 		if (dept.equals("dept")) {
 			addFund1.setVisible(true);
 			delFund1.setVisible(true);
 			addFund2.setVisible(true);
 			delFund2.setVisible(true);
 		}
-
-		// if (project.getState() == Jxkh_Patent.SAVE_RECORD) {
-		// record.setVisible(true);
-		// recordlabel.setVisible(true);
-		// recordhbox.setVisible(true);
-		// record.setValue(project.getRecordCode());
-		// }
 
 		projectName.setValue(project.getName());
 		WkTUser infoWriter = jxkhProjectService
@@ -126,16 +346,6 @@ public class ZPWindow extends Window implements AfterCompose {
 		} else {
 			end.setValue(ConvertUtil.convertDate(project.getEndDate()));
 		}
-		// if (project.getStandYear() == null
-		// || project.getStandYear().length() == 0) {
-		// standYear.setValue(null);
-		// } else {
-		// standYear.setValue(ConvertUtil.convertDate(project.getStandYear()));
-		// }
-
-		// if (project.getProgress().equals("立项")) {
-		// setInfo.setVisible(true);
-		// }
 
 		if (project.getCooState() != null) {
 			if (project.getCooState() == Jxkh_Project.YES) {

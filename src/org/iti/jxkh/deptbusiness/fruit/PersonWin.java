@@ -6,18 +6,14 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
 import org.iti.jxkh.business.fruit.AdviceWin;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.entity.Jxkh_Fruit;
 import org.iti.jxkh.entity.Jxkh_FruitDept;
-import org.iti.jxkh.entity.Jxkh_FruitFile;
 import org.iti.jxkh.entity.Jxkh_FruitMember;
 import org.iti.jxkh.service.JXKHMeetingService;
 import org.iti.jxkh.service.JxkhFruitService;
@@ -38,9 +34,7 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -61,7 +55,6 @@ public class PersonWin extends Window implements AfterCompose {
 	private Short auditStateSearch;
 	private Listbox auditState, rank;
 	private List<Jxkh_Fruit> fruitList = new ArrayList<Jxkh_Fruit>();
-	private Set<Jxkh_FruitFile> filesList;
 	private Paging fruitPaging;
 	private JxkhFruitService jxkhFruitService;
 	private JXKHMeetingService jxkhMeetingService;
@@ -189,34 +182,20 @@ public class PersonWin extends Window implements AfterCompose {
 					}
 				}
 			});
-
+			//成果水平
 			Listcell c3 = new Listcell("");
 			if (fruit.getAppraiseRank() != null)
 				c3 = new Listcell(fruit.getAppraiseRank().getKbName());
+			//积分年度
 			Listcell c4 = new Listcell("");
 			if (fruit.getjxYear() != null)
 				c4 = new Listcell(fruit.getjxYear());
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.setHeight("20px");
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/deptbusinessdata/award/download.zul",
-									null, null);
-
-					filesList = fruit.getFruitFile();
-					win.setFiles(filesList);
-					win.setFlag("FRUIT");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			Listcell c6 = new Listcell(fruit.getScore() == null ? "" : fruit.getScore().toString());
+			//该项得分
+			Listcell c5 = new Listcell(fruit.getScore() == null ? "" : fruit.getScore().toString());
+			//填写人
+			Listcell c6 = new Listcell();
+			c6.setLabel(fruit.getSubmitName());
+			//审核状态
 			Listcell c7 = new Listcell();
 			c7.setTooltiptext("点击查看审核结果");
 			if (fruit.getState() == null || fruit.getState() == 0) {

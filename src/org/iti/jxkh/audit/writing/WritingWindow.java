@@ -6,15 +6,11 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.business.writing.AddWritingWindow;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
-import org.iti.jxkh.entity.Jxkh_Project;
 import org.iti.jxkh.entity.Jxkh_Writer;
 import org.iti.jxkh.entity.Jxkh_Writing;
 import org.iti.jxkh.entity.Jxkh_WritingDept;
@@ -29,7 +25,6 @@ import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.ext.AfterCompose;
 import org.zkoss.zul.Groupbox;
-import org.zkoss.zul.Image;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
@@ -39,7 +34,6 @@ import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -137,7 +131,7 @@ public class WritingWindow extends Window implements AfterCompose {
 			Listcell c2 = new Listcell(project.getName().length() <= 14?
 					project.getName():project.getName().substring(0, 14) + "...");
 			c2.setStyle("color:blue");
-			c2.setTooltiptext("点击查看著作信息");
+			c2.setTooltiptext(project.getName());
 			c2.addEventListener(Events.ON_CLICK, new EventListener() {
 				public void onEvent(Event arg0) throws Exception {
 
@@ -157,30 +151,20 @@ public class WritingWindow extends Window implements AfterCompose {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					// initShow();
 				}
 			});
-
+			//著作类型
 			Listcell c3 = new Listcell(project.getSort().getKbName());
+			//积分年度
 			Listcell c4 = new Listcell(project.getjxYear());
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Image download = new Image("/css/default/images/button/down.gif");
-			download.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-					win.setFiles(project.getWritingFile());
-					win.setFlag("writing");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			c5.appendChild(download);
-			Listcell c6 = new Listcell(project.getScore() == null ? "0"
+			//该项得分
+			Listcell c5 = new Listcell(project.getScore() == null ? "0"
 					: project.getScore().toString());
+			//填写人
+			Listcell c6 = new Listcell();
+			WkTUser user = jxkhProjectService.findWktUserByMemberUserId(project.getInfoWriter());
+			c6.setLabel(user.getKuName());
+			//审核状态
 			String strC8;
 			switch (project.getState()) {
 			case Jxkh_Writing.NOT_AUDIT:
@@ -278,6 +262,7 @@ public class WritingWindow extends Window implements AfterCompose {
 			}
 			return;
 		}
+		@SuppressWarnings("unchecked")
 		Iterator<Listitem> items = zxListbox.getSelectedItems().iterator();
 		List<Jxkh_Writing> awardList = new ArrayList<Jxkh_Writing>();
 		Jxkh_Writing award = new Jxkh_Writing();

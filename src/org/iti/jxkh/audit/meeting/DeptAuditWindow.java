@@ -6,16 +6,12 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.deptbusiness.meeting.AddMeetingWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.JXKH_MeetingDept;
-import org.iti.jxkh.entity.JXKH_MeetingFile;
 import org.iti.jxkh.entity.Jxkh_BusinessIndicator;
 import org.iti.jxkh.service.JXKHMeetingService;
 import org.zkoss.zk.ui.Components;
@@ -35,9 +31,7 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -51,7 +45,6 @@ public class DeptAuditWindow extends Window implements AfterCompose {
 	private WkTUser user;
 	private JXKHMeetingService jxkhMeetingService;
 	private List<JXKH_MEETING> meetingList = new ArrayList<JXKH_MEETING>();
-	private Set<JXKH_MeetingFile> filesList;
 	private Paging awardPaging;
 	private Groupbox cxtj;
 	private YearListbox year;
@@ -146,7 +139,7 @@ public class DeptAuditWindow extends Window implements AfterCompose {
 			Listcell c0 = new Listcell();
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(meeting.getMtName().length() <= 14?meeting.getMtName():meeting.getMtName().substring(0, 14) + "...");
-			c2.setTooltiptext("点击查看学术会议信息");
+			c2.setTooltiptext(meeting.getMtName());
 			c2.setStyle("color:blue");
 			c2.addEventListener(Events.ON_CLICK, new EventListener() {
 				public void onEvent(Event event) throws Exception {
@@ -174,37 +167,22 @@ public class DeptAuditWindow extends Window implements AfterCompose {
 				}
 
 			});
+			//会议级别
 			Listcell c3 = new Listcell("");
 			if (meeting.getMtDegree() == null) {
 				c3.setLabel("");
 			} else {
 				c3.setLabel(meeting.getMtDegree().getKbName());
 			}
+			//积分年度
 			Listcell c4 = new Listcell(meeting.getjxYear());
-
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-
-					filesList = jxkhMeetingService
-							.findMeetingFilesByMeetingId(meeting);
-					// win.setFiles(meeting.getFiles());
-					win.setFiles(filesList);
-					win.setFlag("M");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			Listcell c6 = new Listcell(meeting.getScore() == null ? ""
+			//该项得分
+			Listcell c5 = new Listcell(meeting.getScore() == null ? ""
 					: meeting.getScore().toString());
+			//填写人
+			Listcell c6 = new Listcell();
+			c6.setLabel(meeting.getMtWriter());
+			//审核意见
 			Listcell c7 = new Listcell();
 			c7.setTooltiptext("点击填写审核意见");
 			if (meeting.getMtState() == null) {
@@ -288,6 +266,7 @@ public class DeptAuditWindow extends Window implements AfterCompose {
 			}
 			return;
 		}
+		@SuppressWarnings("unchecked")
 		Iterator<Listitem> items = meetingListbox.getSelectedItems().iterator();
 		List<JXKH_MEETING> meetingList = new ArrayList<JXKH_MEETING>();
 		JXKH_MEETING meeting = new JXKH_MEETING();

@@ -6,17 +6,13 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_Award;
 import org.iti.jxkh.entity.Jxkh_Report;
 import org.iti.jxkh.entity.Jxkh_ReportDept;
-import org.iti.jxkh.entity.Jxkh_ReportFile;
 import org.iti.jxkh.entity.Jxkh_ReportMember;
 import org.iti.jxkh.service.JxkhReportService;
 import org.zkoss.zk.ui.Components;
@@ -34,9 +30,7 @@ import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -49,7 +43,6 @@ public class PersonWin extends Window implements AfterCompose {
 	private Listbox reportListbox;
 	private JxkhReportService jxkhReportService;
 	private List<Jxkh_Report> reportList = new ArrayList<Jxkh_Report>();
-	private Set<Jxkh_ReportFile> filesList;
 	private WkTUser user;
 	private Textbox name;
 	private YearListbox year;
@@ -93,7 +86,7 @@ public class PersonWin extends Window implements AfterCompose {
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(report.getName().length() <= 12?
 					report.getName():report.getName().substring(0, 12) + "...");
-			c2.setTooltiptext("点击查看报告信息");
+			c2.setTooltiptext(report.getName());
 			c2.setStyle("color:blue");
 			if (user.getKuLid().equals(report.getSubmitId())) {
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
@@ -101,7 +94,7 @@ public class PersonWin extends Window implements AfterCompose {
 						Listitem item = (Listitem) event.getTarget()
 								.getParent();
 						Jxkh_Report report = (Jxkh_Report) item.getValue();
-						if (report.getState() == Jxkh_Report.NOT_AUDIT
+						/*if (report.getState() == Jxkh_Report.NOT_AUDIT
 								|| report.getState() == Jxkh_Report.DEPT_NOT_PASS || report.getState() == JXKH_MEETING.WRITING 
 								|| report.getState() == Jxkh_Report.BUSINESS_NOT_PASS) {
 
@@ -109,7 +102,7 @@ public class PersonWin extends Window implements AfterCompose {
 							Messagebox.show(
 									"部门已经审核通过或者业务办已经审核通过，您只能查看，无权再编辑 ！", "提示",
 									Messagebox.OK, Messagebox.ERROR);
-						}
+						}*/
 						AddReportWin w = (AddReportWin) Executions
 								.createComponents(
 										"/admin/personal/businessdata/report/addreport.zul",
@@ -150,42 +143,28 @@ public class PersonWin extends Window implements AfterCompose {
 						initWindow();
 					}
 				});
-
 			}
+			//报告种类
 			Listcell c3 = new Listcell(report.getType());
+			//积分年度
 			Listcell c4 = new Listcell(report.getjxYear());
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("下载文档");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.setHeight("20px");
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-
-					filesList = report.getReportFile();
-					win.setFiles(filesList);
-					win.setFlag("REPORT");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			Listcell c6 = new Listcell(report.getScore() == null ? "" : report
+			//该项得分
+			Listcell c5 = new Listcell(report.getScore() == null ? "" : report
 					.getScore().toString());
-			Listcell c7 = new Listcell("");
+			//个人得分
+			Listcell c6 = new Listcell("");
 			List<Jxkh_ReportMember> mlist = report.getReportMember();
 			for (int j = 0; j < mlist.size(); j++) {
 				Jxkh_ReportMember m = mlist.get(j);
 				if (user.getKuName().equals(m.getName())) {
 					if (m.getScore() != null && !m.getScore().equals("")) {
-						c7.setLabel(m.getScore() + "");
+						c6.setLabel(m.getScore() + "");
 					}
 				}
 			}
+			Listcell c7 = new Listcell();
+			c7.setLabel(report.getSubmitName());
+			//审核状态
 			Listcell c8 = new Listcell();
 			c8.setTooltiptext("点击查看审核结果");
 			if (report.getState() == null || report.getState() == 0) {

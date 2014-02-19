@@ -6,12 +6,9 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
 import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_Patent;
 import org.iti.jxkh.entity.Jxkh_Writer;
@@ -26,7 +23,6 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.ext.AfterCompose;
-import org.zkoss.zul.Image;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
@@ -35,7 +31,6 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.framework.entity.WkTUser;
 
@@ -94,20 +89,19 @@ public class WritingWindow extends Window implements AfterCompose {
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(project.getName().length() <= 12?
 					project.getName():project.getName().substring(0, 12) + "...");
-			c2.setTooltiptext("点击查看著作信息");
+			c2.setTooltiptext(project.getName());
 			c2.setStyle("color:blue");
 			if (user.getKuLid().equals(project.getInfoWriter())) {
-				c2.setTooltiptext("点击编辑著作信息");
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
 					public void onEvent(Event arg0) throws Exception {
-						if (project.getState() == Jxkh_Writing.NOT_AUDIT
+						/*if (project.getState() == Jxkh_Writing.NOT_AUDIT
 								|| project.getState() == Jxkh_Writing.DEPT_NOT_PASS || project.getState() == JXKH_MEETING.WRITING
 								|| project.getState() == Jxkh_Writing.BUSINESS_NOT_PASS) {
 						} else {
 							Messagebox.show(
 									"部门已经审核通过或者业务办已经审核通过，您只能查看，无权再编辑 ！", "提示",
 									Messagebox.OK, Messagebox.ERROR);
-						}
+						}*/
 						AddWritingWindow w = (AddWritingWindow) Executions
 								.createComponents(
 										"/admin/personal/businessdata/writing/addWriting.zul",
@@ -133,7 +127,6 @@ public class WritingWindow extends Window implements AfterCompose {
 				});
 
 			} else {
-				c2.setTooltiptext("点击查看著作信息");
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
 					public void onEvent(Event arg0) throws Exception {
 						AddWritingWindow w = (AddWritingWindow) Executions
@@ -156,35 +149,28 @@ public class WritingWindow extends Window implements AfterCompose {
 					}
 				});
 			}
+			//著作类型
 			Listcell c3 = new Listcell(project.getSort().getKbName());
+			//积分年度
 			Listcell c4 = new Listcell(project.getjxYear());
-			Listcell c5 = new Listcell();
-			Image download = new Image("/css/default/images/button/down.gif");
-			download.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-					win.setFiles(project.getWritingFile());
-					win.setFlag("writing");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			c5.appendChild(download);
-			Listcell c6 = new Listcell(project.getScore() == null ? "0"
+			//该项得分
+			Listcell c5 = new Listcell(project.getScore() == null ? "0"
 					: project.getScore().toString());
-			Listcell c7 = new Listcell("");
+			//个人得分
+			Listcell c6 = new Listcell();
 			List<Jxkh_Writer> mlist = jxkhProjectService.findWritingMember(project);
 			for (int j = 0; j < mlist.size(); j++) {
 				Jxkh_Writer m = mlist.get(j);
 				if (user.getKuName().equals(m.getName())) {
 					if (m.getScore() != null && !m.getScore().equals("")) {
-						c7.setLabel(m.getScore() + "");
+						c6.setLabel(m.getScore() + "");
 					}
 				}
 			}
+			//填写人
+			Listcell c7 = new Listcell();
+			c7.setLabel(project.getInfoWriter());
+			//审核状态
 			String strC8;
 			switch (project.getState()) {
 			case Jxkh_Writing.NOT_AUDIT:

@@ -6,16 +6,11 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import jxl.write.WriteException;
-
 import org.iti.gh.common.util.ExportExcel;
 import org.iti.gh.ui.listbox.YearListbox;
-import org.iti.jxkh.business.meeting.DownloadWindow;
-import org.iti.jxkh.entity.JXKH_MEETING;
 import org.iti.jxkh.entity.Jxkh_Video;
 import org.iti.jxkh.entity.Jxkh_VideoDept;
-import org.iti.jxkh.entity.Jxkh_VideoFile;
 import org.iti.jxkh.entity.Jxkh_VideoMember;
 import org.iti.jxkh.service.JxkhVideoService;
 import org.zkoss.zk.ui.Components;
@@ -33,7 +28,6 @@ import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Toolbarbutton;
 import org.zkoss.zul.Window;
 
 import com.iti.common.util.ConvertUtil;
@@ -49,7 +43,6 @@ public class PersonWin extends Window implements AfterCompose {
 	private JxkhVideoService jxkhVideoService;
 	private List<Jxkh_Video> reportList = new ArrayList<Jxkh_Video>();
 	private WkTUser user;
-	private Set<Jxkh_VideoFile> filesList;
 	private Textbox name;
 	private YearListbox year;
 	private String nameSearch, yearSearch;
@@ -92,7 +85,7 @@ public class PersonWin extends Window implements AfterCompose {
 			Listcell c1 = new Listcell(item.getIndex() + 1 + "");
 			Listcell c2 = new Listcell(video.getName().length() <= 12?
 					video.getName():video.getName().substring(0, 12) + "...");
-			c2.setTooltiptext("点击查看影视专题片信息");
+			c2.setTooltiptext(video.getName());
 			c2.setStyle("color:blue");
 			if (user.getKuLid().equals(video.getSubmitId())) {
 				c2.addEventListener(Events.ON_CLICK, new EventListener() {
@@ -100,14 +93,14 @@ public class PersonWin extends Window implements AfterCompose {
 						Listitem item = (Listitem) event.getTarget()
 								.getParent();
 						Jxkh_Video video = (Jxkh_Video) item.getValue();
-						if (video.getState() == Jxkh_Video.NOT_AUDIT
+						/*if (video.getState() == Jxkh_Video.NOT_AUDIT
 								|| video.getState() == Jxkh_Video.DEPT_NOT_PASS || video.getState() == JXKH_MEETING.WRITING
 								|| video.getState() == Jxkh_Video.BUSINESS_NOT_PASS) {
 						} else {
 							Messagebox.show(
 									"部门已经审核通过或者业务办已经审核通过，您只能查看，无权再编辑 ！", "提示",
 									Messagebox.OK, Messagebox.ERROR);
-						}
+						}*/
 						AddVideoWin w = (AddVideoWin) Executions
 								.createComponents(
 										"/admin/personal/businessdata/video/addvideo.zul",
@@ -149,45 +142,33 @@ public class PersonWin extends Window implements AfterCompose {
 					}
 				});
 			}
+			//影视种类
 			Listcell c3 = new Listcell(video.getType());
+			//积分年度
 			Listcell c4 = new Listcell();
 			if (video.getjxYear() != null) {
 				c4 = new Listcell(video.getjxYear());
 			} else {
 				c4 = new Listcell("");
 			}
-			Listcell c5 = new Listcell();
-			c5.setTooltiptext("附件");
-			Toolbarbutton downlowd = new Toolbarbutton();
-			downlowd.setImage("/css/default/images/button/down.gif");
-			downlowd.setParent(c5);
-			downlowd.setHeight("20px");
-			downlowd.addEventListener(Events.ON_CLICK, new EventListener() {
-				public void onEvent(Event arg0) throws Exception {
-					DownloadWindow win = (DownloadWindow) Executions
-							.createComponents(
-									"/admin/personal/businessdata/meeting/download.zul",
-									null, null);
-
-					filesList = video.getVideoFile();
-					win.setFiles(filesList);
-					win.setFlag("VIDEO");
-					win.initWindow();
-					win.doModal();
-				}
-			});
-			Listcell c6 = new Listcell(video.getScore() == null ? "" : video
+			//该项得分
+			Listcell c5 = new Listcell(video.getScore() == null ? "" : video
 					.getScore().toString());
-			Listcell c8 = new Listcell("");
+			//个人得分
+			Listcell c6 = new Listcell("");
 			List<Jxkh_VideoMember> mlist = video.getVideoMember();
 			for (int j = 0; j < mlist.size(); j++) {
 				Jxkh_VideoMember m = mlist.get(j);
 				if (user.getKuName().equals(m.getName())) {
 					if (m.getScore() != null && !m.getScore().equals("")) {
-						c8.setLabel(m.getScore() + "");
+						c6.setLabel(m.getScore() + "");
 					}
 				}
 			}
+			//填写人
+			Listcell c62 = new Listcell();
+			c62.setLabel(video.getSubmitName());
+			//审核状态
 			Listcell c7 = new Listcell();
 			c7.setTooltiptext("点击查看审核结果");
 			if (video.getState() == null || video.getState() == 0) {
@@ -259,7 +240,7 @@ public class PersonWin extends Window implements AfterCompose {
 			item.appendChild(c4);
 			item.appendChild(c5);
 			item.appendChild(c6);
-			item.appendChild(c8);
+			item.appendChild(c62);
 			item.appendChild(c7);
 		}
 	}
