@@ -59,17 +59,15 @@
 				<listheader align="center" width="7%" label="序号" />
 				<listheader style="text-align:center" width="25%"
 					align="left" label="成果名称" />
-				<!--  <listheader style="text-align:center" width="17%"
-					align="left" label="完成人" />-->
 				<listheader align="center" width="14%" label="成果水平" />
 				<listheader align="center" width="14%" label="绩分年度" />
-				<listheader align="center" width="9%" label="附件" />
 				<listheader label="该项得分" width="13%" align="center" />
+				<listheader align="center" width="9%" label="填写人" />
 				<listheader align="center" width="13%" label="审核状态" />
 			</listhead>
 		</listbox>
 		<div align="center">
-			<paging id="fruitPaging" zclass="z-paging" pageSize="13" detailed="true"/>
+			<paging id="fruitPaging" zclass="z-paging" pageSize="15" detailed="true"/>
 		</div>
 		<separator />
 		<groupbox closable="true">

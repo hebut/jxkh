@@ -62,12 +62,12 @@
 						style="text-align:center" />
 					<listheader label="期刊类别" width="17%" align="center" />
 					<listheader label="绩分年度" width="10%" align="center" />
-					<listheader label="附件" width="9%" align="center" />
 					<listheader label="该项得分" width="10%" align="center" />
+					<listheader label="填写人" width="9%" align="center" />
 					<listheader label="审核状态" width="18%" align="center" />
 				</listhead>
 			</listbox>
-			<paging id="meetingPaging" zclass="z-paging" pageSize="13" detailed="true"/>
+			<paging id="meetingPaging" zclass="z-paging" pageSize="15" detailed="true"/>
 		</div>
 		<separator />
 		<groupbox closable="true">

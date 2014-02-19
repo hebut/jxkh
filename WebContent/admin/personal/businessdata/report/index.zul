@@ -60,33 +60,24 @@
 				image="/css/default/images/button/dc.gif" style="color:blue" />
 		</div>
 		<div align="center">
-			<listbox id="reportListbox" mold="paging" pageSize="13"
+			<listbox id="reportListbox" mold="paging" pageSize="15"
 				sclass="new_listbox" checkmark="true" multiple="true">
 				<listhead>
-
 					<listheader align="center" width="5%" />
 					<listheader label="序号" width="7%" align="center" />
 					<listheader label="报告名称" width="20%" align="left"
-						style="text-align:center" sort="auto(name)" />
-
-					<listheader label="报告种类" width="14%" align="center"
-						sort="auto(types)" />
-					<listheader label="绩分年度" width="13%" align="center"
-						sort="auto(types)" />
-					<listheader label="附件" width="7%" align="center"
-						sort="auto(award_Year)" />
+						style="text-align:center"  />
+					<listheader label="报告种类" width="14%" align="center" />
+					<listheader label="绩分年度" width="13%" align="center"  />
 					<listheader label="该项得分" width="11%" align="center"
 						style="text-align:center" />
-					<listheader label="本人得分" width="11%" align="center"
-						sort="auto(score)" />
-					<listheader label="审核状态" width="12%" align="center"
-						sort="auto(auditState)" />
+					<listheader label="本人得分" width="11%" align="center" />
+					<listheader label="填写人" width="7%" align="center" />
+					<listheader label="审核状态" width="12%" align="center" />
 				</listhead>
 			</listbox>
 		</div>
-		<!-- <div width="100%" align="right">
-			<paging id="reportPaging" pageSize="10" detailed="true" />
-			</div> -->
+		
 		<separator />
 		<groupbox closable="true">
 			<caption>

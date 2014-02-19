@@ -46,7 +46,7 @@
 							image="/css/img/up.gif" />
 					</hbox>
 					<listbox id="fileListbox" sclass="new_listbox"
-						width="200px" rows="2">
+						width="300px" rows="2">
 						<listhead>
 							<listheader width="10%" align="center"
 								label="序号" />

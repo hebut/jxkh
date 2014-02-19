@@ -406,17 +406,7 @@
 								</groupbox>
 								<separator />
 								<html>
-
-
-
-
-									
 									<![CDATA[ <hr color="##8470FF"/> ]]>
-									
-								
-						
-						
-						
 					</html>
 								<separator />
 								<groupbox>
@@ -447,17 +437,7 @@
 								</groupbox>
 								<separator />
 								<html>
-
-
-
-
-									
 									<![CDATA[ <hr color="##8470FF"/> ]]>
-									
-								
-						
-						
-						
 					</html>
 								<separator />
 								<groupbox>
@@ -485,9 +465,7 @@
 									</listbox>
 								</groupbox>
 								<separator />
-							
 							</div>
-
 						</center>
 					</borderlayout>
 					<div align="center">
@@ -517,8 +495,8 @@
 									align="center" />
 								<listheader label="所占比例(共10)"
 									width="15%" align="center" />
-								<!-- <listheader label="绩分归属部门" width="15%"
-									align="center" /> -->
+								<listheader label="绩分归属部门" width="15%"
+									align="center" />
 								<listheader label="绩分" width="15%"
 									align="center" />
 							</listhead>
@@ -526,23 +504,7 @@
 					</groupbox>
 					<separator />
 					<html>
-
-
-
-
-
-
-
-						
 						<![CDATA[ <hr color="##8470FF"/> ]]>
-						
-						
-						
-						
-						
-						
-						
-						
 					</html>
 					<separator />
 					<groupbox>

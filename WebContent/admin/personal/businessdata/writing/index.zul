@@ -64,7 +64,7 @@
 			</hbox>
 		</div>
 		<div align="center" width="100%">
-			<listbox id="zxListbox" mold="paging" pageSize="13"
+			<listbox id="zxListbox" mold="paging" pageSize="15"
 				sclass="new_listbox" checkmark="true" multiple="true"
 				fixedLayout="true">
 				<listhead>
@@ -75,14 +75,12 @@
 					<listheader label="著作类型" width="16%" align="center"
 						style="text-align:center" />
 					<listheader label="绩分年度" width="10%" align="center" />
-					<listheader label="附件" width="10%" align="center" />
 					<listheader label="该项得分" width="11%" align="center" />
 					<listheader label="个人得分" width="11%" align="center" />
+					<listheader label="填写人" width="10%" align="center" />
 					<listheader label="审核状态" width="12%" align="center" />
 				</listhead>
 			</listbox>
-			<!-- <paging id="zxPaging" zclass="z-paging" pageSize="10"
-				detailed="true" /> -->
 		</div>
 		<groupbox closable="true">
 			<caption>

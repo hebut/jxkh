@@ -6,16 +6,16 @@
 		<style>
 			.red { color: red; font-style: oblique; font-size:18px; }
 		</style>
-		<caption>
+		<caption visible="false">
 			<button label="打印个人信息" id="print" target="blank" href="">
 			</button>
 			<space />
 		</caption>
 		<tabbox sclass="new-tabbox">
 			<tabs>
-				<tab label="基本信息" selected="true"  />
+				<tab label="基本信息"  selected="true"  />
 				<tab label="教育经历" />
-				<tab label="工作信息"  />
+				<tab label="工作信息"   />
 				<tab label="职称信息" /> 
 				<tab label="联系方式" />
 			</tabs>
@@ -239,9 +239,9 @@
 												</listbox>
 											</hbox>
 											<label value="加入时间"
-												style="letter-spacing:3px" id="partyLabel" visible="true" />
+												style="letter-spacing:3px" id="partyLabel" visible="false" />
 											<datebox id="partytime"
-												width="100px" timeZonesReadonly="false" visible="true" />
+												width="100px" timeZonesReadonly="false" visible="false" />
 										</row>
 										<row spans="1,5">
 											<label value="个人简介(限125字)"
@@ -497,6 +497,7 @@
 							visible="true" id="addPeiXun">
 						</toolbarbutton>
 					</hbox>
+					<div align="center" >
 					<listbox id="show" mold="paging"
 						paginal="${zxPaging}" sclass="new_listbox">
 						<listhead>
@@ -528,6 +529,7 @@
 					</listbox>
 					<paging id="zxPaging" zclass="z-paging"
 						pageSize="11" detailed="true" />
+					</div>
 				</tabpanel>
 				<!-- 工作信息 -->
 				<tabpanel>
@@ -554,10 +556,12 @@
 										width="100px">
 									</datebox>
 								</hbox>
-								<label value="岗位性质"></label>
+								<label value="用工性质"
+									style="letter-spacing:5px">
+								</label>
 								<hbox>
-									<listbox id="teaqualiry"
-										mold="select" rows="1" width="120px">
+									<listbox id="workproper"
+										mold="select" width="120px">
 									</listbox>
 								</hbox>
 							</row>
@@ -586,14 +590,13 @@
 								</hbox>
 							</row>
 							<row>
-								<label value="用工性质"
-									style="letter-spacing:5px">
-								</label>
+								<label value="岗位性质"></label>
 								<hbox>
-									<listbox id="workproper"
-										mold="select" width="120px">
+									<listbox id="teaqualiry"
+										mold="select" rows="1" width="120px">
 									</listbox>
 								</hbox>
+							
 								<label value="离职时间" id="leave"
 									style="letter-spacing:5px">
 								</label>

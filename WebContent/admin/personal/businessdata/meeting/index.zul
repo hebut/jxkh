@@ -71,14 +71,14 @@
 						style="text-align:center" align="left" />
 					<listheader label="会议级别" align="center" width="17%" />
 					<listheader label="绩分年度" align="center" width="11%" />
-					<listheader label="附件" align="center" width="8%" />
 					<listheader label="该项得分" align="center" width="11%"
 						style="text-align:center" />
 					<listheader label="本人得分" align="center" width="11%" />
+					<listheader label="填写人" align="center" width="8%" />
 					<listheader label="审核状态" align="center" width="11%" />
 				</listhead>
 			</listbox>
-			<paging id="meetingPaging" pageSize="13" detailed="true"/>
+			<paging id="meetingPaging" pageSize="15" detailed="true"/>
 		</div>
 		<separator />
 		<groupbox closable="true">

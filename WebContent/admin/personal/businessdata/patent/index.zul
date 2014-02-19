@@ -14,14 +14,15 @@
 					<column width="12%" align="right"></column>
 					<column width="20%" align="left"></column>
 					<column width="12%" align="right"></column>
-					<column width="20%" align="left"></column>				</columns>
+					<column width="20%" align="left"></column>
+				</columns>
 				<rows>
 					<row style="background:#D2E9FF">
 						<label value="专利(产权)名称" />
 						<textbox id="name" width="90%" />
 						<label value="绩分年度" />
-						<listbox id="year" mold="select" rows="1" use="org.iti.gh.ui.listbox.YearListbox" 
-							width="80%">
+						<listbox id="year" mold="select" rows="1"
+							use="org.iti.gh.ui.listbox.YearListbox" width="80%">
 						</listbox>
 						<label value="审核状态" />
 						<listbox id="auditState" mold="select" rows="1"
@@ -64,7 +65,7 @@
 			</hbox>
 		</div>
 		<div align="center" width="100%">
-			<listbox id="zxListbox" mold="paging" pageSize="13"
+			<listbox id="zxListbox" mold="paging" pageSize="15"
 				sclass="new_listbox" checkmark="true" multiple="true"
 				fixedLayout="true">
 				<listhead>
@@ -75,18 +76,13 @@
 					<listheader label="专利(软件)类型" width="16%"
 						align="center" style="text-align:center" />
 					<listheader label="绩分年度" width="13%" align="center" />
-					<listheader label="附件" width="7%" align="center" />
 					<listheader label="该项得分" width="11%" align="center" />
 					<listheader label="本人得分" width="11%" align="center" />
+					<listheader label="填写人" width="7%" align="center" />
 					<listheader label="审核状态" width="12%" align="center" />
-
 				</listhead>
 			</listbox>
-			<!-- <paging id="zxPaging" zclass="z-paging" pageSize="10"
-				detailed="true" /> -->
 		</div>
-
-		<!-- </panel> -->
 
 		<groupbox closable="true">
 			<caption>

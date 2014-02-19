@@ -68,12 +68,12 @@
 					<listheader label="著作类型" width="16%" align="center"
 						style="text-align:center" />
 					<listheader label="绩分年度" width="13%" align="center" />
-					<listheader label="附件" width="10%" align="center" />
 					<listheader label="该项得分" width="12%" align="center" />
+					<listheader label="填写人" width="10%" align="center" />
 					<listheader label="审核状态" width="14%" align="center" />
 				</listhead>
 			</listbox>
-			<paging id="zxPaging" zclass="z-paging" pageSize="13" width="98%"
+			<paging id="zxPaging" zclass="z-paging" pageSize="15" width="98%"
 				detailed="true" visible="false"/>
 		</div>
 		<groupbox closable="true">

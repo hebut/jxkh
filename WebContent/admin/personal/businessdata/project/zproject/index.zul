@@ -64,24 +64,22 @@
 		</div>
 		<div align="center" width="760px">
 			<listbox id="zxListbox" paginal="${zxPaging}" width="760px" 
-				sclass="new_listbox" checkmark="true" multiple="true"
-				>
+				sclass="new_listbox" checkmark="true" multiple="true" >
 				<listhead>
 					<listheader width="38px" align="center" />
 					<listheader label="序号" width="38px" align="center" />
-					<listheader label="项目名称" width="190px"
+					<listheader label="项目名称" width="260px"
 						style="text-align:center" />
 					<listheader label="项目级别" width="107px" align="center"
 						style="text-align:center" />
 					<listheader label="绩分年度" width="61px" align="center" />
-					<listheader label="合同始期" width="76px" align="center" />
-					<listheader label="附件" width="53px" align="center" />
 					<listheader label="该项得分" width="53px" align="center" />
 					<listheader label="本人得分" width="53px" align="center" />
+					<listheader label="填写人" width="53px" align="center" />
 					<listheader label="审核状态" width="91px" align="center" />
 				</listhead>
 			</listbox>
-			<paging id="zxPaging" zclass="z-paging" pageSize="13"
+			<paging id="zxPaging" zclass="z-paging" pageSize="15"
 				detailed="true" visible="true"/>
 		</div>
 		<groupbox closable="true">
