@@ -10,15 +10,11 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import javax.imageio.ImageIO;
-
 import org.iti.gh.entity.GhPxqk;
 import org.iti.gh.entity.GhZcqc;
 import org.iti.gh.service.PxqkService;
 import org.iti.gh.service.ZcqkService;
-import org.iti.jxkh.base.TitleSelectListbox;
-import org.iti.jxkh.business.fruit.AddFruitWin.FilesRenderer1;
 import org.iti.jxkh.business.meeting.UpfileWindow;
 import org.iti.jxkh.dutyChange.AddDutyChangeWindow;
 import org.iti.jxkh.entity.JXKH_PerTrans;
@@ -53,10 +49,8 @@ import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.Radiogroup;
 import org.zkoss.zul.Row;
-import org.zkoss.zul.Separator;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Toolbarbutton;
-
 import com.iti.common.util.ConvertUtil;
 import com.uniwin.asm.personal.ui.data.EditTitle;
 import com.uniwin.asm.personal.ui.data.EditTrain;
@@ -408,6 +402,7 @@ public class PersonBasicWindow extends BaseWindow {
 			pol.add(political[j]);
 		}
 		kuPolitical.setModel(new ListModelList(pol));
+
 		kuPolitical.addEventListener(Events.ON_SELECT, new EventListener() {
 			public void onEvent(Event arg0) throws Exception {
 				if (kuPolitical.getSelectedIndex() == political.length - 1) {
@@ -438,14 +433,6 @@ public class PersonBasicWindow extends BaseWindow {
 			}
 
 		}
-		// ftitle.initFListbox();
-		// ftitle.addEventListener(Events.ON_SELECT, new EventListener() {
-		// public void onEvent(Event arg0) throws Exception {
-		// //职称级别
-		// Title title = (Title)ftitle.getSelectedItem().getValue();
-		// titleRank.initSListbox(title.getPtiId());
-		// }
-		// });
 
 		// 学历
 		String[] Educational = { "-请选择-", "博士毕业", "博士结业", "博士肄业", "双硕士", "硕士毕业", "硕士结业", "硕士肄业", "相当硕士毕业", "研究生班毕业", "研究生班结业", "研究生班肄业", "双本科", "本科毕业", "本科结业", "本科肄业", "相当本科毕业", "双大专", "大专毕业", "大专结业", "相当大专毕业", "中专毕业", "中专结业" };
@@ -477,13 +464,32 @@ public class PersonBasicWindow extends BaseWindow {
 		}
 		marrystate.setModel(new ListModelList(mar));
 		// 岗位性质
-		String[] teacherqualify = { "-请选择-", "在职在岗", "在职不在岗", "退休返聘", "外聘", "离职", "退休" };
-		initListbox(teacherqualify, teaqualiry);// ///???????????????????????????????????????????????
-		/*
-		 * for (int i = 0; i < teacherqualify.length; i++) {
-		 * tea.add(teacherqualify[i]); } teaqualiry.setModel(new
-		 * ListModelList(tea));
-		 */
+		final String[] teacherqualify = { "-请选择-", "在职在岗", "在职不在岗", "退休返聘", "外聘", "离职", "退休" };
+		initListbox(teacherqualify, teaqualiry);//
+		
+		
+	
+		teaqualiry.addEventListener(Events.ON_SELECT, new EventListener() {
+			public void onEvent(Event arg0) throws Exception {
+				if (teaqualiry.getSelectedIndex() == teacherqualify.length - 2) {
+					leave.setVisible(true);
+					entiretime.setVisible(true);
+					reason.setVisible(true);
+					entirerea.setVisible(true);
+				} else if(teaqualiry.getSelectedIndex() == teacherqualify.length - 1){
+					leave.setValue("退休时间");
+					leave.setVisible(true);
+					entiretime.setVisible(true);
+					reason.setVisible(false);
+					entirerea.setVisible(false);
+				} else {
+					leave.setVisible(false);
+					entiretime.setVisible(false);
+					reason.setVisible(false);
+					entirerea.setVisible(false);
+				}
+			}
+		});
 
 		// 职位
 
@@ -505,28 +511,6 @@ public class PersonBasicWindow extends BaseWindow {
 			wort.add(worktyp[i]);
 		}
 		worktype.setModel(new ListModelList(wort));
-		// 职工性质
-		/*
-		 * String[] stafpro = { "-请选择-", "公立", "私立", "其他" }; for (int i = 0; i <
-		 * stafpro.length; i++) { stafp.add(stafpro[i]); }
-		 * staffproperty.setModel(new ListModelList(stafp));
-		 */
-		// 职工状态
-		/*
-		 * String[] stafstate = { "-请选择-", "实习", "在职", "离职", "退休" }; for (int i
-		 * = 0; i < stafstate.length; i++) { stafs.add(stafstate[i]); }
-		 * staffstate.setModel(new ListModelList(stafs));
-		 */
-		/*
-		 * staffstate.addEventListener(Events.ON_SELECT, new
-		 * org.zkoss.zk.ui.event.EventListener() { public void
-		 * onEvent(org.zkoss.zk.ui.event.Event arg0) throws Exception { if
-		 * (staffstate.getSelectedIndex() == 3) { leave.setVisible(true);
-		 * reason.setVisible(true); entiretime.setVisible(true);
-		 * entirerea.setVisible(true); } else { leave.setVisible(false);
-		 * reason.setVisible(false); entiretime.setVisible(false);
-		 * entirerea.setVisible(false); } } });
-		 */
 
 		// 学制
 		String[] year = { "-请选择-", "两年", "两年半", "三年", "四年", "五年" };
@@ -563,10 +547,6 @@ public class PersonBasicWindow extends BaseWindow {
 		if (user.getKuNativeplace() != null) {
 			nativeplace.setValue(user.getKuNativeplace());
 		}
-		/*
-		 * if (teacher.getThPosition() != null) {
-		 * zhiwu.setValue(teacher.getThPosition()); }
-		 */
 
 		if (user.getKuSex().trim().equalsIgnoreCase("2")) { // 性别是字符，要去空格，否则该语句失灵
 			kuSex.setSelectedIndex(1);
@@ -588,16 +568,15 @@ public class PersonBasicWindow extends BaseWindow {
 		} else {
 			kuPolitical.setSelectedIndex(Integer.valueOf(user.getKuPolitical().trim()));
 		}
-		/*
-		 * if (user.getKuEducational() == null || user.getKuEducational() == "")
-		 * { kuEducational.setSelectedIndex(0); } else {
-		 * kuEducational.setSelectedIndex
-		 * (Integer.valueOf(user.getKuEducational().trim())); } if
-		 * (user.getKuXuewei() == null || user.getKuXuewei() == "") {
-		 * kuXuewei.setSelectedIndex(0); } else {
-		 * kuXuewei.setSelectedIndex(Integer
-		 * .valueOf(user.getKuXuewei().trim())); }
-		 */
+		
+		if (kuPolitical.getSelectedIndex() == political.length - 1) {
+			partyLabel.setVisible(false);
+			partytime.setVisible(false);
+		} else {
+			partyLabel.setVisible(true);
+			partytime.setVisible(true);
+		}
+
 		if (user.getKuNation() == null || user.getKuNation() == "") {
 			kuNation.setSelectedIndex(0);
 		} else {
@@ -608,16 +587,7 @@ public class PersonBasicWindow extends BaseWindow {
 		} else {
 			marrystate.setSelectedIndex(Integer.valueOf(user.getKuMarstatus()));
 		}
-		/*
-		 * if (user.getKuSpoken() == null || user.getKuSpoken() == "") {
-		 * mandarin.setSelectedIndex(0); } else {
-		 * mandarin.setSelectedIndex(Integer.valueOf(user.getKuSpoken())); }
-		 */
-		/*
-		 * if (user.getKuComputer() == null || user.getKuComputer() == "") {
-		 * computer.setSelectedIndex(0); } else {
-		 * computer.setSelectedIndex(Integer.valueOf(user.getKuComputer())); }
-		 */
+		
 		if (detail != null) {
 			if (detail.getfMajor() != null) {
 				fhighmajor.setValue(detail.getfMajor());
@@ -630,6 +600,25 @@ public class PersonBasicWindow extends BaseWindow {
 			} else {
 				teaqualiry.setSelectedIndex(Integer.valueOf(detail.getJobQuality()));
 			}
+			
+			if (teaqualiry.getSelectedIndex() == teacherqualify.length - 2) {
+				leave.setVisible(true);
+				entiretime.setVisible(true);
+				reason.setVisible(true);
+				entirerea.setVisible(true);
+			} else if(teaqualiry.getSelectedIndex() == teacherqualify.length - 1){
+				leave.setValue("退休时间");
+				leave.setVisible(true);
+				entiretime.setVisible(true);
+				reason.setVisible(false);
+				entirerea.setVisible(false);
+			} else {
+				leave.setVisible(false);
+				entiretime.setVisible(false);
+				reason.setVisible(false);
+				entirerea.setVisible(false);
+			}
+			
 			if (detail.getWorkQulity() == null || detail.getWorkQulity() == "") {
 				workproper.setSelectedIndex(0);
 			} else {
@@ -640,25 +629,7 @@ public class PersonBasicWindow extends BaseWindow {
 			} else {
 				worktype.setSelectedIndex(Integer.valueOf(detail.getWorkType()));
 			}
-			/*
-			 * if (detail.getStaffState() == null || detail.getStaffState() ==
-			 * "") { staffstate.setSelectedIndex(0); leave.setVisible(false);
-			 * reason.setVisible(false); entiretime.setVisible(false);
-			 * entirerea.setVisible(false); } else {
-			 * staffstate.setSelectedIndex(
-			 * Integer.valueOf(detail.getStaffState())); if
-			 * (Integer.valueOf(detail.getStaffState()) == 3) {
-			 * leave.setVisible(true); reason.setVisible(true);
-			 * entiretime.setVisible(true); entirerea.setVisible(true); } else {
-			 * leave.setVisible(false); reason.setVisible(false);
-			 * entiretime.setVisible(false); entirerea.setVisible(false); } }
-			 */
-			/*
-			 * if (detail.getStaffQuality() == null || detail.getStaffQuality()
-			 * == "") { staffproperty.setSelectedIndex(0); } else {
-			 * staffproperty
-			 * .setSelectedIndex(Integer.valueOf(detail.getStaffQuality())); }
-			 */
+			
 			// 第一学历、最高学历
 			if (detail.getfDegree() == null || detail.getfDegree() == "") {
 				fedubackgr.setSelectedIndex(0);
@@ -694,8 +665,8 @@ public class PersonBasicWindow extends BaseWindow {
 			if (detail.getEntireReason() != null) {
 				entirerea.setValue(detail.getEntireReason());
 			}
-			if (detail.getEnterTime() != null && detail.getEnterTime().length() > 0) {
-				entiretime.setValue(ConvertUtil.convertDate(DateUtil.getDateString(detail.getEnterTime())));
+			if (detail.getEntireTime() != null && detail.getEntireTime().length() > 0) {
+				entiretime.setValue(ConvertUtil.convertDate(DateUtil.getDateString(detail.getEntireTime())));
 			}
 			if (detail.getfGraduTime() != null) {
 				fgradutime.setValue(ConvertUtil.convertDate(detail.getfGraduTime()));
@@ -763,12 +734,6 @@ public class PersonBasicWindow extends BaseWindow {
 				rank.setValue(detail.getPostRank());
 			}
 			
-			/*
-			 * if(detail.getNowPtRank() != null &&
-			 * !"".equals(detail.getNowPtRank())) {
-			 * nowRank.setValue(detail.getNowPtRank()); }
-			 */
-
 		}
 
 		/**
@@ -779,15 +744,6 @@ public class PersonBasicWindow extends BaseWindow {
 		} else {
 			language.setSelectedIndex(Integer.valueOf(user.getLanguage().trim()));
 		}
-
-		/*
-		 * if(teacher.getThFirsub()!=null){ List
-		 * mlst=majorService.findByZyid(teacher.getThFirsub());
-		 * if(mlst!=null&&mlst.size()!=0){ GhZy z=(GhZy) mlst.get(0);
-		 * System.out.println("ss....."+z.getZyId()); fhighmajor.setMajor(z); }
-		 * 
-		 * }
-		 */
 
 		if (user.getKuHomeaddress() != null || user.getKuHometel() != null || user.getKuWorktel() != null || user.getKuMsn() != null || user.getKuQq() != null || user.getKuHomepage() != null || user.getKuFax() != null || user.getKuOthercontact() != null) {
 			address.setValue(user.getKuHomeaddress());
@@ -818,19 +774,7 @@ public class PersonBasicWindow extends BaseWindow {
 				img.setSrc(user.getKuPath());
 			}
 		}
-		/*
-		 * delete.setDisabled(false); String path =
-		 * this.getDesktop().getWebApp().getRealPath("/admin/image/head/" +
-		 * thid.getValue().trim() + ".jpg"); String srcPath="/admin/image/head/"
-		 * + thid.getValue().trim() + ".jpg"; File file = new File(path); if
-		 * (file.exists()) { img.setSrc(srcPath.replace("\\", "/")); } else {
-		 * delete.setDisabled(true);
-		 * img.setSrc("/admin/image/head/default.jpg"); }
-		 * ///System.out.println(path+"11111");
-		 * //System.out.println(srcPath+"22222222");
-		 */
-
-		/* selectTitle.setTitle(teacher.getTitle()); */
+		
 	}
 
 	/**
@@ -879,15 +823,9 @@ public class PersonBasicWindow extends BaseWindow {
 		user.setKuHealth(healthstate.getText());
 		user.setKuNativeplace(nativeplace.getText());
 		user.setKuNation(String.valueOf(kuNation.getSelectedIndex()));
-		/*
-		 * user.setKuEducational(String.valueOf(kuEducational.getSelectedIndex())
-		 * ); user.setKuXuewei(String.valueOf(kuXuewei.getSelectedIndex()));
-		 */
+		
 		user.setKuMarstatus(String.valueOf(marrystate.getSelectedIndex()));
-		/*
-		 * user.setKuSpoken(String.valueOf(mandarin.getSelectedIndex()));
-		 * user.setKuComputer(String.valueOf(computer.getSelectedIndex()));
-		 */
+		
 		user.setKuSchool(kuSchool.getText());
 		if (kuBirthday.getValue() != null) {
 			user.setKuBirthday(DateUtil.getDateString(kuBirthday.getValue()));
@@ -932,62 +870,7 @@ public class PersonBasicWindow extends BaseWindow {
 		if (partytime.getValue() != null) {
 			user.setKuPartytime(DateUtil.getDateString(partytime.getValue()));
 		}
-		/*
-		 * Teacher teacher = teacherService.findBykuid(user.getKuId()); if
-		 * (shuodao.getSelectedIndex() == 0 && bodao.getSelectedIndex() == 0) {
-		 * teacher.setThAdvisor(Teacher.ADVISOR_BOTH); } else if
-		 * (shuodao.getSelectedIndex() == 0 && bodao.getSelectedIndex() == 1) {
-		 * teacher.setThAdvisor(Teacher.ADVISOR_SD); } else if
-		 * (bodao.getSelectedIndex() == 0 && shuodao.getSelectedIndex() == 1) {
-		 * teacher.setThAdvisor(Teacher.ADVISOR_BD); } else {
-		 * teacher.setThAdvisor(Teacher.ADVISOR_NONE); }
-		 */
-
-		/*
-		 * if (zhiwu.getValue() != null) {
-		 * teacher.setThPosition(zhiwu.getValue()); }
-		 */
-
-		/*
-		 * teacher.setThQualify(String.valueOf(teaqualiry.getSelectedIndex()));
-		 * List yjfx = yjfxService.findByKuid(user.getKuId()); if (yjfx != null
-		 * && yjfx.size() > 0) { GhYjfx fx = (GhYjfx) yjfx.get(0); if
-		 * (search1.getValue() != null || search2.getValue() != null ||
-		 * search3.getValue() != null || search4.getValue() != null ||
-		 * search5.getValue() != null) { fx.setYjResearch1(search1.getValue());
-		 * fx.setYjResearch2(search2.getValue());
-		 * fx.setYjResearch3(search3.getValue());
-		 * fx.setYjResearch4(search4.getValue());
-		 * fx.setYjResearch5(search5.getValue()); } yjfxService.update(fx); }
-		 * else { GhYjfx fx = new GhYjfx(); if (search1.getValue() != null ||
-		 * search2.getValue() != null || search3.getValue() != null ||
-		 * search4.getValue() != null || search5.getValue() != null) {
-		 * fx.setKuId(user.getKuId()); fx.setYjResearch1(search1.getValue());
-		 * fx.setYjResearch2(search2.getValue());
-		 * fx.setYjResearch3(search3.getValue());
-		 * fx.setYjResearch4(search4.getValue());
-		 * fx.setYjResearch5(search5.getValue()); } yjfxService.save(fx); }
-		 */
-		/*
-		 * //判断研究方向个数并存储 String[] a= search.getValue().split(","); if(yjfx ==
-		 * null || yjfx.size() == 0){ for(int i=0;i<a.length;i++){ String[] a1=
-		 * a[i].split("，"); if(a1.length !=0){ for(int j = 0;j < a1.length;j++){
-		 * GhYjfx yj=new GhYjfx(); yj.setYjResearch(a1[j]);
-		 * yj.setKuId(user.getKuId()); yjfxService.save(yj); } }else { GhYjfx
-		 * yj=new GhYjfx(); yj.setYjResearch(a[i]); yj.setKuId(user.getKuId());
-		 * yjfxService.save(yj); } } }else if(yjfx != null && yjfx.size() != 0){
-		 * for(int j = 0;j < yjfx.size(); j++){ GhYjfx yj=(GhYjfx) yjfx.get(j);
-		 * yjfxService.delete(yj); } for(int i=0;i<a.length;i++){ String[] a1=
-		 * a[i].split("，"); if(a1.length !=0){ for(int j = 0;j < a1.length;j++){
-		 * GhYjfx yj=new GhYjfx(); yj.setYjResearch(a1[j]);
-		 * yj.setKuId(user.getKuId()); yjfxService.save(yj); } }else{ GhYjfx
-		 * yj=new GhYjfx(); yj.setYjResearch(a[i]); yj.setKuId(user.getKuId());
-		 * yjfxService.save(yj); } } }
-		 */
-		/*
-		 * teacher.setThTitle(selectTitle.getSelectTitle().getTiId());
-		 * teacherService.update(teacher);
-		 */
+		
 		// teacherService.save(teacher);
 		userService.update(user);
 		Sessions.getCurrent().setAttribute("user", user);
@@ -1008,27 +891,13 @@ public class PersonBasicWindow extends BaseWindow {
 		detail.setJobQuality(String.valueOf(teaqualiry.getSelectedIndex()));
 		detail.setWorkQulity(String.valueOf(workproper.getSelectedIndex()));
 		detail.setWorkType(String.valueOf(worktype.getSelectedIndex()));
-		/* detail.setStaffState(String.valueOf(staffstate.getSelectedIndex())); */
-		/*
-		 * detail.setStaffQuality(String.valueOf(staffproperty.getSelectedIndex()
-		 * ));
-		 */
+		
 		if (entirerea.getValue() != null) {
 			detail.setEntireReason(entirerea.getValue());
 		}
-//		if (emplquali.getValue() != null) {
-//			detail.setEmpQualy(emplquali.getValue());
-//		}
-//		if (getTime.getValue() != null) {
-//			detail.setGetTime(DateUtil.getDateString(getTime.getValue()));
-//		}
 		if (emplrank.getValue() != null) {
 			detail.setEmpRank(emplrank.getValue());
 		}
-		/*
-		 * if (emplposition.getValue() != null) {
-		 * detail.setEmpJob(emplposition.getValue()); }
-		 */
 		if (emplstate.getValue() != null) {
 			detail.setEmpState(emplstate.getValue());
 		}
@@ -1039,7 +908,7 @@ public class PersonBasicWindow extends BaseWindow {
 			detail.setDismissReasn(dismissreason.getValue());
 		}
 		if (entiretime.getValue() != null) {
-			detail.setEnterTime(DateUtil.getDateString(entiretime.getValue()));
+			detail.setEntireTime(DateUtil.getDateString(entiretime.getValue()));
 		}
 		if (empltime.getValue() != null) {
 			detail.setEmpTime(DateUtil.getDateString(empltime.getValue()));
@@ -1056,13 +925,6 @@ public class PersonBasicWindow extends BaseWindow {
 		if (rank.getValue() != null) {
 			detail.setPostRank(rank.getValue());
 		}
-		// if (nowPost.getValue() != null) {
-		// detail.setNowPost(nowPost.getValue());
-		// }
-		/*
-		 * if (nowRank.getValue() != null) {
-		 * detail.setNowPtRank(nowRank.getValue()); }
-		 */
 		if (detail.getKuId() == null) {
 			detail.setKuId(user.getKuId());
 			userDetailService.save(detail);
@@ -1105,12 +967,6 @@ public class PersonBasicWindow extends BaseWindow {
 			}
 			return;
 		}
-//		if (emplquali.getValue() != null && !emplquali.getValue().equals("")) {
-//			detail.setEmpQualy(emplquali.getValue().trim());
-//		}
-//		if (getTime.getValue() != null) {
-//			detail.setGetTime(ConvertUtil.convertDateString(getTime.getValue()));
-//		}
 		if (nowPost.getValue() != null && !nowPost.getValue().equals(""))
 			detail.setNowPost(nowPost.getValue().trim());
 		if (emplrank.getValue() != null && !emplrank.getValue().equals(""))
@@ -1262,10 +1118,6 @@ public class PersonBasicWindow extends BaseWindow {
 				userDetailService.save(df);
 			}
 		}
-		/*
-		 * userService.update(user); Sessions.getCurrent().setAttribute("user",
-		 * user);
-		 */
 		Messagebox.show("保存成功！", "提示", Messagebox.OK, Messagebox.INFORMATION);
 	}
 
@@ -1276,29 +1128,7 @@ public class PersonBasicWindow extends BaseWindow {
 	 * @2010-4-13
 	 */
 	public void onClick$reset1() {
-		// kuName.setValue("");
-		// thid.setRawValue(null);
-		// kuUsedname.setRawValue(null);
-		// kuNation.setSelectedIndex(0);
-		// healthstate.setRawValue(null);
-		// marrystate.setSelectedIndex(0);
-		// nativeplace.setRawValue(null);
-		// partytime.setRawValue(null);
-		// kuBirthday.setRawValue(null);
-		// kuSex.setSelectedIndex(0);
-		// bangType.setSelectedIndex(0);
-		// kuAutoenter.setChecked(false);
-		// kuAutoenter.setDisabled(true);
-		// uBandIp.setValue("");
-		// uinfo.setRawValue("");
-		// kuIdentity.setValue("");
-		// kuPolitical.setSelectedIndex(0);
-		// kuSchool.setValue("");
-		/*
-		 * search1.setRawValue(null); search2.setRawValue(null);
-		 * search3.setRawValue(null); search4.setRawValue(null);
-		 * search5.setRawValue(null);
-		 */
+		
 		initMenu();
 		// initTitle();
 		initDutyChange();
@@ -1307,25 +1137,7 @@ public class PersonBasicWindow extends BaseWindow {
 	}
 
 	public void onClick$reset2() {
-		// starworktime.setRawValue(null);
-		// entertime.setRawValue(null);
-		// teaqualiry.setSelectedIndex(0);
-		// workproper.setSelectedIndex(0);
-		// worktype.setSelectedIndex(0);
-		// /*staffproperty.setSelectedIndex(0);*/
-		// /*staffstate.setSelectedIndex(0);*/
-		// entiretime.setRawValue(null);
-		// entirerea.setRawValue(null);
-		// emplquali.setRawValue(null);
-		// getTime.setRawValue(null);
-		// emplrank.setRawValue(null);
-		// /*emplposition.setRawValue(null);*/
-		// empltime.setRawValue(null);
-		// endtime.setRawValue(null);
-		// emplstate.setRawValue(null);
-		// dismisstime.setRawValue(null);
-		// dismissno.setRawValue(null);
-		// dismissreason.setRawValue(null);
+		
 		initMenu();
 		// initTitle();
 		initDutyChange();
@@ -1333,16 +1145,7 @@ public class PersonBasicWindow extends BaseWindow {
 	}
 
 	public void onClick$reset3() {
-		// address.setRawValue(null);
-		// kuhomePhone.setRawValue(null);
-		// kuworkPhone.setRawValue(null);
-		// kuPhone.setRawValue(null);
-		// kuEmail.setRawValue(null);
-		// msn.setRawValue(null);
-		// qq.setRawValue(null);
-		// homepage.setRawValue(null);
-		// chuanzhen.setRawValue(null);
-		// others.setRawValue(null);
+		
 		initMenu();
 		// initTitle();
 		initDutyChange();
@@ -1350,22 +1153,7 @@ public class PersonBasicWindow extends BaseWindow {
 	}
 
 	public void onClick$reset() {
-		// fedubackgr.setSelectedIndex(0);
-		// facdegree.setSelectedIndex(0);
-		// fduyear.setSelectedIndex(0);
-		// fkuSchool.setRawValue(null);
-		// fgradutime.setRawValue(null);
-		// fcetificateno.setRawValue(null);
-		// hedubackgr.setSelectedIndex(0);
-		// hacdegree.setSelectedIndex(0);
-		// heduyear.setSelectedIndex(0);
-		// kuSchool.setRawValue(null);
-		// highgradutime.setRawValue(null);
-		// hcetificateno.setRawValue(null);
-		// post.setValue("");
-		// nowPost.setValue("");
-		// rank.setValue("");
-		/* nowRank.setValue(""); */
+		
 		initMenu();
 		// initTitle();
 		initDutyChange();
@@ -1475,10 +1263,6 @@ public class PersonBasicWindow extends BaseWindow {
 
 	@Override
 	public void initShow() {
-		/*
-		 * show.addEventListener(Events.ON_SELECT, new EventListener() { public
-		 * void onEvent(Event arg0) throws Exception { } });
-		 */
 
 		show.setItemRenderer(new ListitemRenderer() {
 			public void render(Listitem arg0, Object arg1) throws Exception {
@@ -1528,10 +1312,6 @@ public class PersonBasicWindow extends BaseWindow {
 				arg0.appendChild(c8);
 			}
 		});
-		/*
-		 * titleList.addEventListener(Events.ON_SELECT, new EventListener() {
-		 * public void onEvent(Event arg0) throws Exception { } });
-		 */
 		titleList.setItemRenderer(new ListitemRenderer() {
 			public void render(Listitem arg0, Object GhZcqc) throws Exception {
 				final GhZcqc z = (GhZcqc) GhZcqc;
@@ -1562,10 +1342,8 @@ public class PersonBasicWindow extends BaseWindow {
 					c2.setLabel(t.getTiName());
 				}
 				Listcell c3 = new Listcell(z.getZcTime());
-				Listcell c4 = new Listcell(z.getZcPubtime());
 				Listcell c5 = new Listcell(z.getZcNum());
 				Listcell c6 = new Listcell(z.getZcPubdept());
-				Listcell c7 = new Listcell(z.getZcQuasym());
 				Listcell c8 = new Listcell(z.getZcIdentdept());
 				Listcell c9 = new Listcell();
 				hbox.setParent(c9);
@@ -1573,10 +1351,8 @@ public class PersonBasicWindow extends BaseWindow {
 				arg0.appendChild(c1);
 				arg0.appendChild(c2);
 				arg0.appendChild(c3);
-				// arg0.appendChild(c4);
 				arg0.appendChild(c5);
 				arg0.appendChild(c6);
-				// arg0.appendChild(c7);
 				arg0.appendChild(c8);
 				arg0.appendChild(c9);
 			}
