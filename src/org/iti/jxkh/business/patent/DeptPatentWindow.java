@@ -31,7 +31,6 @@ import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
-import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
 import com.iti.common.util.ConvertUtil;
@@ -52,7 +51,7 @@ public class DeptPatentWindow extends Window implements AfterCompose {
 	private Listbox auditState, rank;
 	private String nameSearch, yearSearch;
 	private Short auditStateSearch;
-	private Paging zxPaging;
+	//private Paging zxPaging;
 	WkTUser user;
 	private JxkhProjectService jxkhProjectService;
 	private JXKHMeetingService jxkhMeetingService;
@@ -65,7 +64,7 @@ public class DeptPatentWindow extends Window implements AfterCompose {
 		user = (WkTUser) Sessions.getCurrent().getAttribute("user");// 获取当前登录用户
 		zxListbox.setItemRenderer(new ZProjectRenderer());
 		auditState.setItemRenderer(new auditStateRenderer());
-		zxPaging.addEventListener("onPaging", new ZXPagingListener());
+		//zxPaging.addEventListener("onPaging", new ZXPagingListener());
 		initShow();
 		String[] a = { "","填写中", "待审核", "部门审核中", "部门通过", "部门不通过","业务办暂缓通过", "业务办通过", "业务办不通过",
 		"归档" };
@@ -111,7 +110,7 @@ public class DeptPatentWindow extends Window implements AfterCompose {
 				.findAllPatentByDept1(user.getDept().getKdNumber());
 		zxListbox.setModel(new ListModelList(patentList));
 		
-		zxPaging.setTotalSize(patentList.size());
+		//zxPaging.setTotalSize(patentList.size());
 		cx = false;
 	}
 
@@ -140,15 +139,11 @@ public class DeptPatentWindow extends Window implements AfterCompose {
 				List<Jxkh_Patent> patentList = jxkhProjectService
 						.findPatentByCondition(nameSearch, auditStateSearch,
 								indicatorId, yearSearch, user.getDept()
-										.getKdNumber(), zxPaging
-										.getActivePage(), zxPaging
-										.getPageSize());
+										.getKdNumber(), 0, 0);
 				zxListbox.setModel(new ListModelList(patentList));
 			} else {
 				List<Jxkh_Patent> patentList = jxkhProjectService
-						.findAllPatentByDept(user.getDept().getKdNumber(),
-								zxPaging.getActivePage(),
-								zxPaging.getPageSize());
+						.findAllPatentByDept(user.getDept().getKdNumber(), 0,	0);
 				zxListbox.setModel(new ListModelList(patentList));
 			}
 		}
@@ -375,14 +370,14 @@ public class DeptPatentWindow extends Window implements AfterCompose {
 		if (year.getSelectedIndex() != 0 && year.getSelectedItem() != null)
 			yearSearch = year.getSelectedItem().getValue() + "";
 
-		List<Jxkh_Patent> patentList1 = jxkhProjectService
-				.findPatentByCondition(nameSearch, auditStateSearch,
-						indicatorId, yearSearch, user.getDept().getKdNumber());
-		zxPaging.setTotalSize(patentList1.size());
+//		List<Jxkh_Patent> patentList1 = jxkhProjectService
+//				.findPatentByCondition(nameSearch, auditStateSearch,
+//						indicatorId, yearSearch, user.getDept().getKdNumber());
+		//zxPaging.setTotalSize(patentList1.size());
 		List<Jxkh_Patent> patentList = jxkhProjectService
 				.findPatentByCondition(nameSearch, auditStateSearch,
 						indicatorId, yearSearch, user.getDept().getKdNumber(),
-						zxPaging.getActivePage(), zxPaging.getPageSize());
+						0,0);
 		zxListbox.setModel(new ListModelList(patentList));
 		cx = true;
 	}

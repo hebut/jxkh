@@ -112,7 +112,6 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 		this.addForward(Events.ON_OK, submit, Events.ON_CLICK);
 		jiFenTime.initYearListbox("");
 		user = (WkTUser) Sessions.getCurrent().getAttribute("user");// 获取当前登录用户
-		System.out.println(user);
 		meetingRank.setItemRenderer(new meetingRankRenderer());
 		holdCategray.setItemRenderer(new holdTypeRenderer());
 		personScore.setItemRenderer(new personScoreRenderer());
@@ -335,7 +334,6 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 			department.setValue(d);
 
 			holdTypeRenderer h = new holdTypeRenderer();
-			System.out.println("initwingdow中的值" + h.getType());
 			if (h.getType().equals(null)) {
 				zcRow.setVisible(false);
 				zxRow.setVisible(false);
@@ -358,7 +356,6 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 				xdep1.setValue(meeting.getMtXDep());
 			}
 			if (h.getType().equals("协办")) {
-				System.out.println("*****");
 				zcRow.setVisible(true);
 				zxRow.setVisible(false);
 				cxRow.setVisible(false);
@@ -417,7 +414,6 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 	private void initListbox() {
 		List<Jxkh_BusinessIndicator> rankList = new ArrayList<Jxkh_BusinessIndicator>();
 		rankList.add(new Jxkh_BusinessIndicator());
-		System.out.println("指标中取出的值是：" + jxkhMeetingService.findRank(mtRank).size());
 		if (jxkhMeetingService.findRank(mtRank) != null) {
 			rankList.addAll(jxkhMeetingService.findRank(mtRank));
 		}
@@ -487,7 +483,6 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 
 		public String getType() {
 			TypeSelect = ((Jxkh_BusinessIndicator) meeting.getMtType()).getKbName();
-			System.out.println("渲染器get中得值" + TypeSelect);
 			return TypeSelect;
 		}
 	}
@@ -496,7 +491,6 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 	public void type() {
 		holdCategray.addEventListener(Events.ON_SELECT, new EventListener() {
 			public void onEvent(Event event) throws Exception {
-				System.out.println(((Jxkh_BusinessIndicator) holdCategray.getSelectedItem().getValue()).getKbName());
 				if (((Jxkh_BusinessIndicator) holdCategray.getSelectedItem().getValue()).getKbName() == null || ((Jxkh_BusinessIndicator) holdCategray.getSelectedItem().getValue()).getKbName().equals(null)) {
 					zcRow.setVisible(false);
 					zxRow.setVisible(false);
@@ -1068,11 +1062,8 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 		w.addEventListener(Events.ON_CHANGE, new EventListener() {
 			public void onEvent(Event arg0) throws Exception {
 				String filePath = (String) Executions.getCurrent().getAttribute("path");
-				System.out.println("输出文件路径是path=" + filePath);
 				String fileName = (String) Executions.getCurrent().getAttribute("title");
-				System.out.println("输出的文件标题是title=" + fileName);
 				String upTime = (String) Executions.getCurrent().getAttribute("upTime");
-				System.out.println("输出文件的上传时间time=" + upTime);
 				applyList1.setItemRenderer(new FilesRenderer1());
 				String[] arr = new String[4];
 				arr[0] = filePath;
@@ -1219,11 +1210,8 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 		w.addEventListener(Events.ON_CHANGE, new EventListener() {
 			public void onEvent(Event arg0) throws Exception {
 				String filePath = (String) Executions.getCurrent().getAttribute("path");
-				System.out.println("输出文件路径是path=" + filePath);
 				String fileName = (String) Executions.getCurrent().getAttribute("title");
-				System.out.println("输出的文件标题是title=" + fileName);
 				String upTime = (String) Executions.getCurrent().getAttribute("upTime");
-				System.out.println("输出文件的上传时间time=" + upTime);
 				applyList3.setItemRenderer(new FilesRenderer3());
 				String[] arr = new String[4];
 				arr[0] = filePath;
@@ -1289,7 +1277,6 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 	}
 
 	public void download(String fpath, String fname) throws InterruptedException {
-		System.out.println("20120304path=" + UploadUtil.getRootPath() + fpath);
 		File file = new File(UploadUtil.getRootPath() + fpath);
 		if (file.exists()) {
 			try {
@@ -1486,7 +1473,6 @@ public class AddMeetingWindow extends Window implements AfterCompose {
 		try {
 			Messagebox.show("绩分信息保存成功！", "提示", Messagebox.OK, Messagebox.INFORMATION);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		List<JXKH_MeetingDept> tempDeptList = jxkhMeetingService.findMeetingDeptByMeetingId(meeting);

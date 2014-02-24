@@ -323,8 +323,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 																			// =
 																			// 1
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo>0&&pageSize>0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Project> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -353,8 +356,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 				.append("and a.id in (select distinct d.project from Jxkh_ProjectDept as d where d.deptId='"
 						+ kdNumber + "') order by a.state asc,a.jxYear desc,a.submitTime desc");
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo>0&&pageSize>0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Project> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -438,8 +444,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 																			// =
 																			// 1
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo >0 && pageSize > 0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Project> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -468,8 +477,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 				.append("and a.id in (select distinct d.project from Jxkh_ProjectDept as d where d.deptId='"
 						+ kdNumber + "') order by a.state asc,a.jxYear desc,a.submitTime desc");
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo > 0 &&  pageSize > 0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Project> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -554,8 +566,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 																			// =
 																			// 1
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo >0 && pageSize>0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Project> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -584,8 +599,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 				.append("and a.id in (select distinct d.project from Jxkh_ProjectDept as d where d.deptId='"
 						+ kdNumber + "') order by a.state asc,a.jxYear asc,a.submitTime desc");
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo > 0 &&  pageSize > 0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Project> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -653,8 +671,10 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 																			// d.rank
 																			// =1
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo > 0 &&  pageSize > 0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
 		List<Jxkh_Patent> list = query.list();
 		for (Jxkh_Patent patent : list) {
 			List<Jxkh_PatentDept> meetingDepts = patent.getPatentDept();
@@ -722,8 +742,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 																			// d.rank
 																			// =1
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo>0&&pageSize>0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Writing> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -1030,8 +1053,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 				.append("and a.id in (select distinct d.project from Jxkh_ProjectDept as d where d.deptId='"
 						+ kdNumber + "') order by a.state asc,a.jxYear desc,a.submitTime desc");
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo>0&&pageSize>0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Project> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -1077,8 +1103,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 																			// =
 																			// 1
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo > 0 && pageSize > 0 ){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Project> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -1121,8 +1150,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 																			// =
 																			// 1
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo > 0 && pageSize >0 ){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Project> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())
@@ -1223,8 +1255,11 @@ public class JxkhProjectServiceImpl extends BaseServiceImpl implements
 																			// d.rank
 																			// =1
 		Query query = session.createQuery(queryString.toString());
-		query.setFirstResult(pageNo * pageSize);
-		query.setMaxResults(pageSize);
+		if(pageNo>0&&pageSize>0){
+			query.setFirstResult(pageNo * pageSize);
+			query.setMaxResults(pageSize);
+		}
+		
 		List<Jxkh_Writing> list = query.list();
 		session.beginTransaction().commit();
 		if (session.isOpen())

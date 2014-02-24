@@ -32,7 +32,6 @@ import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
-import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
 import com.iti.common.util.ConvertUtil;
@@ -53,7 +52,7 @@ public class DeptHprojectWindow extends Window implements AfterCompose {
 	private String nameSearch2;
 	private Short auditStateSearch2;
 	private Listbox hxListbox, auditState2, rank2;
-	private Paging hxPaging;
+	//private Paging hxPaging;
 	WkTUser user;
 	private JxkhProjectService jxkhProjectService;
 	private JXKHMeetingService jxkhMeetingService;
@@ -66,7 +65,7 @@ public class DeptHprojectWindow extends Window implements AfterCompose {
 		user = (WkTUser) Sessions.getCurrent().getAttribute("user");// 获取当前登录用户
 		hxListbox.setItemRenderer(new HProjectRenderer());
 		auditState2.setItemRenderer(new auditStateRenderer());
-		hxPaging.addEventListener("onPaging", new HXPagingListener());
+		//hxPaging.addEventListener("onPaging", new HXPagingListener());
 		initShow();
 		rank2.setItemRenderer(new qkTypeRenderer());
 		List<Jxkh_BusinessIndicator> holdList = new ArrayList<Jxkh_BusinessIndicator>();
@@ -112,7 +111,7 @@ public class DeptHprojectWindow extends Window implements AfterCompose {
 		List<Jxkh_Project> hProjectList = jxkhProjectService.findAllHPByDept1(user.getDept().getKdNumber());
 		hxListbox.setModel(new ListModelList(hProjectList));
 		
-		hxPaging.setTotalSize(hProjectList.size());
+		//hxPaging.setTotalSize(hProjectList.size());
 	}
 
 	public class auditStateRenderer implements ListitemRenderer {
@@ -136,11 +135,11 @@ public class DeptHprojectWindow extends Window implements AfterCompose {
 		@Override
 		public void onEvent(Event event) throws Exception {
 			if (cx2 == true) {
-				List<Jxkh_Project> projectList = jxkhProjectService.findHPByCondition(nameSearch2, auditStateSearch2, indicatorId2, yearSearch2, user.getDept().getKdNumber(), hxPaging.getActivePage(), hxPaging.getPageSize());
+				List<Jxkh_Project> projectList = jxkhProjectService.findHPByCondition(nameSearch2, auditStateSearch2, indicatorId2, yearSearch2, user.getDept().getKdNumber(), 0, 0);
 
 				hxListbox.setModel(new ListModelList(projectList));
 			} else {
-				List<Jxkh_Project> hProjectList = jxkhProjectService.findAllHPByDept(user.getDept().getKdNumber(), hxPaging.getActivePage(), hxPaging.getPageSize());
+				List<Jxkh_Project> hProjectList = jxkhProjectService.findAllHPByDept(user.getDept().getKdNumber(), 0, 0);
 				hxListbox.setModel(new ListModelList(hProjectList));
 			}
 		}
@@ -342,9 +341,9 @@ public class DeptHprojectWindow extends Window implements AfterCompose {
 		if (year2.getSelectedIndex() != 0 && year2.getSelectedItem() != null)
 			yearSearch2 = year2.getSelectedItem().getValue() + "";
 
-		List<Jxkh_Project> projectList1 = jxkhProjectService.findHPByCondition2(nameSearch2, auditStateSearch2, indicatorId2, yearSearch2, user.getDept().getKdNumber());
-		hxPaging.setTotalSize(projectList1.size());
-		List<Jxkh_Project> projectList = jxkhProjectService.findHPByCondition2(nameSearch2, auditStateSearch2, indicatorId2, yearSearch2, user.getDept().getKdNumber(), hxPaging.getActivePage(), hxPaging.getPageSize());
+		//List<Jxkh_Project> projectList1 = jxkhProjectService.findHPByCondition2(nameSearch2, auditStateSearch2, indicatorId2, yearSearch2, user.getDept().getKdNumber());
+		//hxPaging.setTotalSize(projectList1.size());
+		List<Jxkh_Project> projectList = jxkhProjectService.findHPByCondition2(nameSearch2, auditStateSearch2, indicatorId2, yearSearch2, user.getDept().getKdNumber(), 0, 0);
 		hxListbox.setModel(new ListModelList(projectList));
 		cx2 = true;
 	}

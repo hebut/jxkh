@@ -32,7 +32,6 @@ import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Messagebox;
-import org.zkoss.zul.Paging;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
 import com.iti.common.util.ConvertUtil;
@@ -53,7 +52,7 @@ public class DeptWritingWindow extends Window implements AfterCompose {
 	private Long indicatorId;
 	private String nameSearch, yearSearch;
 	private Short auditStateSearch;
-	private Paging zxPaging;
+	//private Paging zxPaging;
 	WkTUser user;
 	private JxkhProjectService jxkhProjectService;
 	private JXKHMeetingService jxkhMeetingService;
@@ -66,7 +65,7 @@ public class DeptWritingWindow extends Window implements AfterCompose {
 		user = (WkTUser) Sessions.getCurrent().getAttribute("user");// 获取当前登录用户
 		zxListbox.setItemRenderer(new ZProjectRenderer());
 		auditState.setItemRenderer(new auditStateRenderer());
-		zxPaging.addEventListener("onPaging", new ZXPagingListener());
+	//	zxPaging.addEventListener("onPaging", new ZXPagingListener());
 		initShow();
 		rank.setItemRenderer(new qkTypeRenderer());
 		List<Jxkh_BusinessIndicator> holdList = new ArrayList<Jxkh_BusinessIndicator>();
@@ -101,7 +100,7 @@ public class DeptWritingWindow extends Window implements AfterCompose {
 				.findAllWritingByDept1(user.getDept().getKdNumber());
 		zxListbox.setModel(new ListModelList(writingList));
 		
-		zxPaging.setTotalSize(writingList.size());
+		//zxPaging.setTotalSize(writingList.size());
 		
 		cx = false;
 		String[] a = { "","填写中", "待审核", "部门审核中", "部门通过", "部门不通过","业务办暂缓通过", "业务办通过", "业务办不通过",
@@ -139,12 +138,10 @@ public class DeptWritingWindow extends Window implements AfterCompose {
 			if (cx == true) {
 				writingList = jxkhProjectService.findWritingByCondition(
 						nameSearch, auditStateSearch, indicatorId, yearSearch,
-						user.getDept().getKdNumber(), zxPaging.getActivePage(),
-						zxPaging.getPageSize());
+						user.getDept().getKdNumber(), 0,0);
 			} else {
 				writingList = jxkhProjectService.findAllWritingByDept(user
-						.getDept().getKdNumber(), zxPaging.getActivePage(),
-						zxPaging.getPageSize());
+						.getDept().getKdNumber(), 0,0);
 			}
 			zxListbox.setModel(new ListModelList(writingList));
 		}
@@ -370,14 +367,13 @@ public class DeptWritingWindow extends Window implements AfterCompose {
 		if (year.getSelectedIndex() != 0 && year.getSelectedItem() != null)
 			yearSearch = year.getSelectedItem().getValue() + "";
 
-		List<Jxkh_Writing> writingList1 = jxkhProjectService
+		/*List<Jxkh_Writing> writingList1 = jxkhProjectService
 				.findWritingByCondition(nameSearch, auditStateSearch,
-						indicatorId, yearSearch, user.getDept().getKdNumber());
-		zxPaging.setTotalSize(writingList1.size());
+						indicatorId, yearSearch, user.getDept().getKdNumber());*/
+	//	zxPaging.setTotalSize(writingList1.size());
 		writingList = jxkhProjectService.findWritingByCondition(nameSearch,
 				auditStateSearch, indicatorId, yearSearch, user.getDept()
-						.getKdNumber(), zxPaging.getActivePage(), zxPaging
-						.getPageSize());
+						.getKdNumber(), 0,0);
 		zxListbox.setModel(new ListModelList(writingList));
 		cx = true;
 	}

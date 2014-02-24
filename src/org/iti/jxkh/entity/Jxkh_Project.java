@@ -47,10 +47,10 @@ public class Jxkh_Project implements java.io.Serializable {
 	private Short cooState;// 是否与外单位合作
 	private String cooCompany;// 合作单位
 	private Short state;// 审核状态
-	private String tempState;// 审核临时状态位（0未审核，1通过，2不通过）
+	private String tempState;// 审核临时状态位（0未审核，1通过，2不通过）//此状态位已经不需要了
 	private String bAdvice;// 业务办审核意见
-	private String dep1Reason;// 主部门反馈意见
-	private String dep2Reason;
+	private String dep1Reason;// 主部门反馈意见，现在多部门合作只需要主管部门审核通过即可
+	private String dep2Reason;//2-7的deptreason已经不需要了
 	private String dep3Reason;
 	private String dep4Reason;
 	private String dep5Reason;
