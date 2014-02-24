@@ -53,7 +53,7 @@
 			<toolbarbutton id="expert"
 				image="/css/default/images/button/dc.gif" style="color:blue" />
 		</div>
-		<listbox id="videoListbox" paginal="${videoPaging}"
+		<listbox id="videoListbox" paginal="${videoPaging}" 
 			sclass="new_listbox" checkmark="true" multiple="true">
 			<listhead>
 				<listheader align="center" width="5%" />

@@ -66,7 +66,7 @@
 					<listheader label="审核状态" width="18%" align="center" />
 				</listhead>
 			</listbox>
-			<paging id="zxPaging" zclass="z-paging" pageSize="15" />
+			<paging id="zxPaging" zclass="z-paging" pageSize="15"  detailed="true" />
 		</div>
 		<separator />
 		<groupbox closable="true">

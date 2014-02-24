@@ -56,7 +56,22 @@
 			</hbox>
 		</div>
 		<div align="center" width="100%">
-			<listbox id="zsListbox" paginal="${zsPaging}"
+			<listbox id="zsListbox"  mold="paging" pageSize="15" 
+				sclass="new_listbox" checkmark="true" multiple="true"
+				fixedLayout="true">
+				<listhead>
+					<listheader width="5%" align="center" />
+					<listheader label="序号" width="5%" align="center" />
+					<listheader label="项目名称" width="30%"
+						style="text-align:center" />
+					<listheader label="项目负责人" width="20%" align="center"
+						style="text-align:center" />
+					<listheader label="填写人" width="15%" align="center" />
+					<listheader label="审核状态" width="15%" align="center" />
+				</listhead>
+			</listbox>
+			
+			<!-- <listbox id="zsListbox" paginal="${zsPaging}"
 				sclass="new_listbox" checkmark="true" multiple="true"
 				fixedLayout="true">
 				<listhead>
@@ -71,7 +86,7 @@
 				</listhead>
 			</listbox>
 			<paging id="zsPaging" zclass="z-paging" pageSize="15"
-				detailed="true" />
+				detailed="true" /> -->
 		</div>
 		<groupbox closable="true">
 			<caption>

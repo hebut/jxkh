@@ -56,7 +56,7 @@
 			</hbox>
 		</div>
 		<div align="center" width="100%">
-			<listbox id="zxListbox" paginal="${zxPaging}"
+			<listbox id="zxListbox" mold="paging" pageSize="15" 
 				sclass="new_listbox" checkmark="true" multiple="true"
 				fixedLayout="true">
 				<listhead>
@@ -72,8 +72,6 @@
 					<listheader label="审核状态" width="12%" align="center" />
 				</listhead>
 			</listbox>
-			<paging id="zxPaging" zclass="z-paging" pageSize="15"
-				detailed="true" />
 		</div>
 		<groupbox closable="true">
 			<caption>
