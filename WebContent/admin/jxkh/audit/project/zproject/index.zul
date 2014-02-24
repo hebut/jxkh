@@ -59,18 +59,17 @@
 				<listhead>
 					<listheader width="5%" align="center" />
 					<listheader label="序号" width="7%" align="center" />
-					<listheader label="项目名称" width="18%"
+					<listheader label="项目名称" width="30%"
 						style="text-align:center" />
 					<listheader label="项目级别" width="16%" align="center"
 						style="text-align:center" />
 					<listheader label="绩分年度" width="10%" align="center" />
-					<listheader label="合同始期" width="12%" align="center" />
-					<listheader label="附件" width="7%" align="center" />
 					<listheader label="该项得分" width="10%" align="center" />
+					<listheader label="填写人" width="7%" align="center" />
 					<listheader label="审核状态" width="12%" align="center" />
 				</listhead>
 			</listbox>
-			<paging id="zxPaging" pageSize="13" zclass="z-paging" detailed="true"/>
+			<paging id="zxPaging" pageSize="15" zclass="z-paging" detailed="true"/>
 		</div>
 		<groupbox closable="true">
 			<caption>

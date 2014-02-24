@@ -1,0 +1,26 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="提示" border="normal" width="370px" height="190px">
+		<div width="99%" height="99%"  style="background-color:#FFFFFF" >
+		<separator />
+			<space />
+			<image src="/images/circleIcon.png" />
+			<space />
+			<label value="确认退回？"  style="font-size:15px"/>
+			<separator />
+			<hbox width="99%">
+			<space />
+			<textbox width="320px" height="40px"  value="请在此处填写反馈意见" style="color:DAE0F1"/>
+			</hbox>
+			<separator />
+			<separator bar="true" />
+			
+			<div align="center">
+				<button label="是" width="70px" />
+				<space />
+				<button label="否" width="70px" />
+			</div>
+		</div>
+
+	</window>
+</zk>

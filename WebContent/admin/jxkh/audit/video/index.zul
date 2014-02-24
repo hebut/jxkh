@@ -60,15 +60,14 @@
 				<listheader align="center" width="5%" />
 				<listheader label="序号" width="7%" align="center" />
 				<listheader label="影视名称" width="23%" align="left"
-					style="text-align:center" sort="auto(name)" />
+					style="text-align:center"  />
 				<listheader label="影视种类" width="15%" align="center" />
 				<listheader label="绩分年度" width="14%" align="center" />
-				<listheader label="附件" width="9%" align="center" />
 				<listheader label="该项得分" width="12%" align="center" />
+				<listheader label="填写人" width="9%" align="center" />
 				<listheader label="审核状态" width="15%" align="center" />
 			</listhead>
 		</listbox>
-		
 			<paging id="videoPaging" pageSize="13" zclass="z-paging" detailed="true" />
 		</div>
 		<separator />
